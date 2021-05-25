@@ -1,0 +1,39 @@
+\select@language {english}
+\contentsline {section}{\numberline {0.1}Abstract}{iv}{section.0.1}
+\contentsline {section}{\numberline {0.2}Sammendrag}{v}{section.0.2}
+\contentsline {section}{\numberline {0.3}Acknowledgments}{vi}{section.0.3}
+\contentsline {section}{\numberline {0.4}Introduction}{vii}{section.0.4}
+\contentsline {section}{\numberline {0.5}Overview of the thesis}{ix}{section.0.5}
+\contentsline {section}{\numberline {0.6}Meta-commentary}{x}{section.0.6}
+\contentsline {chapter}{\numberline {1}DG-algebras}{1}{chapter.1}
+\contentsline {section}{\numberline {1.1}Motivation}{2}{section.1.1}
+\contentsline {section}{\numberline {1.2}Our algebraic model}{2}{section.1.2}
+\contentsline {section}{\numberline {1.3}Formality}{6}{section.1.3}
+\contentsline {section}{\numberline {1.4}Model categories}{9}{section.1.4}
+\contentsline {subsection}{\numberline {1.4.1}Constructions in model categories}{11}{subsection.1.4.1}
+\contentsline {section}{\numberline {1.5}The homotopy theory of DG-algebras}{15}{section.1.5}
+\contentsline {section}{\numberline {1.6}More formality}{21}{section.1.6}
+\contentsline {chapter}{\numberline {2}Massey products}{25}{chapter.2}
+\contentsline {section}{\numberline {2.1}Motivation}{26}{section.2.1}
+\contentsline {section}{\numberline {2.2}The inaccessible information}{26}{section.2.2}
+\contentsline {section}{\numberline {2.3}Relation to formality}{30}{section.2.3}
+\contentsline {chapter}{\numberline {3}$\ensuremath {A_{\infty }}$-algebras}{37}{chapter.3}
+\contentsline {section}{\numberline {3.1}Motivation}{38}{section.3.1}
+\contentsline {section}{\numberline {3.2}Deformation retraction}{41}{section.3.2}
+\contentsline {section}{\numberline {3.3}The generalized algebraic model}{46}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Relation to the boundary operator}{48}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Morphisms of $\ensuremath {A_{\infty }}$-algebras}{49}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Visualization using rooted trees}{51}{subsection.3.3.3}
+\contentsline {subsubsection}{\numberline {3.3.3.1}Rooted trees for DG-algebras}{55}{subsubsection.3.3.3.1}
+\contentsline {subsection}{\numberline {3.3.4}Visualization of morphisms using rooted trees}{56}{subsection.3.3.4}
+\contentsline {subsubsection}{\numberline {3.3.4.1}Combinatorics}{58}{subsubsection.3.3.4.1}
+\contentsline {subsubsection}{\numberline {3.3.4.2}Rooted trees for DG-morphisms}{62}{subsubsection.3.3.4.2}
+\contentsline {section}{\numberline {3.4}Kadeishvili's theorem}{64}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}Connection to formality}{69}{subsection.3.4.1}
+\contentsline {section}{\numberline {3.5}Uniform vanishing}{71}{section.3.5}
+\contentsline {chapter}{\numberline {4}An application}{75}{chapter.4}
+\contentsline {section}{\numberline {4.1}Motivation}{76}{section.4.1}
+\contentsline {section}{\numberline {4.2}Lusternik-Schnirelmann category 1 spaces}{76}{section.4.2}
+\contentsline {section}{\numberline {4.3}Summary and last thoughts}{80}{section.4.3}
+\contentsline {chapter}{\numberline {A}Alternative construction of triple Massey products}{81}{appendix.A}
+\contentsline {chapter}{\numberline {B}Alternative description of the model structure on $DGA_k$}{85}{appendix.B}

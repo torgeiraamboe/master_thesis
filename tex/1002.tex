@@ -1,0 +1,128 @@
+
+\subsection{Li, Wu - Massey products and twisted cohomology of $\A$-algebras}
+
+Recall that there is an $\A$-structure $\overline{b_n}$ on $H(A)$ after choosing the maps $p_1$ and $q_1$ (§2.4). When $A$ is a differential graded algebra, it was a folklore that the $\A$-structure on $H(A)$ gives the Massey products [29, 7, 26, 17]. The precise statement seems to be a long standing puzzle (footnote) .We now establish the exact relationship in the more general context of $\A$-algebras.
+
+\begin{proposition}{4.17}
+
+Let $A$ be an $\A$-algebra and $\alpha_1, \ldots, \alpha_m \in H(A)$. If $\overline{b_{j-i}}(\alpha_{i+1}, \ldots, \alpha_j) = 0$ for any $i, j$ satisfying $0 \leq i < j \leq m, j − i < m$, then the Massey product of $\alpha_1, \ldots, \alpha_m$ is defined and $\overline{b_m}(\alpha_1, \ldots, \alpha_m) \in \langle \alpha_1, \ldots, \alpha_m\rangle$.
+\end{proposition}
+
+(footnote) It was claimed in Theorem 3.1 of [17] that when A is a differential graded algebra, the conclusion of Proposition 4.17 holds under a weaker assumption that for any $j−i < m$, the Massey product of $\alpha_{i+1}, \ldots, \alpha_j$ is defined and contains $0$. We think that the stronger condition $\overline{b_{j-i}}(\alpha_{i+1}, \ldots, \alpha_j) = 0$ as in Propistion 4.17 is necessary even when $A$ is a differential graded algebra.
+
+
+References mentioned: 
+[7]  = Kadeishvili - On the homology theory of fiber spaces
+[17] = Lu, Palmieri, Wu, Zhang - A-infinity structure on Ext algebras
+[26] = Prouté - Vers un Zp-lemme de Hirsch
+[29] = Stasheff - Homotopy associativite of H-spaces (293-312)
+
+\begin{proposition}{Theorem 4.3.c in Keller}
+Two morphisms $f, g : A \longrightarrow A'$ between fibrant-cofibrant objects of Alg are homotopic iff there is a k-linear map $h : A \longrightarrow A'$ homogeneous of degree −1 such that $h \circ m_A = m_{A'} \circ (f \otimes h + h \otimes g)$ and $f − g = d \circ h + h +\circ d$.
+%https://webusers.imj-prg.fr/~bernhard.keller/publ/ainffun.pdf
+\end{proposition}
+
+\begin{lemma}{38.1}
+Let R be a ring. Let $(B, d)$ be a differential graded R-algebra. There exists a quasi-isomorphism $(A, d) \longrightarrow (B, d)$ of differential graded R-algebras with the following properties
+\begin{enumerate}
+    \item A is K-flat as a complex of R-modules
+    \item A is a free graded R-algebra
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+First we claim we can find $(A_0, d) \longrightarrow (B, d)$ having (1) and (2) inducing a surjection on cohomology. Namely, take a graded set S and for each $s \in S$ a homogeneous element $b_s \in Ker(d : B \rightarrow B)$ of degree $deg(s)$ such that the classes $b_s$ in $H^*(B)$ generate $H^*(B)$ as an R-module. Then we can set $A_0 = R\langle S\rangle$ with zero differential and $A_0 \longrightarrow B$ given by mapping $s$ to $b_s$.
+
+Given $A_0 \longrightarrow B$ inducing a surjection on cohomology we construct a sequence
+\begin{equation*}
+    A_0\longrightarrow A_1 \longrightarrow A_2 \longrightarrow \cdots \longrightarrow B
+\end{equation*}
+by induction. Given $A_n \longrightarrow B$ we set $S_n$ be a graded set and for each $s in S_n$ we let $a_s \in Ker(A_n \rightarrow A_n)$ be a homogeneous element of degree $deg(s) + 1$ mapping to a class as in $H^*(A_n)$ which maps to zero in $H^*(B)$. We choose $S_n$ large enough so that the elements as generate $Ker(H^*(A_n) \rightarrow H^*(B))$ as an R-module. Then we set $A_{n+1} = A_n \langle S_n\rangle$ with differential given by $d(s) = a_s$ see discussion above. 
+
+Then each $(A_n, d)$ satisfies (1) and (2), we omit the details. The map $H^*(A_n) \longrightarrow H^*(B)$ is surjective as this was true for $n = 0$. It is clear that $A = colim A_n$ is a free graded R-algebra. It is K-flat by More on Algebra, Lemma 58.10. The map $H^*(A) \longrightarrow H^*(B)$ is an isomorphism as it is surjective and injective: every element of $H^*(A)$ comes from an element of $H^*(A_n)$ for some n and if it dies in $H^*(B)$, then it dies in $H^*(A_{n+1})$ hence in $H^*(A)$. 
+\end{proof}
+
+
+
+
+
+
+\subsection{Math overflow}
+
+As I recall, an abelian object in the category of DGAs is not a commutative DGA; it is instead a square 0 extension. So if you do Quillen homology (derived functors of abelianization) in DGAs, you are supposed to recover Hochschild cohomology of DGAs, I believe. - Mark Hovey
+%https://mathoverflow.net/questions/5031/model-structure-of-commutative-dg-algebras-inside-all-dg-algebras
+
+\subsection{Diverse}
+
+%https://ncatlab.org/nlab/show/model+structure+on+dg-algebras
+%https://mathoverflow.net/questions/92315/massey-products-vs-a-infty-structures
+%https://mathoverflow.net/questions/258641/homology-of-the-product-of-spaces-with-integer-coefficients-and-the-massey-produ?rq=1
+%https://mathoverflow.net/questions/198383/massey-products-and-a-infty-structures?rq=1
+%https://mathoverflow.net/questions/236003/why-are-quasi-isomorphisms-of-homotopy-algebras-only-defined-for-arity-1
+%https://mathoverflow.net/questions/116313/homotopy-transfer-theorem-for-differential-graded-associative-algebras?rq=1
+
+
+Massey product as a differential in a spectral sequence 
+% https://mathoverflow.net/questions/291445/defining-massey-products-as-transgressions
+
+Different results regarding higher Massey products
+% https://www.ams.org/journals/tran/1966-124-03/S0002-9947-1966-0202136-1/S0002-9947-1966-0202136-1.pdf
+
+Properties of 4-product and showing linked links are not unlinks
+% https://www.ams.org/journals/tran/1979-248-01/S0002-9947-1979-0521692-6/S0002-9947-1979-0521692-6.pdf
+
+
+
+
+
+
+
+
+
+
+
+
+% Wrong proof of formal then no massey
+\iffalse
+\begin{proof}
+Since we are assuming $A$ is formal we know from \cref{thm:formal_then_span} that we have a span of quasi-isomorphisms $A\overset{q}\longleftarrow C \overset{p}\longrightarrow H(A)$ for some DG-algebra $C$. This means we have a diagram 
+\begin{center}
+\begin{tikzcd}
+\cdots \arrow[r] & A^{n-1} \arrow[r, "d^{n-1}"]                                                 & A^n \arrow[r, "d^{n}"]                                             & A^{n+1} \arrow[r]                                            & \cdots \\
+\cdots \arrow[r] & C^{n-1} \arrow[u, "q_{n-1}"] \arrow[d, "p_{n-1}"'] \arrow[r, "\delta^{n-1}"] & C^n \arrow[u, "q_{n}"] \arrow[d, "p_{n}"'] \arrow[r, "\delta^{n}"] & C^{n+1} \arrow[u, "q_{n+1}"] \arrow[d, "p_{n+1}"'] \arrow[r] & \cdots \\
+\cdots \arrow[r] & H^{n-1}(A) \arrow[r, "0"]                                                    & H^n(A) \arrow[r, "0"]                                              & H^{n+1}(A) \arrow[r]                                         & \cdots
+\end{tikzcd}    
+\end{center}
+
+Let's study the Massey n-product $\langle x_1, \ldots , x_n\rangle$. We need to show that the zero class is in this set. Pick a cochain $x\in A^{n}$ representing an element in the Massey n-product. In particular we have $d^{n}(x)=0$ as all Massey products consists of closed cochains. 
+
+We have no form of vertical exactness, but we know that there is at least one element in the inverse image of $0$ under $q_{n+1}$, namely $0\in C^{n+1}$. This is because $q$ is linear on the graded components. We also know that $\delta^{n+1}(0) = 0$, hence by the complex property of $C$ we know there is an element $c_1\in C^n$ such that $\delta^{n}(c_1)=0$. Since $c_1$ is a closed cochain we again use the complex property to find an element $c_2 \in C^{n-1}$ such that $\delta^{n-1}(c_2)=c_1$. If we plot this in a diagram of elements we have 
+\begin{center}
+\begin{tikzcd}
+                                       & x \arrow[r, "d^n", maps to]          & 0                                                                  &   \\
+c_2 \arrow[r, "\delta^{n-1}", maps to] & c_1 \arrow[r, "\delta^{n}", maps to] & 0 \arrow[r, "\delta^{n+1}", maps to] \arrow[u, "q_{n+1}", maps to] & 0
+\end{tikzcd}    
+\end{center}
+
+Since the individual squares must commute, because $q$ is a morphism of DG-algebras, we know that $q_{n}(c_1)=x$ as well. 
+
+Further we know that $p_{n}(c_1)=0$ because $p_n(c_1)=p_n(\delta^{n-1}(c_2))=d_{H(A)}(p_{n-1}(c_2)=0$ as $d_{H(A)}=0$. 
+
+In diagram form we have 
+\begin{center}
+\begin{tikzcd}
+                                                                      & x \arrow[r, "d^n", maps to]                                                        & 0                                                                  &   \\
+c_2 \arrow[r, "\delta^{n-1}", maps to] \arrow[d, "p_{n-1}"', maps to] & c_1 \arrow[r, "\delta^{n}", maps to] \arrow[d, "p_n"', maps to] \arrow[u, "q_{n}", maps to] & 0 \arrow[r, "\delta^{n+1}", maps to] \arrow[u, "q_{n+1}", maps to] & 0 \\
+p_{n-1}(c_2) \arrow[r, "0", maps to]                                  & p_n(c_1)=0                                                                         &                                                                    &  
+\end{tikzcd}    
+\end{center}
+
+Since $p$ and $q$ are quasi-isomorphisms, they induce isomorphisms $\overline{p}$ and $\overline{q}$ in cohomology. Denote their inverses by $\overline{p}^{-1}$ and $\overline{q}^{-1}$. We then have $[0]=\overline{q_{n}}(\overline{p_n}^{-1}([0])) = \overline{q_n}([c_1])=[x]$, or in diagram form
+\begin{center}
+\begin{tikzcd}
+                                                                                       & {[x]} \arrow[r, "0", maps to]                                             & {[0]}                                                                  &       \\
+{[c_2]} \arrow[r, "0", maps to]                                                        & {[c_1]} \arrow[r, "0", maps to] \arrow[u, "\overline{q_n}^{-1}", maps to] & {[0]} \arrow[r, "0", maps to] \arrow[u, "\overline{q_{n+1}}", maps to] & {[0]} \\
+{[p^{n-1}(c_2)]} \arrow[u, "\overline{p_{n-1}}^{-1}", maps to] \arrow[r, "0", maps to] & {[0]} \arrow[u, "\overline{p_n}^{-1}", maps to]                           &                                                                        &      
+\end{tikzcd}    
+\end{center}
+\end{proof}
+\fi

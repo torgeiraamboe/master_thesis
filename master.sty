@@ -1,0 +1,241 @@
+
+\ProvidesPackage{master}
+
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[T1]{fontenc}
+\RequirePackage{times}
+\RequirePackage{geometry}
+\RequirePackage[english]{babel}
+\RequirePackage{microtype}
+\RequirePackage{pdfpages}
+\RequirePackage{tocloft}
+\RequirePackage{imakeidx}
+\RequirePackage{titling}
+\RequirePackage{csquotes}
+\RequirePackage{amsmath, amssymb, amsthm}
+\setlength{\marginparwidth }{2.6cm}
+\setlength{\headheight}{14.5pt}
+\RequirePackage{todonotes, verbatim}
+\RequirePackage{faktor}
+\RequirePackage{fancyhdr}
+\RequirePackage{parskip}
+\RequirePackage{pgfplots}
+\RequirePackage{adjustbox}
+\RequirePackage{tikz-cd}
+%\RequirePackage{quiver}
+\RequirePackage{multicol}
+
+%\RequirePackage[%
+%backend=biber,
+%style=alphabetic,
+%citestyle=authoryear]{biblatex}
+\RequirePackage{hyperref}
+\RequirePackage{cleveref}
+
+\makeindex
+
+\setcounter{secnumdepth}{3}
+\cftsetindents{section}{2em}{2em}
+\cftsetindents{subsection}{4em}{3em}
+\cftsetindents{subsubsection}{6em}{3em}
+
+\graphicspath{{./images/}}
+\pgfplotsset{compat=1.15}
+
+
+%\setcounter{biburllcpenalty}{7000}
+
+
+\geometry{
+    top=30mm, 
+    bottom=30mm, 
+    left=30mm, 
+    right=30mm
+}
+
+% \newtheorem{theorem}{Theorem}
+% \newtheorem{lemma}{Lemma}
+% \newtheorem{proposition}{Proposition}
+% \newtheorem{definition}{Definition}
+% \newtheorem{example}{Example}
+% \newtheorem{corollary}{Corollary}
+% \newtheorem{remark}{Remark}
+
+% \crefname{theorem}{theorem}{theorems}
+% \crefname{lemma}{lemma}{lemma}
+% \crefname{corollary}{corollary}{corollaries}
+% \crefname{proposition}{proposition}{propositions}
+% \crefname{definition}{definition}{definitions}
+% \crefname{example}{example}{examples}
+% \crefname{remark}{remark}{remarks}
+
+\newcounter{mathenv}[chapter]
+\setcounter{mathenv}{1}
+%\newcounter{corenv}[mathenv]
+%\setcounter{corenv}{1}
+\renewcommand\themathenv{\arabic{chapter}.\arabic{mathenv}}
+
+%\newtheorem{theorem}{Theorem}[mathenv]
+%\newtheorem{proposition}{Proposition}[mathenv]
+%\newtheorem{corollary}{Corollary}
+%\newtheorem{lemma}{Lemma}[mathenv]
+%\newtheorem{definition}{Definition}[mathenv]
+%\newtheorem{remark}{Remark}[mathenv]
+%\newtheorem{example}{Example}[mathenv]
+%\newtheorem{problem}{Problem}[mathenv]
+
+%\newenvironment{theorem}[1][]%
+%{\refstepcounter{mathenv}%
+%\ifstrempty{#1}%
+%{\par\medskip\textbf{Theorem~\themathenv.}%
+%\itshape}}%
+%{\par\medskip\textbf{Theorem~\themathenv.(#1)}%
+%\itshape}}%
+%{\medskip}
+
+
+\newenvironment{theorem}[1][]{%
+    \refstepcounter{mathenv}%
+    \par
+    \ifstrempty{#1}%
+	{\strut \textbf{Theorem~\themathenv.}~}%  
+	{\strut \textbf{Teorem~\themathenv.}~(#1)\newline}%                       
+	\relax
+}{}
+
+\newenvironment{proposition}[1][]{%
+    \refstepcounter{mathenv}%
+    \par
+    \ifstrempty{#1}%
+	{\strut \textbf{Theorem~\themathenv.}~}%  
+	{\strut \textbf{Teorem~\themathenv.}~(#1)\newline}%                       
+	\relax
+}{}
+
+\newenvironment{corollary}[1][]{%
+    \refstepcounter{mathenv}%
+    \par
+    \ifstrempty{#1}%
+	{\strut \textbf{Theorem~\themathenv.}~}%  
+	{\strut \textbf{Teorem~\themathenv.}~(#1)\newline}%                       
+	\relax
+}{}
+   
+\newenvironment{lemma}[1][]{%
+    \refstepcounter{mathenv}%
+    \par
+    \ifstrempty{#1}%
+	{\strut \textbf{Theorem~\themathenv.}~}%  
+	{\strut \textbf{Theorem~\themathenv.}~(#1)\newline}%                       
+	\relax
+}{} 
+
+\newenvironment{definition}[1][]{%
+	\index{#1}
+    \refstepcounter{mathenv}%
+    \par
+    \ifstrempty{#1}%
+	{\strut \textbf{Definition~\themathenv.}~}%  
+	{\strut \textbf{Definition~\themathenv.}~(#1)\newline}%                       
+	\relax
+}{}
+
+\newenvironment{remark}[1][]{%
+    \refstepcounter{mathenv}%
+    \par
+    \ifstrempty{#1}%
+	{\strut \textbf{Remark~\themathenv.}~}%  
+	{\strut \textbf{Remark~\themathenv.}~(#1)\newline}%                       
+	\relax
+}{}
+
+\newenvironment{example}[1][]{%
+    \refstepcounter{mathenv}%
+    \par
+    \ifstrempty{#1}%
+	{\strut \textbf{Example~\themathenv.}~}%  
+	{\strut \textbf{Example~\themathenv.}~(#1)\newline}%                       
+	\relax
+}{}
+
+\newenvironment{central}{%
+    \par
+	{\textbf{The central question:}~}%                       
+	\relax
+}{}
+
+\renewenvironment{proof}[1][]{%
+    \par
+    \ifstrempty{#1}%
+	{\strut \textit{Proof.}~}%  
+	{\strut \textit{Proof~#1.}~}%                       
+	\relax
+}{}
+
+
+\crefname{mathenv}{theorem}{theorems}
+\crefname{lemma}{lemma}{lemma}
+\crefname{corollary}{corollary}{corollaries}
+\crefname{proposition}{proposition}{propositions}
+\crefname{definition}{definition}{definitions}
+\crefname{example}{example}{examples}
+\crefname{remark}{remark}{remarks}
+
+
+%\let\tempCorollary\corollary
+%\renewcommand{\corollary}{%
+%	\crefalias{mathenv}{corollary} %mathenv counter ser nå ut som corollary
+%	\tempCorollary%
+%}%
+\let\tempLemma\lemma
+\renewcommand{\lemma}{%
+	\crefalias{mathenv}{lemma} %mathenv counter ser nå ut som lemma
+	\tempLemma%
+}%
+\let\tempProposition\proposition
+\renewcommand{\proposition}{%
+	\crefalias{mathenv}{proposition} %mathenv counter ser nå ut som proposisjon
+	\tempProposition%
+}%
+\let\tempDefinition\definition
+\renewcommand{\definition}{%
+	\crefalias{mathenv}{definition} %mathenv counter ser nå ut som definition
+	\tempDefinition%
+}%
+\let\tempRemark\remark
+\renewcommand{\remark}{%
+	\crefalias{mathenv}{remark} %mathenv counter ser nå ut som remark
+	\tempRemark%
+}%
+\let\tempExample\example
+\renewcommand{\example}{%
+	\crefalias{mathenv}{example} %mathenv counter ser nå ut som example
+	\tempExample%
+}%
+
+\newcommand{\N}{\ensuremath{\mathbb{N}}}
+\newcommand{\R}{\ensuremath{\mathbb{R}}}
+\newcommand{\C}{\ensuremath{\mathcal{C}}}
+\newcommand{\Z}{\ensuremath{\mathbb{Z}}} 
+\newcommand{\Q}{\ensuremath{\mathbb{Q}}}
+\newcommand{\A}{\ensuremath{A_{\infty}}}
+\newcommand{\ls}{\text{cat}_{LS}}
+\renewcommand{\ker}{\text{Ker}}
+\newcommand{\ima}{\text{Im}}
+\newcommand{\wH}{\widetilde{H}}
+\newcommand{\wC}{\widetilde{C}}
+\newcommand{\pir}{\pi^{\Q}}
+\newcommand{\Hom}{\text{Hom}}
+\newcommand{\Apl}{\text{A}_{PL}}
+\DeclareMathOperator{\Tot}{Tot}
+
+
+\pagestyle{fancy}
+\fancyhf{}
+%\setlength{\headheight}{15pt}
+
+\lhead{\leftmark}
+\cfoot{\thepage}
+
+
+\tikzset{arrow/.style={thick}}

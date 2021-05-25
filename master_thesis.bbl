@@ -1,0 +1,322 @@
+\begin{thebibliography}{CPRNW20}
+
+\bibitem[Ada78]{adams_loop}
+John~Frank Adams.
+\newblock Infinite loop spaces.
+\newblock {\em Annals of mathematics}, 90, 1978.
+
+\bibitem[Bas12]{nonformal_loop}
+Somnath Basu.
+\newblock Of sullivan models, massey products, and twisted pontrjagin products.
+\newblock 2012.
+
+\bibitem[BB17]{berglund}
+Alexander Berglund and Kaj Börjeson.
+\newblock Koszul a-infinity-algebras and free loop space homology.
+\newblock 2017.
+
+\bibitem[Bet70]{betti}
+Enrico Betti.
+\newblock Sopra gli spazi di un numero qualunque di dimensioni.
+\newblock {\em Annali di Matematica Pura ed Applicata}, 4:140–158, 1870.
+
+\bibitem[BG76]{PLdeRham}
+Aldridge Bousfield and Victor Gugenheim.
+\newblock On pl derham theory and rational homotopy type.
+\newblock {\em Memoirs of the AMS}, 179, 1976.
+
+\bibitem[BMFM20]{detection}
+Urtzi Buijs, José~Manuel Moreno-Fernández, and Aniceto Murillo.
+\newblock A-infinity structures and massey products.
+\newblock {\em Mediterranean Journal of Mathematics}, 17, 2020.
+
+\bibitem[BV73]{boardman_vogt}
+J.M. Boardman and R.M. Vogt.
+\newblock {\em Homotopy invariant algebraic structures on topological spaces},
+  volume 347 of {\em Lecture notes in mathematics}.
+\newblock Springer verlag, 1973.
+
+\bibitem[Car54]{cartan}
+Henry Cartan.
+\newblock Dga-algebres et dga-modules.
+\newblock {\em Séminaire Henri Cartan}, 7:1--9, 1954.
+
+\bibitem[CLOT03]{lscategorybook}
+Octav Cornea, Gregory Lupton, John Oprea, and Daniel Tanré.
+\newblock {\em Lusternik-Schnirelmann category}, volume 103.
+\newblock Mathematical Surveys and Monographs, 2003.
+
+\bibitem[CN20]{non_formal1}
+Diarmuid Crowley and Johannes Nordström.
+\newblock The rational homotopy type of (n-1)-connected manifolds of dimension
+  up to 5n-3.
+\newblock {\em Journal of topology}, 13:539--575, 2020.
+
+\bibitem[CPRNW20]{Petersen}
+Ricardo Campos, Dan Petersen, Daniel Robert-Nicoud, and Felix Wierstra.
+\newblock Lie, associative and commutative quasi-isomorphism, 2020.
+
+\bibitem[DGMS75]{DGMS}
+Deligne, Griffiths, Morgan, and Sullivan.
+\newblock Real homotopy theory of kähler manifolds.
+\newblock {\em Inventiones math}, 29:245--274, 1975.
+
+\bibitem[FHT01]{FHT}
+Yves Félix, Stephen Halperin, and Jean-Claude Thomas.
+\newblock {\em Rational Homotopy Theory}.
+\newblock Springer-Verlag, 2001.
+
+\bibitem[FM02]{sformality}
+Marisa Fernández and Vicente Muñoz.
+\newblock Formality of donaldson submanifolds.
+\newblock {\em Mathematische Zeitschrift}, 257, 2002.
+
+\bibitem[Gar09]{small_objects}
+Richard Gardner.
+\newblock Understanding the small object argument.
+\newblock {\em Applied Categorical Structures}, 17:247–285, 2009.
+
+\bibitem[Hen83]{co-H-space}
+Hans-Werner Henn.
+\newblock On almost rational co-h-spaces.
+\newblock {\em Proceedings of the american mathematical society}, 87:164--168,
+  1983.
+
+\bibitem[Hes07]{hess}
+Kathryn Hess.
+\newblock Rational homotopy theory: a brief introduction.
+\newblock {\em Interactions between Homotopy Theory and Algebra, Contemporary
+  Mathematics}, 436:175--202, 2007.
+
+\bibitem[Hov07]{hovey}
+Mark Hovey.
+\newblock {\em Model categories}.
+\newblock American Mathematical Society, 2007.
+
+\bibitem[HS79]{non_formal2}
+Stephen Halperin and James Stasheff.
+\newblock Obstructions to homotopy equivalences.
+\newblock {\em Advances in mathematics}, 32:233--279, 1979.
+
+\bibitem[Jar97]{jardine}
+Rick Jardine.
+\newblock A closed model structure for differential graded algebras.
+\newblock {\em Fields Institute Communications}, 17:55--58, 1997.
+
+\bibitem[Kad80]{kadeishvili}
+Tornike Kadeishvili.
+\newblock On the homology theory of fiber spaces.
+\newblock {\em English translation: Russian math. surveys}, 35:231--238, 1980.
+
+\bibitem[Kal07]{kaledin1}
+D.~Kaledin.
+\newblock Some remarks on formality in families.
+\newblock {\em Moscow mathematical journal}, 7(4):643--652, 2007.
+
+\bibitem[Kel01]{keller}
+Bernard Keller.
+\newblock Introduction to a-infinity algebras and modules.
+\newblock {\em Homology, homotopy and applications}, 3:1--35, 2001.
+
+\bibitem[Kon94]{kontsevich}
+Maxim Kontsevich.
+\newblock Homological algebra of mirror symmetry.
+\newblock {\em Proceedings of the International Congress of Mathematicians},
+  90:120--139, 1994.
+
+\bibitem[LH03]{french1}
+Kenji Lefèvre-Hasegawa.
+\newblock Sur les a-infinity catégories.
+\newblock {\em PhD thesis}, University Paris 7, 2003.
+
+\bibitem[LPWZ09]{Ext}
+D-M Lu, J.~H Palmieri, Q-S Wu, and J.~Zhang.
+\newblock A-infinity structure on ext-algebras.
+\newblock {\em Pure Applied Algebra}, 2013, 2009.
+
+\bibitem[LS34]{lscat}
+Lazar Lusternik and Lev Schnirelmann.
+\newblock Methodes topologiques dans les problemes variationnels.
+\newblock {\em Hermann, Paris}, 1934.
+
+\bibitem[Lun10]{kaledin2}
+Valery~A. Lunts.
+\newblock Formality of dg algebras (after kaledin).
+\newblock {\em Journal of Algebra}, 323(4):878--898, 2010.
+
+\bibitem[LV12]{operads}
+Jean-Louis Loday and Bruno Vallette.
+\newblock {\em Algebraic operads}.
+\newblock Springer-Verlag, 2012.
+
+\bibitem[LW09]{infty-massey}
+Weiping Li and Siye Wu.
+\newblock Massey product and twisted cohomology of a-infinity algebras.
+\newblock 2009.
+
+\bibitem[Mar06]{transfer}
+Martin Markl.
+\newblock Transferring a-infinity (strongly homotopy associative) structures.
+\newblock {\em Circolo Matematico di Palermo}, 79:139–151, 2006.
+
+\bibitem[Mas58]{massey}
+William~S. Massey.
+\newblock Some higher order cohomology operations.
+\newblock {\em Symposium internacional de topología algebraica}, page
+  145–154, 1958.
+
+\bibitem[Mas98]{linking}
+William~S. Massey.
+\newblock Higher order linking numbers.
+\newblock {\em Journal of Knot Theory and Its Ramifications}, 7:393--414, 1998.
+
+\bibitem[Mas99]{history1}
+William~S. Massey.
+\newblock {\em The history of topology, Chapter 21: A history of cohomology
+  theory}.
+\newblock Elsevier B.V., 1999.
+
+\bibitem[May29a]{mayer}
+Walther Mayer.
+\newblock Über abstakte topologie.
+\newblock {\em Monatshefte für Mathematik und Physik}, 36:1--42, 1929.
+
+\bibitem[May29b]{mayer2}
+Walther Mayer.
+\newblock Über abstakte topologie ii.
+\newblock {\em Monatshefte für Mathematik und Physik}, 36:219--258, 1929.
+
+\bibitem[May69]{naturality}
+James~Peter May.
+\newblock Matric massey products.
+\newblock {\em Journal of algebra}, 12:533--568, 1969.
+
+\bibitem[May72]{may_loop}
+James~Peter May.
+\newblock {\em The geometry of iterated loop spaces}, volume 271.
+\newblock Springer verlag, 1972.
+
+\bibitem[Mer99]{Merkulov}
+S.~A. Merkulov.
+\newblock Strong homotopy algebras of a kähler manifold.
+\newblock {\em International mathematics research notices}, 3:152--164, 1999.
+
+\bibitem[Noe25]{noether}
+Emmy Noether.
+\newblock Ableitung der elementarteilertheorie aus der gruppentheorie.
+\newblock {\em Jahresbericht der Deutschen Mathematiker-Vereinigung}, 34:104,
+  1925.
+
+\bibitem[O'n79]{four-link}
+Edward~J. O'neill.
+\newblock Higher order massey products and links.
+\newblock {\em Transactions of the American mathematical society}, 248:37--66,
+  1979.
+
+\bibitem[Poi95]{situs}
+Henry Poincaré.
+\newblock Analysis situs.
+\newblock {\em Journal de l'École Polytechnique}, pages 1--123, 1895.
+
+\bibitem[Poi99]{situs2}
+Henry Poincaré.
+\newblock Complément à l'analysis situs.
+\newblock {\em Rendiconti del Circolo Matematico di Palermo}, page 285–343,
+  1899.
+
+\bibitem[Qui69]{Quillen}
+Daniel Quillen.
+\newblock Rational homotopy theory.
+\newblock {\em Annals of mathematics}, page 205–295, 1969.
+
+\bibitem[Rie57]{riemann}
+Bernhard Riemann.
+\newblock Theorie der abel’schen funktionen.
+\newblock {\em Journal fur die reine und angewandte Mathematik}, page
+  101–155, 1857.
+
+\bibitem[Rud99]{Rudyak}
+Yuli~B. Rudyak.
+\newblock On category weight and its applications.
+\newblock {\em Topology 38}, 1:37–55, 1999.
+
+\bibitem[Sag10]{Sagave}
+Steffen Sagave.
+\newblock Dg-algebras and derived a-infinity algebras.
+\newblock {\em Journal für die reine und angewandte Mathematik}, 639:73–105,
+  2010.
+
+\bibitem[Sal17]{Saleh}
+Bashar Saleh.
+\newblock Noncommutative formality implies commutative and lie formality.
+\newblock {\em Algebraic and Geometric Topology}, 17:2523--2542, 2017.
+
+\bibitem[Ser53]{Serre}
+Jean-Pierre Serre.
+\newblock Groupes d’homotopie et classes de groupes abeliens.
+\newblock {\em Annals of mathematics}, pages 258--294, 1953.
+
+\bibitem[SS00]{monoid}
+Stefan Schwede and Brooke Shipley.
+\newblock Algebras and modules in monoidal model categories.
+\newblock {\em Proceedings of the London mathematical society}, 80:491--511,
+  2000.
+
+\bibitem[Sta63a]{h-spaces1}
+James Stasheff.
+\newblock Homotopy associativity of h-spaces, i.
+\newblock {\em Transactions of the American Mathematical Society},
+  108:275–292, 1963.
+
+\bibitem[Sta63b]{h-spaces2}
+James Stasheff.
+\newblock Homotopy associativity of h-spaces, ii.
+\newblock {\em Transactions of the American Mathematical Society},
+  108:293–312, 1963.
+
+\bibitem[Sta70]{h-spaces}
+James Stasheff.
+\newblock H-spaces from a homotopy point of view.
+\newblock {\em Springer verlag}, 1970.
+
+\bibitem[Sul77]{Sullivan}
+Dennis Sullivan.
+\newblock Infinitesimal computations in topology.
+\newblock {\em Publications Math\'ematiques de l'IH\'ES}, 47:269--331, 1977.
+
+\bibitem[Sul04]{MIT}
+Dennis Sullivan.
+\newblock Geometric topology, part i: Localization, periodicity, and galois
+  symmetry.
+\newblock {\em K-Monographs in Math}, 2004.
+
+\bibitem[TO97]{exact-massey}
+Aleksy Tralle and John Oprea.
+\newblock {\em Symplectic Manifolds with no Kähler Structure}, volume 1661 of
+  {\em Lecture notes in mathematics}.
+\newblock Springer verlag, 1997.
+
+\bibitem[Val14]{AHO}
+Bruno Vallette.
+\newblock Algebra+homotopy=operad.
+\newblock {\em Symplectic, Poisson, and noncommutative geometry}, 62:229–290,
+  2014.
+
+\bibitem[Wei94]{weibel}
+Charles~A. Weibel.
+\newblock {\em An introduction to homological algebra}.
+\newblock Cambridge university press, 1994.
+
+\bibitem[Wei99]{history2}
+Charles~A. Weibel.
+\newblock {\em The history of topology, Chapter 28: The history of homological
+  algebra}.
+\newblock Elsevier B.V., 1999.
+
+\bibitem[Whi37]{whitney}
+Hassler Whitney.
+\newblock On products in a complex.
+\newblock {\em Proceedings of the National Academy of Sciences of the United
+  States of America}, 23:285--291, 1937.
+
+\end{thebibliography}

@@ -1,0 +1,81 @@
+
+
+
+\section{Introduction}
+
+One of the goals of algebraic topology is to study topological spaces using objects, techniques and methods from algebra. One of the most successful ways of doing this is through cohomology, which is essentially a method for calculating the different holes in a topological space. Another, more complicated tool is called homotopy, more specifically the homotopy groups of a topological space. The $n$'th homotopy group of a space $X$ is essentially the set of continuous maps from $S^n$---the $n$-dimensional sphere---to $X$, where we identify two such maps if they are in some sense topologically similar. A way to understand such new tools is usually to try them out on some simple examples, and there is almost no simpler class of topological spaces than the $n$-dimensional spheres. But, trying to calculate the homotopy groups of spheres is a notoriously difficult problem. It turns out that higher dimensional spheres can twist around lower dimensional spheres non-trivially---producing many non-trivial homotopy groups. Even worse is maybe the fact that they seem to satisfy no general pattern at all. 
+
+As a way to get around the difficult torsion arising when calculating the homotopy groups of the spheres, Serre looked at what happens if one works over the rationals instead of the integers, essentially removing the torsion from the theory. In \cite{Serre} he successfully calculated the torsion free part of all homotopy groups of all spheres, starting a journey for mathematicians to develop a complete torsion free theory of topological spaces. This theory is now called rational homotopy theory, and its development was mainly spearheaded by Quillen and Sullivan. One of the great achievements in this field came from developing purely algebraic models for the theory, meaning that one could only study some algebraic objects, and get all information about the topological spaces. More formally, we get that the rational homotopy type of a topological space is given by the isomorphism class of its algebraic model. The first successful attempt at making such an algebraic model was made in \cite{Quillen} in 1969 by Quillen. It is a rather complicated process that passes through multiple different algebraic, topological and geometric objects, until it ends up in the desired model: differential graded Lie algebras (DGL-algebras). 
+%In 1970 Sullivan created and circulated the now famous MIT notes \cite{MIT} which among a huge list of other things explained a way to ``rationalize'' simply connected topological spaces. This allowed using some more traditional tools from algebraic topology as well.% 
+After contributing many new ideas to the field, like rationalization of spaces (\cite{MIT}), Sullivan proposed in \cite{Sullivan} a simpler idea for a purely algebraic model for rational homotopy theory. This was a model inspired by the de Rham theory for manifolds, which instead of using DGL-algebras used some simpler objects: differential graded algebras (DG-algebras). 
+
+A DG-algebra is a sequence of vector spaces, chained together by a differential and made into a graded algebra using a graded product. This algebraic object is very well built to describe information used in algebraic topology, as we will see later. 
+
+Due to its simpler construction, the model developed by Sullivan became the standard tool of rational homotopy theory. The main construction is a certain DG-algebra, denoted $\Apl(X)$---that we can associate to every CW complex $X$---in such a way that homotopy equivalent CW complexes have isomorphic $\Apl$ algebras, and conversely two isomorphic $\Apl$ algebras must come from homotopy equivalent CW complexes\footnote{The reason we focus on CW complexes is to by able to study homotopy equivalences instead of weak homotopy equivalences. We can do this due to the CW approximation theorem and Whiteheads theorem, which together show that studying CW complexes up to homotopy equivalence is the same as studying topological spaces up to weak homotopy equivalences. So in a way we are studying the weak rational homotopy theory of all topological spaces.}.
+
+
+The good thing about this $\Apl$ algebra is that it also calculates the cohomology of the CW complex $X$, i.e. that taking the cohomology of the sequence of vector spaces, with respect to the differential, gives the same DG-algebra as the cohomology of the cochain complex of $X$. 
+
+One question we could ask is: If I know that two topological spaces have the same cohomology algebra, do I also know that they have the same $\Apl$ algebra? The answer to this turns out to be no. In general there are certain bits of information stored in the $\Apl$ algebra that the cohomology algebra does not have access to, meaning that two different $\Apl$ algebras from two different topological spaces could produce the same cohomology algebra.
+
+The next question then becomes: How do I know if I have an $\Apl$ algebra that is sufficiently simple, such that the cohomology algebra has access to all the information determining the $\Apl$ algebra? Such an algebra is called a \emph{formal} DG-algebra, and the above question is the central question for this thesis. This is of course an imprecise and vague question, where ``sufficiently simple'', ``access'' and ``information'' are not mathematically defined at all. We also want to only study algebraic models, so we rephrase this question as follows: 
+
+\begin{central}
+Given a DG-algebra $A$, how do we know if  when formal?
+\end{central}
+
+This is of course still an imprecise question, as none of its elements have been defined yet. We will throughout the thesis refine this question, and formulate it more mathematically, as well as try to find an answer. 
+
+
+
+
+
+
+
+
+
+%so we start off the thesis by introducing DG-algebras and what formality is. This, together with introducing a much more general framework for working with homotopy theory in categories that are not the category of topological spaces, constitutes the first chapter. We then take a quick interlude to look at one type of information that might be stored in a DG-algebra, that is not accessible to the cohomology algebra. These are called Massey products, and contain in some sense higher homotopical information. After this interlude we introduce an abstraction of DG-algebras, called $\A$-algebras. These make certain parts of the theory of formality easier, and allow us to show certain nice results. In particular we develop some criteria on an $\A$-algebra that is connected to any DG-algebra, in order to show that the DG-algebra is formal. Building up this theory, and proving the results make up the third chapter. We round the thesis off by applying the results developed in chapter 3 to the DG-algebras associated to a particular class of topological spaces. 
+
+
+
+
+
+% \section{Definitions and constructions}
+
+% \begin{definition}{Rational space}
+% A topological space $X$ is called a rational space if it is connected, the fundamental group is abelian and $\pi_i(X)$ is a rational vector space for all $i>0$.
+% \end{definition}
+
+% \begin{definition}{Rational homotopy groups}
+% The $i$'th rational homotopy group, denoted $\pir_i$, of a connected topological space with abelian fundamental group is defined to be $\pi_i(X)\o\Q$
+% \end{definition}
+
+% This is the reason we require $X$ to have an abelian fundamental group, as otherwise we cant use this nice tensor definition. There is a more general theory that allows the fundamental group to be non-abelian, but other requirements have to be fulfilled and the theory is outside the scope of what we need here. It can be found in \cite{PLdeRham}. 
+
+% By definition we have that if $X$ is a rational space, then $\pi_i(X) = \pir_i(X)$ for all $i$. 
+
+% \begin{definition}{Rational homotopy equivalence}
+% We say a map $f\colon X\longrightarrow Y$ is a rational homotopy equivalence if the induced map on rational homotopy groups is a $\Q$-linear vector space isomorphism for all $i>0$. 
+% \end{definition}
+
+% Note that a map between two rational spaces is a rational homotopy equivalence if and only if it is a weak homotopy equivalence. 
+
+% \begin{definition}{Rationalization}
+% Let $X$ be a topological space. If there is a rational space $X_\Q$ and a rational homotopy equivalence $f\colon X\longrightarrow X_\Q$ then we say $X$ is rationalizable, and that $f$ is a rationalization. 
+% \end{definition}
+
+
+% Since $\Q$ is both torsion and extension free we know from classical theorems in algebraic topology, such as the homological and cohomological universal coefficient theorem and the Kunneth formula that
+% \begin{itemize}
+%     \item $H_n(X;\Q)\cong H_n(X;\Z)\otimes \Q$
+%     \item $H_n(X;\Q)\o H_n(Y;\Q)\cong H_n(X\times Y;\Q)$
+%     \item $H^n(X;\Q) \cong \Hom(H_n(X); \Q)$
+% \end{itemize}
+
+
+
+
+
+
+
+

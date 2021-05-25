@@ -1,0 +1,220 @@
+
+
+
+
+%The more algebraic setting where $\A$-algebras naturally show up is in homotopical algebra. In regular algebra the structures studied are algebraic, and we often relate them to each other through isomorphisms. If we have two isomorphic objects $f:S\cong G$, and $G$ has an algebraic structure, for example a group, we can always pull it back through the isomorphism between them. This we can do because the naturally defined operation $f^{-1}(f(a)f(b))$ for elements $a, b$ makes $S$ into a group.
+
+%One thing one can study in homotopical algebra is the same kind of setup, except the map between them is a homotopy equivalence instead of an isomorphism. If we have a chain complex $C$, a DG algebra $A$ and a chain-homotopy equivalence $f:C\rightleftarrows A:g$, then if we try to induce a DG structure onto $C$ through $f$, i.e. to define an operations $d_C = g(d_A(f(a)))$, and $a\star b = g(f(a)\cdot f(b))$ for elements $a, b \in C$, then this last operation is not associative. This is because $(a\star b)\star c = g(f(g(f(a)\cdot f(b)))\cdot f(c))\neq g(f(a)\cdot f(g(f(b)\cdot f(c))))=a\star (b\star c)$. It is however, as maybe now expected, associative up to chain-homotopy. And these homotopies are related by more relations, and so on. 
+
+
+\section{The generalized algebraic model}
+
+We have now had a lot of intuition-building, as well as motivation for why we need to generalize our concept of DG-algebra. As we have seen, if we deform a DG-algebra through a deformation retract, we don't necessarily again get a DG-algebra. This means that their homotopy theory is not as well behaved as we would like. The notion of an $\A$-algebra fixes this problem. 
+
+These algebras were introduced and developed by Stasheff in \cite{h-spaces1} and \cite{h-spaces2}, which consists of his work trying to study H-spaces. These $\A$-algebras were further sucessfully used by Adams (\cite{adams_loop}), May (\cite{may_loop}) to study iterated loop spaces. The notion of an H-spaces and loop spaces are exactly the motivation for our topological introduction in the beginning of the chapter, as these are spaces with some operation, often homotopy associative. This idea of transferring the structure through a deformation retract, and studying only structure that is invariant under such deformations seem to stem from Boardman and Vogt (\cite{boardman_vogt}). 
+
+The study of $\A$-algebras again flourished in the 90's, with the arrival of the homological mirror symmetry conjecture by Kontsevich at the 1994 International Congress of Mathematicians (\cite{kontsevich}). This conjecture relies on an object know as the Fukaya-category, which is in fact an $\A$-category, the categorified version of an $\A$-algebra.\footnote{Most elements in this historical overview is due to Keller (\cite{keller}).}
+
+From here on there will be some details and proofs missing. This is due to the shear complexity of the material, and the intricacy of the proofs. We will of course try our best to develop the theory of these algebras - as well as explain the results we need -, but as the focus is on formal DG-algebras, we will focus on getting some in depth feel for $\A$-algebras and their morphisms, instead of going through all the results in their full detail.   
+
+\begin{definition}[$\A$-algebra]
+    Let $K$ be a field. An $\A$-algebra over $K$ is a $\Z$-graded vector space $A=\bigoplus_{i\in \Z}A_i$ together with a family of $K$-linear maps $m_n : A^{\otimes n}\rightarrow A$ of degree $n-2$, such that the identities 
+    \begin{equation*}
+        \sum_{r+s+t = n}(-1)^{r+st}m_{r+1+t}(Id^{\otimes r}\otimes m_s \otimes Id^{\otimes t})
+    \end{equation*}
+    hold for all $n, s\geq 1$. 
+\end{definition}
+
+All these relations are called the coherence relations, or the Stasheff identities in $A$, and can be a handful to handle and keep track of. Lets try to understand them a bit better for some small $n$'s. 
+
+$\mathbf{n=1 :}$ The Stasheff identity then simply becomes
+\begin{equation*}
+    0 = (-1)^{0+0}m_1 \cdot (m_1) = m_1^2 .
+\end{equation*}
+
+$\mathbf{n=2 :}$ This sum is a bit more complicated, but still not too bad. We have
+\begin{align*}
+    0 
+    &= (-1)^{1}m_2\cdot(Id\otimes m_1)+(-1)^{0}m_1\cdot (m_2)+(-1)^{1}m_2\cdot (m_1\otimes Id)
+\end{align*}
+which reduces to $m_1 \cdot m_2 = m_2(m_1\otimes Id + Id\otimes m_1)$. 
+
+$\mathbf{n=3 :}$ This sum is again going to be more complicated, but lets keep our tongues straight and our heads cold and do this one as well. 
+\begin{align*}
+    0 
+    &= (-1)^{2}m_3(Id\otimes Id \otimes m_1) \\
+    &\quad + (-1)^{2}m_3(Id\otimes m_1 \otimes Id) \\
+    &\quad + (-1)^{2}m_3(m_1\otimes Id \otimes Id) \\
+    &\quad + (-1)^{2}m_2(m_2\otimes Id) \\
+    &\quad + (-1)^{1}m_2(Id\otimes m_2) \\
+    &\quad + (-1)^{0}m_1(m_3) 
+\end{align*}
+
+which reduces to $m_2(id\otimes m_2) - m_2(m_2\otimes id) = m_3(m_1\otimes id \otimes id + id\otimes m_1 \otimes id + id\otimes id \otimes m_1) + m_1\cdot m_3 $. We wont show the calculations for $n \geq 4$ right here, since they get more and more complex, and less recognizable. Some of them will however feature later.   
+
+The first condition looks very familiar, and is easily recognized as the chain condition. The second one is also relatively easy to spot, and tells us that $m_1$ is a derivation with respect to $m_2$. If we apply this to an element $v_1\otimes v_2$ and remember to use the Koszul grading rule we get 
+\begin{align*}
+    m_1(m_2)(v_1 \otimes v_2) 
+    &= m_2(m_1\otimes id)(v_1\otimes v_2) + m_2(id\otimes m_1)(v_1\otimes v_2) \\
+    &= (-1)^{|id||v_1|}m_2(m_1(v_1)\otimes v_2) + (-1)^{|m_1||v_1|}m_2(v_1\otimes m_1(v_2))
+\end{align*}
+Since the identity morphism has degree $0$ the first sign vanishes, and since $m_1$ has degree $1$ we are left with $(-1)^{|v_1|}$ as our second sign, i.e.
+\begin{equation*}
+    m_2(m_1(v_1)\otimes v_2) + (-1)^{|v_1|}m_2(v_1\otimes m_1(v_2))
+\end{equation*}
+We just figured out that $m_1$ acts as a differential, so for just a moment let it be denoted by $d$. Since $m_2$ takes two vectors and produces one vector, we can interpret this as a product. If we write $m_2(v_1\otimes v_2)=v_1\cdot v_2$ for this product, we now get a more familiar equation:
+\begin{equation*}
+    d(v_1\cdot v_2) = d(v_1)\cdot v_2 + (-1)^{|v_1|}v_1\cdot d(v_2)
+\end{equation*}
+which we recognize as the graded Leibniz rule. 
+
+The third condition should be recognizable by the discussion on transferring DG-structures through deformation retracts. We recognize the left hand side as the associator of $m_2$ and the right hand side as the boundary of $m_3$ where now $m_1$ is the differential. Since the right hand side is not necessarily equal to zero, we see that the product is not necessarily associative, as expected by the motivation in the beginning of the chapter. 
+
+If in fact $m_3 = 0$, then we see that the associator is zero, and hence the product $m_2$ is associative.  As we can see, $m_2$ is also associative if $m_1$ is zero, which will cause some interesting phenomenons later. In this last case we have a associative product, but the higher homotopies need not vanish. 
+
+As we see by the first two relations, these look an awful lot like our DG algebras, and we have in fact just showed that an $\A$-algebra where $m_3 = 0$ is a DG algebra. This also means that we can view every DG algebra as an $\A$-algebra, by letting the multiplication $m$ be the map $m_2$, the differential $d$ be the map $m_1$ and letting $m_i=0$ for all $i\geq 3$. Hence, a DG algebra is a kind of trivial, or easy version of an $\A$-algebra. 
+
+
+% If we compare what happens in these higher products to what happens in successive products in the algebra, we start to see the structure a bit more. If we were to take the differential of a successive product in a DG algebra $A$, i.e. to look at $d((xy)z)$, we know, since the product is associative that $d((xy)z) = d(x(yz))$. If we write these out, we have 
+% \begin{align*}
+%     d((xy)z) 
+%     &= d(xy)z + (-1)^{|xy|}xyd(z) \\
+%     &= (d(x)y+(-1)^{|x|}xd(y))z + (-1)^{|xy|}xyd(z) \\
+%     &= d(x)yz + (-1)^{|x|}xd(y)z + (-1)^{|x|}x (-1)^{|y|}y d(z) \\
+%     &= d(x)yz + (-1)^{|x|}x(d(y)z + (-1)^{|y|}yd(z)) \\
+%     &= d(x)(yz) + (-1)^{|x|}xd(yz) \\
+%     &= d(x(yz))
+% \end{align*}
+% by applying the graded Leibniz rule twice. The interesting bit is the longest part in the middle. If we define a triple product in $A$ by saying $m_3:A\otimes A\otimes A \longrightarrow A$, $m_3(x, y, z) = xyz$, then we see that this middle part above describes how the differential behaves with the triple product. We have $d \circ m_3= \pm m_3(d\otimes id \otimes id) \pm m_3(id\otimes d\otimes id) \pm m_3(id\otimes id\otimes d)$. This is starting to look familiar to the equation we got from the $\A$-algebra structure. If we take $d$ to be a map $m_1$ in an $\A$-algebra, then this tells us that the triple product is just repeated product (maybe up to a sign), if the product is associative. So, not only is the $m_2$ operation in an $\A$-algebra associative if the product $m_3$ is trivial, but the only thing obstructing $m_3$ from being repeated $m_2$ is the associator, since we have 
+% \begin{equation*}
+%     m_1 m_3 = m_2(id\otimes m_2) - m_2(m_2\otimes id) - m_3(m_1\otimes id \otimes id + id\otimes m_1 \otimes id + id\otimes id \otimes m_1).
+% \end{equation*}
+% \todo[inline]{signs}
+
+% This means that the $\A$-structure is well behaved, even though it is complicated. This shows that it is also a quite natural construction. 
+
+\subsection{Relation to the boundary operator}
+
+When we looked at transferring algebraic structures we defined a boundary operator $\partial (-) = d(-)-(-1)^{|-|}(-)d_{A^{\otimes 3}}$ on the complex $Hom(A^{\otimes 3}, A)$ where the different graded components are given by the degrees of the maps. We can do this more generally for higher arity maps, i.e. for a map $f\colon A^{\otimes n}\longrightarrow A$ we get
+\begin{equation*}
+    \partial f = df -(-1)^{|f|}d_{A^{\otimes n}}
+\end{equation*}
+where $d_{A^{\otimes n}}= \sum_{k=0}^{n}(id^{k}\otimes d\otimes id^{\otimes n-k})$
+
+This allows us to look generally at $\partial m_n$ and its relation to the Stasheff identities, as we did earlier when $n=3$. Consider the extremal decompositions of the number $n$ into $r+s+t$, i.e. the one where $s=n$ and the ones where $s=1$. The former gives us the part of the Stasheff identity given by $m_1(m_s)$ and the latter gives the sum 
+\begin{equation*}
+    \sum_{r=0}^{n-1} (-1)^{n-1}m_n(id^{\otimes r}\otimes m_1\otimes id^{\otimes n-r-1})
+\end{equation*}
+
+Inside $A$ the differential is given by $m_1$, meaning that these two parts of the Stasheff identity perfectly matches the boundary operator applied to $m_n$. Hence if we want we can reformulate the Stasheff identities as
+\begin{equation*}
+    \partial m_n = - \sum_{r+s+t=n}(-1)^{r+st}m_{r+s+t}(id^{\otimes r}\otimes m_s\otimes id^{\otimes t})
+\end{equation*}
+where $r,s,t\geq 1$. This is for example used in \cite{AHO} as the definition. 
+
+Notice that for $n=3$ and $n=4$ this perfectly matches the boundaries we calculated earlier of $K3$ and $K4$. It will do so for higher $n$ as well of course, as designed. 
+
+
+\subsection{Morphisms of \texorpdfstring{$\A$}{A}-algebras}
+
+%Often the important part of defining a new concept is not the objects itself, but its relations to others of the same kind. That is why morphisms between objects are equally or perhaps more important than the objects themselves. With this motivation let's try to understand morphisms between the newly defined $\A$-algebras. 
+
+Since $\A$-algebras look a lot like DG algebras, our first guess at what a morphism of $\A$-algebras should be is perhaps a map of graded vector spaces $f:A\longrightarrow B$ that commute with all of the internal multiplications, i.e. $f\circ m^A_i = m^B_i\circ f$. This would make sense from an algebraic perspective, but from a homotopy theoretic standpoint, this is too strict, and hence we call these strict $\A$-morphisms. They are too strict because they do not take the homotopy information into account, so we need a more neuanced definition. 
+
+\begin{definition}[$\A$-morphism]
+A morphism of $\A$-algebras $f:A\rightarrow B$, also called $\A$-morphism or sometimes $\infty$-morphisms, is a family of linear maps $f_n:A^{\otimes n}\rightarrow B$ such that 
+\begin{equation*}
+    \sum_{n = r+s+t}(-1)^{r+st}f_{r+1+t}(id^{\otimes r}\otimes m_s^A \otimes id^{\otimes t}) = \sum_{k=1}^{n}\sum_{n=i_1+\cdots i_k}(-1)^{u} m_k^B(f_{i_1}\otimes f_{i_2}\otimes \cdots \otimes f_{i_k})
+\end{equation*}
+where $u=\displaystyle \sum_{t=1}^{k-1}t(i_{k-t}-1)$
+\end{definition}
+
+This definition looks quite impenetrable and scary, but is a much better definition for a map of $\A$-algebras, at least for our purposes. This will become more clear later, when we connect this theory to the theory of formality.  
+
+If we start to write out some of the relations, we quickly see that the definition is very natural in terms of the already present products.
+
+$\mathbf{n=1 :}$ The relation gives us
+\begin{equation*}
+    f_1(m_1^A) = m_1^B(f_1)
+\end{equation*}
+which just tells us that the lowest arity map respects the cochain complex structure defined by $m_1$. It more specifically tells us that $f_1$ is a morphism of chain complexes. 
+
+$\mathbf{n=2 :}$ This already gets a bit more complicated, but it is still the natural relation to have. We get
+\begin{equation*}
+    -f_2(m_1\otimes id)+f_1(m_2)-f_2(id\otimes m_2) = m_1(f_2)+m_2(f_1\otimes f_1)
+\end{equation*}
+which we can reformulate to 
+\begin{equation*}
+    f_1(m_2)-m_2(f_1\otimes f_1) = f_2(m_1\otimes id + id\otimes m_1) + m_1(f_2)
+\end{equation*}
+which tells us that $f_1$ almost commutes with $m_2$, but only up to a higher morphism $f_2$. Above we saw that a DG algebra is an $\A$-algebra with $m_i=0$ for $i\geq 3$. If we let $f_2=0$ then this relation tells us that $f_1$ is a morphism of DG-algebras. Hence we can kind of start to think about $\A$-morphisms as DG-morphisms up to homotopy.  
+
+$\mathbf{n=3 :}$ Now the relations start to get complex and more confusing, but lets write it out anyway. 
+\begin{align*}
+    f_3(m_1\otimes id^{\otimes 2})
+    +f_2(m_2\otimes id)
+    +f_1(m_3)
+    &+f_3(id\otimes m_1\otimes id)
+    -f_2(id\otimes m_2)
+    +f_3(id^{\otimes 2}\otimes m_1) \\
+    &= \\
+    m_1(f_1)
+    +m_2(f_1\otimes f_2) 
+    &-m_2(f_2\otimes f_1)
+    +m_3(f_1\otimes f_1\otimes f_1)
+\end{align*}
+
+This relation can be rewritten to form 
+\begin{align*}
+    f_1(m_3)
+    -m_3(f_1^{\otimes 3})
+    = 
+    m_1(f_3)
+    &+f_2(id\otimes m_2-m_2\otimes id)
+    +m_2(f_1\otimes f_2 - f_2\otimes f_1) \\
+    &-f_3(m_1\otimes id^{\otimes 2}+id\otimes m_1\otimes id+id^{\otimes 2}\otimes m_1)
+\end{align*}
+This relation is hard to pull some intuition out from, but we see that one the left hand side we have some familiar $m_3$'s. We also have some familiar parts on the right hand side, if we remember that $f_3\in Hom(A^{\otimes 3}, B)$, which we earlier made into a chain complex. We also notice that the remaining two summands look like some form of associator. We can then write
+\begin{equation*}
+    f_1(m_3)-m_3(f_1^{\otimes 3}) = \partial f_3 + f_2(id\otimes m_2-m_2\otimes id)
+    +m_2(f_1\otimes f_2 - f_2\otimes f_1).
+\end{equation*}
+As said, we cant draw much conclusive intuition from this, but it tells us roughly how to compare the associating homotopies in $A$ and $B$, using $f_1$, $f_2$ and the boundary of $f_3$.  
+
+Let's move away from these relations for now, as we will come back to them and analyze them using more graphical ways in a bit. To have a category of $\A$-algebras we need to know how to compose morphisms. Composition of $\A$-morphisms is given by 
+\begin{equation*}
+    (g\circ f)_n = \sum_{i_1+\cdots + i_r = n}g_r\circ (f_{i_1}\otimes \cdots \otimes f_{i_r})
+\end{equation*}
+where $r>0, i_1, \ldots, i_r>0$. Important for us is the fact that $(g\circ f)_1 = g_1\circ f_1$. This means that we have a category $\infty Alg_k$ consisting of $\A$-algebras and $\A$-morhisms. Note that $DGA_k$ is a non-full subcategory of $\infty Alg_k$. 
+
+As for DG-algebras we have some important special types of $\A$-morphisms. The ones we will need are the $\A$-isomorphisms and the $\A$-quasi-isomorphisms.
+
+\begin{definition}[$\A$-isomorphism]
+Let $\{f\}:A\longrightarrow B$ be an $\A$-morphism. We call $f$ a $\A$-isomorphism, or a isomorphism of $\A$-algebras, if $f_1$ is an isomorphism of chain complexes.
+\end{definition}
+
+Since any $\A$-algebra $(A, m)$ has a map $m_1$ such that $m_1^2=0$, we can also create its cohomology algebra in the exact same way we did for DG algebras. Then maybe as expected, we define an $\A$-quasi-isomorphism as usual.
+
+\begin{definition}[$\A$-quasi-isomorphism]
+Let $\{f\}:A\longrightarrow B$ be an $\A$-morphism. We call $f$ a $\A$-quasi-isomorphism, or a quasi-isomorphism of $\A$-algebras, if $f_1$ is a quasi-isomorphism of chain complexes, i.e. it induces an isomorphism of their cohomology algebras. 
+\end{definition}
+
+Since we have $(g\circ f)_1 = g_1\circ f_1$ for the composition of $\A$-morphisms, we have that composition of $\A$-isomorphisms and $\A$-quasi-isomorphisms are again $\A$-isomorphisms and $\A$-quasi-isomorphisms respectively.
+
+\begin{remark}
+When we discussed Massey products in chapter 2 we proved that Massey products are natural, and that 
+\begin{equation*}
+	q^*(\langle x_1, \ldots, x_n\rangle ) = \langle q^*(x_1),\ldots, q^*(x_n)\rangle
+\end{equation*}
+when $q$ is a quasi-isomorphism of DG-algebras. The proof we had for this was inspired by \cite[Theorem 1.5]{naturality}, and we remarked that this theorem was proven for a more general type of quasi-isomorphism. This more general type is exactly the $\A$-quasi-isomorphism.
+
+This means that if we have an $\A$-quasi-isomorphism $q\colon A\longleftarrow B$ between two DG-algebras - thought of as $\A$-algebras in the way described earlier - and a defined Massey product $\langle x_1, \ldots, x_n\rangle$ in $A$, then we also have
+\begin{equation*}
+	q^*(\langle x_1, \ldots, x_n\rangle ) = \langle q^*(x_1),\ldots, q^*(x_n)\rangle .
+\end{equation*}
+Notice that this is more general than the previous result, as for $\A$-quasi-isomorphisms we only have that the algebra multiplications is preserved up to homotopy, which means some of the steps we took in our proof no longer holds. 
+\end{remark}
+
+
+
+
