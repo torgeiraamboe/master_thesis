@@ -50,9 +50,11 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.47881153)%
+  \begin{picture}(1,0.51562256)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{borromean+unlink.pdf}}%
+    \put(0.11495993,0.00457576){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}The borromean rings\end{tabular}}}}%
+    \put(0.67296517,0.00457576){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}The triple unlink\end{tabular}}}}%
   \end{picture}%
 \endgroup%

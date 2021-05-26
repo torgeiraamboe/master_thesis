@@ -1,10 +1,10 @@
 \select@language {english}
-\contentsline {section}{\numberline {0.1}Abstract}{iv}{section.0.1}
-\contentsline {section}{\numberline {0.2}Sammendrag}{v}{section.0.2}
-\contentsline {section}{\numberline {0.3}Acknowledgments}{vi}{section.0.3}
-\contentsline {section}{\numberline {0.4}Introduction}{vii}{section.0.4}
-\contentsline {section}{\numberline {0.5}Overview of the thesis}{ix}{section.0.5}
-\contentsline {section}{\numberline {0.6}Meta-commentary}{x}{section.0.6}
+\contentsline {section}{\numberline {0.1}Abstract}{i}{section.0.1}
+\contentsline {section}{\numberline {0.2}Sammendrag}{ii}{section.0.2}
+\contentsline {section}{\numberline {0.3}Acknowledgments}{iii}{section.0.3}
+\contentsline {section}{\numberline {0.4}For experienced readers}{iv}{section.0.4}
+\contentsline {section}{\numberline {0.5}Introduction}{vii}{section.0.5}
+\contentsline {section}{\numberline {0.6}Overview of the thesis}{ix}{section.0.6}
 \contentsline {chapter}{\numberline {1}DG-algebras}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Motivation}{2}{section.1.1}
 \contentsline {section}{\numberline {1.2}Our algebraic model}{2}{section.1.2}
