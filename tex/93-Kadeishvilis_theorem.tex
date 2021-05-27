@@ -88,11 +88,24 @@ In order for $h$ to be a homotopy between $id_A$ and $i\circ p$ we need to have 
 
 or in diagram form that the sum of the maps in the parallelogram equals the vertical arrow. 
 \begin{center}
-\begin{tikzcd}
-B^{n-1}\oplus H^{n-1}\oplus L^{n-1} \arrow[r, "d^{n-1}"]  & B^{n}\oplus H^{n}\oplus L^{n} \arrow[r, "d^n"] \arrow[dd, "id_{A^n} -(i\circ p)^n"] \arrow[ldd, "h^n"] & B^{n+1}\oplus H^{n+1}\oplus L^{n+1} \arrow[ldd, "h^{n+1}"] \\
-                                                          &                                                                                                                     &                                                            \\
-B^{n-1}\oplus H^{n-1}\oplus L^{n-1} \arrow[r, "d^{n-1}"'] & B^{n}\oplus H^{n}\oplus L^{n} \arrow[r, "d^n"']                                                                     & B^{n+1}\oplus H^{n+1}\oplus L^{n+1}                       
-\end{tikzcd}   
+\begin{tikzpicture}
+	\node (1) {$B^{n-1}\otimes H^{n-1}\otimes L^{n-1}$};
+	\node (2) [node distance=5cm, right of=1] {$B^n\otimes H^n\otimes L^n$};
+	\node (3) [node distance=5cm, right of=2] {$B^{n+1}\otimes H^{n+1}\otimes L^{n+1}$};
+	
+	\node (4) [below of=1]{$B^{n-1}\otimes H^{n-1}\otimes L^{n-1}$};
+	\node (5) [node distance=5cm, right of=4] {$B^n\otimes H^n\otimes L^n$};
+	\node (6) [node distance=5cm, right of=5] {$B^{n+1}\otimes H^{n+1}\otimes L^{n+1}$};
+
+	\draw [-to] (2) to node [swap]{$h^n$} (4);
+	\draw [-to] (3) to node {$h^{n+1}$} (5);
+	\draw [-to] (2) to node {{\scriptsize $id_{A^n}-(i\circ p)^n$}} (5);
+	
+	\draw [-to] (1) to node {$d^{n-1}$} (2);
+	\draw [-to] (2) to node {$d^{n}$} (3);
+	\draw [-to] (4) to node [swap]{$d^{n-1}$} (5);
+	\draw [-to] (5) to node [swap]{$d^{n}$} (6);
+\end{tikzpicture}
 \end{center}
 
 In matrix notation the left hand side becomes
@@ -200,9 +213,14 @@ Hence we have
 \end{align*}
 which shows that $h$ is in fact a chain homotopy between $id_A$ and $i\circ p$. This means that we finally have our deformation retraction
 \begin{center}
-\begin{tikzcd}[column sep=large, row sep=large]
-A \arrow[r, "p", shift left] \arrow["h"', loop, distance=2em, in=215, out=145] & H(A) \arrow[l, "i", shift left]
-\end{tikzcd}   
+\begin{tikzpicture}
+	\node (1) {$A$};
+	\node (2) [node distance=3.5cm, right of=1] {$H(A)$};
+	
+	\draw [to-, out=220, in=140, loop] (1) to node {$h$} (1);
+	\draw [-to] (1.20) to node {$p$} (2.170);
+	\draw [-to] (2.190) to node {$i$} (1.340);
+\end{tikzpicture}
 \end{center}
 
 Note that this deformation retraction is not unique, as it requires making choices for the subspaces $H^n$ and $L^n$. Thus we can get many different such deformation retractions by altering these choices. In the theorem we want to prove, namely that such a deformation retraction gives us an $\A$-structure on the cohomology algebra, we will get different, albeit $\A$-quasi-isomorphic $\A$-structures when we alter the choices of the subspaces. Since we are only interested in an $\A$-structure on $H(A)$ such that it is $\A$-quasi-isomorphic to $A$, these choices of subspaces are not important, as we have our desired $\A$-quasi-isomorphism regardless. This is because we are not really interested in the structure itself, merely its existence, and its relation to formality. 

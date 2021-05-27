@@ -13,28 +13,36 @@ Before we go into the theory, we give a brief overview of the process. Recall th
 \begin{definition}[Monoidal category]
 A monoidal category is a category $ \mathcal{C}$ equipped with a functor $ \otimes :  \mathcal{C} \times \mathcal{C} \rightarrow \mathcal{C}$, called the monoidal product, a unit object $ 1\in \mathcal{C}$ and three natural isomorphisms $ \lambda_A : 1\otimes A \rightarrow A$, $ \rho_A : A\otimes 1\rightarrow A$ and $ \alpha_{A,B,C} : (A\otimes B)\otimes C \rightarrow A\otimes (B\otimes C)$ called the left unitor, right unitor and associator respectively, such that the following diagrams 
 \begin{center}
-\begin{tikzcd}
-	{A\otimes (1 \otimes B)} && {(A\otimes 1) \otimes B} \\
-	& {A\otimes B}
-	\arrow["{\alpha_{A, 1, B}}", from=1-1, to=1-3]
-	\arrow["{id_A \otimes \lambda_B}"', from=1-1, to=2-2]
-	\arrow["{\rho_A\otimes\lambda_B}", from=1-3, to=2-2]
-\end{tikzcd}
+\begin{tikzpicture}
+	\node (1) {$A\otimes (1\otimes B)$};
+	\node (2) [right of=1] {};
+	\node (3) [right of=2] {$(A\otimes 1)\otimes B$};
+	\node (4) [node distance=2cm, below of=2] {$A\otimes B$};
+	
+	\draw [-to] (1) to node {$\alpha_{A, 1, B}$} (3);
+	\draw [-to] (1) to node [swap]{$id_A\otimes \lambda_B$} (4);
+	\draw [-to] (3) to node {$\rho_A\otimes id_B$} (4);
+\end{tikzpicture}
 \end{center}
 called the triangle identity, and 
 \begin{center}
-\begin{tikzcd}
-	& {A\otimes (B\otimes (C\otimes D))} \\
-	&&& {(A\otimes B)\otimes (C\otimes D)} \\
-	{A\otimes ((B\otimes C)\otimes D)}  \\
-	&&& {((A\otimes B)\otimes C)\otimes D} \\
-	& {(A\otimes (B\otimes C))\otimes D}
-	\arrow["{id_A\otimes\alpha_{B, C, D}}"', from=1-2, to=3-1]
-	\arrow["{\alpha_{A, B, C\otimes D}}", from=1-2, to=2-4]
-	\arrow["{\alpha_{A, B\otimes C, D}}"', from=3-1, to=5-2]
-	\arrow["{\alpha_{A, B, C}\otimes id_D}"', from=5-2, to=4-4]
-	\arrow["{\alpha_{A\otimes B, C, D}}", from=2-4, to=4-4]
-\end{tikzcd}
+\begin{tikzpicture}
+	\node (C) {};
+	\node (1) [node distance=3.3cm, above of=C] {$(A\otimes B)\otimes (C\otimes D)$}; 
+	\node (2) [node distance= 4.2cm, left of=C] {$((A\otimes B)\otimes C)\otimes D$};	
+	\node (3) [node distance= 4.2cm, right of=C] {$A\otimes (B\otimes (C\otimes D))$};
+	
+	\node (D) [node distance=3.7cm, below of=C] {};
+	\node (4) [node distance= 3cm, left of=D] {$(A\otimes (B\otimes C))\otimes D$};
+	\node (5) [node distance= 3cm, right of=D] {$A\otimes ((B\otimes C))\otimes D)$};
+	
+	
+	\draw [-to] (2) to node {$\alpha_{A\otimes B, C, D}$} (1);
+	\draw [-to] (1) to node {$\alpha_{A, B, C\otimes D}$} (3);
+	\draw [-to] (2) to node [swap]{$\alpha_{A, B, C}\otimes id_D$} (4);
+	\draw [-to] (4) to node [swap]{$\alpha_{A, B\otimes C, C}$} (5);
+	\draw [-to] (5) to node [swap]{$id_A\otimes \alpha_{A, B, C}$} (3);
+\end{tikzpicture}
 \end{center}
 called the pentagon identity, both commute. 
 \end{definition}
@@ -44,27 +52,35 @@ This definition can seem very abstract and difficult, but in reality it is quite
 \begin{definition}[Symmetric monoidal category]
 Let $ \mathcal{C}$ be a monoidal category. We say  $ \mathcal{C}$ is a symmetric monoidal category if there is a natural isomorphism $ \beta_{X,Y}: X\otimes Y \rightarrow Y \otimes X$, called the braid isomorphism, such that $ \beta_{X,Y}\circ \beta_{Y,X} = id_{X\otimes Y} $ and the following diagrams 
 \begin{center}
-\begin{tikzcd}
-	{A\otimes 1} && {1\otimes A} \\
-	& {A}
-	\arrow["{\beta_{A,1}}", from=1-1, to=1-3]
-	\arrow["{\rho_A}"', from=1-1, to=2-2]
-	\arrow["{\lambda_A}", from=1-3, to=2-2]
-\end{tikzcd}
+\begin{tikzpicture}
+	\node (1) {$A\otimes 1$};
+	\node (2) [right of=1] {};
+	\node (3) [right of=2] {$1\otimes A$};
+	\node (4) [node distance=2cm, below of=2] {$A$};
+	
+	\draw [-to] (1) to node {$\beta_{A, 1}$} (3);
+	\draw [-to] (1) to node [swap]{$\rho_A$} (4);
+	\draw [-to] (3) to node {$\lambda_A$} (4);
+\end{tikzpicture}
 \end{center}
 called the unit coherence, and
 \begin{center}
-\begin{tikzcd}
-	& {(A\otimes B)\otimes C} && {(B\otimes A)\otimes C} \\
-	{A\otimes (B\otimes C)} &&&& {B\otimes (A\otimes C)} \\
-	& {(B\otimes C)\otimes A} && {B\otimes (C\otimes A)}
-	\arrow["{\beta_{A, B}\otimes id_C}", from=1-2, to=1-4]
-	\arrow["{\alpha_{B, A, C}}", from=1-4, to=2-5]
-	\arrow["{\alpha_{A, B, C}}"', from=1-2, to=2-1]
-	\arrow["{\beta_{A, B\otimes C}}"', from=2-1, to=3-2]
-	\arrow["{\alpha_{B, C, A}}"', from=3-2, to=3-4]
-	\arrow["{id_B\otimes \beta{A, C}}", from=2-5, to=3-4]
-\end{tikzcd}\
+\begin{tikzpicture}
+	\node (C) {};
+	\node (1) [above of=C, left of=C] {$(A\otimes B)\otimes C$};
+	\node (2) [above of=C, right of=C] {$(B\otimes A)\otimes C$};
+	\node (3) [node distance=4cm, left of=C] {$A\otimes(B\otimes C)$};
+	\node (4) [node distance=4cm, right of=C] {$B\otimes (A\otimes C)$};
+	\node (5) [below of=C, left of=C] {$(B\otimes C)\otimes A$};
+	\node (6) [below of=C, right of=C] {$B\otimes (C\otimes A)$};
+	
+	\draw [-to] (1) to node {$\beta_{A, B}\otimes id_C$} (2);
+	\draw [-to] (1) to node [swap]{$\alpha_{A, B, C}$} (3);
+	\draw [-to] (2) to node {$\alpha_{B, A, C}$} (4);
+	\draw [-to] (3) to node [swap]{$\beta_{A, B\otimes C}$} (5);
+	\draw [-to] (5) to node [swap]{$\alpha_{B, C, A}$} (6);
+	\draw [-to] (4) to node {$id_B\otimes \beta_{A, C}$} (6);
+\end{tikzpicture}
 \end{center}
 called the associativity coherence, both commute. 
 \end{definition}
@@ -80,10 +96,17 @@ We can think about this as being motivated by, or at least inspired by the categ
 \begin{definition}[Pushout product]
 Let $\C$ be a symmetric monoidal category and $f\colon A\to B$, $f'\colon A'\to B'$ be morphisms in $\C$. We can form the following pushout diagram
 \begin{center}
-\begin{tikzcd}
-A\otimes A' \arrow[r] \arrow[d] & A\otimes B' \arrow[d]                         \\
-B\otimes A' \arrow[r]           & B\otimes A' \coprod_{A\otimes A'} A\otimes B'
-\end{tikzcd}    
+\begin{tikzpicture}
+	\node (1) {$A\otimes A'$};
+	\node (3) [below of=1] {$B\otimes A'$};
+	\node (2) [node distance=4cm, right of=1] {$A\otimes B'$};
+	\node (4) [below of=2] {${\displaystyle B\otimes A'\coprod_{A\otimes A'}A\otimes B'}$};
+
+	\draw [-to] (1) to node {} (2);
+	\draw [-to] (1) to node {} (3);
+	\draw [-to] (2) to node {} (4);
+	\draw [-to] (3) to node {} (4);	
+\end{tikzpicture}
 \end{center}
 By the universal property of pushouts we get an induced map
 \begin{equation*}
@@ -132,36 +155,44 @@ We then have the category we want, i.e. $\C$ a cofibrantly generated symmetric m
 \begin{definition}[Monoid]
 A monoid in a monoidal category $ (\mathcal{C}, \otimes, I)$ is an object $ M$ together with a map $ \mu:M\otimes M\rightarrow M$, called multiplication, and a map $ \eta: I\rightarrow M$, called the unit, such that the associative law and left and right unit laws hold, i.e. the following three diagrams commute
 \begin{center}
-\begin{tikzcd}
-	{1\otimes M} && {M\otimes M} \\
-	& {M}
-	\arrow["{\eta\otimes id_M}", from=1-1, to=1-3]
-	\arrow["{\mu}", from=1-3, to=2-2]
-	\arrow["{\lambda_M}"', from=1-1, to=2-2]
-\end{tikzcd}    
+\begin{tikzpicture}
+	\node (1) {$1\otimes M$};
+	\node (2) [right of=1] {};
+	\node (3) [right of=2] {$M\otimes M$};
+	\node (4) [node distance=2cm, below of=2] {$M$};
+	
+	\node (5) [right of=3] {$M\otimes 1$};
+	\node (6) [right of=5] {};
+	\node (7) [right of=6] {$M\otimes M$};
+	\node (8) [node distance=2cm, below of=6] {$M$};	
+	
+	\draw [-to] (1) to node {$\eta\otimes id_M$} (3);
+	\draw [-to] (1) to node [swap]{$\lambda_M$} (4);
+	\draw [-to] (3) to node {$\mu$} (4);
+	
+	\draw [-to] (5) to node {$id_M\otimes \eta$} (7);
+	\draw [-to] (5) to node [swap]{$\rho_M$} (8);
+	\draw [-to] (7) to node {$\mu$} (8);	
+\end{tikzpicture}
 \end{center}
 
 \begin{center}
-\begin{tikzcd}
-	{M\otimes 1} && {M\otimes M} \\
-	& {M}
-	\arrow["{id_M\otimes \eta}", from=1-1, to=1-3]
-	\arrow["{\mu}", from=1-3, to=2-2]
-	\arrow["{\rho_M}"', from=1-1, to=2-2]
-\end{tikzcd}
-\end{center}
+\begin{tikzpicture}
+	\node (C) {};
+	\node (1) [above of=C, left of=C] {$M\otimes (M\otimes M)$};
+	\node (2) [above of=C, right of=C] {$(M\otimes M)\otimes M$};
+	\node (3) [node distance=4cm, left of=C] {$M\otimes M$};
+	\node (4) [node distance=4cm, right of=C] {$M\otimes M$};
+	\node (5) [below of=C] {$M$};
 
-\begin{center}
-\begin{tikzcd}
-	& {M\otimes (M\otimes M)} && {(M\otimes M)\otimes M} \\
-	{M\otimes M} &&&& {M\otimes M} \\
-	&& {M}
-	\arrow["{\alpha_{M, M, M}}", from=1-2, to=1-4]
-	\arrow["{\eta \otimes id_M}", from=1-4, to=2-5]
-	\arrow["{\eta}", from=2-5, to=3-3]
-	\arrow["{\eta}"', from=2-1, to=3-3]
-	\arrow["{id_M\otimes \eta}"', from=1-2, to=2-1]
-\end{tikzcd}
+
+	\draw [-to] (1) to node {$\alpha_{M, M, M}$} (2);
+	\draw [-to] (1) to node [swap]{$id_M\otimes \mu$} (3);
+	\draw [-to] (2) to node {$\mu\otimes id_M$} (4);
+	\draw [-to] (3) to node [swap]{$\mu$} (5);
+	\draw [-to] (4) to node {$\mu$} (5);	
+
+\end{tikzpicture}
 \end{center}
 \end{definition}
 
@@ -197,10 +228,17 @@ A monoid in $Ch(Vect_k)$ is an object $A$ in $Ch(Vect_k)$ together with a map $m
 
 The fact that $m$ is a morphism of cochain complexes means that we have a commutative diagram
 \begin{center}
-\begin{tikzcd}
-M\otimes M \arrow[d, "d_{M\otimes M}"'] \arrow[r, "m"] & M \arrow[d, "d_M"] \\
-M\otimes M \arrow[r, "m"']                             & M                 
-\end{tikzcd}    
+\begin{tikzpicture}
+	\node (1) {$M\otimes M$};
+	\node (3) [below of=1] {$M\otimes M$};
+	\node (2) [node distance=4cm, right of=1] {$M$};
+	\node (4) [below of=2] {$M$};
+
+	\draw [-to] (1) to node {$m$} (2);
+	\draw [-to] (1) to node [swap]{$d_{M\otimes M}$} (3);
+	\draw [-to] (2) to node {$m$} (4);
+	\draw [-to] (3) to node [swap]{$d_M$} (4);	
+\end{tikzpicture}
 \end{center}
 And hence that
 \begin{align*}

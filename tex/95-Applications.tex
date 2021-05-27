@@ -92,21 +92,119 @@ Let $X$ be connected reduced formal CW complex. Then $X$ is formal.
 \begin{proof}
 As $X$ is connected we know that $H^0(X)\cong k$ and $\wH^0(X)=0$. Since it is reduced formal we also know that there is a span of DG-quasi-isomorphisms $\wH^*(X)\longleftarrow B \longrightarrow \wC^*(X)$ for some DG-algebra $B$. In diagram form this looks like
 \begin{center}
-\begin{tikzcd}
-\ldots \arrow[r] & k \arrow[r, "\epsilon"]                                    & C^0(X) \arrow[r, "d^0"]                                    & C^1(X) \arrow[r, "d^1"]                                    & C^2(X) \arrow[r]                                & \cdots \\
-\ldots \arrow[r] & B^{-1} \arrow[r, "d_B^{-1}"] \arrow[d] \arrow[u, "q^{-1}"] & B^0 \arrow[r, "d_B^0"] \arrow[d, "p^0"] \arrow[u, "q^{0}"] & B^1 \arrow[r, "d_B^1"] \arrow[d, "p^1"] \arrow[u, "q^{1}"] & B^2 \arrow[d, "p^2"] \arrow[r] \arrow[u, "q^2"] & \cdots \\
-\ldots \arrow[r] & 0 \arrow[r]                                                & 0 \arrow[r]                                                & H^1(X) \arrow[r, "0"]                                      & H^2(X) \arrow[r]                                & \cdots
-\end{tikzcd}    
+\begin{tikzpicture}
+	\node (1) {$k$};
+	\node (2) [right of=1] {$C^0(X)$};
+	\node (3) [right of=2] {$C^1(X)$};
+	\node (4) [right of=3] {$C^2(X)$};
+	
+	\node (5) [below of=1] {$B^{-1}$};
+	\node (6) [right of=5] {$B^0$};
+	\node (7) [right of=6] {$B^1$};
+	\node (8) [right of=7] {$B^2$};
+	
+	\node (9) [below of=5] {$0$};
+	\node (10) [right of=9] {$0$};
+	\node (11) [right of=10] {$H^1(X)$};
+	\node (12) [right of=11] {$H^2(X)$};
+	
+	\node (13) [left of=1] {$\cdots$};
+	\node (14) [left of=5] {$\cdots$};
+	\node (15) [left of=9] {$\cdots$};
+	\node (16) [right of=4] {$\cdots$};
+	\node (17) [right of=8] {$\cdots$};
+	\node (18) [right of=12] {$\cdots$};
+	
+	\draw [-to] (13) to node {} (1);
+	\draw [-to] (14) to node {} (5);
+	\draw [-to] (15) to node {} (9);
+	\draw [-to] (4) to node {} (16);
+	\draw [-to] (8) to node {} (17);
+	\draw [-to] (12) to node {} (18);
+	
+	\draw [-to] (1) to node {$\epsilon$} (2);
+	\draw [-to] (2) to node {$d^0$} (3);
+	\draw [-to] (3) to node {$d^1$} (4);
+	
+	\draw [-to] (5) to node {$d^{-1}_B$} (6);
+	\draw [-to] (6) to node {$d^0_B$} (7);
+	\draw [-to] (7) to node {$d^1_B$} (8);
+	
+	\draw [-to] (9) to node {} (10);
+	\draw [-to] (10) to node {} (11);
+	\draw [-to] (11) to node {$0$} (12);
+	
+	\draw [-to] (5) to node {$q^{-1}$} (1);
+	\draw [-to] (5) to node {} (9);
+	
+	\draw [-to] (6) to node {$q^0$} (2);
+	\draw [-to] (6) to node [swap]{$p^0$} (10);
+	
+	\draw [-to] (7) to node {$q^1$} (3);
+	\draw [-to] (7) to node [swap]{$p^1$} (11);
+	
+	\draw [-to] (8) to node {$q^2$} (4);
+	\draw [-to] (8) to node [swap]{$p^2$} (12);
+\end{tikzpicture}
 \end{center}
 
 By changing the diagram above slightly at the left-most side, we get the following new diagram:  
 
 \begin{center}
-\begin{tikzcd}
-\cdots \arrow[r] & 0 \arrow[r]                     & C^0(X) \arrow[r, "d^0"]                                                                        & C^1(X) \arrow[r, "d^1"]                                    & C^2(X) \arrow[r]                                & \cdots \\
-\cdots \arrow[r] & 0 \arrow[r] \arrow[u] \arrow[d] & B^0\oplus B^{-1} \arrow[r, "{[d_B^0, 0]}"] \arrow[d, "{[0,q^{-1}]}"] \arrow[u, "{[q^{0}, 0]}"] & B^1 \arrow[r, "d_B^1"] \arrow[d, "p^1"] \arrow[u, "q^{1}"] & B^2 \arrow[d, "p^2"] \arrow[r] \arrow[u, "q^2"] & \cdots \\
-\cdots \arrow[r] & 0 \arrow[r]                     & k \arrow[r, "0"]                                                                               & H^1(X) \arrow[r, "0"]                                      & H^2(X) \arrow[r]                                & \cdots
-\end{tikzcd}    
+\begin{tikzpicture}
+	\node (1) {$0$};
+	\node (2) [right of=1] {$C^0(X)$};
+	\node (3) [right of=2] {$C^1(X)$};
+	\node (4) [right of=3] {$C^2(X)$};
+	
+	\node (5) [below of=1] {$0$};
+	\node (6) [right of=5] {$B^0\oplus B^{-1}$};
+	\node (7) [right of=6] {$B^1$};
+	\node (8) [right of=7] {$B^2$};
+	
+	\node (9) [below of=5] {$0$};
+	\node (10) [right of=9] {$k$};
+	\node (11) [right of=10] {$H^1(X)$};
+	\node (12) [right of=11] {$H^2(X)$};
+	
+	\node (13) [left of=1] {$\cdots$};
+	\node (14) [left of=5] {$\cdots$};
+	\node (15) [left of=9] {$\cdots$};
+	\node (16) [right of=4] {$\cdots$};
+	\node (17) [right of=8] {$\cdots$};
+	\node (18) [right of=12] {$\cdots$};
+	
+	\draw [-to] (13) to node {} (1);
+	\draw [-to] (14) to node {} (5);
+	\draw [-to] (15) to node {} (9);
+	\draw [-to] (4) to node {} (16);
+	\draw [-to] (8) to node {} (17);
+	\draw [-to] (12) to node {} (18);
+	
+	\draw [-to] (1) to node {} (2);
+	\draw [-to] (2) to node {$d^0$} (3);
+	\draw [-to] (3) to node {$d^1$} (4);
+	
+	\draw [-to] (5) to node {} (6);
+	\draw [-to] (6) to node {$d^0_B$} (7);
+	\draw [-to] (7) to node {$d^1_B$} (8);
+	
+	\draw [-to] (9) to node {} (10);
+	\draw [-to] (10) to node {} (11);
+	\draw [-to] (11) to node {$0$} (12);
+	
+	\draw [-to] (5) to node {} (1);
+	\draw [-to] (5) to node {} (9);
+	
+	\draw [-to] (6) to node {$[q^0, 0]$} (2);
+	\draw [-to] (6) to node [swap]{$[0, p^0]$} (10);
+	
+	\draw [-to] (7) to node {$q^1$} (3);
+	\draw [-to] (7) to node [swap]{$p^1$} (11);
+	
+	\draw [-to] (8) to node {$q^2$} (4);
+	\draw [-to] (8) to node [swap]{$p^2$} (12);
+\end{tikzpicture}
 \end{center}
 We see that this in fact gives a span of quasi-isomorphisms $H^*(X)\longleftarrow B'\longrightarrow C^*(X)$, meaning that $X$ is formal. 
 \end{proof}

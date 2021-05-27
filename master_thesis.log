@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.1.3)  26 MAY 2021 11:15
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.1.3)  27 MAY 2021 15:27
 entering extended mode
 **./master_thesis.tex
 (master_thesis.tex
@@ -1581,72 +1581,91 @@ Package cleveref Info: loaded `english' language definitions on input line 278.
 
  [8])
 (tex/11-Model_categories.tex
-Package cleveref Info: loaded `english' language definitions on input line 37.
+Package cleveref Info: loaded `english' language definitions on input line 36.
  [9]
-Package cleveref Info: loaded `english' language definitions on input line 82.
+Package cleveref Info: loaded `english' language definitions on input line 95.
  [10]
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 109.
-Package cleveref Info: loaded `english' language definitions on input line 122.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 128.
+Package cleveref Info: loaded `english' language definitions on input line 135.
 
  [11]
-Package cleveref Info: loaded `english' language definitions on input line 159.
+Package cleveref Info: loaded `english' language definitions on input line 174.
 
  [12]
-Package cleveref Info: loaded `english' language definitions on input line 194.
+Package cleveref Info: loaded `english' language definitions on input line 215.
 
  [13]
-Package cleveref Info: loaded `english' language definitions on input line 228.
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Package cleveref Info: loaded `english' language definitions on input line 260.
 
  [14])
 (tex/12-Modelstructure_DGA.tex
-Package cleveref Info: loaded `english' language definitions on input line 16.
+Underfull \vbox (badness 2799) has occurred while \output is active []
+
+Package cleveref Info: loaded `english' language definitions on input line 6.
  [15]
-Package cleveref Info: loaded `english' language definitions on input line 79.
- [16]
-Package cleveref Info: loaded `english' language definitions on input line 142.
+Package cleveref Info: loaded `english' language definitions on input line 52.
+
+[16]
+Package cleveref Info: loaded `english' language definitions on input line 121.
 
  [17]
-Package cleveref Info: loaded `english' language definitions on input line 196.
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Package cleveref Info: loaded `english' language definitions on input line 180.
 
  [18]
-Package cleveref Info: loaded `english' language definitions on input line 232.
+Package cleveref Info: loaded `english' language definitions on input line 222.
 
- [19]
-Package cleveref Info: loaded `english' language definitions on input line 289.
+
+[19]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Package cleveref Info: loaded `english' language definitions on input line 310.
 
  [20]
-Package cleveref Info: loaded `english' language definitions on input line 327.
+Package cleveref Info: loaded `english' language definitions on input line 375.
 
- [21]
-Package cleveref Info: loaded `english' language definitions on input line 354.
+
+[21]
+Package cleveref Info: loaded `english' language definitions on input line 406.
 
  [22]
-Package cleveref Info: loaded `english' language definitions on input line 395.
+Package cleveref Info: loaded `english' language definitions on input line 446.
 
- [23])
-(tex/chapter2.tex
-Package cleveref Info: loaded `english' language definitions on input line 1.
+ [23]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Package cleveref Info: loaded `english' language definitions on input line 515.
+
  [24]
+Package cleveref Info: loaded `english' language definitions on input line 574.
+
+
+[25]) (tex/chapter2.tex
+Package cleveref Info: loaded `english' language definitions on input line 1.
+ [26]
 Chapter 2.
-<chaptertitles/ch2.pdf, id=461, 421.09319pt x 597.432pt>
+<chaptertitles/ch2.pdf, id=470, 421.09319pt x 597.432pt>
 File: chaptertitles/ch2.pdf Graphic file (type pdf)
 <use chaptertitles/ch2.pdf>
 Package pdftex.def Info: chaptertitles/ch2.pdf  used on input line 9.
 (pdftex.def)             Requested size: 627.42319pt x 887.37614pt.
-[25
+[27
 
  <./chaptertitles/ch2.pdf, page is rotated 90 degrees>]) (tex/20-Massey.tex
 Package cleveref Info: loaded `english' language definitions on input line 26.
 
-[26
+[28
 
 ]
 Package cleveref Info: loaded `english' language definitions on input line 64.
- [27]
+ [29]
 Package cleveref Info: loaded `english' language definitions on input line 98.
- [28] (images/borromean+unlink.pdf_tex
-<./images/borromean+unlink.pdf, id=490, page=1, 543.69286pt x 280.34029pt>
+ [30] (images/borromean+unlink.pdf_tex
+<./images/borromean+unlink.pdf, id=498, page=1, 543.69286pt x 280.34029pt>
 File: ./images/borromean+unlink.pdf Graphic file (type pdf)
 <use ./images/borromean+unlink.pdf, page 1>
 Package pdftex.def Info: ./images/borromean+unlink.pdf , page1 used on input li
@@ -1655,8 +1674,8 @@ ne 56.
 )
 Package cleveref Info: loaded `english' language definitions on input line 131.
 
- [29 <./images/borromean+unlink.pdf>] (images/4-link.pdf_tex
-<./images/4-link.pdf, id=503, page=1, 360.17918pt x 212.08414pt>
+ [31 <./images/borromean+unlink.pdf>] (images/4-link.pdf_tex
+<./images/4-link.pdf, id=512, page=1, 360.17918pt x 212.08414pt>
 File: ./images/4-link.pdf Graphic file (type pdf)
 <use ./images/4-link.pdf, page 1>
 Package pdftex.def Info: ./images/4-link.pdf , page1 used on input line 56.
@@ -1664,16 +1683,16 @@ Package pdftex.def Info: ./images/4-link.pdf , page1 used on input line 56.
 )
 Package cleveref Info: loaded `english' language definitions on input line 163.
 
- [30 <./images/4-link.pdf>]
+ [32 <./images/4-link.pdf>]
 Package cleveref Info: loaded `english' language definitions on input line 194.
 
- [31]
+ [33]
 Package cleveref Info: loaded `english' language definitions on input line 241.
 
- [32]
+ [34]
 Package cleveref Info: loaded `english' language definitions on input line 279.
 
- [33]
+ [35]
 Overfull \hbox (3.33408pt too wide) in paragraph at lines 289--290
 []\T1/ptm/m/n/12 (-20) To sum-ma-rize, we have for any $\OML/cmm/m/it/12 y$ \T1
 /ptm/m/n/12 (-20) in $\OMS/cmsy/m/n/12 h\OML/cmm/m/it/12 q[]\OT1/cmr/m/n/12 (\O
@@ -1687,27 +1706,27 @@ m/n/12 (-20) ,
 
 Package cleveref Info: loaded `english' language definitions on input line 326.
 
-[34]
+[36]
 Package cleveref Info: loaded `english' language definitions on input line 363.
 
- [35]) (tex/chapter3.tex
+ [37]) (tex/chapter3.tex
 Package cleveref Info: loaded `english' language definitions on input line 1.
- [36]
+ [38]
 Chapter 3.
-<chaptertitles/ch3.pdf, id=564, 421.09319pt x 597.432pt>
+<chaptertitles/ch3.pdf, id=573, 421.09319pt x 597.432pt>
 File: chaptertitles/ch3.pdf Graphic file (type pdf)
 <use chaptertitles/ch3.pdf>
 Package pdftex.def Info: chaptertitles/ch3.pdf  used on input line 9.
 (pdftex.def)             Requested size: 627.42319pt x 887.37614pt.
-[37
+[39
 
  <./chaptertitles/ch3.pdf, page is rotated 90 degrees>])
 (tex/29-Stasheff_associahedra.tex
 Package cleveref Info: loaded `english' language definitions on input line 44.
- [38
+ [40
 
 ] (images/K3_brackets.pdf_tex
-<./images/K3_brackets.pdf, id=578, page=1, 370.57202pt x 33.78104pt>
+<./images/K3_brackets.pdf, id=586, page=1, 370.57202pt x 33.78104pt>
 File: ./images/K3_brackets.pdf Graphic file (type pdf)
 <use ./images/K3_brackets.pdf, page 1>
 Package pdftex.def Info: ./images/K3_brackets.pdf , page1 used on input line 56
@@ -1715,7 +1734,7 @@ Package pdftex.def Info: ./images/K3_brackets.pdf , page1 used on input line 56
 (pdftex.def)             Requested size: 256.07741pt x 23.34396pt.
 )
 (images/K4_brackets.pdf_tex
-<./images/K4_brackets.pdf, id=579, page=1, 383.23161pt x 205.96918pt>
+<./images/K4_brackets.pdf, id=587, page=1, 383.23161pt x 205.96918pt>
 File: ./images/K4_brackets.pdf Graphic file (type pdf)
 <use ./images/K4_brackets.pdf, page 1>
 Package pdftex.def Info: ./images/K4_brackets.pdf , page1 used on input line 56
@@ -1723,46 +1742,46 @@ Package pdftex.def Info: ./images/K4_brackets.pdf , page1 used on input line 56
 (pdftex.def)             Requested size: 256.07741pt x 137.6309pt.
 )
 Package cleveref Info: loaded `english' language definitions on input line 78.
- [39 <./images/K3_brackets.pdf>] (images/K5.pdf_tex
-<./images/K5.pdf, id=586, page=1, 316.39763pt x 268.39699pt>
+ [41 <./images/K3_brackets.pdf>] (images/K5.pdf_tex
+<./images/K5.pdf, id=594, page=1, 316.39763pt x 268.39699pt>
 File: ./images/K5.pdf Graphic file (type pdf)
 <use ./images/K5.pdf, page 1>
 Package pdftex.def Info: ./images/K5.pdf , page1 used on input line 56.
 (pdftex.def)             Requested size: 213.39568pt x 181.02498pt.
 )) (tex/30-Deformation_retraction.tex
 Package cleveref Info: loaded `english' language definitions on input line 1.
- [40 <./images/K4_brackets.pdf> <./images/K5.pdf
+ [42 <./images/K4_brackets.pdf> <./images/K5.pdf
 
 pdfTeX warning: pdflatex (file ./images/K5.pdf): PDF inclusion: multiple pdfs w
 ith page group included in a single page
 >]
-Package cleveref Info: loaded `english' language definitions on input line 32.
- [41]
-Package cleveref Info: loaded `english' language definitions on input line 79.
- [42]
-Package cleveref Info: loaded `english' language definitions on input line 143.
-
+Package cleveref Info: loaded `english' language definitions on input line 37.
  [43]
-Package cleveref Info: loaded `english' language definitions on input line 212.
+Package cleveref Info: loaded `english' language definitions on input line 98.
+ [44]
+Package cleveref Info: loaded `english' language definitions on input line 168.
 
- [44] (images/K4_operations.pdf_tex
-<./images/K4_operations.pdf, id=613, page=1, 429.0739pt x 212.49309pt>
+ [45]
+Package cleveref Info: loaded `english' language definitions on input line 237.
+
+ [46] (images/K4_operations.pdf_tex
+<./images/K4_operations.pdf, id=621, page=1, 429.0739pt x 212.49309pt>
 File: ./images/K4_operations.pdf Graphic file (type pdf)
 <use ./images/K4_operations.pdf, page 1>
 Package pdftex.def Info: ./images/K4_operations.pdf , page1 used on input line 
 56.
 (pdftex.def)             Requested size: 298.75264pt x 147.95624pt.
 )
-Package cleveref Info: loaded `english' language definitions on input line 244.
+Package cleveref Info: loaded `english' language definitions on input line 269.
 
- [45 <./images/K4_operations.pdf>] (images/K4_homotopies.pdf_tex
-<./images/K4_homotopies.pdf, id=620, page=1, 474.12209pt x 224.23412pt>
+ [47 <./images/K4_operations.pdf>] (images/K4_homotopies.pdf_tex
+<./images/K4_homotopies.pdf, id=628, page=1, 474.12209pt x 224.23412pt>
 File: ./images/K4_homotopies.pdf Graphic file (type pdf)
 <use ./images/K4_homotopies.pdf, page 1>
 Package pdftex.def Info: ./images/K4_homotopies.pdf , page1 used on input line 
 56.
 (pdftex.def)             Requested size: 298.75264pt x 141.29901pt.
-<./images/K4_homotopies.pdf, id=621, page=2, 474.12209pt x 224.23412pt>
+<./images/K4_homotopies.pdf, id=629, page=2, 474.12209pt x 224.23412pt>
 File: ./images/K4_homotopies.pdf Graphic file (type pdf)
 <use ./images/K4_homotopies.pdf, page 2>
 Package pdftex.def Info: ./images/K4_homotopies.pdf , page2 used on input line 
@@ -1770,82 +1789,82 @@ Package pdftex.def Info: ./images/K4_homotopies.pdf , page2 used on input line
 (pdftex.def)             Requested size: 298.75264pt x 141.29901pt.
 )) (tex/31-A_infinity.tex
 Package cleveref Info: loaded `english' language definitions on input line 15.
- [46 <./images/K4_homotopies.pdf> <./images/K4_homotopies.pdf
+ [48 <./images/K4_homotopies.pdf> <./images/K4_homotopies.pdf
 
 pdfTeX warning: pdflatex (file ./images/K4_homotopies.pdf): PDF inclusion: mult
 iple pdfs with page group included in a single page
 >]
 Package cleveref Info: loaded `english' language definitions on input line 54.
- [47]
+ [49]
 Package cleveref Info: loaded `english' language definitions on input line 105.
 
- [48]
+ [50]
 Package cleveref Info: loaded `english' language definitions on input line 141.
 
- [49]
+ [51]
 Overfull \hbox (25.41832pt too wide) detected at line 165
 []
  []
 
 Package cleveref Info: loaded `english' language definitions on input line 195.
 
-[50]) (tex/91-Rooted_trees.tex (images/rooted_tree/1.tex
+[52]) (tex/91-Rooted_trees.tex (images/rooted_tree/1.tex
 Package cleveref Info: loaded `english' language definitions on input line 21.
- [51])
+ [53])
 (images/rooted_tree/2.tex) (images/rooted_tree/relation1.tex)
 (images/rooted_tree/relation2_1.tex) (images/rooted_tree/relation2_2.tex
 Underfull \vbox (badness 7099) has occurred while \output is active []
 
 Package cleveref Info: loaded `english' language definitions on input line 33.
- [52])
+ [54])
 (images/rooted_tree/relation2_3.tex) (images/rooted_tree/signs_1.tex)
 Package cleveref Info: loaded `english' language definitions on input line 51.
- [53]
+ [55]
 (images/rooted_tree/signs_2.tex) (images/rooted_tree/signs_3.tex)
 (images/rooted_tree/relation4_1.tex
 Package cleveref Info: loaded `english' language definitions on input line 296.
 
- [54]) (images/rooted_tree/DG1.tex)
+ [56]) (images/rooted_tree/DG1.tex)
 (images/rooted_tree/DG2.tex) (images/rooted_tree/DG3.tex
 Package cleveref Info: loaded `english' language definitions on input line 1.
- [55]))
+ [57]))
 (tex/92-More_rooted_trees.tex (images/more_rooted_tree/1.tex)
 (images/more_rooted_tree/left_relation1.tex)
 (images/more_rooted_tree/left_relation2_1.tex
 Package cleveref Info: loaded `english' language definitions on input line 75.
- [56])
+ [58])
 (images/more_rooted_tree/left_relation2_2.tex)
 (images/more_rooted_tree/left_relation3.tex)
 Underfull \vbox (badness 3209) has occurred while \output is active []
 
 Package cleveref Info: loaded `english' language definitions on input line 33.
- [57]
+ [59]
 (images/more_rooted_tree/right_relation3_1.tex)
 (images/more_rooted_tree/right_relation3_2.tex
 Underfull \vbox (badness 2253) has occurred while \output is active []
 
 Package cleveref Info: loaded `english' language definitions on input line 166.
 
- [58])
+ [60])
 (images/more_rooted_tree/right_relation4_1.tex)
 Underfull \vbox (badness 1057) has occurred while \output is active []
 
 Package cleveref Info: loaded `english' language definitions on input line 66.
- [59]
+ [61]
 (images/more_rooted_tree/right_sign_1.tex)
 (images/more_rooted_tree/right_relation3_3.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Package cleveref Info: loaded `english' language definitions on input line 174.
 
- [60])
+ [62])
 (images/more_rooted_tree/relation3.tex) (images/more_rooted_tree/DG1.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Package cleveref Info: loaded `english' language definitions on input line 1.
- [61])
+ [63])
 (images/more_rooted_tree/DG2.tex)
-<pdfs/coverart_master.pdf, id=722, 597.50829pt x 845.0471pt>
+<pdfs/coverart_master.pdf, id=730, 597.50829pt x 845.0471pt>
 File: pdfs/coverart_master.pdf Graphic file (type pdf)
 <use pdfs/coverart_master.pdf>
 Package pdftex.def Info: pdfs/coverart_master.pdf  used on input line 102.
@@ -1854,7 +1873,7 @@ File: pdfs/coverart_master.pdf Graphic file (type pdf)
 <use pdfs/coverart_master.pdf>
 Package pdftex.def Info: pdfs/coverart_master.pdf  used on input line 102.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
-<pdfs/coverart_master.pdf, id=725, page=1, 597.50829pt x 845.0471pt>
+<pdfs/coverart_master.pdf, id=733, page=1, 597.50829pt x 845.0471pt>
 File: pdfs/coverart_master.pdf Graphic file (type pdf)
 <use pdfs/coverart_master.pdf, page 1>
 Package pdftex.def Info: pdfs/coverart_master.pdf , page1 used on input line 10
@@ -1867,7 +1886,7 @@ Package pdftex.def Info: pdfs/coverart_master.pdf , page1 used on input line 10
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 Package cleveref Info: loaded `english' language definitions on input line 102.
 
- [62]
+ [64]
 File: pdfs/coverart_master.pdf Graphic file (type pdf)
 <use pdfs/coverart_master.pdf, page 1>
 Package pdftex.def Info: pdfs/coverart_master.pdf , page1 used on input line 10
@@ -1883,22 +1902,22 @@ File: pdfs/coverart_master.pdf Graphic file (type pdf)
 Package pdftex.def Info: pdfs/coverart_master.pdf , page1 used on input line 10
 2.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
- [63 <./pdfs/coverart_master.pdf>])
+ [65 <./pdfs/coverart_master.pdf>])
 (tex/93-Kadeishvilis_theorem.tex
 Package cleveref Info: loaded `english' language definitions on input line 30.
- [64]
-Package cleveref Info: loaded `english' language definitions on input line 90.
- [65]
-Package cleveref Info: loaded `english' language definitions on input line 200.
-
  [66]
-Package cleveref Info: loaded `english' language definitions on input line 255.
-
+Package cleveref Info: loaded `english' language definitions on input line 90.
  [67]
-Package cleveref Info: loaded `english' language definitions on input line 290.
+Package cleveref Info: loaded `english' language definitions on input line 213.
 
  [68]
-Overfull \hbox (21.43555pt too wide) detected at line 309
+Package cleveref Info: loaded `english' language definitions on input line 270.
+
+ [69]
+Package cleveref Info: loaded `english' language definitions on input line 308.
+
+ [70]
+Overfull \hbox (21.43555pt too wide) detected at line 327
 \OML/cmm/m/it/12 g[] \OMS/cmsy/m/n/12   \OML/cmm/m/it/12 f[] \OT1/cmr/m/n/12 = 
 [] \OML/cmm/m/it/12 m[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 g[] \OMS/cmsy/m/n/12 
  [] \OML/cmm/m/it/12 g[] \OMS/cmsy/m/n/12 
@@ -1911,43 +1930,43 @@ Overfull \hbox (21.43555pt too wide) detected at line 309
  \OML/cmm/m/it/12 id[]\OT1/cmr/m/n/12 )
  []
 
-Package cleveref Info: loaded `english' language definitions on input line 320.
+Package cleveref Info: loaded `english' language definitions on input line 338.
 
-[69]
-Package cleveref Info: loaded `english' language definitions on input line 352.
+[71]
+Package cleveref Info: loaded `english' language definitions on input line 370.
 
- [70]) (tex/94-Uniform_vanishing.tex
+ [72]) (tex/94-Uniform_vanishing.tex
 Package cleveref Info: loaded `english' language definitions on input line 39.
- [71]
+ [73]
 Package cleveref Info: loaded `english' language definitions on input line 67.
- [72]
+ [74]
 Package cleveref Info: loaded `english' language definitions on input line 102.
 
- [73]) (tex/chapter4.tex
+ [75]) (tex/chapter4.tex
 Package cleveref Info: loaded `english' language definitions on input line 1.
 
-[74]
+[76]
 Chapter 4.
-<chaptertitles/ch4.pdf, id=847, 421.09319pt x 597.432pt>
+<chaptertitles/ch4.pdf, id=856, 421.09319pt x 597.432pt>
 File: chaptertitles/ch4.pdf Graphic file (type pdf)
 <use chaptertitles/ch4.pdf>
 Package pdftex.def Info: chaptertitles/ch4.pdf  used on input line 9.
 (pdftex.def)             Requested size: 627.42319pt x 887.37614pt.
-[75
+[77
 
  <./chaptertitles/ch4.pdf, page is rotated 90 degrees>])
 (tex/95-Applications.tex
 Package cleveref Info: loaded `english' language definitions on input line 35.
- [76
+ [78
 
 ] (images/suspension.pdf_tex
-<./images/suspension.pdf, id=865, page=1, 326.32523pt x 292.54292pt>
+<./images/suspension.pdf, id=874, page=1, 326.32523pt x 292.54292pt>
 File: ./images/suspension.pdf Graphic file (type pdf)
 <use ./images/suspension.pdf, page 1>
 Package pdftex.def Info: ./images/suspension.pdf , page1 used on input line 56.
 
 (pdftex.def)             Requested size: 256.07741pt x 229.57526pt.
-<./images/suspension.pdf, id=866, page=2, 326.32523pt x 292.54292pt>
+<./images/suspension.pdf, id=875, page=2, 326.32523pt x 292.54292pt>
 File: ./images/suspension.pdf Graphic file (type pdf)
 <use ./images/suspension.pdf, page 2>
 Package pdftex.def Info: ./images/suspension.pdf , page2 used on input line 59.
@@ -1955,7 +1974,7 @@ Package pdftex.def Info: ./images/suspension.pdf , page2 used on input line 59.
 (pdftex.def)             Requested size: 256.07741pt x 229.57526pt.
 )
 Package cleveref Info: loaded `english' language definitions on input line 67.
- [77 <./images/suspension.pdf> <./images/suspension.pdf
+ [79 <./images/suspension.pdf> <./images/suspension.pdf
 
 pdfTeX warning: pdflatex (file ./images/suspension.pdf): PDF inclusion: multipl
 e pdfs with page group included in a single page
@@ -1965,11 +1984,15 @@ Overfull \hbox (1.63933pt too wide) in paragraph at lines 81--82
 for a space with Lusternik-Schnirelmann
  []
 
-Package cleveref Info: loaded `english' language definitions on input line 104.
 
-[78]) (tex/99-Summary.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Package cleveref Info: loaded `english' language definitions on input line 149.
+
+ [80])
+(tex/99-Summary.tex
 Package cleveref Info: loaded `english' language definitions on input line 1.
- [79]
+ [81]
 Overfull \hbox (5.29822pt too wide) in paragraph at lines 10--11
 []\T1/ptm/m/n/12 (-20) Using the the-ory we developed---in con-junc-tion with s
 ome re-cent re-sults from the literature---
@@ -1977,39 +2000,41 @@ ome re-cent re-sults from the literature---
 
 ) (tex/appendixA.tex
 Package cleveref Info: loaded `english' language definitions on input line 1.
- [80
+ [82
 
 ]
 Appendix A.
-<chaptertitles/apA.pdf, id=914, 421.09319pt x 597.432pt>
+<chaptertitles/apA.pdf, id=923, 421.09319pt x 597.432pt>
 File: chaptertitles/apA.pdf Graphic file (type pdf)
 <use chaptertitles/apA.pdf>
 Package pdftex.def Info: chaptertitles/apA.pdf  used on input line 9.
 (pdftex.def)             Requested size: 627.42319pt x 887.37614pt.
-[81
+[83
 
  <./chaptertitles/apA.pdf, page is rotated 90 degrees>])
 (tex/97-Appendix1.tex
 Package cleveref Info: loaded `english' language definitions on input line 37.
- [82
+ [84
 
 ]
 Package cleveref Info: loaded `english' language definitions on input line 101.
 
- [83]) (tex/appendixB.tex
+ [85]) (tex/appendixB.tex
 Package cleveref Info: loaded `english' language definitions on input line 1.
- [84]
+ [86]
 Appendix B.
-<chaptertitles/apB.pdf, id=944, 421.09319pt x 597.432pt>
+<chaptertitles/apB.pdf, id=954, 421.09319pt x 597.432pt>
 File: chaptertitles/apB.pdf Graphic file (type pdf)
 <use chaptertitles/apB.pdf>
 Package pdftex.def Info: chaptertitles/apB.pdf  used on input line 9.
 (pdftex.def)             Requested size: 627.42319pt x 887.37614pt.
-[85
+[87
 
  <./chaptertitles/apB.pdf, page is rotated 90 degrees>])
 (tex/98-Appendix2.tex
-Package cleveref Info: loaded `english' language definitions on input line 43.
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Package cleveref Info: loaded `english' language definitions on input line 46.
 
 
 Package fancyhdr Warning: \headheight is too small (14.5pt): 
@@ -2019,10 +2044,12 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-12.48592pt}.
 
-[86
+[88
 
 ]
-Package cleveref Info: loaded `english' language definitions on input line 91.
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Package cleveref Info: loaded `english' language definitions on input line 84.
 
 
 Package fancyhdr Warning: \headheight is too small (14.5pt): 
@@ -2032,32 +2059,9 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-12.48592pt}.
 
-[87]
-Package cleveref Info: loaded `english' language definitions on input line 124.
+[89]
+Package cleveref Info: loaded `english' language definitions on input line 123.
 
-
-
-Package fancyhdr Warning: \headheight is too small (14.5pt): 
-(fancyhdr)                Make it at least 26.98592pt, for example:
-(fancyhdr)                \setlength{\headheight}{26.98592pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-12.48592pt}.
-
-[88]
-Package cleveref Info: loaded `english' language definitions on input line 181.
-
-
-
-Package fancyhdr Warning: \headheight is too small (14.5pt): 
-(fancyhdr)                Make it at least 26.98592pt, for example:
-(fancyhdr)                \setlength{\headheight}{26.98592pt}.
-(fancyhdr)                You might also make \topmargin smaller to compensate:
-
-(fancyhdr)                \addtolength{\topmargin}{-12.48592pt}.
-
-[89]) (master_thesis.bbl
-Package cleveref Info: loaded `english' language definitions on input line 1.
 
 
 Package fancyhdr Warning: \headheight is too small (14.5pt): 
@@ -2068,7 +2072,8 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-12.48592pt}.
 
 [90]
-Package cleveref Info: loaded `english' language definitions on input line 1.
+Package cleveref Info: loaded `english' language definitions on input line 157.
+
 
 
 Package fancyhdr Warning: \headheight is too small (14.5pt): 
@@ -2079,6 +2084,18 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 (fancyhdr)                \addtolength{\topmargin}{-12.48592pt}.
 
 [91]
+Package cleveref Info: loaded `english' language definitions on input line 218.
+
+
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 26.98592pt, for example:
+(fancyhdr)                \setlength{\headheight}{26.98592pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-12.48592pt}.
+
+[92]) (master_thesis.bbl
 Package cleveref Info: loaded `english' language definitions on input line 1.
 
 
@@ -2089,20 +2106,31 @@ Package fancyhdr Warning: \headheight is too small (14.5pt):
 
 (fancyhdr)                \addtolength{\topmargin}{-12.48592pt}.
 
-[92
+[93]
+Package cleveref Info: loaded `english' language definitions on input line 1.
 
-] [93]
+
+Package fancyhdr Warning: \headheight is too small (14.5pt): 
+(fancyhdr)                Make it at least 26.98592pt, for example:
+(fancyhdr)                \setlength{\headheight}{26.98592pt}.
+(fancyhdr)                You might also make \topmargin smaller to compensate:
+
+(fancyhdr)                \addtolength{\topmargin}{-12.48592pt}.
+
+[94
+
+] [95]
 Package cleveref Info: loaded `english' language definitions on input line 168.
 
- [94]
+ [96]
 Package cleveref Info: loaded `english' language definitions on input line 264.
 
- [95])
+ [97])
 Package cleveref Info: loaded `english' language definitions on input line 63.
- [96]
+ [98]
 runsystem(makeindex master_thesis.idx)...executed (allowed).
 
- (master_thesis.ind) [97
+ (master_thesis.ind) [99
 
 
 ]
@@ -2117,32 +2145,33 @@ Package rerunfilecheck Info: File `master_thesis.out' has not changed.
 (rerunfilecheck)             Checksum: C204190737CCEC1BD45ECFA163C4A513;2364.
  ) 
 Here is how much of TeX's memory you used:
- 38585 strings out of 493312
- 889121 string characters out of 3138900
- 1168498 words of memory out of 3000000
- 40729 multiletter control sequences out of 15000+200000
+ 36412 strings out of 493312
+ 831084 string characters out of 3138900
+ 1147055 words of memory out of 3000000
+ 38554 multiletter control sequences out of 15000+200000
  63359 words of font info for 231 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 76i,18n,121p,1250b,1004s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 76i,18n,121p,1250b,966s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/base/8r.enc}<C:/Program Files/Mi
 KTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9
 /fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
 ype1/public/amsfonts/cmextra/cmex8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1
 /public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/
 amsfonts/cm/cmmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts
-/cm/cmmi6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8
-.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/
-Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Fi
-les/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
-public/amsfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
-sfonts/symbols/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/ut
-mb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Prog
-ram Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on master_thesis.pdf (109 pages, 1250627 bytes).
+/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6
+.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/
+Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Program F
+iles/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files/MiKTeX 2.9/font
+s/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmsy6.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmsy8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/sy
+mbols/msbm10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb>
+<C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Program Files
+/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on master_thesis.pdf (111 pages, 1256747 bytes).
 PDF statistics:
- 1203 PDF objects out of 1440 (max. 8388607)
- 343 named destinations out of 1000 (max. 500000)
+ 1215 PDF objects out of 1440 (max. 8388607)
+ 345 named destinations out of 1000 (max. 500000)
  29613 words of extra memory for PDF output out of 29859 (max. 10000000)
 

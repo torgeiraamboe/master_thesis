@@ -26,9 +26,14 @@ for composition of functions.
 
 Ok, let's now consider the deformation retract
 \begin{center}
-\begin{tikzcd}[column sep=large, row sep=large]
-A \arrow[r, "p", shift left] \arrow["h"', loop, distance=2em, in=215, out=145] & V \arrow[l, "i", shift left]
-\end{tikzcd}
+\begin{tikzpicture}
+	\node (1) {$A$};
+	\node (2) [node distance=3.5cm, right of=1] {$V$};
+	
+	\draw [to-, out=220, in=140, loop] (1) to node {$h$} (1);
+	\draw [-to] (1.20) to node {$p$} (2.160);
+	\draw [-to] (2.200) to node {$i$} (1.340);
+\end{tikzpicture}
 \end{center}
 
 If we try to do the same as we did for the isomorphism case above we get an attempted multiplication $m_2 = p\circ m \circ (i\otimes i)$. If we investigate the properties of this product a bit, we notice that it is not associative by the exact same reason as in the topological motivation given earlier. As in that motivation we get two different non-equivalent ways of combining the product with it self, i.e. 
@@ -40,14 +45,26 @@ We know they are not equal, so what is the next best thing we could hope for? It
 
 Notice that $m_2(m_2\otimes id)$ and $m_2(id\otimes m_2)$ are elements of $Hom(A^{\otimes 3}, A)$ and are both maps of degree zero. Let's draw them in a diagram
 \begin{center}
-\begin{tikzcd}
-A^{n-1}\otimes A^{n-1}\otimes A^{n-1} \arrow[r, "d_{A^{\otimes 3}}^{n-1}"] \arrow[d, "m_2(m_2\otimes id)", shift left] \arrow[d, "m_2(id\otimes m_2)"', shift right] 
-& A^{n}\otimes A^{n}\otimes A^{n} \arrow[r, "d_{A^{\otimes 3}}^n"] \arrow[d, "m_2(id\otimes m_2)"', shift right] \arrow[d, "m_2(m_2\otimes id)", shift left] 
-& A^{n+1}\otimes A^{n+1}\otimes A^{n+1} \arrow[d, "m_2(m_2\otimes id)", shift left] \arrow[d, "m_2(id\otimes m_2)"', shift right] \\
-A^{n-1} \arrow[r, "d_A^{n-1}"']                     
-& A^{n} \arrow[r, "d_A^n"']
-& A^{n+1}             
-\end{tikzcd}
+\begin{tikzpicture}
+	\node (1) {$A^{n-1}\otimes A^{n-1}\otimes A^{n-1}$};
+	\node (2) [node distance=5cm, right of=1] {$A^n\otimes A^n\otimes A^n$};
+	\node (3) [node distance=5cm, right of=2] {$A^{n+1}\otimes A^{n+1}\otimes A^{n+1}$};
+	
+	\node (4) [below of=1] {$A^{n-1}$};
+	\node (5) [node distance=5cm, right of=4] {$A^n$};
+	\node (6) [node distance=5cm, right of=5] {$A^{n+1}$};
+
+	\draw [-to] (1.250) to node [swap]{{\scriptsize $m_2(id\otimes m_2)$}} (4.110);
+	\draw [-to] (1.290) to node {{\scriptsize $m_2(id\otimes m_2)$}} (4.70);
+	\draw [-to] (2.250) to node [swap]{{\scriptsize $m_2(id\otimes m_2)$}} (5.110);
+	\draw [-to] (2.290) to node {{\scriptsize $m_2(id\otimes m_2)$}} (5.70);
+	\draw [-to] (3.250) to node [swap]{{\scriptsize $m_2(id\otimes m_2)$}} (6.110);
+	\draw [-to] (3.290) to node {{\scriptsize $m_2(id\otimes m_2)$}} (6.70);
+	\draw [-to] (1) to node {$d^{n-1}_{A^{\otimes 3}}$} (2);
+	\draw [-to] (2) to node {$d^{n}_{A^{\otimes 3}}$} (3);
+	\draw [-to] (4) to node [swap]{$d^{n-1}_{A}$} (5);
+	\draw [-to] (5) to node [swap]{$d^{n}_{A}$} (6);
+\end{tikzpicture}
 \end{center}
 
 This space, $Hom(A^{\otimes 3}, A)$, can be made into a chain complex by defining a boundary operator. If $f$ is just some generic element in $Hom(A^{\otimes 3}, A)$ of degree $|f|$, we define such an operator as
@@ -58,16 +75,24 @@ where $d_{A^{\otimes 3}} = (d_A, id, id)+(id, d_A, id)+(id, id, d_A)$.
 
 A homotopy between $m_2(id\otimes m_2)$ and $m_2(m_2\otimes id)$ would be a map $h\colon A^{\otimes 3}\longrightarrow A$ of degree $-1$ such that $d_A^{n-1}\circ h^{n} + h^{n+1}\circ d_{A^{\otimes 3}}^n = m_2(id\otimes m_2)-m_2(m_2\otimes m_2)$, i.e. a map
 \begin{center}
-\begin{tikzcd}
-A^{n-1}\otimes A^{n-1}\otimes A^{n-1} \arrow[r, "d_{A^{\otimes 3}}^{n-1}"] 
-& A^{n}\otimes A^{n}\otimes A^{n} \arrow[r, "d_{A^{\otimes 3}}^n"] \arrow[dd, "m_2(id\otimes m_2)-m_2(m_2\otimes id)" description] \arrow[ldd, "h^n"'] 
-& A^{n+1}\otimes A^{n+1}\otimes A^{n+1} \arrow[ldd, "h^{n+1}"] \\
-&                                     
-&   \\
-A^{n-1} \arrow[r, "d_A^{n-1}"'] 
-& A^{n} \arrow[r, "d_A^n"']                 
-& A^{n+1}                                           
-\end{tikzcd}
+\begin{tikzpicture}
+	\node (1) {$A^{n-1}\otimes A^{n-1}\otimes A^{n-1}$};
+	\node (2) [node distance=5cm, right of=1] {$A^n\otimes A^n\otimes A^n$};
+	\node (3) [node distance=5cm, right of=2] {$A^{n+1}\otimes A^{n+1}\otimes A^{n+1}$};
+	
+	\node (4) [below of=1] {$A^{n-1}$};
+	\node (5) [node distance=5cm, right of=4] {$A^n$};
+	\node (6) [node distance=5cm, right of=5] {$A^{n+1}$};
+
+	\draw [-to] (2) to node [swap]{$h^n$} (4);
+	\draw [-to] (3) to node {$h^{n+1}$} (5);
+	\draw [-to] (2.250) to node [swap]{{\scriptsize $m_2(id\otimes m_2)$}} (5.110);
+	\draw [-to] (2.290) to node {{\scriptsize $m_2(id\otimes m_2)$}} (5.70);
+	\draw [-to] (1) to node {$d^{n-1}_{A^{\otimes 3}}$} (2);
+	\draw [-to] (2) to node {$d^{n}_{A^{\otimes 3}}$} (3);
+	\draw [-to] (4) to node [swap]{$d^{n-1}_{A}$} (5);
+	\draw [-to] (5) to node [swap]{$d^{n}_{A}$} (6);
+\end{tikzpicture}
 \end{center}
 such that the sum of the outer parallelogram equals the vertical arrow. But notice that this is exactly just showing that $\partial h = m_2(id\otimes m_2)-m_2(m_2\otimes id)$!
 

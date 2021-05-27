@@ -77,58 +77,69 @@ The map $k\longrightarrow T(x)$ is a cofibration.
 \begin{proof}
     We need to show that a lift $h:T(X)\longrightarrow A$ exists for all commuting diagrams
 \begin{center}
-\begin{tikzcd}[column sep=large, row sep=large]
-	{k} & {A} \\
-	{T(x)} & {B}
-	\arrow[from=1-1, to=1-2]
-	\arrow[from=1-1, to=2-1]
-	\arrow["{g}", from=2-1, to=2-2]
-	\arrow["{f}", from=1-2, to=2-2]
-\end{tikzcd}
+\begin{tikzpicture}
+	\node (1) {$k$};
+	\node (2) [below of=1] {$T(x)$};
+	\node (3) [node distance=4cm, right of=1] {$A$};
+	\node (4) [below of=3] {$B$};
+
+	\draw [-to] (1) to node {} (2);
+	\draw [-to] (1) to node {} (3);
+	\draw [-to] (2) to node [swap]{$g$} (4);
+	\draw [-to] (3) to node {$f$} (4);	
+\end{tikzpicture}
 \end{center}
     
 The push-out of the diagram 
 \begin{center}
-\begin{tikzcd}[column sep=large, row sep=large]
-	{k} & {A} \\
-	{T(x)}
-	\arrow[from=1-1, to=1-2]
-	\arrow[from=1-1, to=2-1]
-\end{tikzcd}    
+\begin{tikzpicture}
+	\node (1) {$k$};
+	\node (2) [below of=1] {$T(x)$};
+	\node (3) [node distance=4cm, right of=1] {$A$};
+
+	\draw [-to] (1) to node {} (2);
+	\draw [-to] (1) to node {} (3);
+\end{tikzpicture}
 \end{center}
 is the coproduct $A\ast_k T(x)$, which we know is isomorphic to $A[C(x)]$. Hence we have a unique map $B\longrightarrow A[C(x)]$ by the universal property of a push-out, i.e. 
 \begin{center}
-\begin{tikzcd}[column sep=large, row sep=large]
-	{k} & {A} \\
-	{T(x)} & {B} \\
-	&& {A[C(x)]}
-	\arrow[from=1-1, to=1-2]
-	\arrow[from=1-1, to=2-1]
-	\arrow[from=1-2, to=2-2]
-	\arrow[from=2-1, to=2-2]
-	\arrow[from=1-2, to=3-3, bend left]
-	\arrow[from=2-1, to=3-3, bend right]
-	\arrow["{\phi}", from=2-2, to=3-3, dashed]
-\end{tikzcd}    
+\begin{tikzpicture}
+	\node (1) {$k$};
+	\node (2) [below of=1] {$T(x)$};
+	\node (3) [node distance=4cm, right of=1] {$A$};
+	\node (4) [below of=3] {$B$};
+	\node (5) [node distance=2cm, right of=4, below of=4] {$A[C(x)]$};
+
+	\draw [-to] (1) to node {} (2);
+	\draw [-to] (1) to node {} (3);
+	\draw [-to] (2) to node [swap]{$g$} (4);
+	\draw [-to] (3) to node {$f$} (4);	
+	\draw [-to, dotted] (4) to node {$\phi$} (5);
+	\draw [-to, bend left] (3) to node {} (5);
+	\draw [-to, bend right] (2) to node {} (5);
+\end{tikzpicture}
 \end{center}
 We can then define the map $h = p_A \circ \phi \circ g$, where $p_A$ is the projection onto the first component, which is uniquely determined by being the identity on $A$ and $j_{p_A} = 0$. 
     
 Then the diagram 
 \begin{center}
-\begin{tikzcd}[column sep=large, row sep=large]
-	{k} & {A} \\
-	{T(x)} & {B} \\
-	&& {A[C(x)]}
-	\arrow[from=1-1, to=1-2]
-	\arrow[from=1-1, to=2-1]
-	\arrow["{f}", from=1-2, to=2-2]
-	\arrow["{g}"', from=2-1, to=2-2]
-	\arrow[from=1-2, to=3-3, bend left]
-	\arrow[from=2-1, to=3-3, bend right]
-	\arrow["{\phi}", from=2-2, to=3-3]
-	\arrow["{h}", from=2-1, to=1-2]
-	\arrow["{p_A}"', from=3-3, to=1-2, bend right=60]
-\end{tikzcd}
+\begin{tikzpicture}
+	\node (1) {$k$};
+	\node (2) [below of=1] {$T(x)$};
+	\node (3) [node distance=3.5cm, right of=1] {$A$};
+	\node (4) [below of=3] {$B$};
+	\node (5) [node distance=2cm, right of=4, below of=4] {$A[C(x)]$};
+
+	\draw [-to] (1) to node {} (2);
+	\draw [-to] (1) to node {} (3);
+	\draw [-to] (2) to node [swap]{$g$} (4);
+	\draw [-to] (3) to node {$f$} (4);	
+	\draw [-to] (2) to node {$h$} (3);
+	\draw [-to] (4) to node {$\phi$} (5);
+	\draw [-to, bend left] (3) to node {} (5);
+	\draw [-to, bend right] (2) to node {} (5);
+	\draw [-to, bend right, in=250, out=300] (5) to node [swap]{$p_A$} (3);
+\end{tikzpicture}
 \end{center}
 commutes everywhere, and we are done. 
 \end{proof}
@@ -148,19 +159,24 @@ We need to check the four axioms.
 Assume $f:A\longrightarrow B$ is a retract of $g:X\longrightarrow Y$ where $g\in F$. This means we have a diagram
 
 \begin{center}
-\begin{tikzcd}[column sep=large, row sep=large]
-	{A} & {X} & {A} \\
-	{B} & {Y} & {B}
-	\arrow["{k}"', from=1-1, to=1-2]
-	\arrow["{i}"', from=1-2, to=1-3]
-	\arrow["{h}", from=2-2, to=2-3]
-	\arrow["{j}", from=2-1, to=2-2]
-	\arrow["{f}"', from=1-1, to=2-1]
-	\arrow["{g}"', from=1-2, to=2-2]
-	\arrow["{f}"', from=1-3, to=2-3]
-	\arrow["{id_A}", from=1-1, to=1-3, bend left]
-	\arrow["{id_B}"', from=2-1, to=2-3, bend right]
-\end{tikzcd}   
+\begin{tikzpicture}
+	\node (1) {$A$};
+	\node (2) [below of=1] {$B$};
+	\node (3) [node distance=3cm, right of=1] {$X$};
+	\node (4) [below of=3] {$Y$};
+	\node (5) [node distance=3cm, right of=3]{$A$};
+	\node (6) [below of=5] {$B$};
+	
+	\draw [-to] (1) to node [swap]{$f$} (2);
+	\draw [-to] (1) to node [swap]{$k$} (3);
+	\draw [-to] (2) to node {$j$} (4);
+	\draw [-to] (3) to node {$g$} (4);
+	\draw [-to] (5) to node {$f$} (6);
+	\draw [-to] (4) to node {$h$} (6);
+	\draw [-to] (3) to node [swap]{$i$} (5);
+	\draw [-to, bend left] (1) to node {$id_A$} (5);
+	\draw [-to, bend right] (2) to node [swap] {$id_B$} (6);	
+\end{tikzpicture}
 \end{center}
 
 Let $b$ be a homogeneous element in degree $n$. Want to show that there is a homogeneous element $a$ such that $f(a)=b$, as this would show that $f$ is degree-wise surjective, i.e. $f\in F$. 
@@ -177,19 +193,24 @@ which shows that the retract of a fibration is again a fibration.
 
 For the second part we let $g\in W$ and $f$ still a retraction of $g$. We have the same retraction diagram as above, which induces the following diagram in cohomology:
 \begin{center}
-\begin{tikzcd}[column sep=large, row sep=large]
-	{H(A)} & {H(X)} & {H(A)} \\
-	{H(B)} & {H(Y)} & {H(B)}
-	\arrow["{\overline{k}}"', from=1-1, to=1-2]
-	\arrow["{\overline{i}}"', from=1-2, to=1-3]
-	\arrow["{\overline{h}}", from=2-2, to=2-3]
-	\arrow["{\overline{j}}", from=2-1, to=2-2]
-	\arrow["{\overline{f}}"', from=1-1, to=2-1]
-	\arrow["{\overline{g}}"', from=1-2, to=2-2]
-	\arrow["{\overline{f}}"', from=1-3, to=2-3]
-	\arrow["{id_{H(A)}}", from=1-1, to=1-3, bend left]
-	\arrow["{id_{H(B)}}"', from=2-1, to=2-3, bend right]
-\end{tikzcd}   
+\begin{tikzpicture}
+	\node (1) {$H(A)$};
+	\node (2) [below of=1] {$H(B)$};
+	\node (3) [node distance=3cm, right of=1] {$H(X)$};
+	\node (4) [below of=3] {$H(Y)$};
+	\node (5) [node distance=3cm, right of=3]{$H(A)$};
+	\node (6) [below of=5] {$H(B)$};
+	
+	\draw [-to] (1) to node [swap]{$\overline{f}$} (2);
+	\draw [-to] (1) to node [swap]{$\overline{k}$} (3);
+	\draw [-to] (2) to node {$\overline{j}$} (4);
+	\draw [-to] (3) to node {$\overline{g}$} (4);
+	\draw [-to] (5) to node {$\overline{f}$} (6);
+	\draw [-to] (4) to node {$\overline{h}$} (6);
+	\draw [-to] (3) to node [swap]{$\overline{i}$} (5);
+	\draw [-to, bend left] (1) to node {$id_{H(A)}$} (5);
+	\draw [-to, bend right] (2) to node [swap] {$id_{H(B)}$} (6);	
+\end{tikzpicture}
 \end{center}
 
 Recall that we want to show that $f$ induced an isomorphism in cohomology. As $g$ is surjective, we can use the same argument as above---when we had $f\in F$---to get that $\overline{f}$ is surjective. Assume now that $\overline{f}([a]) = \overline{f}([a'])$. Then $\overline{j}(\overline{f}([a])) = \overline{j}(\overline{f}([a']))$, which means $\overline{g}(\overline{k}([a])) = \overline{g}(\overline{k}([a']))$. But $\overline{g}$ is an isomorphism, and hence we have $\overline{k}([a]) = \overline{k}([a'])$ and finally
@@ -200,33 +221,92 @@ This shows that $\overline{f}$ is both injectiv and surjective, i.e. an isomorph
 
 For the last part we let $g\in C$, and $f$ still a retraction of $g$. Recall that we need to have a lift of $f$ with respect to all acyclic fibrations $[p\colon U\longrightarrow V]\in F\cap W$, i.e. the existence of the dotted morphism $\phi$ in the following diagram
 \begin{center}
-\begin{tikzcd}[column sep=large, row sep=large]
-A \arrow[d, "f"'] \arrow[rr, "s"]           &  & U \arrow[d, "p"] \\
-B \arrow[rr, "r"'] \arrow[rru, "\phi", dotted] &  & V               
-\end{tikzcd}
+\begin{tikzpicture}
+	\node (1) {$A$};
+	\node (2) [node distance=4cm, right of=1] {$U$};
+	\node (3) [below of=1] {$B$};
+	\node (4) [below of=2] {$V$};
+
+	\draw [-to] (1) to node {$s$} (2);
+	\draw [-to] (1) to node [swap]{$f$} (3);
+	\draw [-to] (2) to node {$p$} (4);
+	\draw [-to] (3) to node [swap]{$r$} (4);	
+	\draw [-to, dotted] (3) to node {$\phi$} (2);
+\end{tikzpicture}
 \end{center}
 
 We get this by producing a lift from $g$, as it is in $C$. As $f$ is a retraction of $f$ we can extend the above diagram to 
 \begin{center}
-\begin{tikzcd}[column sep=large, row sep=large]
-A \arrow[d, "f"'] \arrow[rrr, "s", bend left] \arrow[r, "k"'] & X \arrow[d, "g"'] \arrow[r, "i"] & A \arrow[d, "f"] \arrow[r, "s"] & U \arrow[d, "p"] \\
-B \arrow[rrr, "r"', bend right] \arrow[r, "j"]                & Y \arrow[r, "h"']                & B \arrow[r, "r"']               & V               
-\end{tikzcd}
+\begin{tikzpicture}
+	\node (1) {$A$};
+	\node (2) [right of=1] {$X$};	
+	\node (3) [right of=2]{$A$};	
+	\node (4) [right of=3] {$U$};	
+	
+	\node (5) [below of=1] {$B$};
+	\node (6) [below of=2] {$Y$};
+	\node (7) [below of=3] {$B$};
+	\node (8) [below of=4] {$V$};
+	
+	\draw [-to] (1) to node [swap]{$f$} (5);
+	\draw [-to] (1) to node [swap]{$k$} (2);
+	\draw [-to] (5) to node {$j$} (6);
+	\draw [-to] (2) to node {$g$} (6);
+	\draw [-to] (3) to node {$f$} (7);
+	\draw [-to] (6) to node {$h$} (7);
+	\draw [-to] (2) to node [swap]{$i$} (3);
+	\draw [-to] (3) to node [swap]{$s$} (4);
+	\draw [-to] (7) to node {$r$} (8);	
+	\draw [-to] (4) to node {$p$} (8);	
+	\draw [-to, bend left] (1) to node {$s$} (4);
+	\draw [-to, bend right] (5) to node [swap]{$r$} (8);	
+\end{tikzpicture}
 \end{center}
 
 This diagram has the sub-diagram  
 \begin{center}
-\begin{tikzcd}[column sep=large, row sep=large]
-X \arrow[d, "g"'] \arrow[rr, "s\circ i"]      &  & U \arrow[d, "p"] \\
-Y \arrow[rr, "r\circ h"'] \arrow[rru, "\psi"] &  & V               
-\end{tikzcd}
+\begin{tikzpicture}
+	\node (1) {$X$};
+	\node (2) [node distance=4cm, right of=1] {$U$};
+	\node (3) [below of=1] {$Y$};
+	\node (4) [below of=2] {$V$};
+
+	\draw [-to] (1) to node {$s\circ i$} (2);
+	\draw [-to] (1) to node [swap]{$g$} (3);
+	\draw [-to] (2) to node {$p$} (4);
+	\draw [-to] (3) to node [swap]{$r\circ h$} (4);	
+	\draw [-to, dotted] (3) to node {$\psi$} (2);
+\end{tikzpicture}
 \end{center}
 where we know that the lift $\psi$, exists, as $g\in C$ and $p\in F\cap W$. We can then define $\psi = \psi\circ j$, i.e. the dotted arrow in the following diagram
 \begin{center}
-\begin{tikzcd}[column sep=large, row sep=large]
-A \arrow[d, "f"'] \arrow[rrr, "s", bend left] \arrow[r, "k"]               & X \arrow[d, "g"'] \arrow[r, "i"]              & A \arrow[d, "f"] \arrow[r, "s"] & U \arrow[d, "p"] \\
-B \arrow[rrr, "r"', bend right] \arrow[r, "j"'] \arrow[rrru, "\phi", dotted] & Y \arrow[r, "h"'] \arrow[rru, "\psi", dotted] & B \arrow[r, "r"']               & V               
-\end{tikzcd}
+\begin{tikzpicture}[%
+	cross line/.style={preaction={draw=white, -,line width=6pt}}]
+	\node (1) {$A$};
+	\node (2) [right of=1] {$X$};	
+	\node (3) [right of=2]{$A$};	
+	\node (4) [right of=3] {$U$};	
+	
+	\node (5) [below of=1] {$B$};
+	\node (6) [below of=2] {$Y$};
+	\node (7) [below of=3] {$B$};
+	\node (8) [below of=4] {$V$};
+	
+	\draw [-to] (1) to node [swap]{$f$} (5);
+	\draw [-to] (1) to node {$k$} (2);
+	\draw [-to] (5) to node [swap]{$j$} (6);
+	\draw [-to] (2) to node [swap]{$g$} (6);
+	\draw [-to] (3) to node {$f$} (7);
+	\draw [-to] (6) to node [swap]{$h$} (7);
+	\draw [-to] (2) to node {$i$} (3);
+	\draw [-to] (3) to node {$s$} (4);
+	\draw [-to] (7) to node [swap]{$r$} (8);	
+	\draw [-to] (4) to node {$p$} (8);	
+	\draw [-to, bend left] (1) to node {$s$} (4);
+	\draw [-to, bend right] (5) to node [swap]{$r$} (8);	
+	\draw [-to, cross line, dotted] (5) to node {$\phi$} (4);
+	
+\end{tikzpicture}
 \end{center}
 Hence all retractions of morphisms in $C$ satisfy the lifting property with respect to morphisms in $F\cap W$, which means they are again in $C$. 
 
@@ -235,10 +315,18 @@ Hence all retractions of morphisms in $C$ satisfy the lifting property with resp
     
 \textbf{MC 3:} Notice that one half of this axiom holds by definition, as we defined cofibrations to be the morphisms that satisfied the left lifting property with respect to acyclic fibrations. For the other half we need to show that if we have a diagram 
 \begin{center}
-\begin{tikzcd}[column sep=large, row sep=large]
-A \arrow[d, "i"'] \arrow[rr, "f"] &  & X \arrow[d, "p"] \\
-B \arrow[rr, "g"']                &  & Y               
-\end{tikzcd}
+\begin{tikzpicture}
+	\node (1) {$A$};
+	\node (3) [below of=1] {$B$};
+	\node (2) [node distance=4cm, right of=1] {$X$};
+	\node (4) [below of=2] {$Y$};
+
+	\draw [-to] (1) to node {} (2);
+	\draw [-to] (1) to node [swap]{$i$} (3);
+	\draw [-to] (2) to node {$p$} (4);
+	\draw [-to] (3) to node [swap]{} (4);	
+	\draw [-to, dotted] (3) to node {$h$} (2);
+\end{tikzpicture}
 \end{center}
 where $i$ is an acyclic cofibration, and $p$ a fibration, then a lift exists. 
     
@@ -248,34 +336,42 @@ Assume we have proven MC4, then we can factorize $i= f\circ j$ such that $j\in C
 
 Hence we have a diagram 
 \begin{center}
-\begin{tikzcd}[column sep=large, row sep=large]
-	{A} & {\overline{B}} \\
-	{B} & {B}
-	\arrow["{j}", from=1-1, to=1-2]
-	\arrow["{f}", from=1-2, to=2-2]
-	\arrow["{i}"', from=1-1, to=2-1]
-	\arrow["{id_B}"', from=2-1, to=2-2]
-	\arrow["{h}", from=2-1, to=1-2, dotted]
-\end{tikzcd}
+\begin{tikzpicture}
+	\node (1) {$A$};
+	\node (3) [below of=1] {$B$};
+	\node (2) [node distance=4cm, right of=1] {$\overline{B}$};
+	\node (4) [below of=2] {$B$};
+
+	\draw [-to] (1) to node {$j$} (2);
+	\draw [-to] (1) to node [swap]{$i$} (3);
+	\draw [-to] (2) to node {$f$} (4);
+	\draw [-to] (3) to node [swap]{$id_B$} (4);	
+	\draw [-to, dotted] (3) to node {$h$} (2);
+\end{tikzpicture}
 \end{center}
     
 that has a lift $h$ by the definition of $C$. 
 
 By the commutativity of the previous diagram we have a new diagram 
 \begin{center}
-\begin{tikzcd}[column sep=large, row sep=large]
-	{A} & {A} & {A} \\
-	{B} & {\overline{B}} & {B}
-	\arrow["{id_A}"', from=1-1, to=1-2]
-	\arrow["{id_A}"', from=1-2, to=1-3]
-	\arrow["{f}", from=2-2, to=2-3]
-	\arrow["{h}", from=2-1, to=2-2]
-	\arrow["{i}"', from=1-1, to=2-1]
-	\arrow["{j}"', from=1-2, to=2-2]
-	\arrow["{i}"', from=1-3, to=2-3]
-	\arrow["{id_A}", from=1-1, to=1-3, bend left]
-	\arrow["{id_B}"', from=2-1, to=2-3, bend right]
-\end{tikzcd}   
+\begin{tikzpicture}
+	\node (1) {$A$};
+	\node (2) [below of=1] {$B$};
+	\node (3) [node distance=3cm, right of=1] {$A$};
+	\node (4) [below of=3] {$\overline{B}$};
+	\node (5) [node distance=3cm, right of=3]{$A$};
+	\node (6) [below of=5] {$B$};
+	
+	\draw [-to] (1) to node [swap]{$i$} (2);
+	\draw [-to] (1) to node [swap]{$id_A$} (3);
+	\draw [-to] (2) to node {$h$} (4);
+	\draw [-to] (3) to node {$j$} (4);
+	\draw [-to] (5) to node {$i$} (6);
+	\draw [-to] (4) to node {$f$} (6);
+	\draw [-to] (3) to node [swap]{$id_A$} (5);
+	\draw [-to, bend left] (1) to node {$id_A$} (5);
+	\draw [-to, bend right] (2) to node [swap] {$id_B$} (6);	
+\end{tikzpicture}
 \end{center}
 which means that $i$ is a retraction of $j$, which we know has the right lifting property w.r.t all maps $f\in F$, hence $i$ does as well.
 
@@ -328,45 +424,94 @@ Since we know $A$ and $B$ are quasi-isomorphic, we have a zig-zag of quasi-isomo
 
 Notice that if we prove that we can turn a cospan $A_{i-1}\longrightarrow A_i\longleftarrow A_{i+1}$ into a span $A_{i-1}\longleftarrow C_i \longrightarrow A_{i+1}$, then we have proved the theorem. This is due to composition of quasi-isomorphisms again being quasi-isomorphisms. Hence at the ends we get for example
 \begin{center}
-\begin{tikzcd}[column sep=large, row sep=large]
-A \arrow[r, "q_0"] & A_1                                      & A_2 \arrow[l, "q_1"'] \arrow[r, "q_2"] & A_3  & \cdots \arrow[l] \\
-                   & C_1 \arrow[lu, "p_0"] \arrow[ru, "p_1"'] &                                        &               &       
-\end{tikzcd}    
+\begin{tikzpicture}
+	\node (1) {$A$};
+	\node (2) [right of=1] {$A_1$};
+	\node (3) [right of=2] {$A_2$};
+	\node (4) [right of=3] {$A_3$};
+	\node (5) [right of=4] {$\cdots$};
+	\node (6) [below of=2] {$C_1$};
+	
+	\draw [-to] (1) to node {$q_0$} (2);
+	\draw [to-] (2) to node {$q_1$} (3);
+	\draw [-to] (3) to node {$q_2$} (4);
+	\draw [to-] (4) to node {} (5);
+	\draw [-to] (6) to node {$p_0$} (1);
+	\draw [-to] (6) to node [swap]{$p_1$} (3);	
+\end{tikzpicture}
 \end{center}
 which by composing $p_2$ and $q_2$ reduces the length $r$ zig-zag to a length $r-1$ zig-zag. Hence we can do this for all the cospans in the zig-zag, and the end result will be a simple nice span. 
 
 So, lets assume we have a cospan $A_{i-1}\overset{q_{i-1}}\longrightarrow A_i\overset{q_i}\longleftarrow A_{i+1}$. We could take its pullback, but we have no justification for saying that the maps in the pullback are again quasi-isomorphisms. Since $DGA_k$ is right proper we know that pullback of a weak equivalence along a fibration is again a weak equivalence. By \textbf{MC4} we know that the quasi-isomorphisms $q_{i-1}$ and $q_i$ can be factorized as $q_{i-1} = i \circ q$ and $q_i = j\circ p$, where $q, p$ are cofibrations and $i, j$ are acyclic fibrations. By the two-out-of-three property of weak equivalences, we also know that $q, p$ are acyclic cofibrations. This means we have the following diagram
 \begin{center}
-\begin{tikzcd}[column sep=large, row sep=large]
-C_1 \arrow[r, "i"]                           & A_i & C_2 \arrow[l, "j"']                       \\
-A_{i-1} \arrow[ru, "q_{i-1}"] \arrow[u, "q"] &     & A_{i+1} \arrow[lu, "q_i"] \arrow[u, "p"']
-\end{tikzcd}
+\begin{tikzpicture}
+	\node (1) {$C_1$};
+	\node (2) [node distance=3.5cm, right of=1] {$A_i$};
+	\node (3) [node distance=3.5cm, right of=2] {$C_2$};
+	\node (4) [below of=1] {$A_{i-1}$};
+	\node (5) [below of=3] {$A_{i+1}$};
+	
+	\draw [-to] (1) to node {$i$} (2);
+	\draw [to-] (2) to node {$j$} (3);
+	\draw [-to] (4) to node [swap]{$q_{i-1}$} (2);
+	\draw [-to] (5) to node {$q_i$} (2);
+	\draw [-to] (4) to node {$q$} (1);
+	\draw [-to] (5) to node [swap]{$p$} (3);		
+\end{tikzpicture}
 \end{center}
 
 Consider now the diagram
 \begin{center}
-\begin{tikzcd}[column sep=large, row sep=large]
-A_{i-1} \arrow[d, "q"'] \arrow[r, "id_{A_{i-1}}"] & A_{i-1} \arrow[d] \\
-C_1 \arrow[r]                                     & 0                
-\end{tikzcd}
+\begin{tikzpicture}
+	\node (1) {$A_{i-1}$};
+	\node (2) [node distance=4cm, right of=1] {$A_{i-1}$};	
+	\node (3) [below of=1] {$C_1$};
+	\node (4) [below of=2] {$0$};
+
+	\draw [-to] (1) to node {$id_{A_{i-1}}$} (2);
+	\draw [-to] (1) to node [swap]{$q$} (3);
+	\draw [-to] (2) to node {} (4);
+	\draw [-to] (3) to node {} (4);	
+\end{tikzpicture}
 \end{center}
 As all objects are fibrant we know that $A_{i-1}\longrightarrow 0$ is a fibration. By \textbf{MC3}  there exists a lift, $q'\colon C_1\longrightarrow A$ making the sub-diagrams commute. In particular $q'\circ q = id_{A_{i-1}}$. Since $q$ and $id_{A_{i-1}}$ are both quasi-isomorphisms, $q'$ has to be as well due to the two-out-of-three property. Similarily a quasi-isomorphism $p'$ exists such that $p'\circ p = id_{A_{i+1}}$. 
 
 The next step is to take the pullback of $C_1\overset{i}\rightarrow A_i\overset{j}\leftarrow C_2$, i.e.
 \begin{center}
-\begin{tikzcd}[column sep=large, row sep=large]
-C_3 \arrow[d, "j'"'] \arrow[r, "i'"] & C_2 \arrow[d, "j"] \\
-C_1 \arrow[r, "i"]                   & A_i               
-\end{tikzcd}    
+\begin{tikzpicture}
+	\node (1) {$C_3$};
+	\node (2) [node distance=4cm, right of=1] {$C_2$};	
+	\node (3) [below of=1] {$C_1$};
+	\node (4) [below of=2] {$A_i$};
+
+	\draw [-to] (1) to node {$i'$} (2);
+	\draw [-to] (1) to node [swap]{$j'$} (3);
+	\draw [-to] (2) to node {$j$} (4);
+	\draw [-to] (3) to node [swap]{$i$} (4);	
+\end{tikzpicture}
 \end{center}
 As $i$ and $j$ are both acyclic fibrations, the maps $i'$ and $j'$ will be as well. This is because being a fibration is stable under pullback, and being a quasi-isomorphism is stable when we are pulling back along a fibration, which both maps are. Now we have a diagram
 
 \begin{center}
-\begin{tikzcd}[column sep=large, row sep=large]
-                                                           & C_3 \arrow[ld, "j'"'] \arrow[rd, "i'"] &                                                     \\
-C_1 \arrow[r, "i"] \arrow[d, "q'"', bend right]            & A_i                                    & C_2 \arrow[l, "j"] \arrow[d, "p'", bend left]       \\
-A_{i-1} \arrow[ru, "q_{i-1}"'] \arrow[u, "q"', bend right] &                                        & A_{i+1} \arrow[lu, "q_i"] \arrow[u, "p", bend left]
-\end{tikzcd}    
+\begin{tikzpicture}
+	\node (1) {$C_1$};
+	\node (2) [node distance=3.5cm, right of=1] {$A_i$};
+	\node (3) [node distance=3.5cm, right of=2] {$C_2$};
+	\node (4) [below of=1] {$A_{i-1}$};
+	\node (5) [below of=3] {$A_{i+1}$};
+	\node (6) [node distance=2cm, above of=2] {$C_3$};
+	
+	\draw [-to] (6) to node [swap]{$j'$} (1);
+	\draw [-to] (6) to node {$i'$} (3);
+	\draw [-to] (1) to node {$i$} (2);
+	\draw [to-] (2) to node {$j$} (3);
+	\draw [-to] (4) to node [swap]{$q_{i-1}$} (2);
+	\draw [-to] (5) to node {$q_i$} (2);
+	\draw [-to, bend right] (4) to node [swap]{$q$} (1);
+	\draw [-to, bend left] (5) to node {$p$} (3);	
+	\draw [to-, bend left] (4) to node {$q'$} (1);
+	\draw [to-, bend right] (5) to node [swap]{$p'$} (3);				
+\end{tikzpicture}
 \end{center}
 
 And the compositions $q'\circ i'$ and $p'\circ j'$ are both quasi-isomorphisms, as all four individually are. Hence we have a span $A_{i-1}\longleftarrow C_3 \longrightarrow A_{i+1}$, which by the argument above means we can reduce any zig-zag of quasi-isomorphisms $A\leftarrow \cdots \rightarrow B$ to a single span $A\leftarrow C\rightarrow B$. 
@@ -380,50 +525,99 @@ We don't actually use the specific model structure on $DGA_k$ in this proof, so 
 
 Notice that this also implies that $DGA_k$ satisfies the right Ore condition, i.e. that given a cospan $A\overset{a}\rightarrow C \overset{q}\leftarrow B$, where $q$ is a quasi-isomorphism, then there exists a span $A\overset{q'}\leftarrow C' \rightarrow B$ where $q'$ is a quasi-isomorphism. This follows from the proof above as we can factorize $a$ into $f\circ c$, where $c$ is an acyclic cofibration and $f$ a fibration. We take the pullback of $D\rightarrow C\leftarrow B$ to get the diagram
 \begin{center}
-\begin{tikzcd}[column sep=large, row sep=large]
-C' \arrow[dd, "q'", bend right] \arrow[r, "a'"] & B \arrow[d, "q"] \\
-A \arrow[r, "a"] \arrow[d, "c"]                 & C                \\
-D \arrow[ru, "f"']                              &                 
-\end{tikzcd}    
+\begin{tikzpicture}
+	\node (1) {$C'$};
+	\node (2) [node distance=4cm, right of=1] {$B$};	
+	\node (3) [below of=1] {$C$};
+	\node (4) [below of=2] {$A$};
+	\node (5) [below of=3] {$D$};
+
+	\draw [-to] (1) to node {$a'$} (2);
+	\draw [-to, bend right] (1) to node [swap]{$q'$} (5);
+	\draw [-to] (2) to node {$q$} (4);
+	\draw [-to] (3) to node [swap]{$a$} (4);
+	\draw [-to] (3) to node {$c$} (5);
+	\draw [-to] (5) to node [swap]{$f$} (4);
+\end{tikzpicture}
 \end{center}
 where now $q'$ is a quasi-isomorphism as it is a pullback of one along the fibration $f$. As in the proof above, because $A$ is fibrant we get a left inverse to the acyclic cofibration $c$, which is again a quasi-isomorphism. This is the lift we get from the following diagram
 \begin{center}
-\begin{tikzcd}[column sep=large, row sep=large]
-A \arrow[d, "c"'] \arrow[r, "id_{A}"] & A \arrow[d] \\
-D \arrow[r]                                     & 0                
-\end{tikzcd}
+\begin{tikzpicture}
+	\node (1) {$A$};
+	\node (2) [node distance=4cm, right of=1] {$A$};	
+	\node (3) [below of=1] {$D$};
+	\node (4) [below of=2] {$0$};
+
+	\draw [-to] (1) to node {$id_A$} (2);
+	\draw [-to] (1) to node [swap]{$c$} (3);
+	\draw [-to] (2) to node {} (4);
+	\draw [-to] (3) to node {} (4);	
+\end{tikzpicture}
 \end{center}
 Denote this lift by $c'$. We now have the final diagram
 \begin{center}
-\begin{tikzcd}[column sep=large, row sep=large]
-C' \arrow[dd, "q'", bend right] \arrow[r, "a'"] & B \arrow[d, "q"] \\
-A \arrow[r, "a"] \arrow[d, "c"']                & C                \\
-D \arrow[ru, "f"'] \arrow[u, "c'"', bend right] &                 
-\end{tikzcd}    
+\begin{tikzpicture}
+	\node (1) {$C'$};
+	\node (2) [node distance=3.5cm, right of=1] {$B$};	
+	\node (3) [below of=1] {$C$};
+	\node (4) [below of=2] {$A$};
+	\node (5) [below of=3] {$D$};
+
+	\draw [-to] (1) to node {$a'$} (2);
+	\draw [-to, bend right, in=250] (1) to node [swap]{$q'$} (5);
+	\draw [-to] (2) to node {$q$} (4);
+	\draw [-to] (3) to node [swap]{$a$} (4);
+	\draw [-to, bend right] (3) to node [swap]{$c$} (5);
+	\draw [to-, bend left] (3) to node {$c'$} (5);	
+	\draw [-to] (5) to node [swap]{$f$} (4);
+\end{tikzpicture}
 \end{center}
 where we by the composition $c'\circ q'$, which is a quasi-isomorphism, we get our wanted span $A\overset{c'\circ q'}\leftarrow C'\rightarrow B$. 
 
 This Ore condition allows the homotopy category $HoDGA_k$ to be described even more explicitly using spans as the morphisms. This means that a morphism $A\longrightarrow B$ is given by a span
 \begin{center}
-\begin{tikzcd}[column sep=large, row sep=large]
-  & C \arrow[ld, "q"'] \arrow[rd] &   \\
-A &                               & B
-\end{tikzcd}
+\begin{tikzpicture}
+	\node (1) {$A$};
+	\node (2) [right of=1] { };	
+	\node (3) [right of=2] {$B$};	
+	\node (4) [node distance=1cm, above of=2] {$C$};
+
+	\draw [-to] (4) to node [swap]{$q$} (1);
+	\draw [-to] (4) to node {} (3);
+\end{tikzpicture}
 \end{center}
 where $q$ is a quasi-isomorphism. Composition of morphisms $A\longrightarrow B$ and $B\longrightarrow C$ is then given as
 \begin{center}
-\begin{tikzcd}[column sep=large, row sep=large]
-  &                                   & D_3 \arrow[ld, "q_3"'] \arrow[rd] &                                   &   \\
-  & D_1 \arrow[ld, "q_1"'] \arrow[rd] &                                   & D_2 \arrow[ld, "q_2"'] \arrow[rd] &   \\
-A &                                   & B                                 &                                   & C
-\end{tikzcd}
+\begin{tikzpicture}
+	\node (1) {$A$};
+	\node (2) [right of=1] {};	
+	\node (3) [right of=2] {$B$};	
+	\node (4) [node distance=1cm, above of=2] {$D_2$};
+	\node (5) [right of=3] {};
+	\node (6) [right of=5] {$C$};
+	\node (7) [node distance=1cm, above of=5] {$D_2$};
+	\node (8) [right of=4] {};
+	\node (9) [node distance=1cm, above of=8] {$D_3$};
+
+	\draw [-to] (4) to node [swap]{$q_1$} (1);
+	\draw [-to] (4) to node {} (3);
+	\draw [-to] (7) to node [swap]{$q_2$} (3);
+	\draw [-to] (7) to node {} (6);	
+	\draw [-to] (9) to node [swap]{$q_3$} (4);
+	\draw [-to] (9) to node {} (7);		
+\end{tikzpicture}
 \end{center}
 where $q_3$ exists due to the Ore condition. As $q_3\circ q_1$ is again a quasi-isomorphism, we have a new span
 \begin{center}
-\begin{tikzcd}[column sep=large, row sep=large]
-  & D_3 \arrow[rd] \arrow[ld, "q_3\circ q_1"'] &   \\
-A &                                            & C
-\end{tikzcd}.
+\begin{tikzpicture}
+	\node (1) {$A$};
+	\node (2) [right of=1] { };	
+	\node (3) [right of=2] {$C$};	
+	\node (4) [node distance=1cm, above of=2] {$D_3$};
+
+	\draw [-to] (4) to node [swap]{$q_3\circ q_1$} (1);
+	\draw [-to] (4) to node {} (3);
+\end{tikzpicture}
 \end{center}
 
 

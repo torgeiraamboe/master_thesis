@@ -6,19 +6,24 @@ We now turn our eye to the homotopy theory of DG-algebras. Homotopy theories are
 \begin{definition}[Retraction]
     We say a map $f:A\longrightarrow B$ is a retract, or a retraction of a a map $g:X\longrightarrow Y$ if there exists a commuting diagram 
 \begin{center}
-\begin{tikzcd}[column sep=large, row sep=large]
-	{A} & {X} & {A} \\
-    {B} & {Y} & {B}
-    \arrow["{f}", from=1-1, to=2-1]
-    \arrow["{g}", from=1-2, to=2-2]
-    \arrow["{f}", from=1-3, to=2-3]
-    \arrow[from=1-1, to=1-2]
-    \arrow[from=1-2, to=1-3]
-    \arrow[from=2-1, to=2-2]
-    \arrow[from=2-2, to=2-3]
-    \arrow["{Id_A}", from=1-1, to=1-3, bend left]
-    \arrow["{Id_B}"', from=2-1, to=2-3, bend right]
-\end{tikzcd}
+\begin{tikzpicture}
+	\node (1) {$A$};
+	\node (2) [below of=1] {$B$};
+	\node (3) [node distance=3cm, right of=1] {$X$};
+	\node (4) [below of=3] {$Y$};
+	\node (5) [node distance=3cm, right of=3]{$A$};
+	\node (6) [below of=5] {$B$};
+	
+	\draw [-to] (1) to node [swap]{$f$} (2);
+	\draw [-to] (1) to node [swap]{$k$} (3);
+	\draw [-to] (2) to node {$j$} (4);
+	\draw [-to] (3) to node {$g$} (4);
+	\draw [-to] (5) to node {$f$} (6);
+	\draw [-to] (4) to node {$h$} (6);
+	\draw [-to] (3) to node [swap]{$i$} (5);
+	\draw [-to, bend left] (1) to node {$id_A$} (5);
+	\draw [-to, bend right] (2) to node [swap] {$id_B$} (6);	
+\end{tikzpicture}
 \end{center}
 such that the horizontal maps compose to the identity. 
 \end{definition}
@@ -45,10 +50,18 @@ The collection $W$ of weak equivalences has the two out of three property, i.e. 
 If we have a commutative square 
 
 \begin{center}
-\begin{tikzcd}[column sep=large, row sep=large]
-    A \arrow[r, "f"] \arrow[d, "i"']         & X \arrow[d, "p"] \\
-    B \arrow[r, "g"] \arrow[ru, "h", dotted] & Y               
-\end{tikzcd}
+\begin{tikzpicture}
+	\node (1) {$A$};
+	\node (3) [below of=1] {$B$};
+	\node (2) [node distance=4cm, right of=1] {$X$};
+	\node (4) [below of=2] {$Y$};
+
+	\draw [-to] (1) to node {$f$} (2);
+	\draw [-to] (1) to node [swap]{$i$} (3);
+	\draw [-to] (2) to node {$p$} (4);
+	\draw [-to] (3) to node [swap]{$g$} (4);	
+	\draw [-to, dotted] (3) to node {$h$} (2);
+\end{tikzpicture}
 \end{center}
 
 where either $i\in C$ and $p\in F\cap W$, or $i\in C\cap W$ and $p\in F$, then there exists a lift $h$ making both subdiagrams commute.
@@ -67,15 +80,18 @@ The archetypal example of a model category is the category of topological spaces
 \begin{example}[Quillen model structure on topological spaces]
 The underlying category is the category of topological spaces with continuous maps. The fibrations consists of the Serre fibrations, which are maps that have the so called homotopy lifting property with respect to all CW complexes. This property is described by lifts $h$ existing when we have a CW complex $X$ and a diagram
 \begin{center}
-\begin{tikzcd}[column sep=large, row sep=large]
-	{A} & {X} \\
-	{A\times I} & {Y}
-	\arrow["{i}"', from=1-1, to=2-1]
-	\arrow["{f}", from=1-1, to=1-2]
-	\arrow["{p}", from=1-2, to=2-2]
-	\arrow["{g}"', from=2-1, to=2-2]
-	\arrow["{h}", from=2-1, to=1-2, dotted]
-\end{tikzcd}
+\begin{tikzpicture}
+	\node (1) {$A$};
+	\node (3) [below of=1] {$A\times I$};
+	\node (2) [node distance=4cm, right of=1] {$X$};
+	\node (4) [below of=2] {$Y$};
+
+	\draw [-to] (1) to node {$f$} (2);
+	\draw [-to] (1) to node [swap]{$i$} (3);
+	\draw [-to] (2) to node {$p$} (4);
+	\draw [-to] (3) to node [swap]{$g$} (4);	
+	\draw [-to, dotted] (3) to node {$h$} (2);
+\end{tikzpicture}
 \end{center}
 where $I$ is the unit interval and $i_0:A\longrightarrow A\times I$ is the inclusion into the first component. 
 
@@ -86,15 +102,18 @@ The cofibrations are defined by being induced by retracts of relative CW complex
 As with the previous example, the category of interest is the category of topological spaces with continuous maps. The fibrations are the Hurewicz fibrations, which satisfies the homotopy lifting property with respect to all topological spaces, not just the CW complexes as the Serre fibrations. The cofibrations are the closed Hurewicz cofibrations, which satisfy the homotopy extension property. This property is described by a lift $h$ existing when the diagram below commutes.
 
 \begin{center}
-\begin{tikzcd}[column sep=large, row sep=large]
-	{A} & {Y^I} \\
-	{B} & {Y}
-	\arrow["{i}"', from=1-1, to=2-1]
-	\arrow["{f}", from=1-1, to=1-2]
-	\arrow["{p}", from=1-2, to=2-2]
-	\arrow["{g}"', from=2-1, to=2-2]
-	\arrow["{h}", from=2-1, to=1-2, dotted]
-\end{tikzcd}
+\begin{tikzpicture}
+	\node (1) {$A$};
+	\node (3) [below of=1] {$B$};
+	\node (2) [node distance=4cm, right of=1] {$Y^I$};
+	\node (4) [below of=2] {$Y$};
+
+	\draw [-to] (1) to node {$f$} (2);
+	\draw [-to] (1) to node [swap]{$i$} (3);
+	\draw [-to] (2) to node {$p$} (4);
+	\draw [-to] (3) to node [swap]{$g$} (4);	
+	\draw [-to, dotted] (3) to node {$h$} (2);
+\end{tikzpicture}
 \end{center}
 
 Here $Y^I$ is the path space of $Y$ and $p$ is the projection onto the start of a path. We call a map $i:A\longrightarrow B$ satisfying this property a Hurewicz cofibration, and we say it is a closed Hurewicz cofibration if its image is closed in $B$. The weak equivalences are given by the homotopy equivalences, i.e. the maps that are invertible up to homotopy.  
@@ -157,20 +176,36 @@ Speaking of homotopies, we now have objects that resemble what we use in the cat
 \begin{definition}[Left homotopy]
 Given two maps $f,g: X\rightarrow Y$ we define a left homotopy $h:f\sim_L g$ from $f$ to $g$ to be a map $h: Cyl(X)\rightarrow Y$ such that the following diagram commutes
 \begin{center}
-\begin{tikzcd}[column sep=large, row sep=large]
-X \arrow[r, "i_1"] \arrow[rd, "f"'] & Cyl(X) \arrow[d, "h"] & X \arrow[l, "i_2"'] \arrow[ld, "g"] \\
-                                    & Y                     &                                    
-\end{tikzcd}
+\begin{tikzpicture}
+	\node (X) {$X$};
+	\node (C) [node distance=3.5cm, right of=X] {$Cyl(X)$};
+	\node (X') [node distance=3.5cm, right of=C] {$X$};
+	\node (Y) [below of=C] {$Y$};
+
+	\draw [-to] (X) to node {$i_1$} (C);
+	\draw [-to] (X') to node [swap]{$i_2$} (C);
+	\draw [-to] (X) to node [swap]{$f$} (Y);
+	\draw [-to] (X') to node {$g$} (Y);
+	\draw [-to] (C) to node {$h$} (Y);
+\end{tikzpicture}
 \end{center}
 \end{definition}
 
 \begin{definition}[Right homotopy]
 Given two maps $f,g: X\rightarrow Y$ we define a right homotopy $h:f\sim_R g$ from $f$ to $g$ to be a map $h: X\rightarrow Path(Y)$ such that the following diagram commutes
 \begin{center}
-\begin{tikzcd}[column sep=large, row sep=large]
-  & X \arrow[d, "h"] \arrow[rd, "g"] \arrow[ld, "f"'] &   \\
-Y & Path(Y) \arrow[l, "p_1"] \arrow[r, "p_2"']        & Y
-\end{tikzcd}
+\begin{tikzpicture}
+	\node (Y) {$Y$};
+	\node (P) [node distance=3.5cm, right of=Y] {$Path(Y)$};
+	\node (Y') [node distance=3.5cm, right of=P] {$Y$};
+	\node (X) [above of=P] {$X$};
+
+	\draw [-to] (X) to node [swap]{$f$} (Y);
+	\draw [-to] (X) to node {$g$} (Y');
+	\draw [-to] (X) to node {$h$} (P);
+	\draw [-to] (P) to node {$i_1$} (Y);
+	\draw [-to] (P) to node [swap]{$i_2$} (Y');
+\end{tikzpicture}
 \end{center}
 \end{definition}
 
@@ -178,10 +213,18 @@ If the cylinder object used to define the left homotopy is a good cylinder objec
 
 The fact that homotopy is an equivalence relation on classes of continuous maps is one of the most important and fundamental properties that homotopy has in the category of topological spaces. Thus it should also be important in the general setting. Before we do that, we note that we can upgrade any left homotopy h to a good left homotopy by factoring the map $X\rightarrow Cyl(X)$ into $X\rightarrow Cyl(X)' \overset{\sigma}\rightarrow Cyl(X)$ by \textbf{MC4}. Then $h\circ \sigma$ will be a good homotopy. If $X$ is fibrant, then we can upgrade it further to a very good left homotopy by using the other factorization on $Cyl(X)\rightarrow X$ to get $Cyl(X)\rightarrow Cyl(X)'\rightarrow X$. This factorization gives us a commutative diagram
 \begin{center}
-\begin{tikzcd}[column sep=large, row sep=large]
-Cyl(X) \arrow[r, "h"] \arrow[d]    & Y \arrow[d] \\
-Cyl(X)' \arrow[r] \arrow[ru, "h'"] & T          
-\end{tikzcd}
+\begin{tikzpicture}
+	\node (C) {$Cyl(X)$};
+	\node (C') [below of=C] {$Cyl(X)'$};
+	\node (Y) [node distance=4cm, right of=C] {$Y$};
+	\node (T) [below of=Y] {$T$};
+
+	\draw [-to] (C) to node {$h$} (Y);
+	\draw [-to] (C) to node {} (C');
+	\draw [-to] (C') to node {} (T);
+	\draw [-to] (Y) to node {} (T);	
+	\draw [-to, dotted] (C') to node {$h'$} (Y);
+\end{tikzpicture}
 \end{center}
 where $T$ is the terminal object. The lift $h'$ comes from \textbf{MC3} and gives us the very good left homotopy that we wanted. 
 
@@ -202,10 +245,18 @@ Let $f,g:X\rightarrow Y$ be two maps. If $X$ is cofibrant and $f,g$ are left hom
 \begin{proof}
 Choose a good cylinder object $X\coprod X \overset{i_1 + i_2}\rightarrow Cyl(X) \overset{j}\rightarrow X$ and let $h:Cyl(X)\rightarrow Y$ be a left homotopy between $f$ and $g$. Choose also a good path object $Y\overset{q}\rightarrow Path(Y) \overset{(p_1, p_2)}\rightarrow Y\prod Y$. We then have a commutative diagram
 \begin{center}
-\begin{tikzcd}[column sep=large, row sep=large]
-X \arrow[r, "q\circ f"] \arrow[d, "i_1"']                       & Path(Y) \arrow[d, "{[p_1, p_2]}"] \\
-Cyl(X) \arrow[r, "{[f\circ j, h]}"'] \arrow[ru, "\overline{h}"] & Y\coprod Y                       
-\end{tikzcd}    
+\begin{tikzpicture}
+	\node (X) {$X$};
+	\node (C) [below of=X] {$Cyl(X)$};
+	\node (P) [node distance=4cm, right of=X] {$Path(Y)$};
+	\node (Y) [below of=P] {$Y\coprod Y$};
+
+	\draw [-to] (X) to node {$q\circ f$} (P);
+	\draw [-to] (X) to node [swap]{$i_1$} (C);
+	\draw [-to] (C) to node [swap]{$[p_1, p_2]$} (Y);
+	\draw [-to] (P) to node {$[f\circ j, h]$} (Y);	
+	\draw [-to, dotted] (C) to node {$\overline{h}$} (P);
+\end{tikzpicture}
 \end{center}
 which has a lift $\overline{h}$ by \textbf{MC3}. 
 %Note here that we used the fact that $i_1$ is an acyclic cofibration which we have not proved, but it can be seen by the two out of three property since $X$ is assumed to be cofibrant together with the fact that it is a composition of two cofibrations. 
