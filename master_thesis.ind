@@ -1,33 +1,33 @@
 \begin{theindex}
 
   \item $\ensuremath  {A_{\infty }}$-algebra, \hyperpage{49}
-  \item $\ensuremath  {A_{\infty }}$-homotopy, \hyperpage{71}
+  \item $\ensuremath  {A_{\infty }}$-homotopy, \hyperpage{72}
   \item $\ensuremath  {A_{\infty }}$-isomorphism, \hyperpage{53}
-  \item $\ensuremath  {A_{\infty }}$-morphism, \hyperpage{51}
+  \item $\ensuremath  {A_{\infty }}$-morphism, \hyperpage{52}
   \item $\ensuremath  {A_{\infty }}$-quasi-isomorphism, \hyperpage{53}
 
   \indexspace
 
-  \item Algebra, \hyperpage{2}
+  \item Algebra, \hyperpage{3}
 
   \indexspace
 
-  \item Bicomplex, \hyperpage{84}
+  \item Bicomplex, \hyperpage{88}
   \item Bifibrant, \hyperpage{12}
 
   \indexspace
 
-  \item Closed symmetric monoidal category, \hyperpage{90}
+  \item Closed symmetric monoidal category, \hyperpage{94}
   \item Cochain complex, \hyperpage{3}
   \item Cofibrant object, \hyperpage{12}
-  \item Cofibrantly generated model category, \hyperpage{91}
+  \item Cofibrantly generated model category, \hyperpage{95}
   \item Cylinder object, \hyperpage{12}
 
   \indexspace
 
   \item Defining system, \hyperpage{29}
   \item Deformation retraction, \hyperpage{43}
-  \item DG morphism, \hyperpage{6}
+  \item DG morphism, \hyperpage{7}
   \item Differential graded algebra, \hyperpage{3}
 
   \indexspace
@@ -48,21 +48,21 @@
   \indexspace
 
   \item Left homotopy, \hyperpage{13}
-  \item Lusternik-Scnirelman category, \hyperpage{78}
+  \item Lusternik-Scnirelman category, \hyperpage{80}
 
   \indexspace
 
   \item Massey $n$-product, \hyperpage{29}
-  \item Minimal $\ensuremath  {A_{\infty }}$-algebra, \hyperpage{66}
-  \item Model category, \hyperpage{10}
+  \item Minimal $\ensuremath  {A_{\infty }}$-algebra, \hyperpage{67}
+  \item Model category, \hyperpage{11}
   \item Model structure, \hyperpage{10}
-  \item Monoid, \hyperpage{91}
-  \item Monoidal category, \hyperpage{88}
+  \item Monoid, \hyperpage{95}
+  \item Monoidal category, \hyperpage{92}
 
   \indexspace
 
-  \item Path object, \hyperpage{12}
-  \item Pushout product, \hyperpage{90}
+  \item Path object, \hyperpage{13}
+  \item Pushout product, \hyperpage{94}
 
   \indexspace
 
@@ -71,18 +71,18 @@
 
   \indexspace
 
-  \item Reduced cohomology, \hyperpage{78}
-  \item Reduced formal space, \hyperpage{80}
-  \item Retraction, \hyperpage{9}
+  \item Reduced cohomology, \hyperpage{80}
+  \item Reduced formal space, \hyperpage{82}
+  \item Retraction, \hyperpage{10}
   \item Retraction closed, \hyperpage{10}
   \item Right homotopy, \hyperpage{13}
   \item Right proper model category, \hyperpage{23}
 
   \indexspace
 
-  \item Spectral sequence, \hyperpage{84}
-  \item Symmetric monoidal category, \hyperpage{89}
-  \item Symmetric monoidal model category, \hyperpage{90}
+  \item Spectral sequence, \hyperpage{88}
+  \item Symmetric monoidal category, \hyperpage{93}
+  \item Symmetric monoidal model category, \hyperpage{94}
 
   \indexspace
 
@@ -95,6 +95,6 @@
 
   \indexspace
 
-  \item Vanishing Massey product, \hyperpage{30}
+  \item Vanishing Massey product, \hyperpage{31}
 
 \end{theindex}

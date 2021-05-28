@@ -7,7 +7,7 @@
 %One thing one can study in homotopical algebra is the same kind of setup, except the map between them is a homotopy equivalence instead of an isomorphism. If we have a chain complex $C$, a DG algebra $A$ and a chain-homotopy equivalence $f:C\rightleftarrows A:g$, then if we try to induce a DG structure onto $C$ through $f$, i.e. to define an operations $d_C = g(d_A(f(a)))$, and $a\star b = g(f(a)\cdot f(b))$ for elements $a, b \in C$, then this last operation is not associative. This is because $(a\star b)\star c = g(f(g(f(a)\cdot f(b)))\cdot f(c))\neq g(f(a)\cdot f(g(f(b)\cdot f(c))))=a\star (b\star c)$. It is however, as maybe now expected, associative up to chain-homotopy. And these homotopies are related by more relations, and so on. 
 
 
-\section{The generalized algebraic model}
+\section{Motivation}
 
 We have now had a lot of intuition-building, as well as motivation for why we need to generalize our concept of DG-algebra. As we have seen, if we deform a DG-algebra through a deformation retract, we don't necessarily again get a DG-algebra. This means that their homotopy theory is not as well behaved as we would like. The notion of an $\A$-algebra fixes this problem. Note that the following historical overview is due to Keller, in \cite{keller}.
 
@@ -15,7 +15,17 @@ These algebras were introduced and developed by Stasheff in \cite{h-spaces1} and
 
 The study of $\A$-algebras again flourished in the 90's, with the arrival of the homological mirror symmetry conjecture by Kontsevich at the 1994 International Congress of Mathematicians (\cite{kontsevich}). This conjecture relies on an object know as the Fukaya-category, which is in fact an $\A$-category, the categorified version of an $\A$-algebra.
 
-From here on there will be some details and proofs missing. This is due to the shear complexity of the material, and the intricacy of the proofs. We will of course try our best to develop the theory of these algebras - as well as explain the results we need -, but as the focus is on formal DG-algebras, we will focus on getting some in depth feel for $\A$-algebras and their morphisms, instead of going through all the results in their full detail.   
+From here on there will be some details and proofs missing. This is due to the shear complexity of the material, and the intricacy of the proofs. We will of course try our best to develop the theory of these algebras - as well as explain the results we need -, but as the focus is on formal DG-algebras, we will focus on getting some in depth feel for $\A$-algebras and their morphisms, instead of going through all the results in their full detail.
+
+The main results of this chapters will be the fact that a DG-algebra $A$ is formal if and only if it has a Merkulov model, which is itself a DG-algebra. 
+
+\textbf{Theorem C.} \textit{A DG-algebra $A$ is formal if and only if its Merkulov model, $H(A)$, has $m_i=0$ for $i\geq 3$.}
+
+This we use to prove our new result for this thesis. 
+
+\textbf{Theorem D.} \textit{Let $A$ be a DG-algebra such that the induced product on cohomology is trivial, and all Massey products vanish. Then $A$ is formal.}
+
+\section{The generalized algebraic model}
 
 \begin{definition}[$\A$-algebra]
     Let $K$ be a field. An $\A$-algebra over $K$ is a $\Z$-graded vector space $A=\bigoplus_{i\in \Z}A_i$ together with a family of $K$-linear maps $m_n : A^{\otimes n}\rightarrow A$ of degree $n-2$, such that the identities 

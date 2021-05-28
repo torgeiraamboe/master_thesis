@@ -55,7 +55,7 @@ Let $(A, d_A)$ be a DG-algebra and let $(H(A), m_n)$ be it's Merkulov model. If 
 As $H(A)$ is a Merkulov model, there is a quasi isomorphism of $\A$-algebras $q:H(A)\longrightarrow A$. Since all the higher products vanish we know that $H(A)$ is a DG algebra. This means that $A$ is formal by \cref{cor:formal}. 
 \end{proof}
 
-As mentioned above, we can now finally answer the central question of the thesis. 
+This resolves \textbf{Theorem C.} from the motivation earlier. As mentioned above, we can also finally answer the central question of the thesis. 
 \begin{central}
 Given a DG-algebra $A$, when do I know that $A$ is formal?
 \end{central}
@@ -99,6 +99,8 @@ Since the induced product is trivial we know that the Massey 3-product is define
 
 Assume $m_i = 0$ for $1\leq i\leq n-1$. Then by \cref{cor:massey_only_one_class} we again know that $\langle x_1, \ldots, x_n \rangle = \{x\}$ is defined and contains a single element. This element is again zero since all the Massey products are vanishing. We again know by \cref{thm:infty_massey_recovers_massey} that $m_n(x_1, \ldots, x_n)=x+\Gamma$, where again $\Gamma = 0$ because it consists of only images of lower degree products, which by the induction hypothesis are $0$. Hence $m_n(x_1, \ldots, x_n)=0$, and we are done. 
 \end{proof}
+
+This resolves \textbf{Theorem D.} from the motivation. 
 
 It is tempting to think that having trivial product in cohomology makes every attempt to build and produce a Massey product impossible. This feels true intuitively, but there are examples of this not being the case. A specific example is the free loop space of an even-dimensional sphere. Its cohomology algebra has trivial product, and it is shown in \cite[Theorem 3.5]{nonformal_loop} to have non-zero Massey products. Hence it can't be formal. 
 

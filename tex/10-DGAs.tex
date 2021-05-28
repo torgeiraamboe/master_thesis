@@ -11,10 +11,12 @@ The theory of these cycles on topological spaces, and their Betti numbers were m
 
 Inspired by these ideas, Mayer constructed in \cite{mayer, mayer2} the modern notion of a chain complex, and its homology, beginning the journey of a purely algebraic description of topological information. Some years later the theory of cohomology, and cup products was developed by both Alexander and Kolmogoroff \footnote{Even though cohomology was unknowingly previously used by de Rham to prove one of Cartan's conjectures}. They both had some mistakes and ad hoc definitions, so a more refined and developed theory was given by Whitney in \cite{whitney}. In this paper Whitney also introduced ``the Leibniz axiom''. This implicitly defined the notion of what we call a differential graded algebra (DG-algebra) today, namely as a cohomology ring satisfying this Leibniz axiom. This object is the object this whole thesis is about.
 
-We start the chapter by developing these DG-algebras for ourselves, as well as look at very special kind of DG-algebra---referred in the introduction to as ``sufficiently simple''. Afterwards we develop the abstract concept of homotopy theory. We do this in order to prove that DG-algebras admit such a homotopy theory, which might not be a surprising fact given their above described connection to topology. 
+We start the chapter by developing these DG-algebras for ourselves, as well as look at very special kind of DG-algebra---referred in the introduction to as ``sufficiently simple''. Afterwards we develop the abstract concept of homotopy theory. We do this in order to prove that DG-algebras admit such a homotopy theory, which might not be a surprising fact given their above described connection to topology. The main result from this chapter is a description of formality, using only a single span of quasi-isomorphisms, i.e. 
+
+\textbf{Theorem A. } \textit{A DG-algebra $A$ is formal, if and only if there is	a span of quasi-isomorphisms $H(A)\leftarrow B	\rightarrow A$, for some DG-algebra $B$.}
 
 
-\section{Our algebraic model}
+\section{The algebraic model}
 
 Our algebraic model consists of DG-algebras, which are both algebras, and cochain complexes in a compatible way. We define them by first looking at their different structures. For the rest of this thesis, we let $k$ be an infinite field, unless otherwise stated.  
 
@@ -60,7 +62,7 @@ A differential graded algebra $(A, d)$, often called just a DG algebra or a DGA,
 \end{itemize}
 \end{definition}
 
-The condition that $d\circ d = 0$ is what makes $A$ into a cochain complex, and the second condition is what makes these two structures work well together. The second condition is called the graded Leibniz rule. The criteria that $d$ has degree $+1$ means that if we take a degree $n$ homogeneous elements $a$ of $A$, i.e. an element in $A^n$, then $d(a)$ has degree $n+1$, i.e. it lies in $A^{n+1}$. By some abuse of notation, we will denote a DG-algebra simply by $A$.a
+The condition that $d\circ d = 0$ is what makes $A$ into a cochain complex, and the second condition is what makes these two structures work well together. The second condition is called the graded Leibniz rule. The criteria that $d$ has degree $+1$ means that if we take a degree $n$ homogeneous elements $a$ of $A$, i.e. an element in $A^n$, then $d(a)$ has degree $n+1$, i.e. it lies in $A^{n+1}$. By some abuse of notation, we will denote a DG-algebra simply by $A$.
 
 % \begin{definition}{Chain maps}
 %     A morphism of cochain complexes $f:(A^{\bullet}, d^{\bullet})\rightarrow (B^{\bullet}, b^{\bullet})$ is a family of maps $f^n:A^n\rightarrow B^n$, such that $f^{n+1}\circ d^{n} = b^n\circ f^{n}$, in other words, each square in the following diagram commutes
@@ -73,7 +75,7 @@ The condition that $d\circ d = 0$ is what makes $A$ into a cochain complex, and 
 % \end{definition}
 
 
-As these objects will be one of our main focus points throughout this thesis, so it is important to have control over some examples. As you will see, the examples mostly comes from topology, and is mostly related to cohomology. This is not surprising given the historical context earlier. 
+As these objects will be one of our main focus points throughout this thesis, so it is important to have control over some examples. In the introduction we used the word ``cochain algebra'' to mean roughly any DG-algebra that we can associate to a topological space. So to tie the theory to the introduction we focus mostly on the examples coming from topology. Most of these are related to cohomology in some way. This is maybe not surprising given the historical context earlier. 
 
 %\begin{example}[Singular cochains]
 %Let $X$ be a topological space and $M$ an abelian group. An $n$-cochain on $X$ is a group homomorphism $S_n(X)\longrightarrow M$, where $S_n(X)$ is the group of singular n-chains, i.e. the free group on the set of continuous map $\sigma\colon\Delta^n\longrightarrow X$, where $\Delta^n$ is the standard $n$-simplex. 
