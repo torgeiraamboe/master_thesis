@@ -34,7 +34,7 @@
 
   \item Fibrant object, \hyperpage{12}
   \item Formal DG-algebra, \hyperpage{7}, \hyperpage{22}
-  \item Formal topological space, \hyperpage{7}
+  \item Formal topological space, \hyperpage{8}
 
   \indexspace
 
@@ -66,15 +66,15 @@
 
   \indexspace
 
-  \item Quasi-isomorphic DG-algebras, \hyperpage{6}
-  \item Quasi-isomorphism, \hyperpage{6}
+  \item Quasi-isomorphic DG-algebras, \hyperpage{7}
+  \item Quasi-isomorphism, \hyperpage{7}
 
   \indexspace
 
   \item Reduced cohomology, \hyperpage{78}
   \item Reduced formal space, \hyperpage{80}
   \item Retraction, \hyperpage{9}
-  \item Retraction closed, \hyperpage{9}
+  \item Retraction closed, \hyperpage{10}
   \item Right homotopy, \hyperpage{13}
   \item Right proper model category, \hyperpage{23}
 
@@ -95,6 +95,6 @@
 
   \indexspace
 
-  \item Vanishing Massey product, \hyperpage{31}
+  \item Vanishing Massey product, \hyperpage{30}
 
 \end{theindex}

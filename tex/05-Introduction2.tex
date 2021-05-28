@@ -1,0 +1,38 @@
+
+\section{Introduction}
+
+The field of algebraic topology is centered around using objects, techniques and theory from abstract algebra---in order to study topological spaces. As both algebra and topology are vast and deep fields, there are countless ways of using both theories in tandem to produce interesting results and deep connections between the two fields. A highly successful algebraic construction---now used throughout the whole field of mathematics, but originally arising from trying to study topological spaces---is called cohomology. 
+
+Cohomology is a graded algebra---associated to any topological space---where the elements are essentially those closed subspaces that are not the boundaries of other subspaces. This allows us to study how many, and which kinds of holes a topological space has---which is one of its central topological properties. There are many ways of calculating the cohomology of a space, but by definition they arise as quotients of collections of cochains in the topological space---which can by thought of as the closed subspaces. The collection of all cochains form what we call the cochain algebra of the topological space, and it gives a very rich insight into the space we are interested in. An unfortunate drawback is that this cochain algebra is very difficult to calculate, much harder that the cohomology, hence we most often this instead. 
+
+As the cohomology is easier to understand---and easier to calculate---we arrive at the following question: If two topological spaces have the same cohomology algebra, do they also have the same cochain algebra? The answer to this turns out to be no. In general, there are certain bits of information---for example \emph{Massey products}---stored in the cochain algebra, that the cohomology algebra does not have access to. This means that two different topological spaces, with different cochain algebras, could have the same cohomology algebra, but by using the existence of these Massey products---which are certain higher order, higher arity, cohomology operations---allows us to distinguish them. 
+
+As a follow up to the failure of the previous question, we can ask: Given the cochain algebra of a topological space, how can I know whether it is sufficiently simple, such that the cohomology algebra has access to all the relevant information? Such ``sufficiently simple'' algebras are called \emph{formal} algebras, and they are the central theme of this thesis. More precisely, an algebra is called formal if it contains the same homotopical information as its cohomology algebra, which means we must find some way to relate these two. This is done through quasi-isomorphisms. 
+
+The above informal question turns out to be very deep and interesting, so we take it as the central question we want to answer in the whole thesis. 
+
+\begin{central}
+Given the cochain algebra $C(X)$ of a topological space $X$, how do we know whether $C(X)$ is sufficiently simple, such that $H(X)$---the cohomology algebra of $X$---has access to all the relevant information?
+\end{central}
+
+This is of course an imprecise and non-mathematical question, as ``sufficiently simple'', ``access'' and ``information'' are not yet well defined mathematical concepts. Thus we will need to define these parts, and refine the question more mathematically throughout the thesis. In order to tell a cohesive story, and to have something to look ahead for, we give the precise question:
+
+\begin{central}
+Given a DG-algebra $A$, how can we know if it is formal?
+\end{central}
+
+We see that we have a lot of work ahead of ourselves, so lets define the goals we want to achieve. 
+
+Our \textit{first goal} for this thesis is simply to learn about mathematics that we previously did not know much about, as well as answering the above central question. This is done through two attempts. The first one is using Massey products, which although they give obstructions to formality, turn out to not be the only possible obstructions. We then try to generalize DG-algbras and Massey products to a unified and stronger framework, called $\A$-algebras, which we successfully use to get one possible solution to the central question. 
+
+The \textit{second goal} is to push the boundaries of mathematical knowledge, by whatever tiny nudge we can. After developing the above-mentioned theory, we are able to provide a new case where formality is guaranteed. This somewhat rectifies the failure of Massey products to be the only obstructions to formality, by proving that they are in fact the only obstructions in DG-algebras where the induced product on cohomology is trivial. We then apply this new result to an example from topology, in order to prove a known result---that spaces with Lusternik-Schnirelmann category 1 are formal---in a new way. 
+
+The \textit{third goal} is to make a rigorous, thorough, detailed---but still understandable---presentation of formal DG-algebras, their connection to Massey products and in the end---their partial common framework in $\A$-algebras. This is so that others---also wanting to understand the material---can look at a cohesive story, and not have to dig up all the relevant results and literature themselves. 
+ 
+ 
+
+
+
+
+
+

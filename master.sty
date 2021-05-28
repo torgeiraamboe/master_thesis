@@ -39,6 +39,9 @@
 \cftsetindents{subsection}{4em}{3em}
 \cftsetindents{subsubsection}{6em}{3em}
 
+%\setlength{\parindent}{3em}
+%\setlength{\parskip}{5pt}
+
 \graphicspath{{./images/}}
 \pgfplotsset{compat=1.15}
 
@@ -98,8 +101,8 @@
     \refstepcounter{mathenv}%
     \par
     \ifstrempty{#1}%
-	{\strut \textbf{Theorem~\themathenv.}~}%  
-	{\strut \textbf{Teorem~\themathenv.}~(#1)\newline}%                       
+	{\strut \textbf{Theorem~\themathenv.}~\itshape}%  
+	{\strut \textbf{Theorem~\themathenv.}~(#1).~\itshape}%
 	\relax
 }{}
 
@@ -107,8 +110,8 @@
     \refstepcounter{mathenv}%
     \par
     \ifstrempty{#1}%
-	{\strut \textbf{Proposition~\themathenv.}~}%  
-	{\strut \textbf{Proposition~\themathenv.}~(#1)\newline}%                       
+	{\strut \textbf{Proposition~\themathenv.}~\itshape}%  
+	{\strut \textbf{Proposition~\themathenv.}~(#1).~\itshape}%
 	\relax
 }{}
 
@@ -116,8 +119,8 @@
     \refstepcounter{mathenv}%
     \par
     \ifstrempty{#1}%
-	{\strut \textbf{Corollary~\themathenv.}~}%  
-	{\strut \textbf{Corollary~\themathenv.}~(#1)\newline}%                       
+	{\strut \textbf{Corollary~\themathenv.}~\itshape}%  
+	{\strut \textbf{Corollary~\themathenv.}~(#1).~\itshape}%
 	\relax
 }{}
    
@@ -125,27 +128,26 @@
     \refstepcounter{mathenv}%
     \par
     \ifstrempty{#1}%
-	{\strut \textbf{Lemma~\themathenv.}~}%  
-	{\strut \textbf{Lemma~\themathenv.}~(#1)\newline}%                       
+	{\strut \textbf{Lemma~\themathenv.}~\itshape}%  
+	{\strut \textbf{Lemma~\themathenv.}~(#1).~\itshape}%
 	\relax
-}{} 
+}{}
 
 \newenvironment{definition}[1][]{%
 	\index{#1}
     \refstepcounter{mathenv}%
     \par
     \ifstrempty{#1}%
-	{\strut \textbf{Definition~\themathenv.}~}%  
-	{\strut \textbf{Definition~\themathenv.}~(#1)\newline}%                       
+	{\strut \textbf{Definition~\themathenv.}~\itshape}%  
+	{\strut \textbf{Definition~\themathenv.}~(#1).~\itshape}%
 	\relax
 }{}
-
 \newenvironment{remark}[1][]{%
     \refstepcounter{mathenv}%
     \par
     \ifstrempty{#1}%
-	{\strut \textbf{Remark~\themathenv.}~}%  
-	{\strut \textbf{Remark~\themathenv.}~(#1)\newline}%                       
+	{\strut \textbf{Remark~\themathenv.}~\itshape}%  
+	{\strut \textbf{Remark~\themathenv.}~(#1).~\itshape}%
 	\relax
 }{}
 
@@ -153,8 +155,8 @@
     \refstepcounter{mathenv}%
     \par
     \ifstrempty{#1}%
-	{\strut \textbf{Example~\themathenv.}~}%  
-	{\strut \textbf{Example~\themathenv.}~(#1)\newline}%                       
+	{\strut \textbf{Example~\themathenv.}~\itshape}%  
+	{\strut \textbf{Example~\themathenv.}~(#1).~\itshape}%
 	\relax
 }{}
 
