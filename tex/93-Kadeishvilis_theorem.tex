@@ -7,10 +7,12 @@ One of the main reasons we introduce these $\A$-algebras, instead of just workin
 We then want to study these more complicated structures and morphisms in order to figure out if they collapse to our more simple DG-algebra world in certain situations. If we can do and understand this, it will give us a new tool to figure out if a DG-algebra is formal. So far our tool for checking formality of a DG-algebra---namely the Massey products---have been a sort of non-criteria. By this we means that we can use them to easily spot whether a DG-algebra is non-formal, but we can not use them to check formality. This more general theory will allow us to create a more ``perfect'' version of Massey products in order to actually prove that a class of DG-algebras are formal. 
 
 \begin{definition}[Minimal $\A$-algebra]
+\label{def:minimal_A_infinity-algebra}
 We say an $\A$-algebra $(A, m)$ is minimal if we have $m_1 = 0$. 
 \end{definition}
 
 \begin{theorem}[Kadeishvili's theorem]
+\label{thm:Kadeishvilis_theorem}
 Let $(A,d)$ be a DG-algebra. Then there exists a minimal $\A$-algebra structure on its cohomology algebra $H(A)$, and a quasi-isomorphism of $\A$-algebras $H(A)\rightarrow A$. 
 \end{theorem}
 
@@ -227,6 +229,7 @@ Note that this deformation retraction is not unique, as it requires making choic
 We now restate Kadeishvili's theorem in this new situation we have created.
 
 \begin{theorem}[Kadeishvili's theorem]
+\label{thm:Kadeishvilis_theorem2}
 Let $(A, m, d)$ be a DG-algebra and $(A, H(A), p, i, h)$ be the deformation retraction onto its cohomology algebra described above. Then there is a minimal $\A$-structure $\{m_n\}$ on $H(A)$ and an $\A$-quasi-isomorphism $I\colon H(A)\longrightarrow A$ that extends $i$. 
 \end{theorem}
 \begin{proof}
@@ -318,10 +321,11 @@ Now that we have this more general approach to studying the relationship between
 
 One of the other main reasons for passing to $\A$-algebras is that their homotopy theory is better behaved than for DG-algebras. We have in fact already seen this, as a complex homotopy equivalent to a DG-algebra is not necessarily a DG-algebra, but by the generalizaton of Kadeishvili's theorem we mentioned, this property in fact holds for $\A$-algebras. This means that being an $\A$-algebra is a ``homotopy stable'' property. 
 
-We have also seen that DG-quasi-isomorphisms are not the nicest ones, as they are not homotopy invertible. This is because not all isomorphisms in the homotopy category $ho(DGA_k)$ comes from a DG-quasi-isomorphism in $DGA_k$. This resulted is us having to use zig-zags and spans of DG-quasi-isomorphisms instead of just direct ones. This property is luckily also fixed by passing to $\A$-algebras, meaning that all $\A$-quasi-isomorphisms are $\A$-homotopy equivalences. 
+We have also seen that DG-quasi-isomorphisms are not the nicest ones, as they are not homotopy invertible. This is because not all isomorphisms in the homotopy category $hoDGA_k$ comes from a DG-quasi-isomorphism in $DGA_k$. This resulted is us having to use zig-zags and spans of DG-quasi-isomorphisms instead of just direct ones. This property is luckily also fixed by passing to $\A$-algebras, meaning that all $\A$-quasi-isomorphisms are $\A$-homotopy equivalences. 
 
 
 \begin{definition}[$\A$-homotopy]
+\label{def:A_infinity-homotopy}
 Let $(A, m^A)$ and $(B, m^B)$ be $\A$-algebras. Two $\A$-morphisms $\{f_n\}, \{g_n\}$ between them are called homotopic if there exists a family of graded homogeneous multilinear degree $-1$ maps $h_n:A^{\otimes n}\longrightarrow B$, such that 
 \begin{equation*}
     g_n-f_n = \sum_{i_1+\cdots i_r = n}m^B_{r+1+t} (g_{i_1}\otimes \cdots g_{i_t}\otimes h_s \otimes f_{i_{t+1}}\otimes \cdots \otimes f_{i_r} ) + \sum_{r+s+t = n}h_{r+1+t} (id^{\otimes r}\otimes m^A_s \otimes id^{\otimes t})
@@ -331,8 +335,8 @@ where $r, t\geq 0, n, s\geq 1$ as usual.
 
 
 \begin{proposition}
+\label{prop:infty-qi_homotopy_invertible}
 Let $(A, m^A)$ and $(B, m^B)$ be $\A$-algebras and $q:A\rightarrow B$ an $\A$-quasi-isomorphism. Then there exists an $\A$-quasi-isomorphism $q':B\rightarrow A$ that is a $\A$-homotopy inverse of $f$. This means that the class of $\A$-quasi-isomorphisms is the same as the class of $\A$-homotopy equivalences. 
-\label{prop:infty-q.i._are_homotopy_invertible}
 \end{proposition}
 
 We wont prove this result, as the proof uses some machinery that we will not cover in this thesis. More precisely one at least needs the bar and cobar constructions for $\A$-algebras. The reader interested in the proof is referred to \cite[Corollary 1.3.1.3]{french1}. 
@@ -340,16 +344,16 @@ We wont prove this result, as the proof uses some machinery that we will not cov
 The next step is to figure out how an $\A$-quasi-isomorphism relates to a DG-quasi-isomorphism. This is done through the following result.
 
 \begin{corollary}
+\label{cor:zigzag-quasi}
 Two DG algebras $(A, d_A)$ and $(B, d_B)$ is connected by a zig-zag of quasi-isomorphisms
 \begin{equation*}
     A \overset{\sim}\longleftarrow \bullet \overset{\sim}\longrightarrow \cdots \overset{\sim}\longleftarrow \bullet \overset{\sim}\longrightarrow B, 
 \end{equation*}
 i.e. they are quasi-isomorphic, if and only if there is an $\A$-quasi-isomorphism $A\rightarrow B$. 
-\label{lem:zigzag-quasi}
 \end{corollary}
 
 \begin{proof}
-Assume we have a zig-zag of DG-quasi-isomorphisms between $A$ and $B$. Recall that by \cref{thm:span} we can reduce the zig-zag to a single span of DG-quasi-isomorphisms $A\overset{q}\longleftarrow C\overset{p}\longrightarrow B$. We now interpret $A$, $B$ and $C$ as $\A$-algebras, and $q, p$ as morphisms of $\A$ algebras. This is the same standard procedure we have described before, i.e. letting $m^A_n = m^B_n = m^C_n = 0$ for all $n\geq 3$ and defining $\{q_n\}$ by $q_1 = q$ and $q_m = 0$ for $m\geq 2$ and similarly for $p$. By abuse of notation we denote these $\A$-morphisms again by $q$ and $p$. Notice that since $q$ and $p$ are DG-quasi-isomorphisms, then $q$ and $p$ are $\A$-quasi-isomorphisms as well. We then have a span $A\overset{q}\longleftarrow C \overset{p}\longrightarrow B$ of $\A$-quasi-isomorphisms. By \cref{prop:infty-q.i._are_homotopy_invertible} we know these are invertible up to homotopy, hence we have an $A$-quasi-isomorphism $q'\colon A\longrightarrow C$ such that $q\circ q' \sim id_A$ and $q'\circ q \sim id_C$. 
+Assume we have a zig-zag of DG-quasi-isomorphisms between $A$ and $B$. Recall that by \cref{thm:span} we can reduce the zig-zag to a single span of DG-quasi-isomorphisms $A\overset{q}\longleftarrow C\overset{p}\longrightarrow B$. We now interpret $A$, $B$ and $C$ as $\A$-algebras, and $q, p$ as morphisms of $\A$ algebras. This is the same standard procedure we have described before, i.e. letting $m^A_n = m^B_n = m^C_n = 0$ for all $n\geq 3$ and defining $\{q_n\}$ by $q_1 = q$ and $q_m = 0$ for $m\geq 2$ and similarly for $p$. By abuse of notation we denote these $\A$-morphisms again by $q$ and $p$. Notice that since $q$ and $p$ are DG-quasi-isomorphisms, then $q$ and $p$ are $\A$-quasi-isomorphisms as well. We then have a span $A\overset{q}\longleftarrow C \overset{p}\longrightarrow B$ of $\A$-quasi-isomorphisms. By \cref{prop:infty-qi_homotopy_invertible} we know these are invertible up to homotopy, hence we have an $A$-quasi-isomorphism $q'\colon A\longrightarrow C$ such that $q\circ q' \sim id_A$ and $q'\circ q \sim id_C$. 
 
 Since composition of two $DG$-quasi-isomorphisms is again a DG-quasi-isomorphism we know that this is the case for composition of $\A$-quasi-isomorphisms as well, as it only depends on the arity $1$ map. Thus $q'\circ p$ is an $\A$-quasi-isomorphism from $A$ to $B$. Notice that this can no longer have $(q'\circ p)_m = 0$ for $m\geq 2$ in general, as that would contradict DG-quasi-isomorphism being homotopy invertible. 
 
@@ -365,7 +369,8 @@ where $U(q)$ is a DG-quasi-isomorphism when $q$ is an $\A$-quasi-isomorphism. He
 These results allow us to characterize formal DG-algebras by use of $\A$-morphisms instead of zig-zags of DG-morphisms. 
 
 
-\begin{corollary}\label{cor:formal}
+\begin{corollary}
+\label{cor:formal_A_infinity-qi}
 Let $(A, d_A)$ be a DG-algebra and $H(A)$ its cohomology algebra, treated as a DG-algebra with trivial differential. Then $A$ is formal if and only if there is an $\A$-quasi-isomorphism $q\colon H(A)\longrightarrow A$. 
 \end{corollary}
 

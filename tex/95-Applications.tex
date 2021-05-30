@@ -6,6 +6,7 @@ As we have just developed a new way to test formality, it would be nice to test 
 One solution to this is looking at reduced cohomology instead of ``normal'' unreduced cohomology. 
 
 \begin{definition}[Reduced cohomology]
+\label{def:reduced_cohomology}
 Let $X$ be a topological space and $C^*(X;k)$ its cochain complex (treated here as an unbounded DG-algebra):
 \begin{equation*}
     \cdots \to 0 \to C^0(X)\to C^1(X) \to \cdots \to C^n(X) \to \cdots 
@@ -30,10 +31,12 @@ When we do this reduction to reduced cohomology there is a certain class of topo
 This invariant was originally developed in \cite{lscat} as an invariant on manifolds to be a lower bound for the number of critical points any real valued function on it could have. It has since become a useful---but very difficult to calculate---invariant of topological spaces. 
 
 \begin{definition}[Lusternik-Scnirelman category]
+\label{def:ls_category}
 Let $X$ be a CW complex. The Lusternik-Schnirelmann category of $X$, denoted $\ls(X)$ is the least integer $n$, such that there is a cover of $X$ by $n+1$ subsets $\bigcup_{i=1}^n U_i$ that are contractible in $X$. Being contractible in $X$ means that the inclusion into $X$ is null-homotopic. 
 \end{definition}
 
 \begin{example}
+\label{ex:suspension}
 Let $X$ be a topological space. The suspension of $X$ is defined to be the topological space
 \begin{equation*}
 	\Sigma X = X\times I/\sim
@@ -53,24 +56,25 @@ Let $X$ be a contractible topological space, then $\ls(X)=0$. This holds in the 
 Recall that the cup length of a topological space $X$ is the largest integer $n$ such that a chain $[x_1]\cup \cdots \cup [x_n]$ of cohomology classes with $deg|x_i|\geq 1$ is non-zero. We have the following fundamental relation between the cup length and the Lusternik-Schnirelmann category of $X$. The proof is referred to \cite{lscategorybook}.
 
 \begin{lemma}
+\label{lem:cup-length_lower_bound}
 Let $X$ be a topological space. Then the cup length of $X$ is a lower bound for its Lusternik-Schnirelmann category. 
 \end{lemma}
 
-This means that a topological space $X$ such that $\ls(X)=1$ has our desired property that the cup product in the reduced cohomology ring of $X$ is trivial. This is because the cup length has to be equal or lower than the Lusternik-Schnirelmann category, i.e. less than or equal to $1$. By Kadeishvili's theorem we get an $\A$-structure $\{m_i\}$ on $H^*(X)$ where $m_1 =0$. As the operation $m_2$ in the $\A$-structure is induced by the cup product we also have $m_2=0$. Hence we know by \ref{thm:cuptrivial_no_massey_then_formal} that the Massey products are the \emph{only} obstructions to formality. But, due to the following result by Rudyak in \cite[Lemma 4.6]{Rudyak}, there are actually none of these obstructions. 
+This means that a topological space $X$ such that $\ls(X)=1$ has our desired property that the cup product in the reduced cohomology ring of $X$ is trivial. This is because the cup length has to be equal or lower than the Lusternik-Schnirelmann category, i.e. less than or equal to $1$. By Kadeishvili's theorem (\cref{thm:Kadeishvilis_theorem2}) we get an $\A$-structure $\{m_i\}$ on $H^*(X)$ where $m_1 =0$. As the operation $m_2$ in the $\A$-structure is induced by the cup product we also have $m_2=0$. Hence we know by \ref{thm:cuptrivial_no_massey_then_formal} that the Massey products are the \emph{only} obstructions to formality. But, due to the following result by Rudyak in \cite[Lemma 4.6]{Rudyak}, there are actually none of these obstructions. 
 
 \begin{theorem}
-Let $X$ be a CW complex with $\ls(X)\leq 1$ and let the Massey $n$-product $\langle x_1, \ldots, x_n\rangle$ be defined with $x_i \in \widetilde{H^*}(X)$. Then $0\in \langle x_1, \ldots, x_n\rangle $.
 \label{thm:ls1_then_no_massey}
+Let $X$ be a CW complex with $\ls(X)\leq 1$ and let the Massey $n$-product $\langle x_1, \ldots, x_n\rangle$ be defined with $x_i \in \widetilde{H^*}(X)$. Then $0\in \langle x_1, \ldots, x_n\rangle $.
 \end{theorem}
 
 Thus we can conclude with the following theorem. 
 
 \begin{theorem}
+\label{thm:ls1_then_reduced_formal}
 Let $X$ be a topological space such that $\ls(X)\leq 1$. Then $\widetilde{C}^*(X;k)$ is a formal DG-algebra.
 \end{theorem}
 \begin{proof}
 By having $\ls(X)\leq 1$ we know that the cup length in $\wH^*(X)$ is $0$ or $1$, meaning that the cup product is trivial. By \cref{thm:ls1_then_no_massey} we know that all Massey products are vanishing, which by  \cref{thm:cuptrivial_no_massey_then_formal} means that $\widetilde{C^*}(X)$ is formal.
-\label{thm:ls1_then_reduced_formal}
 \end{proof}
 
 
@@ -79,13 +83,15 @@ Earlier we defined what we mean by a topological space being formal, and unfortu
 In order to conclude with some formality statement for a space with Lusternik-Schnirelmann category 1, we see that we need to define a new concept of formality that relies of the reduced cohomology ring---rather than the unreduced one. There are other versions of formality out there in the literature, for example $s$-formality (\cite{sformality}). The notion of $s$-formality truncates the need to have an induced isomorphism in cohomology at position $s$ and upwards, so this theory operates sort of at the other side of the cochain complex than we do. 
 
 \begin{definition}[Reduced formal space]
+\label{def:reduced_formal_space}
 Let $X$ be a topological space. We say $X$ is reduced formal if its augmented cochain algebra $\wC^*(X)$ is a formal DG-algebra. 
 \end{definition}
 
-We have in fact just shown in \ref{thm:ls1_then_reduced_formal} that any space $X$ such that $\ls(X)\leq 1$ is a reduced formal space. The natural question to ask is then: What is the relationship between formality and reduced formality? It turns out---luckily for us---that reduced formality is stronger than formality, due to the following result. This result is also original to this thesis. 
+We have in fact just shown in \cref{thm:ls1_then_reduced_formal} that any space $X$ such that $\ls(X)\leq 1$ is a reduced formal space. The natural question to ask is then: What is the relationship between formality and reduced formality? It turns out---luckily for us---that reduced formality is stronger than formality, due to the following result. This result is also original to this thesis. 
 
 \begin{theorem}
-Let $X$ be connected reduced formal CW complex. Then $X$ is formal. 
+\label{thm:reduced_formal_then_formal}
+Let $X$ be connected, reduced formal CW complex. Then $X$ is formal. 
 \end{theorem}
 \begin{proof}
 As $X$ is connected we know that $H^0(X)\cong k$ and $\wH^0(X)=0$. Since it is reduced formal we also know that there is a span of DG-quasi-isomorphisms $\wH^*(X)\longleftarrow B \longrightarrow \wC^*(X)$ for some DG-algebra $B$. In diagram form this looks like
@@ -210,6 +216,7 @@ We see that this in fact gives a span of quasi-isomorphisms $H^*(X)\longleftarro
 This means that in order to prove that some space is formal, it is enough to prove reduced formality. We can then finally conclude with the following statement.
 
 \begin{corollary}
+\label{cor:ls1_then_formal}
 Let $X$ be a CW complex with $\ls(X)=1$. Then $X$ is formal. 
 \end{corollary}
 

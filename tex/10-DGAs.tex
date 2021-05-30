@@ -33,7 +33,7 @@ for all $x, y , z \in A, a, b\in k$.
 
 Notice in particular that we don't require our map $m$ to be commutative. The last condition says that the product is associative, but we remark that not all authors require this in general. By convenience, we often replace $m(x, y)$ by just $x\cdot y$ or simply $xy$. We will switch a bit between all these three where they make the most sense to use. 
 
-It can be noted that we can define algebras over rings in general---not just fields--- but we chose this definition as it will be sufficient for us throughout the thesis. It will also generalize more smoothly to $\A$-algebras in chapter 3. 
+It can be noted that we can define algebras over rings in general---not just fields--- but we chose this definition as it will be sufficient for us throughout the thesis. It will also generalize more smoothly to $\A$-algebras in \cref{ch:3}. 
 
 \begin{definition}[Graded algebra]
 We say an algebra $A$ is a graded algebra if there is a decomposition $A = \bigoplus_{n\in \Z}A^n$, into vector spaces $A^n$, such that the product respects the grading, i.e. $m:A^n\times A^m \rightarrow A^{n+m}$. 
@@ -55,6 +55,7 @@ together with maps $d^n:A^n\rightarrow A^{n+1}$ such that $d^{n+1}\circ d^n = 0$
 The following definition is one of the main definitions of the thesis, so make sure to digest it properly. It is a combination of the (graded) algebra structure and the cochain complex structure, into one unified framework. 
 
 \begin{definition}[Differential graded algebra]
+\label{def:dga}
 A differential graded algebra $(A, d)$, often called just a DG algebra or a DGA, is a graded algebra $A$ together with a degree $+1$ map $d: A\rightarrow A$, often called the differential, such that 
 \begin{itemize}
     \item $d\circ d = 0$, and
@@ -78,6 +79,7 @@ The condition that $d\circ d = 0$ is what makes $A$ into a cochain complex, and 
 As these objects will be one of our main focus points throughout this thesis, it is important to have control over some examples. In the introduction we used the word ``cochain algebra'' to mean roughly any DG-algebra that we can associate to a topological space. So to tie the theory to the introduction we focus mostly on the examples coming from topology. Most of these are related to cohomology in some way. This is maybe not surprising given the historical context earlier. 
 
 \begin{example}[Singular $mod\,p$ cohomology]
+\label{ex:singular_p_cohomology}
 Let $T$ be a topological space. For any prime number $p\neq 2$, the singular $mod p$ cohomology ring $H^*(T, \Z/p\Z)$, is a DG algebra. Its graded multiplication is the induced operation in cohomology from the cup product of n-cochains. The differential is a bit more involved, but comes from the exact sequence
 \begin{equation*}
 \Z/p\Z \rightarrow \Z/p^2 \rightarrow \Z/p\Z.
@@ -90,6 +92,7 @@ where the connecting homomorphism $\beta$ is called the Bockstein homomorphism. 
 \end{example}
 
 \begin{example}[The singular cochain algebra]
+\label{ex:singular_cochain_algebra}
 Let $X$ be a topological space and $k$ a field. An $n$-cochain on $X$ is a group homomorphism $S_n(X)\longrightarrow k$, where $S_n(X)$ is the group of singular $n$-chains, i.e. the free group on the set of continuous map $\sigma\colon\Delta^n\longrightarrow X$, where $\Delta^n$ is the standard $n$-simplex. 
 
 The group of singular $n$-cochains on $X$ is then defined to be 
@@ -107,12 +110,12 @@ The multiplication is the so-called cup product of cochains. For a good rigorous
 \end{example}
 
 \begin{example}[The cohomology algebra of a DG-algebra]
+\label{ex:cohomology}
 Since every DG algebra is a cochaincomplex, it naturally comes equipped with a way to form its cohomology, by simply letting $H(A)=Ker(d)/Im(d)$. The cohomology of any cochain complex is naturally graded, and together with the induced product from the DG algebra, it forms a graded algebra. 
     
 The product on the cohomology algebra is defined by $[a][b]=[ab]$, and it is well defined because any other two representatives $a'=a+d(t)$ and $b'=b+d(r)$ has a product $[a'b']=[ab+ad(r)+d(t)b+d(t)d(r)]$. The last three are coboundaries because $d(ar)=d(a)r + (-1)^{|a|}ad(r) = (-1)^{|a|}ad(r)$ since $a$ is a cocycle. Hence $ad(r)$ is the boundary of $(-1)^{|a|}(ar)$. Similarily $d(tb)$ is the boudary of $tb$ and $d(t)d(r)$ is the boundary of $td(r)$. Hence all representatives give the same class in cohomology, and the product is well defined. 
     
 We can also trivially equip the cohomology algebra with the differential $d_H=0$, which turns the cohomology algebra into a DG-algebra. 
-\label{ex:cohomology}
 \end{example}
 
 Note that the cohomology algebra of the singular cochain algebra of a topological space $X$, is the singular cohomology ring of $X$.
@@ -177,6 +180,7 @@ Let $S$ be a simplicial set. We define a functor $\mathcal{A}\colon sSet\longrig
 
 
 \begin{example}[Piece-wise linear de Rham algebra]
+\label{ex:piece-wise_algebra}
 We define the DG-algebra of piece-wise linear de Rham forms on a topological space $X$ to be the DG-algebra given by
 \begin{equation*}
     \Apl(X) = \mathcal{A}(Sing(X))
@@ -195,6 +199,7 @@ Notice here that $\Apl(X)$ is actually a commutative DG-algebra, often denoted C
 Hopefully the reader was able to imagine some definition of morphism between DG-algebras in order to get the earlier example---using the category $DGA_k$---to work. If not then we include the definition now. 
 
 \begin{definition}[DG morphism]
+\label{def:dg-morphism}
 Let $(A, d_A)$ and $(B, d_B)$ be two DG-algebras. A map $f:A\longrightarrow B$ is called a morphism of DG-algebras---sometimes shortened DG-morphism---if it
 \begin{itemize}
     \item preserves the degree of homogeneous elements, i.e. if $a\in A^n$ then $f(a)\in B^n$, and
@@ -207,10 +212,12 @@ This implies that we can think of a morphism of DG-algebras as a regular morphis
 The collection of DG-algebras over some field $k$, together with these morphisms form a category, which we already know we will denote by $DGA_k$. There are some special types of morphisms in $DGA_k$ that will be important throughout the thesis. As usual we say a morphism is an isomorphism if it has a two-sided inverse. Given this, the following definition is especially important. 
 
 \begin{definition}[Quasi-isomorphism]
+\label{def:quasi-isomorphism}
 Let $(A, d_A)$ and $(B, d_B)$ be two DG-algebras. A morphism $q:A\longrightarrow B$ is called a quasi-isomorphism if the induced map $\Bar{q}:H(A)\rightarrow H(B)$ on their cohomology algebras, is an isomorphism. We often write $q:A\overset{\sim}\longrightarrow B$ if $q$ is a quasi-isomorphism. 
 \end{definition}
 
 \begin{definition}[Quasi-isomorphic DG-algebras]
+\label{def:quasi-isomorphic}
 We say two DG-algebras $(A, d_A)$ and $(B, d_B)$ are quasi-isomorphic if they can be connected by a zig-zag of quasi-isomorphisms 
 \begin{equation*}
     A \overset{\sim}\longleftarrow \bullet \overset{\sim}\longrightarrow \cdots \overset{\sim}\longleftarrow \bullet \overset{\sim}\longrightarrow B .
@@ -221,6 +228,7 @@ This is sometimes also referred to as $A$ and $B$ being weakly equivalent. The r
 With this we finally can state the definition of the informal description ``sufficiently simple'' that we used in the introduction. This definition is the central definition of the thesis, and is the property we will be focusing on for the rest of it. 
 
 \begin{definition}[Formal DG-algebra]
+\label{def:formal_dga}
 A DG algebra $(A, d)$ is called formal if it is quasi-isomorphic to a DG algebra $(M, 0)$ with trivial differential. 
 \end{definition}
 
@@ -239,6 +247,7 @@ Rational homotopy theory uses a slightly different way---but sort of the rationa
 
 
 \begin{definition}[Formal topological space]
+\label{def:formal_space}
 A topological space $X$ is called formal if $\Apl(X)$ is a formal DG-algebra. 
 \end{definition}
 
@@ -263,7 +272,7 @@ This equivalence is given by the $\Apl$ functor.
 \end{theorem}
 
 \begin{remark}
-Since much of this theory is motivated by the study of topological spaces or manifolds, most of the classical papers (\cite{DGMS}, \cite{Sullivan}, \cite{PLdeRham} etc) only use positively, or non-negatively graded DG algebras. These are the only ones that matter when the motivation is purely topological. As we will see later the study of DG algebras has in more recent times been generalized to the study of $\A$-algebras. These objects bring much more information to the table, and are often applicable in more areas of mathematics, as well as theoretical physics. Their homotopy theory is also better behaved as their theory of quasi-isomorphisms is better behaved, but, one caveat is that one is often required to work with $\Z$-gradings instead. Therefore we develop all the DG-algebra theory above---as well as onwards---to hold for unbounded grading. This will make the generalization easier when introducing the $\A$-algebras. 
+Since much of this theory is motivated by the study of topological spaces or manifolds, most of the classical papers (\cite{DGMS}, \cite{Sullivan}, \cite{PLdeRham} etc) only use positively, or non-negatively graded DG algebras. These are the only ones that matter when the motivation is purely topological. As we will see later the study of DG algebras has in more recent times been generalized to the study of $\A$-algebras. These objects bring much more information to the table, and are often applicable in more areas of mathematics, as well as theoretical physics. Their homotopy theory is also better behaved as their theory of quasi-isomorphisms is better behaved, but, one caveat is that one is often required to work with $\Z$-gradings instead. Therefore we develop all the DG-algebra theory above---as well as onwards---to hold for unbounded grading. This will make the generalization easier when introducing $\A$-algebras in \cref{ch:3}. 
 \end{remark}
 
 One may also notice that many examples one could make, as well as most of the examples from rational homotopy theory, are in fact commutative DG-algebras. Throughout the thesis we are mostly interested in studying the quasi-isomorphisms between DG-algebras, and the resulting notion of formality. The study of quasi-isomorphisms between commutative DG-algebras is completely encompassed by the same theory for associative DG-algebras. This is because a commutative DG-algebra is formal if and only if it is formal as an associative DG-algebra (\cite{Saleh}). From the preprint \cite{Petersen}, we actually have an even stronger connection. We get that two commutative DG-algebras are quasi-isomorphic if and only if they are quasi-isomorphic as associative DG-algebras. This means that our focus on understanding formality for associative DG-algebras also allows us to understand it for the commutative DG-algebras. This is what we meant earlier when saying we are interested in a property that does not depend on commutativity. 

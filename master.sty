@@ -45,6 +45,11 @@
 \graphicspath{{./images/}}
 \pgfplotsset{compat=1.15}
 
+\hypersetup{
+colorlinks=true,
+citecolor=blue,
+linkcolor=blue,
+}
 
 %\setcounter{biburllcpenalty}{7000}
 
@@ -155,8 +160,8 @@
     \refstepcounter{mathenv}%
     \par
     \ifstrempty{#1}%
-	{\strut \textbf{Example~\themathenv.}~\itshape}%  
-	{\strut \textbf{Example~\themathenv.}~(#1).~\itshape}%
+	{\strut \textbf{Example~\themathenv.}~}%  
+	{\strut \textbf{Example~\themathenv.}~(#1).~}%
 	\relax
 }{}
 

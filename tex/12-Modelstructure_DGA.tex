@@ -143,10 +143,8 @@ commutes everywhere, which means we have our desired lift $h$.
 \end{proof}
 
 
-
-
-
 \begin{theorem}
+\label{thm:dgak_model_category}
 The category $DGA_k$ of DG-algebras over a field $k$, together with the three classes of morphisms; $W$, $C$, $F$, as described above, form a model category.
 \end{theorem}
 
@@ -396,6 +394,7 @@ As we now know that $DGA_k$ is a model category, we know there exists a terminal
 This new framework allows us to reconsider the definition of a formal DG algebra. We take the category $DGA_k$, which we now know is a model category with $W$ being the collection of quasi-isomorphisms, and produce its homotopy category $HoDGA_k = DGA_k[W^{-1}]$. We can then define a DG-algebra to be formal as follows. 
 
 \begin{definition}[Formal DG-algebra]
+\label{def:formal_dga2}
 A DG-algebra $(A, d)$ is called formal if it is isomorphic to its cohomology algebra $H(A)$ in $HoDGA_k$.
 \end{definition}
 
@@ -406,6 +405,7 @@ Unfortunately not all isomorphisms in $HoDGA_k$ come from a single quasi-isomorp
 A feature of this new framework is that we actually don't need an arbitrary zig-zag of quasi-isomorphisms---we only need a single span. To prove this we will need the following. 
 
 \begin{definition}[Right proper model category]
+\label{def:right_proper}
 Let $\C$ be a model category. We say it is right proper if the pullback of a weak equivalence along a fibration is again a weak equivalence. 
 \end{definition}
 

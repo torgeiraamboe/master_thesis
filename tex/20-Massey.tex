@@ -24,6 +24,7 @@ The main result in this chapter is that for a formal DG-algebra, all Massey prod
 Massey products are often referred to as higher order cohomology operations. We will explain a bit later what this means, but intuitively, it means that they are natural higher arity maps on the cohomology algebra of a DG-algebra. 
 
 \begin{definition}[The triple Massey product]
+\label{def:triple_massey}
 Let $(A,d)$ be a DG-algebra. Let $x_1, x_2, x_3 \in H(A)$ be three cohomology classes such that $x_1 x_2 = 0 = x_2 x_3$, and let $a_1, a_2, a_3$ be cycles that represent these classes. Since their product is zero in cohomology, there exists classes $b_1$ and $b_2$, such that $d(b_1)=(-1)^{|a_1|}a_1a_2$ and $d(b_2)=(-1)^{|a_2|}a_2a_3$. The cochain 
 \begin{equation*}
     x = (-1)^{|a_1|}a_1 b_2 + (-1)^{|b_1|}b_1 a_3
@@ -42,6 +43,7 @@ Notice also that the different elements in the triple Massey product all determi
 As said, generalizing this construction is a bit tedious explicitly, so we instead find a suitable workaround by using so-called defining systems. 
 
 \begin{definition}[Defining system]
+\label{def:defining_system}
 Let $\bar{x} = (-1)^{|x|}x$. A defining system for a set of cohomology classes $x_1, \ldots, x_n$ in $ H(A)$ is a collection $\{ a_{i,j}\}$ of cochains in $A$ such that
 \begin{itemize}
     \item $[a_{i-1, i}] = x_i$
@@ -53,6 +55,7 @@ for all pairs $(i,j)\neq (0,n)$ where $i\leq j$.
 These defining systems allow us to quite easily define Massey products of any order. 
 
 \begin{definition}[Massey $n$-product]
+\label{def:massey_product}
 The Massey $n$-product of $n$ cohomology classes $x_1, \ldots, x_n$, denoted $\langle x_1, \ldots, x_n\rangle$, is defined to be the set of all $[a_{0,n}]$, where
 \begin{equation*}
     a_{0,n} = \sum_{0<k<n}\overline{a_{0, k}}a_{k, n}
@@ -101,12 +104,14 @@ For the rest of this thesis, when we talk about Massey products, we mean Massey 
 We wanted these Massey products to serve as information not accessible to the cohomology algebra, and we will soon define what we mean by this and show that this is in fact the case. In order to do this we will need the following important definition. 
 
 \begin{definition}[Vanishing Massey product]
+\label{def:vanishing_massey}
 We say that a Massey $n$-product, $\langle x_1, \cdots, x_n\rangle$, vanishes if it contains zero as an element, i.e. $0\in \langle x_1, \ldots, x_n\rangle$. 
 \end{definition}
 
 Since the Massey $n$-product is a set, we cant in general hope for it being just the zero class, so this definition of a vanishing Massey product is the closest thing we can have to a ``trivial'' Massey product. 
 
 \begin{definition}[Uniquely defined Massey product]
+\label{def:uniquely_defined_massey}
 We say that a Massey $n$-product, $\langle x_1, \ldots, x_n\rangle$, is uniquely defined if it contains only a single class, i.e. $\langle x_1, \ldots, x_n\rangle=\{x\}$. 
 \end{definition}
 
@@ -123,6 +128,7 @@ This means that by construction we have a non-trivial element of the Massey 3-pr
 \end{example}
 
 \begin{example}
+\label{ex:borromean_rings}
 When talking about Massey products it is customary to mention the application to proving that the Borromean rings are not homeomorphic to the triple unlink. 
 
 \begin{center}
@@ -198,13 +204,14 @@ The Massey 3-product is called a cohomology operation of order 2, because it req
 
 
 \begin{theorem}
+\label{thm:quasi_preserves_massey}
 If $q\colon A\longrightarrow B$ is a quasi-isomorphism of DG-algebras and $x_1, \ldots, x_n$ cohomology classes such that $\langle x_1, \ldots, x_n\rangle$ is defined, then 
 \begin{equation*}
     q^*(\langle x_1, \ldots, x_n\rangle) = \langle q^*(x_1),\ldots, q^*(x_n)\rangle .
 \end{equation*}
 \end{theorem}
 
-This proof is inspired by the much more general proof of the more general statement in \cite[Theorem 1.5]{naturality}. There the same statement is proven to hold for more general types of Massey products, called matric Massey products, as well as for more general types of quasi-isomorphisms, which we will encounter later in the thesis. 
+This proof is inspired by the much more general proof of the more general statement in \cite[Theorem 1.5]{naturality}. There the same statement is proven to hold for more general types of Massey products, called matric Massey products, as well as for more general types of quasi-isomorphisms, which we will encounter later in the thesis (\cref{ssec:A_infinity-morphisms}). 
 
 \begin{proof}
 From the naturality of Massey products we know that 
@@ -303,7 +310,7 @@ By putting the two containments together we get our wanted set-equivalence
 
 
 \begin{corollary}
-\label{cor:quasi_preserves_massey}
+\label{cor:quasi_preserves_vanishing}
 If $q\colon A\longrightarrow B$ is a quasi-isomorphism, then all Massey products in $A$ vanish if and only if all Massey products vanish in $B$. 
 \end{corollary}
 
@@ -339,7 +346,7 @@ The above lemma is the precise mathematical formulation of the statement that th
 Ok, lets put these lemmas together to form the proof of the fact that a formal DG-algebra can have no non-vanishing Massey products. 
 
 \begin{proof}[of theorem 2.8]
-Given a formal DG-algebra $A$ there is by \ref{thm:span} a span of quasi-isomorphisms $H(A)\longleftarrow C\longrightarrow A$. By \cref{lm:trivial_differential_then_no_massey} all Massey products in $H(A)$ must contain the zero class, as it is a DG-algebra with trivial differential. By \cref{cor:quasi_preserves_massey} we know that $H(A)$ only having vanishing Massey product implies that $A$ only has vanishing Massey products, as they are connected by quasi-isomorphisms. 
+Given a formal DG-algebra $A$ there is by \cref{thm:span} a span of quasi-isomorphisms $H(A)\longleftarrow C\longrightarrow A$. By \cref{lm:trivial_differential_then_no_massey} all Massey products in $H(A)$ must contain the zero class, as it is a DG-algebra with trivial differential. By \cref{cor:quasi_preserves_vanishing} we know that $H(A)$ only having vanishing Massey product implies that $A$ only has vanishing Massey products, as they are connected by quasi-isomorphisms. 
 \end{proof}
 
 This resolves \textbf{Theorem B.} from the motivation of the chapter. Having now proven that formal DG-algebras admit no non-vanishing Massey products means that having any non-trivial Massey product is a definite obstruction to being a formal DG algebra, which is exactly what we expected. It is information--inaccessible to the cohomology algebra---hence the DG-algebra can't be sufficiently simple. This also 	gives us a criteria for answering negative to our central question: 

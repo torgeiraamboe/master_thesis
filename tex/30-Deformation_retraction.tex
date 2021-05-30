@@ -9,6 +9,7 @@
 Let's try to apply the above topological motivation to our more algebraic situation. As DG-algebras are in particular cochain complexes, we can ask weather being a DG-algebra is a stable property under homotopy equivalences in $Ch(Vect_k)$, the category of cochain complexes of vector spaces. What we mean by this is that given a DG-algebra $A$, and a cochain complex $V$ that is homotopy equivalent to $A$, can we induce a DG-algebra structure onto $V$? This will in some sense tell us weather the homotopy theory of DG-algebras is well behaved. To make things even more simple, we use deformation retractions instead of homotopy equivalences. 
 
 \begin{definition}[Deformation retraction]
+\label{def:deformation_retraction}
 Let $(A, d_A)$ and $(B, d_B)$ be cochain complexes, and let $p:A\longrightarrow B$ and $i:B\longrightarrow A$ be morphisms between them. We call $p$ a deformation retraction if $p\circ i = id_B$ and there exists a homotopy $i\circ p\overset{h}\sim id_A$. If there exists a deformation retraction $A\longrightarrow B$, then we say $B$ is a deformation retract of $A$, or that $A$ deformation retracts onto $B$.
 
 We sometimes denote such a system by $(A, B, p, i, h)$, and more often with the following diagram:

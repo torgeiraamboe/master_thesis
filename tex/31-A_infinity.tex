@@ -28,11 +28,12 @@ This we use to prove our new result for this thesis.
 \section{The generalized algebraic model}
 
 \begin{definition}[$\A$-algebra]
-    Let $k$ be a field. An $\A$-algebra over $k$ is a $\Z$-graded vector space $A=\bigoplus_{i\in \Z}A_i$ together with a family of $k$-linear maps $m_n : A^{\otimes n}\rightarrow A$ of degree $n-2$, such that the identities 
-    \begin{equation*}
-        0=\sum_{r+s+t = n}(-1)^{r+st}m_{r+1+t}(id^{\otimes r}\otimes m_s \otimes id^{\otimes t})
-    \end{equation*}
-    hold for all $n, s\geq 1$. 
+\label{def:A_infinity-algebra}
+Let $k$ be a field. An $\A$-algebra over $k$ is a $\Z$-graded vector space $A=\bigoplus_{i\in \Z}A_i$ together with a family of $k$-linear maps $m_n : A^{\otimes n}\rightarrow A$ of degree $n-2$, such that the identities 
+\begin{equation*}
+    0=\sum_{r+s+t = n}(-1)^{r+st}m_{r+1+t}(id^{\otimes r}\otimes m_s \otimes id^{\otimes t})
+\end{equation*}
+hold for all $n, s\geq 1$. 
 \end{definition}
 
 These relations are called the coherence relations, or the Stasheff identities in $A$. Lets try to understand them a bit better for some small $n$'s. 
@@ -126,12 +127,14 @@ Notice that for $n=3$ and $n=4$ this perfectly matches the boundaries we calcula
 
 
 \subsection{Morphisms of \texorpdfstring{$\A$}{A}-algebras}
+\label{ssec:A_infinity-morphisms}
 
 %Often the important part of defining a new concept is not the objects itself, but its relations to others of the same kind. That is why morphisms between objects are equally or perhaps more important than the objects themselves. With this motivation let's try to understand morphisms between the newly defined $\A$-algebras. 
 
 Since $\A$-algebras look a lot like DG-algebras, our first guess at what a morphism of $\A$-algebras should be, is perhaps a map of graded vector spaces $f:A\longrightarrow B$ that commute with all of the internal multiplications, i.e. $f\circ m^A_i = m^B_i\circ f$. This would make sense from an algebraic perspective, but from a homotopy theoretic standpoint, this is too strict, and hence we call these strict $\A$-morphisms\index{Strict $\A$-morphism}. They are too strict because they do not take the homotopy information into account, so we need a more nuanced definition. 
 
 \begin{definition}[$\A$-morphism]
+\label{def:A_infinity-morphism}
 A morphism of $\A$-algebras $f:A\rightarrow B$, also called $\A$-morphism or sometimes $\infty$-morphisms, is a family of linear maps $f_n:A^{\otimes n}\rightarrow B$ such that 
 \begin{equation*}
     \sum_{n = r+s+t}(-1)^{r+st}f_{r+1+t}(id^{\otimes r}\otimes m_s^A \otimes id^{\otimes t}) = \sum_{k=1}^{n}\sum_{n=i_1+\cdots i_k}(-1)^{u} m_k^B(f_{i_1}\otimes f_{i_2}\otimes \cdots \otimes f_{i_k})
@@ -200,19 +203,21 @@ where $r>0, i_1, \ldots, i_r>0$. Important for us is the fact that $(g\circ f)_1
 As we had for DG-algebras, we have some important special types of $\A$-morphisms. The ones we will need are the $\A$-isomorphisms and the $\A$-quasi-isomorphisms.
 
 \begin{definition}[$\A$-isomorphism]
+\label{def:A_infinity-isomorphism}
 Let $f\colon A\longrightarrow B$ be an $\A$-morphism. We call $f$ a $\A$-isomorphism, or a isomorphism of $\A$-algebras, if $f_1$ is an isomorphism of chain complexes.
 \end{definition}
 
 Since any $\A$-algebra $(A, m)$ has a map $m_1$ such that $m_1^2=0$, we can also create its cohomology algebra in the exact same way we did for DG-algebras. Then maybe as expected, we can define $\A$-quasi-isomorphisms as well.
 
 \begin{definition}[$\A$-quasi-isomorphism]
+\label{def:A_infinity-quasi-isomorphism}
 Let $f\colon A\longrightarrow B$ be an $\A$-morphism. We call $f$ a $\A$-quasi-isomorphism, or a quasi-isomorphism of $\A$-algebras, if $f_1$ is a quasi-isomorphism of chain complexes, i.e. it induces an isomorphism of their cohomology algebras. 
 \end{definition}
 
 Since we have $(g\circ f)_1 = g_1\circ f_1$ for the composition of $\A$-morphisms, we have that composition of $\A$-isomorphisms and $\A$-quasi-isomorphisms are again $\A$-isomorphisms and $\A$-quasi-isomorphisms respectively.
 
 \begin{remark}
-When we discussed Massey products in chapter 2 we proved that Massey products are natural, and that 
+When we discussed Massey products in \cref{ch:2} we proved that Massey products are natural, and that 
 \begin{equation*}
 	q^*(\langle x_1, \ldots, x_n\rangle ) = \langle q^*(x_1),\ldots, q^*(x_n)\rangle
 \end{equation*}
