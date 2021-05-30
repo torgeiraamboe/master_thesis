@@ -1,8 +1,11 @@
 \section{Uniform vanishing}
 
-When we now take a DG-algebra $A$, we know that it has a Merkulov model $H(A)\longrightarrow A$, where the morphism is a quasi-isomorphism of $\A$-algebras. This model is minimal, i.e. has $m_1 = 0$, which makes the induced product $m_2$ an associative product. Before we interpreted the higher arity map $m_3$ as an associating homotopy, but now the associating homotopy is the identity. So how do we interpret $m_3$, and $m_n$ in general? Recall back to chapter 2 that we had some other higher arity maps, $H(A)^{\otimes n}\longrightarrow H(A)$, namely the Massey products. It would be really nice if we could interpret $m_n$ as these already established products. This interpretation turns out to be faulty, as will be seen later. We can however remedy the situation by looking at only the case when these products are trivial. 
 
-In \cite{DGMS} it is stated that formality is implied if the Massey products vanish ``uniformly''. It is mentioned as a remark to theorem 4.1., where they prove that a DG-algebra admits a certain decomposition exists if and only if it is formal. The authors say this is stronger that the Massey products vanishing normally. 
+
+
+If we take a DG-algebra $A$, we know that it has a Merkulov model $H(A)\longrightarrow A$. Earlier we interpreted the map $m_3$ as an associating homotopy, but now we have $m_1 = 0$, as $H(A)$ is minimal. This makes the induced product $m_2$ an associative product, so how do we now interpret $m_3$? and $m_n$ in general? In chapter 2 we introduced some higher arity maps, $H(A)^{\otimes n}\longrightarrow H(A)$---namely the Massey products. It would be really nice if we could interpret $m_n$ as these already established products. This interpretation turns out to be faulty---explained a bit later---but as we are interested in formality, we need these to vanish anyway, so can we say something about this interpretation in the case where all the Massey products are vanishing? or when all the higher operations in the Merkulov model are trivial?
+
+In \cite{DGMS} it is stated that formality is implied if the Massey products vanish ``uniformly''. It is mentioned as a remark to \cite[Theorem 4.1.]{DGMS}, where they prove that a DG-algebra admits a certain decomposition, if and only if it is formal. The authors say this is stronger that the Massey products vanishing normally. 
 
 %The results stated in \cite{DGMS} are the following. 
 
@@ -19,10 +22,10 @@ In \cite{DGMS} it is stated that formality is implied if the Massey products van
 
 This notion of uniform vanishing is interesting, so we try to look into what this could mean for the $\A$-structure on $H(A)$ of a DG-algebra $A$. We start by examining the connection between the higher products on $H(A)$ and Massey products. 
 
-Recall from Kadeishvilis theorem that the cohomology algebra of a DG algebra has a natural $\A$-algebra structure which we call its Merkulov model if it is induced by a deformation retraction.
+Recall from Kadeishvili's theorem that the cohomology algebra of a DG algebra has a natural $\A$-algebra structure which we call its Merkulov model if it is induced by a certain deformation retraction.
 
 \begin{lemma}
-Let $(A, m)$ be a DG algebra and $(H(A), \{m_n\})$ be a Merkulov model. Let further $x_1, x_2, x_3 \in H(A)$ such that $m_2(x_1\otimes x_2) = 0 = m_2(x_2\otimes x_3)$, then $m_3(x_1 \otimes x_2 \otimes x_3) \in \langle x_1, x_2, x_3 \rangle$.  
+Let $(A, m)$ be a DG algebra and $(H(A), \{m_n\})$ be a Merkulov model. Let further $x_1, x_2, x_3 \in H(A)$ such that $m_2(x_1\otimes x_2) = 0 = m_2(x_2\otimes x_3)$, then $m_3(x_1 \otimes x_2 \otimes x_3) \in \langle x_1, x_2, x_3 \rangle$, the Massey 3-product of $x_1, x_2$ and $x_3$.  
 \end{lemma}
 \begin{proof}
 As $m_2(x_1 \otimes x_2) = 0$ we know that there exists some $a_{0,2}$ such that $d(a_{0,2}) = m(a_{0,1}, a_{1,2})$ where $a_{i-1, i}$ is a cocycle representing $x_i$. We choose this cocycle with some care by letting $\overline{a_{0,2}} = h(m(a_{0,1}, a_{1,2}))$. Almost in the same way, we choose for $m_2(x_2, x_3)$ the cocycle $a_{1,3} = h(m(a_{1,2}, a_{2,3}))$ In this way we have
@@ -35,17 +38,19 @@ As $m_2(x_1 \otimes x_2) = 0$ we know that there exists some $a_{0,2}$ such that
 which we see is exactly the cohomology class of a representative of the Massey 3-product of $x_1, x_2, x_3$. Note that we have used the Koszul grading convention to get the correct signs. 
 \end{proof}
 
-This looks promising. It looks like some type of similarity between DG-algebras with Massey products and $\A$-structure on the cohomology algebra. It was long thought to be a folklore truth that these higher order products in the $\A$-structure in fact gave representatives for the Massey products. This was then proven in \cite{Ext}, but later showed to be false in \cite{detection}. There are certain ways to make the higher products give representatives for the Massey products, but one requires stronger assumptions on the defining systems, which does not hold in general. These stronger assumptions are also developed in \cite{detection}. 
+This looks promising. It looks like some type of similarity between DG-algebras with Massey products and $\A$-structure on the cohomology algebra. This also provides us with examples of $\A$-algebras that are not just DG-algebras. We can for example consider the DG-algebra $k[x_1, x_2, x_3, a, b]$ that we had in chapter 2. If we define $m_3(x_1, x_2, x_3)=[\overline{a}x_1 + \overline{x_3}b]$, and the other combinations to be trivial, then we have an $\A$-algebra.
+
+It was long thought to be a folklore truth that these higher order products in the $\A$-structure in fact gave representatives for the Massey products. This was then proven in \cite{Ext}, but later showed to have a gap in its argument in \cite{detection}. There are certain ways to make the higher products give representatives for the Massey products, but one requires stronger assumptions on the defining systems, which does not hold in general. These stronger assumptions are also developed in \cite{detection}. 
 
 \begin{remark}
-The observant reader might also suspect something weird going on here. We earlier remarked that when we have two DG-algebras $A, B$ and an $\A$-quasi-isomorphism $q$ between them, then we have an equality between the Massey products, i.e 
+The observant reader might suspect something weird going on here. We earlier remarked that when we have two DG-algebras $A, B$ and an $\A$-quasi-isomorphism $q$ between them, then we have an informal equality between the Massey products, i.e 
 \begin{equation*}
 	q^*(\langle x_1, \ldots, x_n\rangle ) = \langle q^*(x_1),\ldots, q^*(x_n)\rangle .
 \end{equation*}
 But now we have an $\A$-quasi-isomorhism $H(A)\longrightarrow A$, and we have already proved that $H(A)$ only has vanishing Massey products. So does this mean that all DG-algebras have only vanishing Massey products? No. When $H(A)$ is not purely a DG-algebra, i.e. there is some $k\geq 3$ such that $m_k\neq 0$, then we need to take some more information into account in order to have such a correlation. We could do this by introducing Massey products on $\A$-algebras, which are more general than Massey products for DG-algebras. These were introduced by Stasheff in \cite{h-spaces}, and later used in \cite{infty-massey} to prove that the higher products on $H(A)$ do in fact form representatives of the Massey products on an $\A$-algebra $A$.
 \end{remark}
 
-As mentioned we do not have a correspondence between the higher products and the Massey products, but we can still try to connect these higher products to formality. We actually have the following result, stating in a certain sense that if the higher products on the Merkulov model are uniformely trivial, then the DG-algebra is formal. This also provides us with the first general answer to our central question.
+As mentioned, we do not have a correspondence between the higher products and the Massey products, but we can still try to connect these higher products to formality. We actually have the following result---stating in a certain sense that if the higher products on the Merkulov model are uniformely trivial---then the DG-algebra is formal. This also provides us with the first general answer to our central question.
 
 \begin{theorem}
 Let $(A, d_A)$ be a DG-algebra and let $(H(A), m_n)$ be it's Merkulov model. If all the higher products are trivial, i.e. $m_i = 0$ for $i\geq 3$, then $A$ is formal. 
@@ -59,13 +64,14 @@ This resolves \textbf{Theorem C.} from the motivation earlier. As mentioned abov
 \begin{central}
 Given a DG-algebra $A$, when do I know that $A$ is formal?
 \end{central}
+
 \textbf{Answer:} When the induced $\A$-structure $\{m_i\}$ on $H(A)$ has $m_i=0$ for $n\geq 3$, i.e. it has a Merkulov model which is a DG-algebra.  
 
 The above result does not really rely on which $\A$-structure we have on $H(A)$. It can be shown that the least integer $k$ such that $m_k \neq 0$ is an invariant of all $\A$-structures on $H(A)$ that comes from a deformation retraction. This means that the above results holds regardless of which such $\A$-structure we might have. This result can also be proven using Hochschild cohomology, see for example \cite[Theorem 3.3.]{berglund}.
 
 Even though we have answered the central question, it is important to explore what happens in the near vicinity of the solution. We can for example wonder what happens if not all of the higher products are trivial, but only some of them are. This situation is covered in \cite{detection} by the following two results.
 
-\begin{theorem}[\cite{detection}]
+\begin{theorem}[Theorem 2.1. in \cite{detection}]
 Let $A$ be a DG-algebra and $x\in \langle x_1, \ldots, x_n\rangle$ with $n\geq 3$. Then for any $\A$ structure on $H(A)$ we have 
 \begin{equation*}
     \epsilon m_n(x_1, \ldots, x_n) = x+\Gamma 
@@ -74,37 +80,36 @@ where $\Gamma \in \sum_{j=1}^{n-1}Im(m_j)$ and $\epsilon = (-1)^{\sum_{j=1}^{n-1
 \end{theorem}
 \label{thm:infty_massey_recovers_massey}
 
-\begin{corollary}
-Let $A$ be a DG-algebra and $H(A)$ its Merkulov model. If we have $m_i=0$ for all $1\leq i\leq n-1$. Then for any cohomology classes $x_1, \ldots, x_n \in H(A)$ the Massey product $\langle x_1, \ldots, x_n\rangle = \{ x\}$ consists of a single class. Furthermore $\epsilon m_n(x_1, \ldots, x_n)=x$ where $\epsilon = (-1)^{\sum_{j=1}^{n-1} (n-j)|x_j|}$.
+\begin{corollary}[Corollary 2.2. in \cite{detection}]
+Let $A$ be a DG-algebra and $H(A)$ its Merkulov model. If we have $m_i=0$ for all $1\leq i\leq n-1$, then for any cohomology classes $x_1, \ldots, x_n \in H(A)$ the Massey product $\langle x_1, \ldots, x_n\rangle = \{ x\}$ consists of a single class. Furthermore, $\epsilon m_n(x_1, \ldots, x_n)=x$ where $\epsilon = (-1)^{\sum_{j=1}^{n-1} (n-j)|x_j|}$.
+\label{cor:uniquely_defined}
 \end{corollary}
-\label{cor:massey_only_one_class}
+
 
 
 The property we are interested in throughout the thesis is formality, so lets see what the above discussion about this kind of uniform vanishing has to do with this property. 
 
 Recall that we have earlier seen that formal DG-algebras can admit no non-vanishing Massey product, and that the converse might not be true. This means that having vanishing Massey $n$-products for all $n$ is not sufficient to conclude that the DG-algebra is formal. The following result however allows us to rectify this in a restricted setting. 
 
-As far as the author knows, this result is original to this thesis. One of the authors of \cite{detection} have confirmed that the result was known to them, but was not published due to the lack of interesting examples and applications. 
+As far as the author knows, this result is original to this thesis. One of the authors of \cite{detection} have confirmed that the result was known to them, but was not published due to the lack of interesting examples and applications. As we think we have found a somewhat interesting example---covered in the next chapter---we feature this theorem as the main attraction of the thesis. 
 
 \begin{theorem}
 \label{thm:cuptrivial_no_massey_then_formal}
-Let $A$ be a DG-algebra and $H(A)$ its Merkulov model. If the induced product on $H(A)$ is trivial and the Massey $n$-products vanish for all $n$, then $A$ is formal. 
+Let $A$ be a DG-algebra and $H(A)$ its Merkulov model. If the induced product on $H(A)$ is trivial and the Massey $n$-products vanish for all $n\geq 3$, then $A$ is formal. 
 \end{theorem}
 \begin{proof}
 We assume all Massey products vanish, i.e. that $0\in \langle x_1, \ldots, x_n\rangle $ for all $n$ and all choices of $x_i\in H(A)$. Let $m_i$ denote the higher products in $H(A)$. We claim that $m_i = 0$ for all $i$, and hence that $A$ is formal by \cref{thm:formal_iff_no_infty_massey}. 
 
-We prove this claim by induction. Since $m_1 = 0$ and $m_2 = 0$ by assumption, we start with $n=3$. 
+We prove this claim by induction. Since $m_1 = 0$ and $m_2 = 0$ by assumption, we use these as our base case. Notice that if the induction holds, then we get that all the Massey products of all orders are defined, as well as them all being uniquely equal to the zero class. As $m_2=0$ we get the first step by realizing that all Massey 3-products must be defined. 
 
-Since the induced product is trivial we know that the Massey 3-product is defined for all elements in $H(A)$. By \cref{cor:massey_only_one_class} we know that any triple Massey product $\langle x_1, x_2, x_3 \rangle$ contains only one class, say $x$. This is because $m_i = 0$ for $1\leq i\leq 3-1=2$. We must have $x=0$ since all Massey products vanish. By \cref{thm:infty_massey_recovers_massey} we have that for any $x\in \langle x_1, \ldots, x_n \rangle$ we have $\epsilon m_n(x_1,\ldots, x_n) = x+\Gamma$, where $ \epsilon = (-1)^{\sum_{j=1}^{n-1} (n-j)|x_j|}$ and $\Gamma$ consists of only lower degree products, i.e. $\Gamma \in \sum_{j=1}^{n-1}Im(m_j)$. So in our $n=3$ case we must have $\Gamma = 0$, as $m_1 = 0 = m_2$. Then $m_3(x_1, x_2, x_3)=0$ for all $x_1, x_2, x_3$ which means $m_3=0$. 
-
-Assume $m_i = 0$ for $1\leq i\leq n-1$. Then by \cref{cor:massey_only_one_class} we again know that $\langle x_1, \ldots, x_n \rangle = \{x\}$ is defined and contains a single element. This element is again zero since all the Massey products are vanishing. We again know by \cref{thm:infty_massey_recovers_massey} that $m_n(x_1, \ldots, x_n)=x+\Gamma$, where again $\Gamma = 0$ because it consists of only images of lower degree products, which by the induction hypothesis are $0$. Hence $m_n(x_1, \ldots, x_n)=0$, and we are done. 
+Assume now that $m_k = 0$ for $1\leq k\leq n-1$. By \cref{cor:uniquely_defined} we know that $\langle x_1, \ldots, x_n \rangle$ consists of a unique element for all choices of classes $x_1, \ldots, x_n$. This element must by assumption be the zero class, as we assumed all Massey products to be vanishing. This class is recovered up to a sign by $m_n$, which means $m_n(x_1,\ldots, x_n)=0$ for all choices of $x_1, \ldots, x_n$. Hence $m_n=0$ and we are done. 
 \end{proof}
 
-This resolves \textbf{Theorem D.} from the motivation. 
+This resolves \textbf{Theorem D.} from the motivation in this chapter, and \textbf{Theorem 1.} from the introduction of the thesis. 
 
 It is tempting to think that having trivial product in cohomology makes every attempt to build and produce a Massey product impossible. This feels true intuitively, but there are examples of this not being the case. A specific example is the free loop space of an even-dimensional sphere. Its cohomology algebra has trivial product, and it is shown in \cite[Theorem 3.5]{nonformal_loop} to have non-zero Massey products. Hence it can't be formal. 
 
-In chapter 2 we also looked at the Borromean rings, which also has a trivial product in its reduced cohomology algebra, as the product is a multiple of the linking number of the different circles. But, as we argued then, there still exists non-trivial Massey products detecting the higher linking, meaning it can't be formal. 
+In chapter 2 we also looked at the Borromean rings, which also has a trivial product in its reduced cohomology algebra (we cover reduced cohomology in the next chapter), as the product is a multiple of the linking number of the different circles. But, as we argued then, there still exists non-trivial Massey products detecting the higher linking, meaning it can't be formal. 
 
 
 

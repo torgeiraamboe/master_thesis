@@ -3,36 +3,34 @@
 
 \subsection{Visualization of morphisms using rooted trees}
 
-As with the Stasheff identities internal to an $\A$-algebra we can describe the relations used to describe the morphisms between them as systems of rooted trees. Let us assume we have a morphism of $\A$-algebras $f\colon A\longrightarrow B$. The idea is to compare what happens with applying the internal maps $m_n^A$ before applying the $f_i$'s versus first applying the $f_i$'s and then the internal maps $m_n^B$. Let's start with the former.
+We can also describe the relations of the $\A$-morphisms as systems of rooted trees. Let us assume we have a morphism of $\A$-algebras $f\colon A\longrightarrow B$. The idea is to compare what happens with applying the internal maps $m_n^A$ before applying the $f_i$'s versus first applying the $f_i$'s and then the internal maps $m_n^B$. Let's start with the former.
 
 From the equation used to define the morphisms, we see that the left hand side is very similar to the Stasheff identities. In fact, it is exactly what we get if we replace the operation $m_{r+1+t}^A$ by $f_{r+1+t}$, i.e. 
 \begin{equation*}
-    \sum_{n = r+s+t}(-1)^{r+st}f_{r+1+t}(id^{\otimes r}\otimes m_s^A \otimes id^{\otimes t})
+    \sum_{n = r+s+t}(-1)^{r+st}f_{r+1+t}(id^{\otimes r}\otimes m_s^A \otimes id^{\otimes t}).
 \end{equation*}
 
-To differentiate the $f_i$'s from the $m_n$'s we use a white dots to represent $f_i$ and the same black dots as before to represent the $m_n$'s, as follows:
+To differentiate the $f_i$'s from the $m_n$'s we use a white dots in the central vertex to represent $f_i$, and the same black dots as before to represent the $m_n$'s, for example:
 \input{images/more_rooted_tree/1}
 
 We then do exactly the same procedure as we did when constructing the trees for the different compositions of the $m_n$'s. For $n=1$ we get 
 \input{images/more_rooted_tree/left_relation1}
 
-For $n=2$ we get three different parts. We now stop labeling the different parts, and instead read them out from the trees themselves. 
+For $n=2$ we get three different parts. We now stop labeling the different parts, and instead read them out from the trees themselves. We get
 \input{images/more_rooted_tree/left_relation2_1}
 
 To figure out the signs we can do exactly the same as for the Stasheff identities. Put the trees in a upside-down triangle and alternate placing constant signs and alternating signs. For $n=2$ we get the following
 \input{images/more_rooted_tree/left_relation2_2}
 
-Just because of the nice aesthetics, and because we skipped straight to $n=4$ for the Stasheff identities, we include the system we get when $n=3$:
+Because of the nice aesthetics, and because we skipped straight to $n=4$ for the Stasheff identities, we include the system we get for $n=3$:
 \input{images/more_rooted_tree/left_relation3}
 
 
-
-The latter part of the relation, i.e. the right hand side of the equation is a bit more difficult at fist glance. Let's remind ourselves of what it is.
+The latter part of the relation, i.e. the right hand side, seems a bit more difficult at fist glance. Let's remind ourselves of what it is.
 \begin{equation*}
      \sum_{k=1}^{n}\sum_{i_1+\cdots i_k = n}(-1)^{u} m_k^B(f_{i_1}\otimes f_{i_2}\otimes \cdots \otimes f_{i_k})
 \end{equation*}
-We see we need to decompose $n$ in many more ways than for the left hand side. For any $0\leq k\leq n$ we need figure out all possible ways of decomposing $n$ into $k$ pieces, where all of them are positive. This requires a little detour into some combinatorics.
-
+We see that we need to decompose $n$ in many more ways than for the left hand side. For any $0\leq k\leq n$ we need figure out all possible ways of decomposing $n$ into $k$ pieces, where all of them are positive. This requires a little detour into some combinatorics.
 
 \subsubsection{Combinatorics}
 
@@ -52,18 +50,18 @@ $n=7 \colon$ &1&&6&&15&&20&&15&&6&&1
 
 It is usually labeled by saying the top row is the zeroth row, but we start with $1$ instead, as it fits our purpose better. 
 
-The idea is to have put some $f_i$ at every leaf of the $m_j^B$'s in such a way that the total amount of inputs is $n$. For example, if $n=3$ we have the following four ways of doing this:
+The idea is to put some $f_i$ at every leaf of the $m_j^B$'s in such a way that the total amount of inputs is $n$. For example, if $n=3$ we have the following four ways of doing this:
 \input{images/more_rooted_tree/right_relation3_1}
 
 We can see that these four trees are of three different types. The one on the left has $m_3^B$ at the bottom, the two in the middle have $m_2^B$ and the rightmost one has $m_1^B$. This corresponds precisely to the third row in Pascal's triangle, i.e. $1, 2, 1$. To be more graphical, as with the other side of the equation, we put these in a diamond formation, i.e.
 \input{images/more_rooted_tree/right_relation3_2}
 
 
-To see better the connection with Pascals triangle we show the whole diamond for $n=4$ as well.
+To see better the connection with Pascals triangle we show the whole diamond for $n=4$ as well, but now without the labels, as we can now easily read the trees themselves.
 \input{images/more_rooted_tree/right_relation4_1}
 Here we see that we have four different types, separated by which type of $m_n^B$ they have at the bottom. These four type we have put in four rows, and the numbers of trees in each row follow the fourth row in Pascals triangle, i.e. 1,3,3,1. 
 
-Unfortunately, the signs are a bit harder to figure out on the right hand side. This is due to the complexity of the sign $(-1)^{u}$ that we have in the formula. It is given by $u = \displaystyle \sum_{t=1}^{k-1}t(i_{k-t}-1)$. Calculating this is not very difficult, but lets make it even simpler and more understandable. Given a length $k$ decomposition of $n$, i.e. $i_1+\cdots +i_k = n$ we call $(i_1, i_2, \ldots, i_k)$ its decomposition vector. The sign $u$ is then given by taking the decomposition vector and subtracting the constant $1$ length $k$ vector $(1,1,\ldots, 1)$ and then taking the dot product with the length $k$ decreasing vector $(k-1, k-2, \ldots, 1, 0)$. Doing this is just a reformulation of the sum given above. 
+Unfortunately, the signs are a bit harder to figure out on the right hand side. This is due to the complexity of the sign $(-1)^{u}$ appearing in the formula for the $\A$-morphism relations. Recall that it is given by $u = \displaystyle \sum_{t=1}^{k-1}t(i_{k-t}-1)$. Calculating this is not very difficult, but lets make it even simpler and more understandable. Given a length $k$ decomposition of $n$, i.e. $i_1+\cdots +i_k = n$ we call $(i_1, i_2, \ldots, i_k)$ its decomposition vector. The sign $u$ is then given by taking the decomposition vector and subtracting the constant $1$, length $k$, vector $(1,1,\ldots, 1)$, and then taking the dot product with the length $k$ decreasing vector $(k-1, k-2, \ldots, 1, 0)$. Doing this is just a reformulation of the sum given above. 
 
 %In the left hand side of the equation we had a nice geometric simple formula for finding the signs, but as of yet we have not found one for the right hand side of the equation. 
 
@@ -80,14 +78,18 @@ and
 \begin{equation*}
     ((1,2)-(1,1))\cdot (1,0) = 0
 \end{equation*}
-as our signs. The full diamond for $n=3$, with signs is then
+as our signs. The full diamond---for $n=3$---with signs is then
 \input{images/more_rooted_tree/right_relation3_3}
 
 
 We have now presented both sides of the equation for $n=3$, so a full picture is in order. This is the full $n=3$ relation of an $\A$-morphism.
 \input{images/more_rooted_tree/relation3}
 
-In the end the relation is quite intuitive. Compare the two shapes layer wise, and we see what we might expect, at least up to some signs. 
+In the end the relation is quite intuitive. Compare the two shapes layer wise, and we see what we might expect, at least up to some signs. Note that these relations do not hold layer by layer, as this would imply the morphism is a strict $\A$-morphism. 
+
+We have also seen most of the parts of the full relation for $n=4$, so lets see it in its glorious entirety:
+
+\includepdf[pages=-]{pdfs/coverart_master.pdf}
 
 \subsubsection{Rooted trees for DG-morphisms}
 As we did for the relations describing a DG-algebra, we now present the full relations describing a DG-morphism. Let $A$ and $B$ be two DG-algebras. We think of these as $\A$-algebras by letting $m_i =0$ for $i\geq 3$. A map $f\colon A\longrightarrow B$ can then be considered to be a morphism of $\A$-algebras, $\{f_i\}$ by letting $f_1 = f$ and $f_i = 0$ for all $i\geq 2$. Then we get that the relations describing a DG-morphism are the following:
@@ -98,6 +100,5 @@ and
 
 All other relations will include some copy of $m_i$ for $i\geq 3$ or $f_j$ for $j\geq 2$. Hence these two relations are the only two ones we get for a DG-morphism. We also have some degree preservation requirements, but these hold because $f=f_1$ is a degree $0$ map, meaning it preserves homogeneous degrees of elements. 
 
-Because these relations are in our opinion very beautiful, we also include the full $n=4$ relation for a general $\A$-morphism. 
-\includepdf[pages=-]{pdfs/coverart_master.pdf}
+
 

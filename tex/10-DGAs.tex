@@ -5,11 +5,11 @@ The theory of homology was a theory long in development. Luckily for us we have 
 
 Homology theory arguably started with Riemann in \cite{riemann}, where he defined ``connectedness numbers''. Some years later these were generalized to higher dimensions by Betti in \cite{betti}, which became the numbers we today call Betti numbers. There were some problems and mistakes in both the above papers, so a more rigorously defined and developed notion of these were given by Poincaré in the famous paper ``Analysis situs'' (\cite{situs}). 
 
-Due to some mistakes and new developments, Poincaré published a complement to ``Analysis situs'' (\cite{situs2}), where in addition the first use of the singular chain complex of a polyhedron was used. 
+Due to some mistakes and new developments, Poincaré published a complement to ``Analysis situs'' (\cite{situs2}), where in addition the first use of a prototype of the singular chain complex of a polyhedron was used. 
 
-The theory of these cycles on topological spaces, and their Betti numbers were more firmly joined together, when Noether claimed in an abstract for a lecture series (\cite{noether}) that these in fact form abelian groups - being the first case of the homology groups we use today. 
+The theory of these chains on topological spaces, and their Betti numbers were more firmly joined together, when Noether claimed in an abstract for a lecture series (\cite{noether}) that these in fact form abelian groups - being the first case of the homology groups we use today. 
 
-Inspired by these ideas, Mayer constructed in \cite{mayer, mayer2} the modern notion of a chain complex, and its homology, beginning the journey of a purely algebraic description of topological information. Some years later the theory of cohomology, and cup products was developed by both Alexander and Kolmogoroff \footnote{Even though cohomology was unknowingly previously used by de Rham to prove one of Cartan's conjectures}. They both had some mistakes and ad hoc definitions, so a more refined and developed theory was given by Whitney in \cite{whitney}. In this paper Whitney also introduced ``the Leibniz axiom''. This implicitly defined the notion of what we call a differential graded algebra (DG-algebra) today, namely as a cohomology ring satisfying this Leibniz axiom. This object is the object this whole thesis is about.
+Inspired by these ideas, Mayer constructed in \cite{mayer, mayer2} the modern notion of a chain complex, and its homology, beginning the journey of a purely algebraic description of topological information. Some years later the theory of cohomology, and cup products was developed by both Alexander and Kolmogoroff. They both had some mistakes and ad hoc definitions, so a more refined and developed theory was given by Whitney in \cite{whitney}. In this paper, Whitney also introduced ``the Leibniz axiom''. This implicitly defined the notion of what we call a differential graded algebra (DG-algebra) in modern terminology, namely as a cohomology ring satisfying this Leibniz axiom. This object is the focus of most of this thesis.
 
 We start the chapter by developing these DG-algebras for ourselves, as well as look at very special kind of DG-algebra---referred in the introduction to as ``sufficiently simple''. Afterwards we develop the abstract concept of homotopy theory. We do this in order to prove that DG-algebras admit such a homotopy theory, which might not be a surprising fact given their above described connection to topology. The main result from this chapter is a description of formality, using only a single span of quasi-isomorphisms, i.e. 
 
@@ -21,7 +21,7 @@ We start the chapter by developing these DG-algebras for ourselves, as well as l
 Our algebraic model consists of DG-algebras, which are both algebras, and cochain complexes in a compatible way. We define them by first looking at their different structures. For the rest of this thesis, we let $k$ be an infinite field, unless otherwise stated.  
 
 \begin{definition}[Algebra]
-An algebra over $k$, also called a $k$-algebra, is a vector space $A$ over $k$, together with a bilinear map $m: A\times A\rightarrow A$ usually called multiplication, i.e. a map satisfying 
+An algebra over $k$, also called a $k$-algebra, is a vector space $A$ over $k$, together with a bilinear map $m: A\times A\rightarrow A$, usually called multiplication. More precisely, $m$ is a map satisfying 
 \begin{itemize}
     \item $m(x+y, z) = m(x, z) + m(y, z)$
     \item $m(x, y+z) = m(x, y) + m(x, z)$
@@ -33,13 +33,13 @@ for all $x, y , z \in A, a, b\in k$.
 
 Notice in particular that we don't require our map $m$ to be commutative. The last condition says that the product is associative, but we remark that not all authors require this in general. By convenience, we often replace $m(x, y)$ by just $x\cdot y$ or simply $xy$. We will switch a bit between all these three where they make the most sense to use. 
 
-It can be noted that we can define algebras over rings in general---not just fields--- but we chose this definition as it will be sufficient for us throughout the thesis. It will also generalize more smoothly to $\A$-algebras later in the thesis. 
+It can be noted that we can define algebras over rings in general---not just fields--- but we chose this definition as it will be sufficient for us throughout the thesis. It will also generalize more smoothly to $\A$-algebras in chapter 3. 
 
 \begin{definition}[Graded algebra]
-We say an algebra $A$ is a graded algebra if there is a decomposition $A = \bigoplus_{n\in \Z}A^n$ into vector spaces $A^n$, such that the product respects the grading, i.e. $m:A^n\times A^m \rightarrow A^{n+m}$. 
+We say an algebra $A$ is a graded algebra if there is a decomposition $A = \bigoplus_{n\in \Z}A^n$, into vector spaces $A^n$, such that the product respects the grading, i.e. $m:A^n\times A^m \rightarrow A^{n+m}$. 
 \end{definition}
 
-To be able to tie these graded algebras in with the already well developed theory of homological algebra we need to have some way to build cohomology. This is done through the notion of cochain complexes. 
+To be able to tie these graded algebras in with the already well developed theory of homological algebra and algebraic topology, we need to have some way to build cohomology. This is done through the notion of cochain complexes. 
 
 \begin{definition}[Cochain complex]
 A cochain complex $(A^{\bullet}, d^{\bullet})$ is a sequence of Abelian groups, or modules,
@@ -52,7 +52,7 @@ together with maps $d^n:A^n\rightarrow A^{n+1}$ such that $d^{n+1}\circ d^n = 0$
 \end{equation*}
 \end{definition}
 
-The following definition is the main definition we need throughout the thesis, so make sure to digest it properly. It is a combination of the (graded) algebra structure and the cochain complex structure into one unified framework. 
+The following definition is one of the main definitions of the thesis, so make sure to digest it properly. It is a combination of the (graded) algebra structure and the cochain complex structure, into one unified framework. 
 
 \begin{definition}[Differential graded algebra]
 A differential graded algebra $(A, d)$, often called just a DG algebra or a DGA, is a graded algebra $A$ together with a degree $+1$ map $d: A\rightarrow A$, often called the differential, such that 
@@ -62,7 +62,7 @@ A differential graded algebra $(A, d)$, often called just a DG algebra or a DGA,
 \end{itemize}
 \end{definition}
 
-The condition that $d\circ d = 0$ is what makes $A$ into a cochain complex, and the second condition is what makes these two structures work well together. The second condition is called the graded Leibniz rule. The criteria that $d$ has degree $+1$ means that if we take a degree $n$ homogeneous elements $a$ of $A$, i.e. an element in $A^n$, then $d(a)$ has degree $n+1$, i.e. it lies in $A^{n+1}$. By some abuse of notation, we will denote a DG-algebra simply by $A$.
+The condition that $d\circ d = 0$ is what makes $A$ into a cochain complex, and the second condition is what makes these two structures work well together. The second condition is called the graded Leibniz rule, or the Leibniz axiom. The criteria that $d$ has degree $+1$ means that if we take a homogeneous element $a$ of degree $n$, i.e. an element in $A^n$, then $d(a)$ has degree $n+1$, i.e. it lies in $A^{n+1}$. We will use the following notation if the degree of an element $a$ is $n$, $|a|=n$. Similarly for morphisms, for example $|d|=-2$. By some abuse of notation, we will denote a DG-algebra simply by $A$.
 
 % \begin{definition}{Chain maps}
 %     A morphism of cochain complexes $f:(A^{\bullet}, d^{\bullet})\rightarrow (B^{\bullet}, b^{\bullet})$ is a family of maps $f^n:A^n\rightarrow B^n$, such that $f^{n+1}\circ d^{n} = b^n\circ f^{n}$, in other words, each square in the following diagram commutes
@@ -75,24 +75,7 @@ The condition that $d\circ d = 0$ is what makes $A$ into a cochain complex, and 
 % \end{definition}
 
 
-As these objects will be one of our main focus points throughout this thesis, so it is important to have control over some examples. In the introduction we used the word ``cochain algebra'' to mean roughly any DG-algebra that we can associate to a topological space. So to tie the theory to the introduction we focus mostly on the examples coming from topology. Most of these are related to cohomology in some way. This is maybe not surprising given the historical context earlier. 
-
-%\begin{example}[Singular cochains]
-%Let $X$ be a topological space and $M$ an abelian group. An $n$-cochain on $X$ is a group homomorphism $S_n(X)\longrightarrow M$, where $S_n(X)$ is the group of singular n-chains, i.e. the free group on the set of continuous map $\sigma\colon\Delta^n\longrightarrow X$, where $\Delta^n$ is the standard $n$-simplex. 
-
-%The group of singular n-cochains on $X$ is then defined to be 
-%\begin{equation*}
-%S^n(X;M) = Hom_{Ab}(S_n(X), M)
-%\end{equation*}
-%We define the coboundary operator to be the group homomorphism
-%\begin{align*}
-%	\delta\colon S^n(X;M)&\longrightarrow S^{n+1}(X;M) \\
-%	c &\longmapsto [\sigma\mapsto c(\partial_{n+1}(\sigma))]
-%\end{align*}
-%where $\partial_{n+1}$ is the boundary operator on the groups of singular $n$-chains. This operator makes the set $\{S^i(X;M)\}$ into a cochain complex. 
-%\end{example}
-
-%\todo[inline]{add singular cochains example}
+As these objects will be one of our main focus points throughout this thesis, it is important to have control over some examples. In the introduction we used the word ``cochain algebra'' to mean roughly any DG-algebra that we can associate to a topological space. So to tie the theory to the introduction we focus mostly on the examples coming from topology. Most of these are related to cohomology in some way. This is maybe not surprising given the historical context earlier. 
 
 \begin{example}[Singular $mod\,p$ cohomology]
 Let $T$ be a topological space. For any prime number $p\neq 2$, the singular $mod p$ cohomology ring $H^*(T, \Z/p\Z)$, is a DG algebra. Its graded multiplication is the induced operation in cohomology from the cup product of n-cochains. The differential is a bit more involved, but comes from the exact sequence
@@ -103,22 +86,36 @@ This induces a long exact sequence
 \begin{equation*}
     \cdots \rightarrow H^i(T; \Z/p\Z) \rightarrow H^i(T; \Z/p^2\Z) \rightarrow H^i(T; \Z/p\Z) \overset{\beta}\rightarrow H^{i+1}(T; \Z/p\Z) \rightarrow \cdots, 
 \end{equation*}
-where the connecting homomorphism $\beta$ is called the Bockstein homomorphism. This homomorphism serves as the differential in our DG algebra $H^*(T, \Z/p\Z)$. 
+where the connecting homomorphism $\beta$ is called the Bockstein homomorphism. This homomorphism serves as the differential in our DG-algebra $H^*(T, \Z/p\Z)$. 
 \end{example}
 
-%\begin{example}[The de Rham algebra of a manifold]
+\begin{example}[The singular cochain algebra]
+Let $X$ be a topological space and $k$ a field. An $n$-cochain on $X$ is a group homomorphism $S_n(X)\longrightarrow k$, where $S_n(X)$ is the group of singular $n$-chains, i.e. the free group on the set of continuous map $\sigma\colon\Delta^n\longrightarrow X$, where $\Delta^n$ is the standard $n$-simplex. 
 
-%\end{example}
+The group of singular $n$-cochains on $X$ is then defined to be 
+\begin{equation*}
+S^n(X;k) = Hom_{Ab}(S_n(X), k)
+\end{equation*}
+We define the coboundary operator to be the group homomorphism
+\begin{align*}
+	\delta\colon S^n(X;M)&\longrightarrow S^{n+1}(X;M) \\
+	c &\longmapsto [\sigma\mapsto c(\partial_{n+1}(\sigma))]
+\end{align*}
+where $\partial_{n+1}$ is the boundary operator on the groups of singular $n$-chains. This operator makes the set $\{S^i(X;M)\}$ into a cochain complex. 
 
-%\todo[inline]{Add example of de Rham algebra}
+The multiplication is the so-called cup product of cochains. For a good rigorous treatment of this operation, see \cite[Section 3.2.]{hatcher}. 
+\end{example}
 
-\begin{example}[The cohomology algebra of a DG algebra]
+\begin{example}[The cohomology algebra of a DG-algebra]
 Since every DG algebra is a cochaincomplex, it naturally comes equipped with a way to form its cohomology, by simply letting $H(A)=Ker(d)/Im(d)$. The cohomology of any cochain complex is naturally graded, and together with the induced product from the DG algebra, it forms a graded algebra. 
     
-The product on the cohomology algebra is defined by $[a][b]=[ab]$, and it is well defined because any other two representatives $a'=a+dt$ and $b'=b+dr$ has a product $[a'b']=[ab+adr+dtb+dtdr]$. The last three are coboundaries because $d(ar)=d(a)r + (-1)^{|a|}adr = (-1)^{|a|}adr$ since $a$ is a cocycle. Hence $adr$ is the boundary of $(-1)^{|a|}(ar)$. Similarily $dtb$ is the boudary of $tb$ and $dtdr$ is the boundary of $tdr$. Hence all representatives give the same class in cohomology, and the product is well defined. 
+The product on the cohomology algebra is defined by $[a][b]=[ab]$, and it is well defined because any other two representatives $a'=a+d(t)$ and $b'=b+d(r)$ has a product $[a'b']=[ab+ad(r)+d(t)b+d(t)d(r)]$. The last three are coboundaries because $d(ar)=d(a)r + (-1)^{|a|}ad(r) = (-1)^{|a|}ad(r)$ since $a$ is a cocycle. Hence $ad(r)$ is the boundary of $(-1)^{|a|}(ar)$. Similarily $d(tb)$ is the boudary of $tb$ and $d(t)d(r)$ is the boundary of $td(r)$. Hence all representatives give the same class in cohomology, and the product is well defined. 
     
-We can also trivially equip the cohomology algebra with the differential $d_H=0$, which turns the cohomology algebra into a DG algebra. 
+We can also trivially equip the cohomology algebra with the differential $d_H=0$, which turns the cohomology algebra into a DG-algebra. 
+\label{ex:cohomology}
 \end{example}
+
+Note that the cohomology algebra of the singular cochain algebra of a topological space $X$, is the singular cohomology ring of $X$.
 
 \begin{example}[Tensor algebra]
 Let $V$ be a vector space over a field $k$ with basis $e_1, \cdots, e_n$. Define a graded vector space $T(V)$ by letting its graded components be give by
@@ -135,7 +132,7 @@ where $\widehat{i_j}$ means that the $j$'th component is omitted. The product is
 \end{equation*}
 \end{example}
 
-Notice that this example actually uses the opposite grading of what we used in the definition. This is called having homological grading, instead of our cohomological grading. We wont use this example for anything in the thesis, so the different grading does not matter, but it is an important example for much of related theory, for example the deformation theory of algebras. 
+Notice that this example actually uses the opposite grading of what we used in the definition. This is called having homological grading, instead of our cohomological grading. We won't use this example for anything in the thesis, so the different grading does not matter, but, it is an important example for much of related theory, for example the deformation theory of algebras. 
 
 \subsection*{Interlude on rational homotopy theory}
 
@@ -145,7 +142,7 @@ A famous---notoriously difficult---problem in algebraic topology, is to calculat
 
 As a way to get around this, Serre looked at what happens if one works over the rationals instead of the integers, essentially removing the difficult torsion from the theory. In \cite{Serre} he successfully calculated the torsion free part of all homotopy groups of all spheres, starting a journey for mathematicians to develop a complete torsion free theory of topological spaces. This theory is now called rational homotopy theory, and its development was mainly spearheaded by Quillen and Sullivan. One of the great achievements in this field came from developing purely algebraic models for the theory, meaning that one could only study some algebraic objects, and get all information about the topological spaces. More formally, we get that the rational homotopy type of a topological space is given by the isomorphism class of its algebraic model. The first successful attempt at making such an algebraic model was made in \cite{Quillen} in 1969 by Quillen, using certain differential graded Lie algebras (DGL-algebras). Some years later Sullivan---inspired by the de Rham theory for manifolds---proposed in \cite{Sullivan} a simpler idea for a purely algebraic model for rational homotopy theory, using certain DG-algebras. 
 
-In the following definition we use so-called simplicial DG-algebras. These are functors $\Delta \longrightarrow DGA_k$, where $\Delta$ is the simplex category. We haven't really discussed morphisms of DG-algebras yet, hence not defined the category $DGA_k$, but the reader can use their imagination to convince themselves that such a category should exist. 
+In the following definition we use so-called simplicial DG-algebras. These are functors $\Delta \longrightarrow DGA_k$, where $\Delta$ is the simplex category. We haven't really discussed morphisms of DG-algebras yet---hence not defined the category $DGA_k$---but the reader can use their imagination to convince themselves that such a category should exist. The morphisms will be covered in the next section, so it is also possible to peek at the definition, and then come back to this example afterwards. 
 
 \begin{definition}
 Let $\mathcal{A}_*$ be the DG-algebra given by 
@@ -187,7 +184,7 @@ We define the DG-algebra of piece-wise linear de Rham forms on a topological spa
 where $Sing(X)$ is the set of continuous maps from $\Delta^n$---the standard $n$-simplex---to $X$. 
 \end{example}
 
-Notice here that $\Apl(X)$ is actually a commutative DG-algebra, often denoted CDG-algebra. The DG-algebra of rational cochains on a topological space is not commutative in general, which is one of the reasons this $\Apl$ construction is introduced. However, the rational singular cohomology algebra of a topological space is commutative, so $\Apl(X)$ being commutative allows rational homotopy theory to be simplified as the category $CDGA_\Q$ of commutative rational DG-algebras is a bit nicer to work with than $DGA_\Q$. This added niceness is not needed in our case as we are interested in a property that does not depend on commutativity. More on this later. 
+Notice here that $\Apl(X)$ is actually a commutative DG-algebra, often denoted CDG-algebra. The DG-algebra of rational cochains on a topological space is not commutative in general, which is one of the reasons this $\Apl$ construction is introduced. However, the rational singular cohomology algebra of a topological space \emph{is} commutative, so $\Apl(X)$ being commutative allows rational homotopy theory to be simplified, as the category $CDGA_\Q$ of commutative rational DG-algebras is a bit nicer to work with than $DGA_\Q$. This added niceness is not needed in our case as we are interested in a property that does not depend on commutativity.  
 
 
 
@@ -198,49 +195,47 @@ Notice here that $\Apl(X)$ is actually a commutative DG-algebra, often denoted C
 Hopefully the reader was able to imagine some definition of morphism between DG-algebras in order to get the earlier example---using the category $DGA_k$---to work. If not then we include the definition now. 
 
 \begin{definition}[DG morphism]
-    Let $(A, d_A)$ and $(B, d_B)$ be two DG-algebras. A map $f:A\longrightarrow B$ is called a DG-algebra morphism, sometimes shortened DG-morphism, if it
-    \begin{itemize}
-        \item preserves the degree of homogeneous elements, i.e. if $a\in A^n$ then $f(a)\in B^n$, and
-        \item commutes with the differentials, i.e. $f(d_A(a))=d_B(f(a))$. 
-    \end{itemize}
+Let $(A, d_A)$ and $(B, d_B)$ be two DG-algebras. A map $f:A\longrightarrow B$ is called a morphism of DG-algebras---sometimes shortened DG-morphism---if it
+\begin{itemize}
+    \item preserves the degree of homogeneous elements, i.e. if $a\in A^n$ then $f(a)\in B^n$, and
+    \item commutes with the differentials, i.e. $f(d_A(a))=d_B(f(a))$. 
+\end{itemize}
 \end{definition}
 
-This implies that we can think of a DG-morphism as a regular morphism of algebras in each degree, which respects the differential.
+This implies that we can think of a morphism of DG-algebras as a regular morphism of algebras in each degree, which respects the differential.
 
-The collection of DG-algebras over some field $k$, together with DG-morphisms form a category, which we already know we will denote by $DGA_k$. There are some special types of morphisms in $DGA_k$ that will be important throughout the thesis. As usual we say a morphism is an isomorphism if it has a two-sided inverse. Given this, the following definition is especially important. 
+The collection of DG-algebras over some field $k$, together with these morphisms form a category, which we already know we will denote by $DGA_k$. There are some special types of morphisms in $DGA_k$ that will be important throughout the thesis. As usual we say a morphism is an isomorphism if it has a two-sided inverse. Given this, the following definition is especially important. 
 
 \begin{definition}[Quasi-isomorphism]
-    Let $(A, d_A)$ and $(B, d_B)$ be two DG algebras. A DG morphism $q:A\longrightarrow B$ is called a DG quasi-isomorphism if the induced map $\Bar{q}:H(A)\rightarrow H(B)$ on their cohomology algebras, is a DG-isomorphism. We write $q:A\overset{\sim}\longrightarrow B$ if $q$ is a DG-quasi-isomorphism. 
+Let $(A, d_A)$ and $(B, d_B)$ be two DG-algebras. A morphism $q:A\longrightarrow B$ is called a quasi-isomorphism if the induced map $\Bar{q}:H(A)\rightarrow H(B)$ on their cohomology algebras, is an isomorphism. We often write $q:A\overset{\sim}\longrightarrow B$ if $q$ is a quasi-isomorphism. 
 \end{definition}
 
 \begin{definition}[Quasi-isomorphic DG-algebras]
-    We say two DG algebras $(A, d_A)$ and $(B, d_B)$ are quasi-isomorphic if they can be connected by a zig-zag of DG-quasi-isomorphisms 
-    \begin{equation*}
-        A \overset{\sim}\longleftarrow \bullet \overset{\sim}\longrightarrow \cdots \overset{\sim}\longleftarrow \bullet \overset{\sim}\longrightarrow B .
-    \end{equation*}
-    This is sometimes also referred to as $A$ and $B$ being weakly equivalent. 
+We say two DG-algebras $(A, d_A)$ and $(B, d_B)$ are quasi-isomorphic if they can be connected by a zig-zag of quasi-isomorphisms 
+\begin{equation*}
+    A \overset{\sim}\longleftarrow \bullet \overset{\sim}\longrightarrow \cdots \overset{\sim}\longleftarrow \bullet \overset{\sim}\longrightarrow B .
+\end{equation*}
+This is sometimes also referred to as $A$ and $B$ being weakly equivalent. The reason for this alternative name will become clear when we discuss model categories in the next section. 
 \end{definition}
 
-With this we finally can state the definition of the informal description ``sufficiently simple'' that we used in the introduction. This definition is the central definition of the thesis, and is the property we will be focusing on throughout the rest of it. 
+With this we finally can state the definition of the informal description ``sufficiently simple'' that we used in the introduction. This definition is the central definition of the thesis, and is the property we will be focusing on for the rest of it. 
 
 \begin{definition}[Formal DG-algebra]
 A DG algebra $(A, d)$ is called formal if it is quasi-isomorphic to a DG algebra $(M, 0)$ with trivial differential. 
 \end{definition}
 
-This definition is often stated as $A$ being quasi-isomorphic to its cohomology algebra, treated as a DG algebra in the way described above. This is equivalent because if $A$ is formal then the zig-zag of quasi-isomorphisms $M \leftarrow \cdots \rightarrow A$ induces isomorphisms $H(M)\cong \cdots \cong H(A)$, but since $M$ had a trivial differential its cohomology is equal to itself. Hence we have $M\cong H(A)$, and we can extend the zig-zag of quasi-isomorphisms to $H(A)\cong M \leftarrow \cdots \rightarrow A$, which is also a zig-zag of quasi-isomorphisms, meaning that $A$ is quasi-isomorphic to its cohomology algebra $H(A)$. 
+This definition is often stated as $A$ being quasi-isomorphic to its cohomology algebra, treated as a DG algebra in the way described in \ref{ex:cohomology}. This is equivalent, because if $A$ is formal then the zig-zag of quasi-isomorphisms $M \leftarrow \cdots \rightarrow A$ induces isomorphisms $H(M)\cong \cdots \cong H(A)$, but as $M$ had a trivial differential---its cohomology is equal to itself. Hence we have $M\cong H(A)$, and we can extend the zig-zag of quasi-isomorphisms to $H(A)\cong M \leftarrow \cdots \rightarrow A$, which is also a zig-zag of quasi-isomorphisms. This means that $A$ is quasi-isomorphic to its cohomology algebra $H(A)$. 
 
-So what does it mean for a DG algebra to be formal? And is there a justification for its name? Formality for DG-algebras was first defined in \cite{DGMS} and was used as a tool to describe the real homotopy theory of certain manifolds. In the paper the authors define a certain DG-algebra for these manifolds, called their minimal models, and define the manifold to be formal if its minimal model is formal as a DG-algebra. 
+So what does it mean for a DG-algebra to be formal? And is there a justification for its name? Formality for DG-algebras was first defined in \cite{DGMS} and was used as a tool to describe the real homotopy theory of certain manifolds. In the paper the authors define a certain DG-algebra for these manifolds---called their minimal models---and define the manifold to be formal if its minimal model is formal as a DG-algebra. The notion of being formal then means that we can ``formally reconstruct'' the minimal model from its cohomology algebra. The former is often very hard to describe in full detail as it is very rich in information, while the latter is often simple to calculate for many manifolds. Thus, formality means that our DG-algebra is simple enough, and does not contain ``too much information'', meaning that having calculated the cohomology algebra automatically ``gives us'' the minimal model---at least up to quasi-isomorphism. This is of course not precise at all, but in our opinion it serves as some good intuition. When this is the case we say that the real homotopy type of the manifold is a formal consequence of its cohomology. 
 
-The notion of being formal then means that we can ``formally'' reconstruct the algebra of cochains from its cohomology algebra. The former is often very hard to describe in full detail as it is very rich in information, while the latter is often simple to calculate for many manifolds. Thus, formality means that our DG-algebra is simple enough, and does not contain ``too much information'', meaning that having calculated the cohomology algebra automatically gives us the DG-algebra of cochains. This is of course not precise at all, but in our opinion it serves as some good intuition. When this is the case we say that the homotopy type of the manifold is a formal consequence of its cohomology. 
+So, the intuitive slogan for the definition of formality for manifolds, and more generally for any DG-algebra, is a DG-algebra where all its homotopy-information is contained in its cohomology algebra.
 
-So, the intuitive slogan for the definition of formality for manifolds is a manifold where all its homotopy-information is contained in its cohomology algebra. Extending this more generally to all DG-algebras, we again get that the notion of being formal means that all the homotopy-information is contained in the cohomology algebra.
-
-We can finally state the central question of the thesis in more mathematical terms:
+We can finally restate the central question of the thesis with an actual understanding of its components.
 \begin{central}
 Given a DG-algebra $A$, when do I know whether $A$ is formal? 
 \end{central}
 
-In rational homotopy theory we use a slightly different way---but sort of the rational analogue---of defining a topological space being formal. In the real case described very briefly above, we must require the topological space to be a manifold, but in the rational case we can be a bit more general. 
+Rational homotopy theory uses a slightly different way---but sort of the rational analogue---of defining a topological space being formal. In the real case described very briefly above, we must require the topological space to be a manifold, but in the rational case we can be a bit more general. 
 
 
 \begin{definition}[Formal topological space]
@@ -254,10 +249,10 @@ By \cite[Corollary 10.10]{FHT} we actually have a span of DG-quasi-isomorphisms
 for some DG-algebra $B$. This gives us two things:
 \begin{enumerate}
     \item They have the same cohomology, i.e. $H(\Apl(X)) \cong H^*(X;\Q)$
-    \item $\Apl(X)$ is formal (as a not necessarily commutative) DG-algebra if and only if $C^*(X;\Q)$ is formal. 
+    \item $\Apl(X)$ is formal as a (not necessarily commutative) DG-algebra if and only if $C^*(X;\Q)$ is formal. 
 \end{enumerate}
 
-We say that the $\Apl$ construction gives us an algebraic model of rational homotopy theory. This is justified by the fact that Sullivan showed in \cite{Sullivan} that if we make some restrictions, this $\Apl$ functor is an equivalence of categories. Recall that a DG-algebra $(A, d)$ is called connected if $A^i = 0$ for $i< 0$ and $A^0\cong k$. It is called 1-connected if it is connected and $A^1=0$. A topological space $X$ is called 1-connected, or simply connected, if $\pi_1(X)=0$. A rational space $X$ is said to have cohomology of finite type if $H^n(X)$ is finite dimensional vector space. Similarily, a rational DG-algebra $A$ is said to have cohomology of finite type if $H^n(A)$ is finite dimensional. 
+We say that the $\Apl$ construction gives us an algebraic model of rational homotopy theory. This is justified by the fact that Sullivan showed in \cite{Sullivan} that---if we make some restrictions---this $\Apl$ functor is an equivalence of categories. Recall that a topological space $X$ is called 1-connected---or simply connected---if $\pi_1(X)=0$. It is also said to have cohomology of finite type if $H^n(X)$ is finite dimensional vector space. We can similarly define a DG-algebra $(A, d)$ to be \emph{connected}\index{Connected DG-algebra} if $A^i = 0$ for $i< 0$ and $A^0\cong k$. We define it to be \emph{1-connected DG-algebra}\index{1-connected} if it is connected and $A^1=0$. Similarily, a rational DG-algebra $A$ is said to have \emph{cohomology of finite type}\index{Cohomology of finite type} if $H^n(A)$ is finite dimensional. 
 
 The equivalence Sullivan showed is the following.
 
@@ -267,10 +262,11 @@ There is an equivalence of categories between the homotopy category of 1-connect
 This equivalence is given by the $\Apl$ functor. 
 \end{theorem}
 
-Since much of this theory is motivated by the study of topological spaces or manifolds, most of the classical papers (\cite{DGMS}, \cite{Sullivan}, \cite{PLdeRham} etc) only use positively, or non-negatively graded DG algebras. These are the only ones that matter when the motivation is purely topological. As we will see later the study of DG algebras has in more recent times been generalized to the study of $\A$-algebras. These objects bring much more information to the table, and are often applicable in more areas of mathematics and theoretical physics. Their homotopy theory is also better behaved as their theory of quasi-isomorphisms is better behaved, but one caveat is that one is often required to work with $\Z$-gradings instead. Therefore we develop all the DG-algebra theory above, as well as onwards, to hold for unbounded grading. This will make the generalization easier when introducing the $\A$-algebras. 
+\begin{remark}
+Since much of this theory is motivated by the study of topological spaces or manifolds, most of the classical papers (\cite{DGMS}, \cite{Sullivan}, \cite{PLdeRham} etc) only use positively, or non-negatively graded DG algebras. These are the only ones that matter when the motivation is purely topological. As we will see later the study of DG algebras has in more recent times been generalized to the study of $\A$-algebras. These objects bring much more information to the table, and are often applicable in more areas of mathematics, as well as theoretical physics. Their homotopy theory is also better behaved as their theory of quasi-isomorphisms is better behaved, but, one caveat is that one is often required to work with $\Z$-gradings instead. Therefore we develop all the DG-algebra theory above---as well as onwards---to hold for unbounded grading. This will make the generalization easier when introducing the $\A$-algebras. 
+\end{remark}
 
-One may also notice that many examples one could make, as well as most of the examples from rational homotopy theory, are in fact commutative DG-algebras. Throughout the thesis we are mostly interested in studying the quasi-isomorphisms between DG-algebras, and the resulting notion of formality. The study of quasi-isomorphisms between commutative DG-algebras is completely encompassed by the same theory for associative DG-algebras. This is because two commutative DG-algebras are quasi-isomorphic, if and only if they are quasi-isomorphic as associative DG-algebras \cite{Petersen}. It was also shown a couple years earlier that a commutative DG-algebra is formal if and only if it is formal as an associative DG-algebra \cite{Saleh}. Hence our focus on understanding formality for associative DG-algebras also allows us to understand it for the commutative DG-algebras. 
-
+One may also notice that many examples one could make, as well as most of the examples from rational homotopy theory, are in fact commutative DG-algebras. Throughout the thesis we are mostly interested in studying the quasi-isomorphisms between DG-algebras, and the resulting notion of formality. The study of quasi-isomorphisms between commutative DG-algebras is completely encompassed by the same theory for associative DG-algebras. This is because a commutative DG-algebra is formal if and only if it is formal as an associative DG-algebra (\cite{Saleh}). From the preprint \cite{Petersen}, we actually have an even stronger connection. We get that two commutative DG-algebras are quasi-isomorphic if and only if they are quasi-isomorphic as associative DG-algebras. This means that our focus on understanding formality for associative DG-algebras also allows us to understand it for the commutative DG-algebras. This is what we meant earlier when saying we are interested in a property that does not depend on commutativity. 
 
 Let's see some examples of formal DG-algebras. 
 
@@ -288,12 +284,12 @@ Then we have quasi-isomorphisms $A'\longrightarrow A$ and $A'\longrightarrow H(A
 \end{example}
 
 \begin{example}
-Let $(A, d)$ be a DG-algebra over a field $k$ such that $H(A)$ is the polynomial algebra $k[x]$ where $|x|=n$. Then $A$ is formal. We can see his by choosing an element $\alpha$ in $A^n$ that represents $x$ and then constructing a quasi-isomorphism $k[x]\longrightarrow A$ by
+Let $(A, d)$ be a DG-algebra over a field $k$ such that $H(A)$ is the polynomial algebra $k[x]$ where $|x|=n$. Then $A$ is formal. We can see his by choosing an element $a$ in $A^n$ that represents $x$ and then constructing a quasi-isomorphism $k[x]\longrightarrow A$ by
 \begin{align*}
-    (k(x), 0)&\longrightarrow (A,d) \\
-    x &\longmapsto \alpha
+    (k[x], 0)&\longrightarrow (A,d) \\
+    x &\longmapsto a
 \end{align*} 
-This morphism induces an isomorphism in cohomology, and is hence a quasi-isomorphism. This shows $A$ is formal as it is quasi-isomorphic to a DG-algebra with trivial differential. 
+This morphism induces an isomorphism in cohomology, and is hence a quasi-isomorphism. This shows $A$ is formal, as it is quasi-isomorphic to a DG-algebra with trivial differential. 
 \end{example}
 
 

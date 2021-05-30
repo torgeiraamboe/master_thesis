@@ -2,40 +2,39 @@
 \subsection{Visualization using rooted trees}
 
 
-There is another way of describing the Stasheff identities, and this is done by rooted trees. It gives a much more graphical understanding of the relations. A rooted tree is a graph with a fixed node at the bottom (which we call the root) and where every other two nodes are connected by no more then one line. An example is the following graph.
+There is another---more graphical---way of describing the Stasheff identities, and this is done by \emph{rooted trees}\index{Rooted tree}. A rooted tree is a graph with a fixed node at the bottom (which we call the root), and where every other two nodes are connected by no more than one line. An example is the following graph.
 
 \input{images/rooted_tree/1}
 
-The top vertices are called the leafs of the tree. 
+The top vertices are called the leaves of the tree. 
 
-We use these to represent our higher operations. For example, if the above graph is read from top to bottom, the it can be thought of as an operation that takes in two elements, and produces just one. Hence it represents a multiplication and we denote the above graph by $m_2$. The following graphs represents $m_1, m_2, m_3$ and $m_4$ respectively. 
+We can use these to represent our higher operations. For example---if the above graph is read from top to bottom---it can be thought of as an operation that takes in two elements, and produces just one. This is exactly what $m_2$ does in an $\A$-algebra, hence the reason we can use them. The following graphs represents $m_1, m_2, m_3$ and $m_4$ respectively. 
 
 \input{images/rooted_tree/2}
 
-
-We can then let these trees interact in certain ways in order to produce the relations we defined an $\A$-algebra by. Lets start with $n=1$. This relation is given by $m_1 m_1=0$, which we can describe with the following rooted tree
+Adding more leaves to the central vertex gives all the other $m_i$'s as well. We can let these trees interact in certain ways in order to produce the Stasheff identities. Let's start with $n=1$. This relation is given by $m_1 m_1=0$, which we can describe with the following rooted tree:
 \input{images/rooted_tree/relation1}
 
-Here we have stacked them on top of each other in order to signify that they happen ``after'' each other. We still read from top to bottom, which means that we first do $m_1$, and then $m_1$ again. Note that this rooted tree is the unique way of combining two operations such that the combination is an operation that takes in one element and produces again one element. 
+Here we have stacked them on top of each other in order to signify that they happen ``after'' each other. We still read from top to bottom, which means that we first do $m_1$, and then $m_1$ again. Note that this rooted tree is the unique way of combining two operations, $m_i, m_j$, such that the combination is an operation that takes in one element and produces one element. 
 
-For $n=2$ we have a sum consisting of more then just one element, hence the relation is described by a sum of rooted trees instead. The second relation looks at ways to combine two operations in order to form an operation that takes in two elements and produces just one element. There are three ways of doing this, represented by the following three rooted trees:
+For $n=2$ we have more than one way of composing the trees, hence the relation must be described by a sum of rooted trees instead. The second relation looks at ways to combine two operations, $m_i, m_j$, in order to form an operation that takes in two elements and produces just one element. There are three ways of doing this, represented by the following three rooted trees:
 \input{images/rooted_tree/relation2_1}
 
 Note here that we have omitted the identity maps which should be present. If we add these we get for example the following:
 \input{images/rooted_tree/relation2_2}
 
-For simplicity we omit these identities, as they add a bit of confusion because of their similarity to the $m_1$ operation. So whenever one sees one operation starting lower than another, add identities to get to the same height.
+For simplicity we omit these identities, as they add a bit of confusion because of their similarity to the $m_1$ operation. So whenever one sees a leaf at a lower level than another, add identities on top until they reach the same height.
 
 In order to produce the second Stasheff identity we need to add these together in the correct way. This correct way, as calculated earlier, is the following:
 \input{images/rooted_tree/relation2_3}
 
-We can figure out the correct signs by looking at the $r, s, t$ decomposition of $n$. For this particular example, when $n=2$ we have three decompositions
+We can figure out the correct signs by looking at the $r, s, t$ decomposition of $n$. For this particular example---when $n=2$---we have three decompositions
 \begin{itemize}
     \item $r=0, s=1, t=1$
     \item $r=1, s=1, t=0$
     \item $r=0, s=2, t=0$
 \end{itemize}
-These are the ingredients in the sign $(-1)^{r+st}$ which we have in the Stasheff identities. The integer $s$ denotes the operation $m_s$ we will see at the top of the rooted tree. The integer $r$ denotes the position of this top operation, i.e. how far to the right it will be placed on the leaves of the operation at the bottom. The bottom operation will be given by $r+1+t$, i.e. $m_{r+1+t}$. This means that we can read of the correct sign from the composed rooted tree of the two operations, as the placements of the sub-trees from the top operation completely determines it. Let's see an example of how we can read out the signs. We have
+These are the ingredients in the sign $(-1)^{r+st}$ which we had in the Stasheff identities. The integer $s$ denotes the operation $m_s$, which we see at the top of the rooted tree. The integer $r$ denotes the position of this top operation, i.e. how far to the right it will be placed on the leaves of the operation at the bottom. The bottom operation will be given by $r+1+t$, i.e. $m_{r+1+t}$. This means that we can read of the correct sign from the composed rooted tree of the two operations. Let's see an example. If we take the middle rooted tree of the ones above, we can read off $r, s, t$ as follows: 
 \input{images/rooted_tree/signs_1}
 
 which means that the correct associated sign is $(-1)^{r+st}=(-1)^{1+1\cdot 0}=(-1)$. 
@@ -44,10 +43,10 @@ which means that the correct associated sign is $(-1)^{r+st}=(-1)^{1+1\cdot 0}=(
 
 
 
-One way to create the correct system of trees for some  $n$ with the correct signs is the following. 
+One algorithm to create the correct system of trees for some $n$---with the correct signs---is the following. 
 \begin{enumerate}
     \item Draw $n$ copies of the rooted tree that represents $m_n$. 
-    \item Put one copy of the binary tree that represents $m_1$ at each of the leaves of the above copies of $m_n$ by first putting it on the leftmost one and then continuing to the right. 
+    \item Put one copy of the binary tree that represents $m_1$ at just one of the leaves of the above copies of $m_n$, starting from the left and continuing to the right. 
 \end{enumerate}
 This is easier by a visualization, so let $n=4$. Then by doing the above two steps we get the following:
 
@@ -55,12 +54,12 @@ This is easier by a visualization, so let $n=4$. Then by doing the above two ste
 
 \begin{enumerate}
 \setcounter{enumi}{2}
-    \item If $n$ is odd put a $+$ between them all, and if $n$ is even put a $-$. 
+    \item If $n$ is odd, put positive signs, $+$, between them all, and if $n$ is even put negative signs, $-$. 
     \item Then draw $n-1$ copies of the binary rooted tree that represent $m_{n-1}$ below the above trees. \item Put a copy of $m_2$ on the leaves in the same way as we did for $m_1$ on $m_n$.
     \item Put alternating signs, beginning with $+$ between the different trees.
 \end{enumerate}
 
-In the $n=4$ example we drew above we would get
+In the $n=4$ example we drew above, we would get
 \input{images/rooted_tree/signs_3}
 
 \begin{enumerate}
@@ -68,7 +67,7 @@ In the $n=4$ example we drew above we would get
     \item We continue this process downward, and draw $n-2$ copies of $m_{n-2}$, and put a copy of $m_3$ at each leaf. The signs are again all negative or all positive, depending on weather $n$ is even or odd. The dependence is the same as for the first one. 
 \end{enumerate}
 
-The general process for drawing the $i$'th step is drawing $n-i$ copies of the rooted tree that represent $m_{n-i}$. Then put a copy of the rooted tree that represents $m_{i+1}$ on each of of the leaves in succession from left to right, never more than one per copy. If $i+1=n$ then we have a single tree $m_1 m_{n}$, which gets a positive sign. If $n$ is odd and $i$ is even, then put negative signs in front of all of them. If $n$ and $i$ are both even, then put a positive sign in front of all of them. Finally, if $i$ is odd, put alternating signs, starting at positive, in front of them. When we have done this process for all $i$, where $0\leq i \leq n$, then we have an upside down triangle. When we sum up all the different layers, we get $0$. 
+The general process for drawing the $i$'th step is drawing $n-i$ copies of the rooted tree that represent $m_{n-i}$. Then put a copy of the rooted tree that represents $m_{i+1}$ on each of of the leaves in succession from left to right, never more than one per copy. If $i+1=n$ then we have a single tree $m_1 m_{n}$, which gets a positive sign. If $n$ is odd and $i$ is even, then put negative signs in front of all of them. If $n$ and $i$ are both even, then put a positive sign in front of all of them. Finally, if $i$ is odd, put alternating signs, starting at positive, in front of them. When we have done this process for all $i$, where $0\leq i \leq n$, then we have an upside down triangle. When we sum up all the different layers the Stasheff identity tells us we get $0$. 
 
 For our $n=4$ example the final triangle would look like
 \input{images/rooted_tree/relation4_1}
@@ -76,13 +75,13 @@ For our $n=4$ example the final triangle would look like
 
 \subsubsection{Rooted trees for DG-algebras}
 
-Since we have that a DG-algebra is an $\A$-algebra where $m_n = 0$ for all $n\geq 3$ we can explicitly write out all the relations we have in a DG-algebra using these trees. The $n=1$ relation is just given by
-\input{images/rooted_tree/DG1}
+Since we know that a DG-algebra can be though of as an $\A$-algebra where $m_n = 0$ for all $n\geq 3$, we can explicitly write out all the relations we have in a DG-algebra using these trees. The $n=1$ relation is again given by
+\input{images/rooted_tree/DG1},  
 
 just as we saw earlier for a general $\A$-algebra. The relation for $n=2$, is given by
 \input{images/rooted_tree/DG2}
 
-which we can recognize as the Leibniz rule. We don't have the $(-1)^{|x|}$ sign here, as it first arises when applying the Koszul grading rule when applying these operations to actual elements. The third and final relation is given by 
+which we can recognize as the Leibniz rule. We don't have the $(-1)^{|x|}$ sign here, as it first arises when using the Koszul grading rule when applying these operations to actual elements. The third and final relation is given by 
 \input{images/rooted_tree/DG3}
 
-which we recognize as the associativity condition.
+which we recognize as the associativity condition. Here none of the higher arity trees appear, du to the fact that $m_i=0$ for all $i\geq 3$. 

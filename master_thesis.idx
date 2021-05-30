@@ -1,4 +1,4 @@
-\indexentry{Algebra|hyperpage}{3}
+\indexentry{Algebra|hyperpage}{2}
 \indexentry{Graded algebra|hyperpage}{3}
 \indexentry{Cochain complex|hyperpage}{3}
 \indexentry{Differential graded algebra|hyperpage}{3}
@@ -7,45 +7,52 @@
 \indexentry{DG morphism|hyperpage}{7}
 \indexentry{Quasi-isomorphism|hyperpage}{7}
 \indexentry{Quasi-isomorphic DG-algebras|hyperpage}{7}
-\indexentry{Formal DG-algebra|hyperpage}{7}
+\indexentry{Formal DG-algebra|hyperpage}{8}
 \indexentry{Formal topological space|hyperpage}{8}
+\indexentry{Connected DG-algebra|hyperpage}{9}
+\indexentry{1-connected|hyperpage}{9}
+\indexentry{Cohomology of finite type|hyperpage}{9}
 \indexentry{Retraction|hyperpage}{10}
-\indexentry{Retraction closed|hyperpage}{10}
-\indexentry{Model structure|hyperpage}{10}
+\indexentry{Retraction closed|hyperpage}{11}
+\indexentry{Model structure|hyperpage}{11}
 \indexentry{Model category|hyperpage}{11}
-\indexentry{The homotopy category|hyperpage}{12}
-\indexentry{Fibrant object|hyperpage}{12}
-\indexentry{Cofibrant object|hyperpage}{12}
-\indexentry{Bifibrant|hyperpage}{12}
-\indexentry{Cylinder object|hyperpage}{12}
+\indexentry{The right lifting property|hyperpage}{11}
+\indexentry{The left lifting property|hyperpage}{11}
+\indexentry{The homotopy category|hyperpage}{13}
+\indexentry{Fibrant object|hyperpage}{13}
+\indexentry{Cofibrant object|hyperpage}{13}
+\indexentry{Bifibrant object|hyperpage}{13}
+\indexentry{Cylinder object|hyperpage}{13}
 \indexentry{Path object|hyperpage}{13}
-\indexentry{Left homotopy|hyperpage}{13}
-\indexentry{Right homotopy|hyperpage}{13}
-\indexentry{Homtopic maps|hyperpage}{15}
-\indexentry{Homotopy equivalence|hyperpage}{15}
-\indexentry{|hyperpage}{17}
-\indexentry{Formal DG-algebra|hyperpage}{22}
-\indexentry{Right proper model category|hyperpage}{23}
-\indexentry{Triple Massey product|hyperpage}{28}
-\indexentry{Defining system|hyperpage}{29}
-\indexentry{Massey $n$-product|hyperpage}{29}
-\indexentry{Vanishing Massey product|hyperpage}{31}
-\indexentry{Uniquely defined Massey product|hyperpage}{31}
-\indexentry{Deformation retraction|hyperpage}{43}
-\indexentry{$\ensuremath  {A_{\infty }}$-algebra|hyperpage}{49}
-\indexentry{$\ensuremath  {A_{\infty }}$-morphism|hyperpage}{52}
-\indexentry{$\ensuremath  {A_{\infty }}$-isomorphism|hyperpage}{53}
-\indexentry{$\ensuremath  {A_{\infty }}$-quasi-isomorphism|hyperpage}{53}
-\indexentry{Minimal $\ensuremath  {A_{\infty }}$-algebra|hyperpage}{67}
-\indexentry{$\ensuremath  {A_{\infty }}$-homotopy|hyperpage}{72}
-\indexentry{Reduced cohomology|hyperpage}{80}
-\indexentry{Lusternik-Scnirelman category|hyperpage}{80}
-\indexentry{Reduced formal space|hyperpage}{82}
-\indexentry{Spectral sequence|hyperpage}{88}
-\indexentry{Bicomplex|hyperpage}{88}
+\indexentry{Left homotopy|hyperpage}{14}
+\indexentry{Right homotopy|hyperpage}{14}
+\indexentry{Homtopic maps|hyperpage}{16}
+\indexentry{Homotopy equivalence|hyperpage}{16}
+\indexentry{|hyperpage}{18}
+\indexentry{Formal DG-algebra|hyperpage}{23}
+\indexentry{Right proper model category|hyperpage}{24}
+\indexentry{The triple Massey product|hyperpage}{30}
+\indexentry{Defining system|hyperpage}{31}
+\indexentry{Massey $n$-product|hyperpage}{31}
+\indexentry{Vanishing Massey product|hyperpage}{33}
+\indexentry{Uniquely defined Massey product|hyperpage}{33}
+\indexentry{Deformation retraction|hyperpage}{47}
+\indexentry{Koszul sign rule|hyperpage}{48}
+\indexentry{The associating homotopy|hyperpage}{51}
+\indexentry{$\ensuremath  {A_{\infty }}$-algebra|hyperpage}{54}
+\indexentry{Strict $\A$-morphism|hyperpage}{56}
+\indexentry{$\ensuremath  {A_{\infty }}$-morphism|hyperpage}{56}
+\indexentry{$\ensuremath  {A_{\infty }}$-isomorphism|hyperpage}{57}
+\indexentry{$\ensuremath  {A_{\infty }}$-quasi-isomorphism|hyperpage}{58}
+\indexentry{Rooted tree|hyperpage}{58}
+\indexentry{Minimal $\ensuremath  {A_{\infty }}$-algebra|hyperpage}{71}
+\indexentry{$\ensuremath  {A_{\infty }}$-homotopy|hyperpage}{77}
+\indexentry{Reduced cohomology|hyperpage}{84}
+\indexentry{Lusternik-Scnirelman category|hyperpage}{84}
+\indexentry{Reduced formal space|hyperpage}{86}
 \indexentry{Monoidal category|hyperpage}{92}
 \indexentry{Symmetric monoidal category|hyperpage}{93}
-\indexentry{Closed symmetric monoidal category|hyperpage}{94}
+\indexentry{Closed symmetric monoidal category|hyperpage}{93}
 \indexentry{Pushout product|hyperpage}{94}
 \indexentry{Symmetric monoidal model category|hyperpage}{94}
 \indexentry{Cofibrantly generated model category|hyperpage}{95}

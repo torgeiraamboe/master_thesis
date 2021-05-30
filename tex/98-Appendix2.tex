@@ -1,8 +1,9 @@
 
+\section*{Abstract nonsense}
 
-There is a more general framework to describe both DG-algebras and their model structure in one joint framework. The theory is developed in \cite{monoid} and uses so called monoids in monoidal categories. We will not cover all the details in this appendix, but we will go through the construction at least on a surface level. This is to get insight into how the theory presented in this thesis might be abstracted to other types of objects. 
+There is a more general procedure we can use, in order to describe both DG-algebras and their model structure in one joint framework. The theory is developed in \cite{monoid} and uses so called monoids in monoidal categories. We will not cover all the details in this appendix, but we will go through the construction at least on a surface level. This is to get insight into how the theory presented in this thesis might be abstracted to other types of objects. 
 
-Before we go into the theory, we give a brief overview of the process. Recall that DG-algebras are cochain complexes of vector spaces, with an added algebra structure, i.e. an associative product. This means that we can think of DG-algebras as a subcategory of $Ch(Vect_k)$, the category of cochain complexes of vector spaces over a field $k$. This category has two additional natural structures that we can add; a categorical product and a model structure. These extra structures are particularly nice in $Ch(Vect_k)$, which will allow us to transfer the model structure onto its subcategory of monoids. This subcategory will turn out to be the category of DG-algebras.  
+Before we go into the theory, we give a brief overview of the process. Recall that DG-algebras are cochain complexes of vector spaces, with an added algebra structure, i.e. an associative product. This means that we can think of DG-algebras as a subcategory of $Ch(Vect_k)$, the category of cochain complexes of vector spaces over a field $k$. This category has two additional natural structures that we can add; a categorical product and a model structure. These extra structures are particularly nice in $Ch(Vect_k)$, which will allow us to transfer the model structure onto its subcategory of monoids. This subcategory will turn out to be the category of DG-algebras, $DGA_k$.
 
 %The category of unbonded cochain complexes of vector spaces form a model category with weak equivalences being quasi-isomorphisms of cochain complexes, fibrations being degreewise surjections and cofibrations being the maps that satisfy the lifting property with respect to acyclic fibrations. This category is also a monoidal category, which means we have some form of product of object, in this case the tensor product of cochain complexes. This added monoidal structure plays nice with the model structure, so we get that the category of cochain complexes of vector spaces is a monoidal model category. The cofibrations and acyclic cofibrations turn out to have a generating set each, which we call being a cofibrantly generated model category. This means that we have a few extra tools we can use, most prominently the so-called small objects argument. 
 
@@ -10,8 +11,33 @@ Before we go into the theory, we give a brief overview of the process. Recall th
 
 \subsection*{Cofibrantly generated symmetric monoidal model categories}
 
+The above chain of words is rather daunting, so lets build it up---step by step.
+
 \begin{definition}[Monoidal category]
-A monoidal category is a category $ \mathcal{C}$ equipped with a functor $ \otimes :  \mathcal{C} \times \mathcal{C} \rightarrow \mathcal{C}$, called the monoidal product, a unit object $ 1\in \mathcal{C}$ and three natural isomorphisms $ \lambda_A : 1\otimes A \rightarrow A$, $ \rho_A : A\otimes 1\rightarrow A$ and $ \alpha_{A,B,C} : (A\otimes B)\otimes C \rightarrow A\otimes (B\otimes C)$ called the left unitor, right unitor and associator respectively, such that the following diagrams 
+A monoidal category is a category $\mathcal{C}$, equipped with a functor $\otimes : \mathcal{C} \times \mathcal{C} \rightarrow \mathcal{C}$, called the monoidal product, a unit object $1\in \mathcal{C}$ and three natural isomorphisms $\lambda_A : 1\otimes A \rightarrow A$, $\rho_A : A\otimes 1\rightarrow A$ and $\alpha_{A,B,C} : (A\otimes B)\otimes C \rightarrow A\otimes (B\otimes C)$ called the left unitor, right unitor and associator respectively---such that the following diagrams 
+
+\begin{center}
+\begin{tikzpicture}
+	\node (C) {};
+	\node (1) [node distance=3cm, above of=C] {$(A\otimes B)\otimes (C\otimes D)$}; 
+	\node (2) [node distance= 4cm, left of=C] {$((A\otimes B)\otimes C)\otimes D$};	
+	\node (3) [node distance= 4cm, right of=C] {$A\otimes (B\otimes (C\otimes D))$};
+	
+	\node (D) [node distance=3.5cm, below of=C] {};
+	\node (4) [node distance= 2.7cm, left of=D] {$(A\otimes (B\otimes C))\otimes D$};
+	\node (5) [node distance= 2.7cm, right of=D] {$A\otimes ((B\otimes C))\otimes D)$};
+	
+	
+	\draw [-to] (2) to node {$\alpha_{A\otimes B, C, D}$} (1);
+	\draw [-to] (1) to node {$\alpha_{A, B, C\otimes D}$} (3);
+	\draw [-to] (2) to node [swap]{$\alpha_{A, B, C}\otimes id_D$} (4);
+	\draw [-to] (4) to node [swap]{$\alpha_{A, B\otimes C, C}$} (5);
+	\draw [-to] (5) to node [swap]{$id_A\otimes \alpha_{A, B, C}$} (3);
+\end{tikzpicture}
+\end{center}
+
+called the pentagon identity, and
+
 \begin{center}
 \begin{tikzpicture}
 	\node (1) {$A\otimes (1\otimes B)$};
@@ -24,30 +50,10 @@ A monoidal category is a category $ \mathcal{C}$ equipped with a functor $ \otim
 	\draw [-to] (3) to node {$\rho_A\otimes id_B$} (4);
 \end{tikzpicture}
 \end{center}
-called the triangle identity, and 
-\begin{center}
-\begin{tikzpicture}
-	\node (C) {};
-	\node (1) [node distance=3.3cm, above of=C] {$(A\otimes B)\otimes (C\otimes D)$}; 
-	\node (2) [node distance= 4.2cm, left of=C] {$((A\otimes B)\otimes C)\otimes D$};	
-	\node (3) [node distance= 4.2cm, right of=C] {$A\otimes (B\otimes (C\otimes D))$};
-	
-	\node (D) [node distance=3.7cm, below of=C] {};
-	\node (4) [node distance= 3cm, left of=D] {$(A\otimes (B\otimes C))\otimes D$};
-	\node (5) [node distance= 3cm, right of=D] {$A\otimes ((B\otimes C))\otimes D)$};
-	
-	
-	\draw [-to] (2) to node {$\alpha_{A\otimes B, C, D}$} (1);
-	\draw [-to] (1) to node {$\alpha_{A, B, C\otimes D}$} (3);
-	\draw [-to] (2) to node [swap]{$\alpha_{A, B, C}\otimes id_D$} (4);
-	\draw [-to] (4) to node [swap]{$\alpha_{A, B\otimes C, C}$} (5);
-	\draw [-to] (5) to node [swap]{$id_A\otimes \alpha_{A, B, C}$} (3);
-\end{tikzpicture}
-\end{center}
-called the pentagon identity, both commute. 
+called the triangle identity---both commute. 
 \end{definition}
 
-This definition can seem very abstract and difficult, but in reality it is quite simple. We are using the symbol for the tensor product, $ \otimes $ for the monoidal product because the tensor product is usually the product we are using. So any intuition we have from using the tensor product can usually be applied to monoidal categories. If the three natural isomorphisms $ \lambda, \rho, \alpha $ are identities, then $ \mathcal{C}$ is called a strict monoidal category. These do rarely come up in nature, but every monoidal category is in fact equivalent to a strict monoidal category. Notice also $K4$ appearing in the pentagon identity. 
+This definition can seem very abstract and difficult, but in reality it is quite simple. We are using the symbol for the tensor product, $ \otimes $, for the monoidal product because the tensor product is usually the product we are using. So any intuition we have from using the tensor product can usually be applied to monoidal categories. If the three natural isomorphisms $ \lambda, \rho, \alpha $ are identities, then $ \mathcal{C}$ is called a strict monoidal category. These do rarely come up in nature, but every monoidal category is in fact equivalent to a strict monoidal category. Notice also $K4$ appearing as the pentagon identity. 
 
 \begin{definition}[Symmetric monoidal category]
 Let $ \mathcal{C}$ be a monoidal category. We say  $ \mathcal{C}$ is a symmetric monoidal category if there is a natural isomorphism $ \beta_{X,Y}: X\otimes Y \rightarrow Y \otimes X$, called the braid isomorphism, such that $ \beta_{X,Y}\circ \beta_{Y,X} = id_{X\otimes Y} $ and the following diagrams 
@@ -85,13 +91,15 @@ called the unit coherence, and
 called the associativity coherence, both commute. 
 \end{definition}
 
+A monoidal category can be thought of as a category with a multiplication, an a symmetric monoidal category is then a monoidal category with a commutative product. 
+
 \begin{definition}[Closed symmetric monoidal category]
 Let $\C$ be a symmetric monoidal category. We say $\C$ is closed if the tensor functor $-\otimes A\colon \C \longrightarrow \C$ has a right adjoint functor $[A, -]\colon \C \longrightarrow \C$, called the internal hom. 
 \end{definition}
 
-The notion of closed category can be defined without the need for a symmetric monoidal structure. This definition is a bit more involved, and the above definition is the result of combining the closed structure with the symmetric monoidal one. 
+The notion of closed category can be defined without the need for a symmetric monoidal structure, but this definition is a bit more involved---and the above definition is the result of combining the closed structure with the symmetric monoidal one. 
 
-We can think about this as being motivated by, or at least inspired by the category of sets, where we have $[X,Y]=\{ f:X\rightarrow Y\}$, and $Hom(S, [X, Y])\cong Hom(S\times X, Y)$. So when we require that the internal hom functor $[A,-]$ is right adjoint to the monoidal product functor $-\otimes A$ we get a bijection $Hom(X, [A, B])\rightarrow Hom(X\otimes A, B)$, that is natural in all three variables. This isomorphism is called ``currying''.
+We can think about this as being motivated by---or at least inspired by the category of sets---where we have $[X,Y]=\{ f:X\rightarrow Y\}$, and $Hom(S, [X, Y])\cong Hom(S\times X, Y)$. So when we require that the internal hom functor $[A,-]$ is a right adjoint to the monoidal product functor $-\otimes A$, we get a bijection $Hom(X, [A, B])\rightarrow Hom(X\otimes A, B)$, that is natural in all three variables. This isomorphism is called ``currying''.
 
 \begin{definition}[Pushout product]
 Let $\C$ be a symmetric monoidal category and $f\colon A\to B$, $f'\colon A'\to B'$ be morphisms in $\C$. We can form the following pushout diagram
@@ -115,10 +123,10 @@ By the universal property of pushouts we get an induced map
 which we call the pushout product of $f$ and $f'$. 
 \end{definition}
 
-We have already covered the definition of a model category in the thesis, so recall that it consists of three classes of maps $W, C, F$ - called weak equivalences, cofibrations and fibrations respectively - such that certain axioms \textbf{MC1}, \textbf{MC2}, \textbf{MC3} and \textbf{MC4} hold. 
+We have already covered the definition of a model category in the thesis, so recall that it consists of three classes of maps $W, C, F$---called weak equivalences, cofibrations and fibrations respectively---such that certain axioms \textbf{MC1}, \textbf{MC2}, \textbf{MC3} and \textbf{MC4} hold. 
 
 \begin{definition}[Symmetric monoidal model category]
-A (closed) symmetric monoidal model category is a category $\C$ with a model structure $(W, C, F)$, equipped with the structure of a closed symmetric monoidal category $(\otimes, I)$ such that the pushout product of two cofibrations is again a cofibration, the pushout product of a cofibration and an acyclic cofibration is again an acyclic cofibration and that the map $QI\otimes X \overset{p\otimes id_X}\to I\otimes X \to X$ between any cofibrant object $X$ and any cofibrant replacement $QI$ of the tensor unit $I$, is a weak equivalence. 
+A (closed) symmetric monoidal model category is a category $\C$ with a model structure $(W, C, F)$, equipped with the structure of a closed symmetric monoidal category $(\otimes, I)$, such that the pushout product of two cofibrations is again a cofibration, the pushout product of a cofibration and an acyclic cofibration is again an acyclic cofibration and that the map $QI\otimes X \overset{p\otimes id_X}\to I\otimes X \to X$ between any cofibrant object $X$---and any cofibrant replacement $QI$ of the tensor unit $I$---is a weak equivalence. 
 \end{definition}
 
 We are almost at the end, but we need one more ``niceness'' condition on our category $\C$. We now have that the monoidal structure is nice, and respects the model structure, but we also want the model structure itself to be ``nice''. The rigorous definition of this niceness condition is a bit tricky, but it essentially requires the cofibrations and the acyclic cofibrations to be generated by a small set. 
@@ -142,9 +150,9 @@ Let $\C$ be a category with a model structure $(W, C, F)$. We say $\C$ is cofibr
 \end{itemize}
 \end{definition}
 
-We have not defined the last two points in the definition above. We wont cover these in detail, as they are complicated and not necessary for the surface overview that we are presenting. It essentially means that $Hom(C,-)$ for a domain $C$ of a map in $P$ or $Q$ commutes with colimits in $P-reg$ or $Q-reg$ respectively. For the details see \cite{monoid}. 
+We have not defined the last two points in the definition above. We wont cover these in detail, as they are complicated and not necessary for the surface overview that we are presenting. It essentially means that $Hom(C,-)$---for an object $C$, that is the domain of a map in $P$ or $Q$---commutes with colimits in $P-reg$ or $Q-reg$ respectively. For the details see \cite{monoid}. 
 
-We then have the category we want, i.e. $\C$ a cofibrantly generated symmetric monoidal model category. The next task is to find the correct subcategory. 
+We then have the category we want, i.e. $\C$ a cofibrantly generated closed symmetric monoidal model category. The next task is to find the correct subcategory. 
 
 
 
@@ -196,25 +204,25 @@ A monoid in a monoidal category $ (\mathcal{C}, \otimes, I)$ is an object $ M$ t
 \end{center}
 \end{definition}
 
-Here $ \alpha$ is the associator in the monoidal category and $ \lambda, \rho$ are the unitors. We see that this notion of monoid in a monoidal category produces the standard notion of a monoid from algebra if we let the monoidal category be $Set$ together with the cartesian product. 
+Here $ \alpha$ is the associator in the monoidal category and $ \lambda, \rho$ are the unitors. We see that this notion of monoid in a monoidal category produces the standard notion of a monoid from algebra---if we let the monoidal category be $Set$ together with the cartesian product. 
 
-The collection of monoids in a monoidal category $\C$ do in fact form a category themselves, which we denote by $Mon\C$. The following theorem is the theorem that assures we get a model structure on the monoids. It is \cite[Theorem 4.1 (3)]{monoid}. 
+The collection of monoids in a monoidal category $\C$ do in fact form a category themselves, which we denote by $Mon\C$. The following theorem is \cite[Theorem 4.1 (3)]{monoid}, and it assures us that we get a model structure on the category of monoids.
 
 \begin{theorem}
 Let $\C$ be a cofibrantly generated symmetric monoidal model category. If $R$ is a commutative monoid in $\C$, then the category of $R$-algebras is a cofibrantly generated model category. 
 \end{theorem}
 
-If we let $R$ be the monoidal unit $I$ in the theorem above we have $I$-mod = $Mon\C$, meaning we have a model structure on the category of monoids. This model structure is induced from the one in $\C$, meaning that a morphism in $Mon\C$ is a fibration or a weak equivalence if it is a fibration or a weak equivalence in $\C$, and that the cofibrations in $Mon\C$ are the ones that have the left lifting property with respect to the acyclic fibrations. 
+If we let $R$ be the monoidal unit $I$ in the theorem above, we have $I$-mod = $Mon\C$, meaning we have a model structure on the category of monoids. This model structure is induced from the one in $\C$, meaning that a morphism in $Mon\C$ is a fibration or a weak equivalence if it is a fibration or a weak equivalence in $\C$, and that the cofibrations in $Mon\C$ are the ones having the left lifting property with respect to the acyclic fibrations. 
 
 \subsection*{Model structure on $DGA_k$}
 
 We have now laid out the general machinery, so what's left is to apply it to our situation. We start with $Ch(Vect_k)$, the category of cochain complexes of vector spaces over a field $k$. It has a symmetric monoidal product given by the graded tensor product, i.e.
 \begin{equation*}
-    (A\otimes B)^n = \sum_{i+j=n} A^i \otimes B^j
+    (A\otimes B)^n = \sum_{i+j=n} A^i \otimes B^j , 
 \end{equation*}
 which has differential given by $d_{A\otimes B} = d_A\otimes id_A + id_B\otimes d_B$. 
 
-As we have actually used throughout the thesis we have that morphisms $Hom(A, B)$ also form cocomplexes, hence we have an internal hom. We have a model structure given by degreewise surjections being the fibrations, the weak equivalences being the quasi-isomorphisms and the cofibrations being the maps that have the left lifting property with respect to acyclic fibrations. In \cite[2.3.11]{hovey} it is proven that this model structure makes $Ch(Vect_k)$ into a cofibrantly generated model category. 
+As we have used throughout the thesis, we know that morphisms $Hom(A, B)$ also form cohain complexes, hence we have an internal hom. We have a model structure, given by degreewise surjections being the fibrations, the weak equivalences being the quasi-isomorphisms and the cofibrations being the maps that have the left lifting property with respect to acyclic fibrations. In \cite[Theorem 2.3.11]{hovey} it is proven that this model structure makes $Ch(Vect_k)$ into a cofibrantly generated model category. 
 
 Hence we have the following theorem to summarize the informal discussion. 
 
@@ -224,7 +232,7 @@ The category $Ch(Vect_k)$ is a cofibrantly generated symmetric monoidal model ca
 
 The last piece of the puzzle is showing that the monoids in $Ch(Vect_k)$ are in face the DG-algebras. 
 
-A monoid in $Ch(Vect_k)$ is an object $A$ in $Ch(Vect_k)$ together with a map $m\colon A\otimes A\longrightarrow A$, and a map $\eta\colon k\longrightarrow A$ such that the left and right unit laws, and the associative law hold. This means that we have a cochain complex of vector spaces together with an associative multiplication map, $m$. 
+A monoid in $Ch(Vect_k)$ is an object $A$, together with a map $m\colon A\otimes A\longrightarrow A$, and a map $\eta\colon k\longrightarrow A$, such that the left and right unit laws, and the associative law hold. This means that we have a cochain complex of vector spaces together with an associative multiplication map, $m$. 
 
 The fact that $m$ is a morphism of cochain complexes means that we have a commutative diagram
 \begin{center}
@@ -255,5 +263,5 @@ when applied to elements and using the Koszul sign rule. If we write $m(a\otimes
     d_M(a\cdot b) = d_M(a)\cdot b + (-1)^{|a|}a\cdot d_M(b).
 \end{equation*}
 
-Hence a monoid in $Ch(Vect_k)$ is in fact a DG-algebra. We then get an induced model structure on $Mon(Ch(Vect_k)) = DGA_k$, which we can identify with the model structure we had earlier in the thesis.
+Thus, a monoid in $Ch(Vect_k)$ is in fact a DG-algebra. We then get an induced model structure on $Mon(Ch(Vect_k)) = DGA_k$, which we can identify with Jardine's model structure we constructed earlier in the thesis.
 

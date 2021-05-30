@@ -5,10 +5,10 @@ John~Frank Adams.
 \newblock Infinite loop spaces.
 \newblock {\em Annals of mathematics}, 90, 1978.
 
-\bibitem[Bas12]{nonformal_loop}
+\bibitem[Bas15]{nonformal_loop}
 Somnath Basu.
 \newblock Of sullivan models, massey products, and twisted pontrjagin products.
-\newblock 2012.
+\newblock {\em Journal of homotopy and related structures}, 10:239--273, 2015.
 
 \bibitem[BB17]{berglund}
 Alexander Berglund and Kaj Börjeson.
@@ -36,11 +36,6 @@ J.M. Boardman and R.M. Vogt.
   volume 347 of {\em Lecture notes in mathematics}.
 \newblock Springer verlag, 1973.
 
-\bibitem[Car54]{cartan}
-Henry Cartan.
-\newblock Dga-algebres et dga-modules.
-\newblock {\em Séminaire Henri Cartan}, 7:1--9, 1954.
-
 \bibitem[CLOT03]{lscategorybook}
 Octav Cornea, Gregory Lupton, John Oprea, and Daniel Tanré.
 \newblock {\em Lusternik-Schnirelmann category}, volume 103.
@@ -57,7 +52,7 @@ Ricardo Campos, Dan Petersen, Daniel Robert-Nicoud, and Felix Wierstra.
 \newblock Lie, associative and commutative quasi-isomorphism, 2020.
 
 \bibitem[DGMS75]{DGMS}
-Deligne, Griffiths, Morgan, and Sullivan.
+Pierre Deligne, Phillip Griffiths, John Morgan, and Dennis Sullivan.
 \newblock Real homotopy theory of kähler manifolds.
 \newblock {\em Inventiones math}, 29:245--274, 1975.
 
@@ -75,6 +70,11 @@ Marisa Fernández and Vicente Muñoz.
 Richard Gardner.
 \newblock Understanding the small object argument.
 \newblock {\em Applied Categorical Structures}, 17:247–285, 2009.
+
+\bibitem[Hat01]{hatcher}
+Allen Hatcher.
+\newblock {\em Algebraic topology}.
+\newblock Cambridge university press, 2001.
 
 \bibitem[Hen83]{co-H-space}
 Hans-Werner Henn.
@@ -109,7 +109,7 @@ Tornike Kadeishvili.
 \newblock {\em English translation: Russian math. surveys}, 35:231--238, 1980.
 
 \bibitem[Kal07]{kaledin1}
-D.~Kaledin.
+Dmitry Kaledin.
 \newblock Some remarks on formality in families.
 \newblock {\em Moscow mathematical journal}, 7(4):643--652, 2007.
 
@@ -130,7 +130,7 @@ Kenji Lefèvre-Hasegawa.
 \newblock {\em PhD thesis}, University Paris 7, 2003.
 
 \bibitem[LPWZ09]{Ext}
-D-M Lu, J.~H Palmieri, Q-S Wu, and J.~Zhang.
+Di~M. Lu, John~H. Palmieri, Quan~S. Wu, and James~J. Zhang.
 \newblock A-infinity structure on ext-algebras.
 \newblock {\em Pure Applied Algebra}, 2013, 2009.
 
@@ -197,7 +197,7 @@ James~Peter May.
 \newblock Springer verlag, 1972.
 
 \bibitem[Mer99]{Merkulov}
-S.~A. Merkulov.
+Sergei~A. Merkulov.
 \newblock Strong homotopy algebras of a kähler manifold.
 \newblock {\em International mathematics research notices}, 3:152--164, 1999.
 
@@ -284,12 +284,6 @@ Dennis Sullivan.
 \newblock Infinitesimal computations in topology.
 \newblock {\em Publications Math\'ematiques de l'IH\'ES}, 47:269--331, 1977.
 
-\bibitem[Sul04]{MIT}
-Dennis Sullivan.
-\newblock Geometric topology, part i: Localization, periodicity, and galois
-  symmetry.
-\newblock {\em K-Monographs in Math}, 2004.
-
 \bibitem[TO97]{exact-massey}
 Aleksy Tralle and John Oprea.
 \newblock {\em Symplectic Manifolds with no Kähler Structure}, volume 1661 of
@@ -301,11 +295,6 @@ Bruno Vallette.
 \newblock Algebra+homotopy=operad.
 \newblock {\em Symplectic, Poisson, and noncommutative geometry}, 62:229–290,
   2014.
-
-\bibitem[Wei94]{weibel}
-Charles~A. Weibel.
-\newblock {\em An introduction to homological algebra}.
-\newblock Cambridge university press, 1994.
 
 \bibitem[Wei99]{history2}
 Charles~A. Weibel.

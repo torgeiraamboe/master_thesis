@@ -5,10 +5,10 @@ Scanning input file master_thesis.idx....
 !! Input index error (file = master_thesis.idx, line = 6):
    -- Illegal null field.
 
-!! Input index error (file = master_thesis.idx, line = 26):
+!! Input index error (file = master_thesis.idx, line = 31):
    -- Illegal null field.
-done (49 entries accepted, 3 rejected).
-Sorting entries....done (275 comparisons).
-Generating output file master_thesis.ind....done (100 lines written, 0 warnings).
+done (56 entries accepted, 3 rejected).
+Sorting entries....done (328 comparisons).
+Generating output file master_thesis.ind....done (110 lines written, 0 warnings).
 Output written in master_thesis.ind.
 Transcript written in master_thesis.ilg.

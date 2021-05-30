@@ -1,13 +1,13 @@
 
 \section{Motivation}
 
-In the introduction we said that in some situations, there is some information in the DG-algebra, not accessible to the cohomology algebra of that DG-algebra. On example of such information is given by the Massey products, which we will define and explore a bit in this chapter. 
+In the introduction we said that in some situations, there is some information in the DG-algebra, not accessible to the cohomology algebra of that DG-algebra. On example of such information is given by the Massey products---which will be the focus of this chapter. 
 
 These operations were first introduced to algebraic topology by William S. Massey in \cite{massey}, and have since been used to solve some really interesting problems. One of the reasons Massey products are interesting in topology is due to their ability to distinguish seemingly similar spaces, where other methods fail. The three main invariants we use in algebraic topology to distinguish spaces are homology, cohomology and homotopy. Why do we need all three? It is because none of them are perfect. There are spaces that have the same homology, but are not homeomorphic. Same goes for cohomology and homotopy. We can use these three together to an even greater effect. What we mean is that when two spaces have the same homology and are not homeomorphic, they usually have different homotopy. But, as mentioned in the introduction, the homotopy groups can be extremely difficult to calculate. 
 
 So, what do we do if the spaces have the same homology and the same homotopy? Or that the spaces have the same homology, and the homotopy is really difficult to calculate? Then the next invariant usually is the cohomology ring. The product structure on cohomology allows us a much greater insight into the relationships between parts of the spaces. Usually when we have same homology and same homotopy, we can differentiate them by having different cohomology rings. 
 
-The next question is then, what do we do when all this fails? How can we know spaces aren't homeomorphic even though they have the same cohomology ring? There are many solutions to this answer, and many invariants one could still try, but Massey products is one of them. These operations then tell us when a DG-algebra contains more information than its cohomology algebra, just as we should expect from the introduction. 
+The next question is then, what do we do when all this fails? How can we know spaces aren't homeomorphic even though they have the same cohomology ring? There are many solutions to this answer---and many invariants one could still try---but, Massey products is one of the most developed ones. These operations then tell us when a DG-algebra contains more information than its cohomology algebra, just as we should expect from the introduction. 
 
 In this thesis we have removed the need to work with topologicals spaces, and work only in the algebraic world, so we define the Massey products purely using DG-algebras.  
 
@@ -21,31 +21,31 @@ The main result in this chapter is that for a formal DG-algebra, all Massey prod
 
 \section{The inaccessible information}
 
-Massey products are often referred to as higher order cohomology operations. We will explain a bit later what this means, but intuitively this means that they are natural higher arity maps on the cohomology algebra of a DG-algebra. 
+Massey products are often referred to as higher order cohomology operations. We will explain a bit later what this means, but intuitively, it means that they are natural higher arity maps on the cohomology algebra of a DG-algebra. 
 
-\begin{definition}[Triple Massey product]
-Let $(A,d)$ be a DG algebra. Let $x_1, x_2, x_3 \in H(A)$ be three cohomology classes such that $x_1 x_2 = 0 = x_2 x_3$, and let $a_1, a_2, a_3$ be cycles that represent these classes. Since their product is zero in cohomology, there exists classes $b_1$ and $b_2$, such that $d(b_1)=(-1)^{|a_1|}a_1a_2$ and $d(b_2)=(-1)^{|a_2|}a_2a_3$. The cochain 
+\begin{definition}[The triple Massey product]
+Let $(A,d)$ be a DG-algebra. Let $x_1, x_2, x_3 \in H(A)$ be three cohomology classes such that $x_1 x_2 = 0 = x_2 x_3$, and let $a_1, a_2, a_3$ be cycles that represent these classes. Since their product is zero in cohomology, there exists classes $b_1$ and $b_2$, such that $d(b_1)=(-1)^{|a_1|}a_1a_2$ and $d(b_2)=(-1)^{|a_2|}a_2a_3$. The cochain 
 \begin{equation*}
     x = (-1)^{|a_1|}a_1 b_2 + (-1)^{|b_1|}b_1 a_3
 \end{equation*}
 is then a cocycle and defines an element in $H^{|a_1|+|a_2|+|a_3|+1}(A)$.  
 
-Since the choices of $b_1$ and $b_2$ are not unique, we define the triple Massey product $\langle x_1, x_2, x_3 \rangle$ to be the set of all such $x$ we can make with different choices for $b_1$ and $b_2$. The elements of the Massey product lie in degree $|a_1|+|a_2|+|a_3|+1$, where the $+1$ comes from the fact that $b_1$ and $b_2$ lie in degree one less than the products $a_1 a_2$ and $a_2 a_3$ respectively. 
+Since the choices of $b_1$ and $b_2$ are not unique, we define the triple Massey product of $x_1, x_2, x_3$, denoted $\langle x_1, x_2, x_3 \rangle$, to be the set of all such $x$ we can make with different choices for $b_1$ and $b_2$. The elements of the Massey product lie in degree $|x_1|+|x_2|+|x_3|+1$, where the $+1$ comes from the fact that $b_1$ and $b_2$ lie in degree one less than the products $a_1 a_2$ and $a_2 a_3$ respectively. 
 \end{definition} 
 
 \begin{remark}
-Note that we showed earlier that the product on a DG algebra induces a well defined product on its cohomology algebra, which we here have used in the definition of the triple Massey product.  
+Note that we showed earlier, in \cref{ex:cohomology}, that the product on a DG algebra induces a well defined product on its cohomology algebra, which we have used in the above definition of the triple Massey product.  
 \end{remark}
 
-Notice also that the different elements in the triple Massey product all determine the same element in $H(A)/([u]H(A)+H(A)[w])$, hence we could define the triple Massey product to be a morphism from a subset of $H(A)\times H(A)\times H(A)$ to in $H(A)/([u]H(A)+H(A)[w])$. This subset would then have to be the set of elements $(u, v, w)$ such that $[u][v] = 0 = [v][w]$. Since this method does not generalize well to the higher Massey products we want to define, we do not use this definition. We do however remark that this way of defining it is not very unnatural, as it can be defined very nicely from a spectral sequence. We have put this method in the appendix. 
+Notice also that the different elements in the triple Massey product all determine the same element in $H(A)/([u]H(A)+H(A)[w])$, hence we could define the triple Massey product to be a morphism from a subset of $H(A)\times H(A)\times H(A)$ to in $H(A)/([u]H(A)+H(A)[w])$. This subset would then have to be the set of elements $(u, v, w)$ such that $[u][v] = 0 = [v][w]$. Since this method does not generalize well to the higher Massey products we want to define, we do not use this definition. 
 
 As said, generalizing this construction is a bit tedious explicitly, so we instead find a suitable workaround by using so-called defining systems. 
 
 \begin{definition}[Defining system]
-Let $\bar{x} = (-1)^{|x|+1}x$. A defining system for a set of cohomology classes $x_1, \ldots, x_n$ in $ H(A)$ is a collection $\{ a_{i,j}\}$ of cochains in $A$ such that
+Let $\bar{x} = (-1)^{|x|}x$. A defining system for a set of cohomology classes $x_1, \ldots, x_n$ in $ H(A)$ is a collection $\{ a_{i,j}\}$ of cochains in $A$ such that
 \begin{itemize}
     \item $[a_{i-1, i}] = x_i$
-    \item $d(a_{i, j}) = \sum_{i<k<j}\overline{a_{i, k}}a_{k, j}$
+    \item $d(a_{i, j}) = \displaystyle\sum_{i<k<j}\overline{a_{i, k}}a_{k, j}$
 \end{itemize}
 for all pairs $(i,j)\neq (0,n)$ where $i\leq j$.
 \end{definition}
@@ -53,7 +53,7 @@ for all pairs $(i,j)\neq (0,n)$ where $i\leq j$.
 These defining systems allow us to quite easily define Massey products of any order. 
 
 \begin{definition}[Massey $n$-product]
-The Massey $n$-product of $n$ cohomology classes $x_1, \ldots, x_n$, denoted $\langle x_1, \ldots, x_n\rangle$ is defined to be the set of all $[a_{0,n}]$, where
+The Massey $n$-product of $n$ cohomology classes $x_1, \ldots, x_n$, denoted $\langle x_1, \ldots, x_n\rangle$, is defined to be the set of all $[a_{0,n}]$, where
 \begin{equation*}
     a_{0,n} = \sum_{0<k<n}\overline{a_{0, k}}a_{k, n}
 \end{equation*}
@@ -62,7 +62,7 @@ such that $\{ a_{i,j} \}$ is a defining system.
 
 Let's write this out in a bit more detail for some small $n$ and see what we get. 
 
-$\mathbf{n=2}:$ Assume we have two cohomology classes $x_1$ and $x_2$ and a defining system $\{a_{i,j} \}$. The defining system will just be $\{ a_{0,1}, a_{1,2}\}$ such that $[a_{0,1}]=x_1$ and  $[a_{1,2}] = x_2$. The element in the Massey product given by the defining system is then $[a_{0,2}]$, where $a_{0, 2} = \overline{a_{0, 1}}a_{1, 2}$. This is just the cohomology class of the product in the DG-algebra up to a sign. Hence Massey $2$-products are already familiar. 
+$\mathbf{n=2}:$ Assume we have two cohomology classes $x_1$ and $x_2$ and a defining system $\{a_{i,j} \}$. The defining system will just be $\{ a_{0,1}, a_{1,2}\}$ such that $[a_{0,1}]=x_1$ and  $[a_{1,2}] = x_2$. The element in the Massey product---given by the defining system---is then $[a_{0,2}]$, where $a_{0, 2} = \overline{a_{0, 1}}a_{1, 2}$. This is just the cohomology class of the product in the DG-algebra up to a sign. Hence Massey $2$-products are already familiar. 
 
 
 $\mathbf{n=3}:$ Let now $x_1, x_2, x_3$ be three cohomology classes and $\{a_{i,j}\}$ a defining system for them. The system will consist of $a_{0,1}, a_{1,2}, a_{2,3}, a_{0,2}$ and $a_{1,3}$ such that 
@@ -77,7 +77,7 @@ This means that the element in the Massey product $\langle x_1, x_2, x_3 \rangle
 \begin{equation*}
     a_{0,3} = \overline{a_{0, 1}}a_{1, 3} + \overline{a_{0, 2}}a_{2, 3}.
 \end{equation*}
-This we see is the exact same as the triple Massey product we defined in the beginning, before introducing the defining systems. Hence this way to generalize the definition is actually a generalization. 
+This we see is exactly the same as the triple Massey product we defined in the beginning, before introducing the defining systems. Hence this way to generalize the definition is actually a generalization. 
 
 $\mathbf{n=4}:$ Let $x_1, x_2, x_3, x_4$ be cohomology classes and $\{ a_{i,j} \}$ be a defining system for them. It consists of nine elements $a_{0,1}, a_{1,2}, a_{2,3}, a_{3,4}, a_{0,2}, a_{1,3}, a_{2,4}, a_{0,3}, a_{1,4}$ such that 
 \begin{itemize}
@@ -96,30 +96,30 @@ This makes the element in $\langle x_1, x_2, x_3, x_4\rangle$ defined by the def
     a_{0,4} = \overline{a_{0,1}}a_{1,4} + \overline{a_{0,2}}a_{2,4} + \overline{a_{0,3}}a_{3,4}.
 \end{equation*}
 
-For the rest of this thesis, when we talk about Massey products, we mean Massey $n$-products for $n\geq 3$, for precisely this reason that Massey $2$-products are just given by multiplication. When we say ``all Massey products'' we mean all Massey $n$-products for all $n\geq 3$. 
+For the rest of this thesis, when we talk about Massey products, we mean Massey $n$-products for $n\geq 3$, for precisely this reason that Massey $2$-products are just given by multiplication. When we say ``all Massey products'' we will mean all Massey $n$-products, for all $n\geq 3$. 
 
-We wanted these Massey product to serve as information not accessible to the cohomology algebra, and we will soon define what we mean by this and show that this is in fact the case. In order to do this we will need the following important definition. 
+We wanted these Massey products to serve as information not accessible to the cohomology algebra, and we will soon define what we mean by this and show that this is in fact the case. In order to do this we will need the following important definition. 
 
 \begin{definition}[Vanishing Massey product]
-We say that the Massey $n$-product vanishes if it contains zero as an element, i.e. $0\in \langle x_1, \ldots, x_n\rangle$. 
+We say that a Massey $n$-product, $\langle x_1, \cdots, x_n\rangle$, vanishes if it contains zero as an element, i.e. $0\in \langle x_1, \ldots, x_n\rangle$. 
 \end{definition}
 
 Since the Massey $n$-product is a set, we cant in general hope for it being just the zero class, so this definition of a vanishing Massey product is the closest thing we can have to a ``trivial'' Massey product. 
 
 \begin{definition}[Uniquely defined Massey product]
-We say that a Massey $n$-product $\langle x_1, \ldots, x_n\rangle$ is uniquely defined if it contains only a single class. 
+We say that a Massey $n$-product, $\langle x_1, \ldots, x_n\rangle$, is uniquely defined if it contains only a single class, i.e. $\langle x_1, \ldots, x_n\rangle=\{x\}$. 
 \end{definition}
 
-In the case of a uniquely defined Massey product, we can say it is trivial if this element is the zero class.  
+In the case of an uniquely defined Massey product, we can say it is trivial if this element is the zero class. We will however still use the word ``vanishing'', as it is more general, and more suitable for our purposes. 
 
-Let's now see some examples of DG-algebras with some Massey products to get a feel for how these work. 
+Let's see some examples of DG-algebras with some Massey products in order to get a feeling for how they work. 
 
 \begin{example}
 Let $A$ be the DG-algebra $k[x_1,x_2,x_3,a,b]$, with product given by normal multiplication, and where $x_1, x_2, x_3, a, b$ all have degree $1$. Let further $d(x_1)=d(x_2)=d(x_3)=0$, $d(a)=x_1\cdot x_2$ and $d(y)=x_2\cdot x_3$. 
 
-Since $x_1\cdot x_2$ and $x_2\cdot x_3$ are coboundaries, they are representatives for the zero class in cohomology. We have also predefined preferred cochains that hit them under $d$. 
+Since $x_1\cdot x_2$ and $x_2\cdot x_3$ are coboundaries, they are representatives for the zero class in cohomology. We also have predefined, preferred cochains that hit them under $d$, namely $a$ and $b$. 
 
-Then by construction we have that $[\overline{a}\cdot x_1 + \overline{x_3}\cdot b]$ is a non trivial element of the Massey triple product $\langle x_1, x_2, x_3\rangle$. 
+This means that by construction we have a non-trivial element of the Massey 3-product $\langle x_1, x_2, x_3\rangle$, given by $[\overline{a}\cdot x_1 + \overline{x_3}\cdot b]$. 
 \end{example}
 
 \begin{example}
@@ -130,9 +130,9 @@ When talking about Massey products it is customary to mention the application to
 \input{images/borromean+unlink.pdf_tex}
 \end{center}
 
-These spaces both consist of three copies of $S^1$, embedded in $\R^3$. The triple unlink is three completely separated components, but the Borromean link can not be separated into its three components. The fact that this can't happen is difficult to prove mathematically, and it was not understood how it could be proven until Massey products came to the rescue. 
+These spaces both consist of three copies of $S^1$, embedded in $\R^3$. The triple unlink is three completely separated components, but the Borromean link can not be separated into its three components. The fact that this can't happen is difficult to prove mathematically, and it was not properly understood how it could be proven until Massey products came to the rescue. 
 
-We won't prove this fact here, as it requires more in depth look into the topological side of these operations, but we can sketch the intuition. These two spaces both have the same cohomology ring, due to the cup product in the cohomology ring of the complement of the spaces measures the linking number of the rings. Since all of the three copies of $S^1$ in the Borromean link, and the triple unlink, are pairwise unlinked we have that the cup product is vanishing on cochains that represent these circles. This means that the cohomology ring is the same, and that some Massey $3$-product is defined for both spaces. 
+We won't prove this fact here, as it requires more in depth look into the topological side of these operations, but we can sketch the intuition. These two spaces both have the same cohomology ring, due to the cup product in the cohomology ring of the complement of the spaces measures the linking number of the rings. Since all of the three copies of $S^1$ in the Borromean link---and the triple unlink---are pairwise unlinked we have that the cup product vanishes on cochains that represent these circles. This means that the cohomology ring is the same, and that some Massey $3$-product is defined for both spaces. 
 
 For the triple unlink, the Massey 3-product will be trivial, but for the Borrmoean link there will be some non-trivial elements. For a proper proof see \cite{linking}. \footnote{Note that this paper was originally presented by Massey in 1968 at a conference at the University of Illinois. The article referenced above has later been written in \TeX{} by Elaine Jackson.}
 \end{example}
@@ -165,11 +165,11 @@ Recall that a DG-algebra $A$ is called formal there is a span of quasi-isomorphi
 Let $(A, d_A)$ be a formal DG-algebra. Then all Massey $n$-products vanish, i.e. given cohomology classes $x_1, \ldots, x_n$ such that their Massey $n$-products is defined, then we have $0\in \langle x_1, \ldots, x_n\rangle$. 
 \end{theorem}
 
-This result is remarked as being true---for positively graded minimal DG-algebra---in \cite[Theorem 4.1.]{DGMS}. It is proven using the same techniques and same assumptions in \cite[Theorem 1.6.5]{exact-massey}. As we do not use the above assumptions, we weren't certain that the referenced proof could be fitted to our more general case. Thus we use a more lengthy, but simpler approach, which also allows us to discuss elements from the introduction in a mathematically rigorous way. Our strategy is to prove it using the naturality of Massey products in combination with a DG-algebra with $d=0$ having vanishing Massey products. So lets prove these first.
+This result is remarked as being true---for positively graded minimal DG-algebras---in \cite[Theorem 4.1.]{DGMS}. It is proven using the same techniques and same assumptions in \cite[Theorem 1.6.5]{exact-massey}. As we do not use the above assumptions, we weren't certain that the referenced proof could be fitted to our more general case. Thus we use a more lengthy, but simpler approach, which also allows us to discuss elements from the introduction in a mathematically rigorous way. Our strategy is to prove it using the naturality of Massey products in combination with a DG-algebra with $d=0$ having vanishing Massey products. So lets prove these first.
 
 \begin{lemma}
 \label{lm:naturality_of_massey}
-Let $f\colon A\longrightarrow B$ be a morphism of DG-algebras, $f^*$ be its induced morphism in cohomology and $\langle x_1, \ldots, x_n\rangle $ a Massey $n$-product in $A$. Then we have $f^*( \langle x_1, \ldots, x_n\rangle) \subseteq \langle f^*(x_1), \ldots, f^*(x_n)\rangle$. 
+Let $f\colon A\longrightarrow B$ be a morphism of DG-algebras, $f^*$ be its induced morphism in cohomology and $\langle x_1, \ldots, x_n\rangle $ a defined Massey $n$-product in $A$. Then we have $f^*( \langle x_1, \ldots, x_n\rangle) \subseteq \langle f^*(x_1), \ldots, f^*(x_n)\rangle$. 
 \end{lemma}
 \begin{proof}
 Let $x\in \langle x_1, \ldots, x_n\rangle$. Then there exists a defining system $\{a_{i,j\}}\subseteq A$ for $x$, such that $[a_{0,n}] = x$, where  
@@ -192,9 +192,9 @@ We have that $[f(a_{i-1,i})] = f^*[a_{i-1,i}] = f^*(x_i)$, which proves the firs
 where the second equality uses the fact that $f(\overline{a_{i,j}}) = \overline{f(a_{i,j})}$. 
 \end{proof}
 
-This is what justifies calling them cohomology operations. This name comes  from algebraic topology, where a cohomology operation is a map between cohomology groups that are natural with respect to continuous maps between topological spaces. This means that they form natural transformations between cohomology functors. For our algebraic setting we have that maps between topological spaces induce maps between their algebraic model, hence we still use the term cohomology operation to describe natural transformations between cohomology functors in this algebraic setting as well. Notice that strictly speaking, the Massey products are not cohomology operations, as they consist of a set, rather than a single element. So calling them cohomology operations is in a broad sense. If however the Massey products consists of a single element, i.e. it is uniquely defined	, then they are actual cohomology operations. 
+This is what justifies calling them cohomology operations. This name comes  from algebraic topology---where a cohomology operation is a map between cohomology groups that are natural with respect to continuous maps between topological spaces. This means that they form natural transformations between cohomology functors. For our algebraic setting we have that maps between topological spaces induce maps between their algebraic model, hence we still use the term cohomology operation to describe natural transformations between cohomology functors in this algebraic setting as well. Notice that strictly speaking, the Massey products are not cohomology operations, as they consist of a set, rather than a single element. So calling them cohomology operations is in a broad sense. If however the Massey products consists of a single element, i.e. they are uniquely defined, then they are actual cohomology operations. 
 
-The Massey 3-product is called a cohomology operation of order 2, because it requires a relation of cohomology operation of order 1 to be true. This relation is the vanishing of the induced product products $x_1 x_2 = 0 = x_2 x_3$. This induced product is a cohomology operation as it is natural with respect to maps between DG-algebras. The Massey $n$-product is then a cohomology operation of order $n-1$, as it places a restriction on some cohomology operation of order $n-2$ to be defined.   
+The Massey 3-product is called a cohomology operation of order 2, because it requires a relation on cohomology operations of order 1 to be true. For the Massey 3-product, this relation is the vanishing of the induced products, $x_1 x_2 = 0 = x_2 x_3$. This induced product is a cohomology operation as it is natural with respect to maps between DG-algebras. The Massey $n$-product is then a cohomology operation of order $n-1$, as it places a restriction on some cohomology operation of order $n-2$ to be defined.   
 
 
 \begin{theorem}
@@ -237,7 +237,7 @@ Notice that these hold for our already constructed $a_{i-1, i}$ and $c_{i-1, i}$
 
 Let $p = j-i$. Then 
 \begin{align*}
-    d(\sum_{k=i+1}^{j-1}\overline{c_{ik}}q(a_{kj})+b_{ik}c_{kj})
+    d\left(\sum_{k=i+1}^{j-1}\overline{c_{ik}}q(a_{kj})+b_{ik}c_{kj}\right)
     &= \sum_{k=i+1}^{j-1}d(\overline{c_{ik}}q(a_{kj}))+d(b_{ik}c_{kj}) \\
     &= \sum_{k=i+1}^{j-1} d(\overline{c_{i,k}})q(a_{k,j}) + (-1)^{|\overline{c_{ik}}|}\overline{c_{i,k}}d(q(a_{k,j})) \\
     &\hspace{13mm}+ 
@@ -249,17 +249,17 @@ which by equation (2.1) and (2.2) is equal to
     &+ 
     \sum_{m = i+1}^{k-1}\overline{c_{i,m}q(a_{m,k})}q(a_{k,j}) + \overline{b_{i,m}c_{m,k}}q(a_{k,j}) \\
     &+ 
-    (-1)^{|\overline{c_{i,k}}|}\overline{c_{i,k}}(\sum_{m=k+1}^{j-1}\overline{q(a_{k,m})})q(a_{m,j}) \\
+    (-1)^{|\overline{c_{i,k}}|}\overline{c_{i,k}}\left(\sum_{m=k+1}^{j-1}\overline{q(a_{k,m})})q(a_{m,j}\right) \\
     &+ 
     \sum_{m=i+1}^{j-1}\overline{b_{i,m}}b_{m,k}c_{k,j} + (-1)^{|b_{i,k}|}(b_{i,k}q(a_{k,j}) - b_{i,k}b_{k,j}) \\
     &+ 
-    (-1)^{|b_{i,k}|}(\sum_{m=k+1}^{j-1}b_{i,k}\overline{c_{k,m}}q(a_{m,j})+b_{i,k}b_{k,m}c_{m,j}).
+    (-1)^{|b_{i,k}|}\left(\sum_{m=k+1}^{j-1}b_{i,k}\overline{c_{k,m}}q(a_{m,j})+b_{i,k}b_{k,m}c_{m,j}\right).
 \end{align*}
-This gives---by canceling the term with opposite signs---finally
+This gives us---by canceling the terms with opposite signs---finally
 \begin{equation*}
-\sum_{k=i+1}^{j-1}\overline{b_{i,k}}b_{k,j} + \sum_{k=i+1}^{j-1}\overline{q(a_{a_{i,k}})}q(a_{k,j}).
+d\left(\sum_{k=i+1}^{j-1}\overline{c_{ik}}q(a_{kj})+b_{ik}c_{kj}\right) = \sum_{k=i+1}^{j-1}\overline{b_{i,k}}b_{k,j} + \sum_{k=i+1}^{j-1}\overline{q(a_{a_{i,k}})}q(a_{k,j}).
 \end{equation*}
-Since $\{b_{i,j}\}$ is a defining system, we know that $\sum_{k=i+1}^{j-1}\overline{b_{i,k}}b_{k,j}$ is a coboundary, which by the above means that also $\sum_{k=i+1}^{j-1}\overline{q(a_{i,k})}q(a_{k,j})$ is a coboundary. Since $q$ and $d$ commute, we know that also $\sum_{k=i+1}^{j-1}\overline{a_{i,k}}a_{k,j}$ is a coboundary. Hence we can choose some $a_{i,j}'$ such that
+Since $\{b_{i,j}\}$ is a defining system, we know that $\sum_{k=i+1}^{j-1}\overline{b_{i,k}}b_{k,j}$ is a coboundary, which by the above calculation means that also $\sum_{k=i+1}^{j-1}\overline{q(a_{i,k})}q(a_{k,j})$ is a coboundary. Since $q$ and $d$ commute, we also get that $\sum_{k=i+1}^{j-1}\overline{a_{i,k}}a_{k,j}$ is a coboundary. Hence we can choose some $a_{i,j}'$ such that
 \begin{equation*}
     d(a_{i,j}') = \sum_{k=i+1}^{j-1}\overline{a_{i,k}}a_{k,j}.    
 \end{equation*}
@@ -281,21 +281,21 @@ If we let $a_{i,j} = a_{i,j}-d_{i,j}$ then we have
     \\
     d(c_{i,j}) &= q(a_{i,k}) - b_{i,k} \sum_{k=i+1}^{j-1}\overline{c_{i,k}}q(a_{k,j}) + b_{i,k}c_{k,j}.
 \end{align*}
-By induction we now have the elements $a_{i,j}$ and $c_{i,j}$ for all $i,j$ such that $1<i-j<n$. The exact same long calculation as earlier, exchanging $i,j$ by $0,n$ shows that 
+By induction we now have the elements $a_{i,j}$ and $c_{i,j}$ for all $i,j$ such that $1<i-j<n$. The exact same long calculation as we just did---exchanging $i,j$ by $0,n$---shows that 
 \begin{align*}
-    d(\sum_{k=1}^{n-1}\overline{c_{0k}}q(a_{kn})+b_{0k}c_{kn})
+    d\left(\sum_{k=1}^{n-1}\overline{c_{0k}}q(a_{kn})+b_{0k}c_{kn}\right)
     &=
     \sum_{k=1}^{n-1}\overline{b_{0,k}}b_{k,n} + \sum_{k=1}^{n-1}\overline{q(a_{a_{0,k}})}q(a_{k,n}) \\
     &= b_{0,n} - q(a_{0,n})
 \end{align*}
-which means that $b_{0,n}$ and $q(a_{o,n})$ are cohomologous. 
+which means that $b_{0,n}$ and $q(a_{o,n})$ are cohomologous, as they differ by a boundary. 
 
-To summarize, we have for any $y$ in $ \langle q^*(x_1), \ldots, q^*(x_n)\rangle$ found an $q^*(x)$ in $q^*(\langle x_1, \ldots, x_n\rangle)$, i.e.
+To summarize, we have for any $y$ in $ \langle q^*(x_1), \ldots, q^*(x_n)\rangle$ found a $q^*(x)$ in $q^*(\langle x_1, \ldots, x_n\rangle)$, such that $q^*(x)=y$ in cohomology, hence
 \begin{equation*}
     \langle q^*(x_1), \ldots, q^*(x_n)\rangle \subseteq q^*(\langle x_1, \ldots, x_n\rangle)
 \end{equation*}
 
-Which finally gives 
+By putting the two containments together we get our wanted set-equivalence 
 \begin{equation*}
     \langle q^*(x_1), \ldots, q^*(x_n)\rangle = q^*(\langle x_1, \ldots, x_n\rangle)
 \end{equation*}
@@ -307,8 +307,7 @@ Which finally gives
 If $q\colon A\longrightarrow B$ is a quasi-isomorphism, then all Massey products in $A$ vanish if and only if all Massey products vanish in $B$. 
 \end{corollary}
 
-
-This means that having vanishing Massey products is a stable property through quasi-isomorphisms. 
+This means that having vanishing Massey products is a ``stable property'' through quasi-isomorphisms. The next thing we need for our result, is that a DG-algebra with trivial differential, can't have any non-vanishing Massey products. 
 
 \begin{lemma}
 \label{lm:trivial_differential_then_no_massey}
@@ -324,7 +323,7 @@ This is also the idea generally. Since the cohomology classes represent themselv
 \begin{equation*}
     0 = d(a_{i,j}) = \sum_{i<j<k}\overline{a_{i,k}} a_{k,j}
 \end{equation*}
-for all $(i,j)\neq (0,n)$, as $d=0$. This means that for $i,j$ such that $(i,j)\neq (0,n)$ and $(i,j)\neq (i,i+1)$ we can let $a_{i,j} = 0$, as $d$ is linear, which gives
+for all $(i,j)\neq (0,n)$, as $d=0$. This means that for $i,j$ such that $(i,j)\neq (0,n)$ and $(i,j)\neq (i,i+1)$ we can choose $a_{i,j} = 0$. As $d$ is linear we get
 \begin{equation*}
     d(0)=0=\sum_{i<j<k}\overline{a_{i,k}} a_{k,j}.
 \end{equation*}
@@ -332,7 +331,7 @@ Thus, if we let $a_{i-1, i} = x_i$, then $\{ x_1, x_2,\ldots, x_n, 0, \ldots, 0 
 \begin{equation*}
     a_{0,n} = \sum_{0<j<n}\overline{a_{0,k}} a_{k,n} = 0
 \end{equation*}
-as every summand must contain a copy of 0. This means that $0\in \langle x_1, \ldots, x_n\rangle$ for any $n$ and any $x_1, \ldots, x_n \subseteq H(A)$, meaning that all Massey products of all orders must be vanishing.
+because every summand must contain a copy of the zero class. This means that $0\in \langle x_1, \ldots, x_n\rangle$ for any $n$ and any $x_1, \ldots, x_n \subseteq H(A)$, meaning that all Massey products of all orders must be vanishing.
 \end{proof}
 
 The above lemma is the precise mathematical formulation of the statement that the cohomology algebra of a DG-algebra does not have ``access to the information'' that the Massey products contain. The cohomology algebra of a DG-algebra is precisely one such DG-algebra with trivial differential, hence there can be no non-vanishing Massey products. This means that the cohomology algebra does not contain all the relevant information, given that there is some non-trivial Massey products in the original DG-algebra. 
@@ -340,7 +339,7 @@ The above lemma is the precise mathematical formulation of the statement that th
 Ok, lets put these lemmas together to form the proof of the fact that a formal DG-algebra can have no non-vanishing Massey products. 
 
 \begin{proof}[of theorem 2.8]
-Given a formal DG-algebra $A$ there is by \ref{thm:span} a span of quasi-isomorphisms $H(A)\longleftarrow C\longrightarrow A$. By \cref{lm:trivial_differential_then_no_massey} all Massey products in $H(A)$ must contain the zero class, as it is a DG-algebra with trivial differential. By \cref{cor:quasi_preserves_massey} we know that $H(A)$ only having vanishing Massey product implies that $A$ only has vanishing Massey products as they are connected by quasi-isomorphisms. 
+Given a formal DG-algebra $A$ there is by \ref{thm:span} a span of quasi-isomorphisms $H(A)\longleftarrow C\longrightarrow A$. By \cref{lm:trivial_differential_then_no_massey} all Massey products in $H(A)$ must contain the zero class, as it is a DG-algebra with trivial differential. By \cref{cor:quasi_preserves_massey} we know that $H(A)$ only having vanishing Massey product implies that $A$ only has vanishing Massey products, as they are connected by quasi-isomorphisms. 
 \end{proof}
 
 This resolves \textbf{Theorem B.} from the motivation of the chapter. Having now proven that formal DG-algebras admit no non-vanishing Massey products means that having any non-trivial Massey product is a definite obstruction to being a formal DG algebra, which is exactly what we expected. It is information--inaccessible to the cohomology algebra---hence the DG-algebra can't be sufficiently simple. This also 	gives us a criteria for answering negative to our central question: 
@@ -350,7 +349,7 @@ Given a DG-algebra $A$, when do we know that $A$ is formal?
 \end{central}
 \textbf{Criteria:} All Massey products needs to be vanishing, if not, $A$ can't be formal. 
 
-We remark that any DG algebra $G$ with $d=0$ must be a formal DG algebra as the map $G\longrightarrow H(G)$ sending $g$ to its cohomology class $[g]$ induces an isomorphism in cohomology, namely the identity map. This means that we can include the category of graded algebras into the category $DGA_k$ by letting $d=0$, project down to the homotopy category $hoDGA_k$ and look at its essential image, i.e. all objects in $hoDGA_k$ that are isomorphic to an algebra in the image of the functor. 
+Notethat any DG-algebra $G$ with $d=0$ must be formal---as the map $G\longrightarrow H(G)$ sending $g$ to its cohomology class $[g]$ induces an isomorphism in cohomology, namely the identity map. This means that we can include the category of graded algebras into the category $DGA_k$ by letting $d=0$, project down to the homotopy category $hoDGA_k$ and look at its essential image, i.e. all objects in $hoDGA_k$ that are isomorphic to an algebra in the image of the functor
 \begin{center}
 \begin{tikzcd}
 GrAlg_k \arrow[r, "I"] & DGA_k \arrow[r, "\pi"] & hoDGA_k
@@ -360,9 +359,9 @@ Taking the essential image
 \begin{equation*}
     \text{eIm}(\pi\circ I) = \{A\in hoDGA_k \,\vert\, A\cong \pi( I(G)) \text{ for some } G\in GrAlg_k\}
 \end{equation*}
-gives us precisely the homotopy category of the subcategory of formal DG-algebras. 
+should give us precisely the homotopy category of the subcategory of formal DG-algebras. 
 
-This means a partial answer to the central question:
+This means we have a partial answer to the central question.
 
 \textbf{Partial answer:} When $A$ has a trivial differential. 
 
@@ -372,13 +371,13 @@ A natural more general question after this is then: Are the Massey products the 
 
 \textbf{Potential answer:} When $A$ has no non-trivial Massey products.
 
-This sadly turns out not to be the case. This should maybe be expected intuitively, as information hidden from the cohomology algebra could in theory be anything. So having the only such information being the Massey products would imply that no ``weird things'' could happen, and in the field of topology, weird things happen more often than not. For some examples of non-formal DG-algebras, with only vanishing Massey products, see \cite[Section 1.5]{non_formal1} and \cite[Example 8.13.]{non_formal2}. 
+This sadly turns out to \emph{not} be the case. This should maybe be expected intuitively, as information hidden from the cohomology algebra could in theory be anything. So having the only such information being the Massey products would imply that no ``weird things'' could happen, and in the field of topology, weird things happen more often than not. For some examples of non-formal DG-algebras, with only vanishing Massey products, see \cite[Section 1.5]{non_formal1} and \cite[Example 8.13.]{non_formal2}. 
 
 \subsection*{The path onwards}
 
-Hence we are now facing a cross-road. Do we try something new? Some other invariants, or techniques to detect formality? There is some interesting theory developed around formality and Hochschild cohomology. One can calculate certain Hochschild cohomology classes---for example the so-called Kaledin class, developed in \cite{kaledin1} and \cite{kaledin2}---which only vanish when the DG-algebra is formal. 
+We are now facing a cross-road. Our attempted method of checking formality didn't work as well as we wanted, so where do we go? Do we try something new? Some other invariants, or techniques to detect formality? There is some interesting theory developed around formality and Hochschild cohomology. One can calculate certain Hochschild cohomology classes---for example the so-called Kaledin class, developed in \cite{kaledin1} and \cite{kaledin2}---which only vanish when the DG-algebra is formal. 
 
-We will however walk another way, continuing more along the same route. By this we mean that we will try to rectify the theory we have already developed by using generalizations. More specifically, we need access to even more homotopical information. We will take a DG-algebra, and in some sense homotopically deform it, so that we get a weaker, but richer structure. 
+We will however walk another way, continuing more along the same route. By this we mean that we will try to rectify the theory we have already developed by using generalizations. More specifically, we need access to even more homotopical information. We will take a DG-algebra, and in some sense homotopically deform it, so that we get a weaker, but richer structure---containing even more homotopical information. 
 
 
 

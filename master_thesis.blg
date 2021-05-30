@@ -2,8 +2,7 @@ This is BibTeX, Version 0.99dThe top-level auxiliary file: master_thesis.aux
 The style file: alpha.bst
 Database file #1: references.bib
 Warning--I'm ignoring may_loop's extra "publisher" field
---line 463 of file references.bib
-Warning--empty journal in nonformal_loop
+--line 466 of file references.bib
 Warning--empty journal in berglund
 Warning--empty journal in infty-massey
-(There were 4 warnings)
+(There were 3 warnings)
