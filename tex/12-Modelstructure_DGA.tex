@@ -2,7 +2,7 @@
 
 \section{The homotopy theory of DG-algebras}
 
-When we looked at some examples of model categories, we mentioned that the model structure on the category of DG-algebras would be similar to the model structure on unbounded chain complexes of modules over a ring. The model structure on $DGA_k$ was first constructed by Jardine in \cite{jardine}, and is described by the weak equivalences being the quasi-isomorphisms, the fibrations being the degreewise surjections and the cofibrations being all maps that have the left lifting property with respect to acyclic fibrations. 
+When we looked at some examples of model categories, we mentioned that the model structure on the category of DG-algebras would be similar to the model structure on unbounded chain complexes of modules over a ring. The model structure on $DGA_k$ was first constructed by Jardine in \cite{jardine}, and is described by the weak equivalences\index{Weak equivalence} being the quasi-isomorphisms\index{Quasi-isomorphism}, the fibrations\index{Fibration} being the degreewise surjections and the cofibrations\index{Cofibration} being all maps that have the left lifting property with respect to acyclic fibrations. 
 
 Let's prove that this is in fact a model structure on the category $DGA_k$. Note that this construction---and proof---holds more generally for $k$ a commutative unital ring. The greater part of the proof below is directly inspired by the  original paper \cite{jardine}, but we have tried to fill in some details, and prove some parts that is left out by Jardine. We will not prove that the second factorization in \textbf{MC4} holds in $DGA_k$, as it requires us to go into the so-called ``small objects argument''. For a proof of that result, see \cite[Theorem 2.1.14]{hovey}, and for a more in depth conceptual treatment, see \cite{small_objects}.
 
@@ -23,7 +23,7 @@ where the differential is trivial, except for being the identity on $k$ in degre
 \end{itemize}
 
 
-The coproduct of two DG-algebras, $A$ and $B$, is defined by $A\ast B = T(A\otimes B)/I$, where $T(A\otimes B)$ is the tensor algebra
+The \emph{coproduct of two DG-algebras}\index{Coproduct of DG-algebras}, $A$ and $B$, is defined by $A\ast B = T(A\otimes B)/I$, where $T(A\otimes B)$ is the tensor algebra
 \begin{equation*}
     T(A\otimes B) = \bigoplus_{n \in \N}(A\otimes B)^{\otimes n}
 \end{equation*}
@@ -151,7 +151,7 @@ The category $DGA_k$ of DG-algebras over a field $k$, together with the three cl
 \begin{proof}
 We need to check the four axioms. 
 
-\textbf{MC 1:} This point consists of three sub-points. We first prove that $F$ is retraction closed, then $W$ and finally $C$. 
+\textbf{MC 1:} This point consists of three sub-points. We first prove that $F$ is retraction closed\index{Retraction closed}, then $W$ and finally $C$. 
 
 Assume $f:A\longrightarrow B$ is a retract of $g:X\longrightarrow Y$ where $g\in F$. This means we have a diagram
 
@@ -310,7 +310,7 @@ Hence all retractions of morphisms in $C$ satisfy the lifting property with resp
 
 \textbf{MC 2:} Isomorphisms of DG-algebras have the two out of three property, and since quasi-isomorphisms are defined by inducing isomorphisms on the cohomology algebras, they also satisfy the property. 
     
-\textbf{MC 3:} Notice that one half of this axiom holds by definition, as we defined cofibrations to be the morphisms that satisfied the left lifting property with respect to acyclic fibrations. For the other half we need to show that if we have a diagram 
+\textbf{MC 3:} Notice that one half of this axiom holds by definition, as we defined cofibrations to be the morphisms that satisfied the left lifting property\index{Left lifting property} with respect to acyclic fibrations. For the other half we need to show that if we have a diagram 
 \begin{center}
 \begin{tikzpicture}
 	\node (1) {$A$};
@@ -327,7 +327,7 @@ Hence all retractions of morphisms in $C$ satisfy the lifting property with resp
 \end{center}
 where $i$ is an acyclic cofibration, and $p$ a fibration, then a lift $h$ exists. 
     
-We can translate the problem to showing that every morphism $i\in C\cap W$ has the right lifting property w.r.t. all fibrations $p\in F$. 
+We can translate the problem to showing that every morphism $i\in C\cap W$ has the right lifting property\index{Right lifting property} w.r.t. all fibrations $p\in F$. 
     
 Assume we have proven MC4, then we can factorize $i= f\circ j$ such that $j\in C\cap W$ and $f\in F$. Since two of them are in $W$, the last one also is by MC2.
 
@@ -384,37 +384,52 @@ The last factorization is as mentioned left out, due to us not covering the smal
 \end{proof}
 
 
-As we now know that $DGA_k$ is a model category, we know there exists a terminal and an initial object. In $DGA_k$ the terminal object is $0$---the complex consisting only of zeroes with only trivial differentials and trivial multiplication---while the initial object is the ground field $k$---treated as a DG-algebra by having only one copy of $k$ in degree zero and zeroes everywhere else. Since the unique map $A\longrightarrow 0$ is a degreewise surjection for any DG-algebra $A$ we know that all DG-algebras are fibrant objects in this model structure. 
+As we now know that $DGA_k$ is a model category, we know there exists a terminal and an initial object. In $DGA_k$ the terminal object is $0$---the complex consisting only of zeroes with only trivial differentials and trivial multiplication---while the initial object is the ground field $k$---treated as a DG-algebra by having only one copy of $k$ in degree zero and zeroes everywhere else. Since the unique map $A\longrightarrow 0$ is a degreewise surjection for any DG-algebra $A$ we know that all DG-algebras are fibrant objects\index{Fibrant object} in this model structure. 
 
 
 
 
 \subsection{More formality}
 
-This new framework allows us to reconsider the definition of a formal DG algebra. We take the category $DGA_k$, which we now know is a model category with $W$ being the collection of quasi-isomorphisms, and produce its homotopy category $HoDGA_k = DGA_k[W^{-1}]$. We can then define a DG-algebra to be formal as follows. 
+This new framework allows us to reconsider the definition of a formal DG-algebra. We take the category $DGA_k$, which we now know is a model category with $W$ being the collection of quasi-isomorphisms, and produce its homotopy category $HoDGA_k = DGA_k[W^{-1}]$. We can then define a DG-algebra to be formal as follows. 
 
 \begin{definition}[Formal DG-algebra]
 \label{def:formal_dga2}
+\index{Formal DG-algebra}
 A DG-algebra $(A, d)$ is called formal if it is isomorphic to its cohomology algebra $H(A)$ in $HoDGA_k$.
 \end{definition}
 
 This is the precise reason we in the abstract referred to formal DG-algebras as being the algebras that contain the same homotopical information as their cohomology algebra. They are isomorphic in the homotopy category, hence contain the same information up to homotopy, e.g. homotopical information. 
 
-Unfortunately not all isomorphisms in $HoDGA_k$ come from a single quasi-isomorphism in $DGA_k$. Quasi-isomorphisms in $DGA_k$ are not invertiblein general---not even homotopy invertible. Thus a zig-zag of quasi-isomorphisms is the best we can hope for, which means that this new definition is precisely the same as the old. 
+Unfortunately not all isomorphisms in $HoDGA_k$ come from a single quasi-isomorphism in $DGA_k$. Quasi-isomorphisms in $DGA_k$ are not invertible in general---not even invertible up to homotopy. Thus a zig-zag of quasi-isomorphisms is the best we can hope for, which means that this new definition is precisely the same as the old. 
 
-A feature of this new framework is that we actually don't need an arbitrary zig-zag of quasi-isomorphisms---we only need a single span. To prove this we will need the following. 
+A feature of this new framework is that we actually don't need an arbitrary zig-zag of quasi-isomorphisms---we only need a single span. A \emph{span of morphisms}\index{Span of morphisms} is a diagram of the following form:
+
+\begin{center}
+\begin{tikzpicture}
+	\node (1) {$A$};
+	\node (2) [right of=1] { };	
+	\node (3) [right of=2] {$B$};	
+	\node (4) [node distance=1cm, above of=2] {$C$};
+
+	\draw [-to] (4) to node [swap]{} (1);
+	\draw [-to] (4) to node {} (3);
+\end{tikzpicture}
+\end{center}
+
+If we reverse the directions of the two arrows we get a diagram called a \emph{cospan}\index{Cospan of morphisms}. To prove this we will need the following. 
 
 \begin{definition}[Right proper model category]
 \label{def:right_proper}
+\index{Right proper model category}
 Let $\C$ be a model category. We say it is right proper if the pullback of a weak equivalence along a fibration is again a weak equivalence. 
 \end{definition}
 
 As a consequence of the fact that all objects in $DGA_k$ are fibrant, and the fact that pullbacks of weak equivalences along fibrations between fibrant objects is again a weak equivalence, we have that $DGA_k$---with the model structure defined above---is a right proper model category.  
-% https://ncatlab.org/nlab/show/proper+model+category
 
 \begin{theorem}
 \label{thm:span}
-Let $A$ and $B$ be quasi-isomorphic DG-algebras. Then there exists a DG-algebra $C$ and two quasi-isomorphisms $q_1, q_2$ such that $A\overset{q_1}\longleftarrow C \overset{q_2}\longrightarrow B$
+Let $A$ and $B$ be quasi-isomorphic DG-algebras\index{Quasi-isomorphic DG-algebras}. Then there exists a DG-algebra $C$ and two quasi-isomorphisms $q_1, q_2$ such that $A\overset{q_1}\longleftarrow C \overset{q_2}\longrightarrow B$
 \end{theorem}
 \begin{proof}
 Since we know $A$ and $B$ are quasi-isomorphic, we have a zig-zag of quasi-isomorphisms between them. Assume this sequence has length $r$. There are four possible ways this zig-zag can look at its ends. On the left we can have either a quasi-isomorphism $A\longrightarrow A_1$, or $A\longleftarrow A_1$. Similarly on the other end we can have either $A_r\longrightarrow B$ or $A_r\longleftarrow B$. 
@@ -518,7 +533,7 @@ This finally resolves \textbf{Theorem A.} from the motivation in the beginning o
 
 We didn't actually use the specific model structure on $DGA_k$ in this proof, so the same argument holds for any right proper model categories where all objects are fibrant. 
 
-Notice that this also implies that $DGA_k$ satisfies the right Ore condition, i.e. that given a cospan $A\overset{a}\rightarrow C \overset{q}\leftarrow B$, where $q$ is a quasi-isomorphism, then there exists a span $A\overset{q'}\leftarrow C' \rightarrow B$ where $q'$ is a quasi-isomorphism. This follows from the proof above as we can factorize $a$ into $f\circ c$, where $c$ is an acyclic cofibration and $f$ a fibration. We can take the pullback of $D\rightarrow C\leftarrow B$ to get the diagram
+Notice that this also implies that $DGA_k$ satisfies the \emph{right Ore condition}\index{The right Ore condition}, i.e. that given a cospan $A\overset{a}\rightarrow C \overset{q}\leftarrow B$, where $q$ is a quasi-isomorphism, then there exists a span $A\overset{q'}\leftarrow C' \rightarrow B$ where $q'$ is a quasi-isomorphism. This follows from the proof above as we can factorize $a$ into $f\circ c$, where $c$ is an acyclic cofibration and $f$ a fibration. We can take the pullback of $D\rightarrow C\leftarrow B$ to get the diagram
 \begin{center}
 \begin{tikzpicture}
 	\node (1) {$C'$};
@@ -616,7 +631,7 @@ where $q_3$ exists due to the Ore condition. As $q_3\circ q_1$ is again a quasi-
 \end{tikzpicture}
 \end{center}
 
-We won't need, or use, this fact during the thesis, but it is a nice interesting consequence of the results in the chapter. It is also nice to know that $DGA_k$ has a nice homotopy category, as we have already described our main interest---formality---by being a consequence of isomorphisms in this homotopy category. 
+We won't need, or use, this fact during the thesis, but it is a nice interesting consequence of the results in the chapter. It is also nice to know that $DGA_k$ has a nice homotopy category, as we have already described our main interest---formality---by being a consequence of isomorphisms in this homotopy category\index{The homotopy category}. 
 
 
 

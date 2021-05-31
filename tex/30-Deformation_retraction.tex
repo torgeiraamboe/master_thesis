@@ -1,6 +1,7 @@
 
 
-\subsection{Deformation retraction}
+\section{Deformation retraction}
+\label{sec:deformation_retraction}
 
 %The algebras we have been developing so far are all well and interesting, but sometimes, we wish to have a little less structure, or ``looser'' structure. This reasoning prompts the study of so-called ``higher algebra''. An $\A$-algebra is one of these higher structures, that arose quite naturally in topology, but have since been given their own algebraic theory. They first showed up when Stasheff was studying loop spaces in his phd thesis. 
 
@@ -10,6 +11,7 @@ Let's try to apply the above topological motivation to our more algebraic situat
 
 \begin{definition}[Deformation retraction]
 \label{def:deformation_retraction}
+\index{Deformation retraction}
 Let $(A, d_A)$ and $(B, d_B)$ be cochain complexes, and let $p:A\longrightarrow B$ and $i:B\longrightarrow A$ be morphisms between them. We call $p$ a deformation retraction if $p\circ i = id_B$ and there exists a homotopy $i\circ p\overset{h}\sim id_A$. If there exists a deformation retraction $A\longrightarrow B$, then we say $B$ is a deformation retract of $A$, or that $A$ deformation retracts onto $B$.
 
 We sometimes denote such a system by $(A, B, p, i, h)$, and more often with the following diagram:
@@ -86,7 +88,7 @@ This space, $Hom(A^{\otimes 3}, A)$, can be made into a chain complex by definin
 \end{equation*}
 where $d_{A^{\otimes 3}} = (d_A, id, id)+(id, d_A, id)+(id, id, d_A)$. 
 
-A homotopy between $m_2(id\otimes m_2)$ and $m_2(m_2\otimes id)$ would be a map $h\colon A^{\otimes 3}\longrightarrow A$ of degree $-1$, such that $d_A^{n-1}\circ h^{n} + h^{n+1}\circ d_{A^{\otimes 3}}^n = m_2(id\otimes m_2)-m_2(m_2\otimes m_2)$. In or diagram it would be a diagonal map
+A \emph{homotopy}\index{Homotopy of chain maps} between $m_2(id\otimes m_2)$ and $m_2(m_2\otimes id)$ would be a map $h\colon A^{\otimes 3}\longrightarrow A$ of degree $-1$, such that $d_A^{n-1}\circ h^{n} + h^{n+1}\circ d_{A^{\otimes 3}}^n = m_2(id\otimes m_2)-m_2(m_2\otimes m_2)$. In or diagram it would be a diagonal map
 \begin{center}
 \begin{tikzpicture}
 	\node (1) {$A^{n-1}\otimes A^{n-1}\otimes A^{n-1}$};
@@ -113,161 +115,17 @@ The explicit homotopy that we will use is the following tertiary operator $m_3$ 
 \begin{equation*}
     m_3 = p\circ (m(hm\otimes id)-m(id\otimes hm))\circ (i\otimes i \otimes i),
 \end{equation*}
-where $m$ denotes the product in $A$. Notice that we have $|m_3|=-1$, and $\partial m_3 = dm_3 + m_3 d_{A^{\otimes 3}}$. Hence for $m_3$ to be the homotopy we want between $m_2(id\otimes m_2)$ and $m_2(m_2\otimes id)$ we must show that $\partial m_3 = m_2(id\otimes m_2)-m_2(m_2\otimes id)$. As we have not come upon a fully written out detailed proof, we have included it to have at least one existing complete calculation in the world. It is not pretty, and it is just tedious straight forward calculation, but in our opinion it is nice to have, as it gives some insight into how these homotopies between operations work. 
+where $m$ denotes the product in $A$. Notice that we have $|m_3|=-1$, and $\partial m_3 = dm_3 + m_3 d_{A^{\otimes 3}}$. Hence for $m_3$ to be the homotopy we want between $m_2(id\otimes m_2)$ and $m_2(m_2\otimes id)$ we must show that $\partial m_3 = m_2(id\otimes m_2)-m_2(m_2\otimes id)$. 
 
-We denote $d_A$ by just $d$, and $id$ by $1$ in order to make it more distinguishable from $d$ and eventual copies of $i\circ d$. We also skip writing $\circ$, and denote it instead just by concatenation, so $d\circ m_3 = dm_3$. Since $m_3$ consists of $i, p$, which are both of degree $0$, and $h$, which has degree $-1$, we have $|m_3|=-1$. The boundary of $m_3$ is then
-\begin{align*}
-    \partial m_3 
-    &= dm_3+m_3(d,1,1)+m_3(1,d,1)+m_3(1,1,d)\\
-    &= dm_3
-    +p((-1)^{|1||d|}m(hm(id\otimes i)\otimes i)
-    -(-1)^{|hm||d|}m(id\otimes hm(i\otimes i))) \\
-    & \hspace{13mm} 
-    +p((-1)^{|1||1|}m(hm(i\otimes id)\otimes i)
-    -(-1)^{|hm||1|}m(i\otimes hm(id\otimes i))) \\
-    & \hspace{13mm} 
-    +p((-1)^{|1||1|}m(hm(i\otimes i)\otimes id)
-    -(-1)^{|hm||1|}m(i\otimes hm(i\otimes id)))
-\end{align*}
+\begin{theorem}
+Let $(A,V, i,p,h)$ be a deformation retraction, where $A$ is a DG-algebra and $V$ is a chain complex. Let $m_2$ be the induced transferred product on $V$. Then the operation $m_3$, as described above, is a homotopy between $m_2(id\otimes m_2)$ and $m_2(m_2\otimes id)$. 
+\end{theorem}
 
-where the signs appear due to the Koszul grading rule. As the identity morphism has degree $0$ most of these vanish, except for $(-1)^{|hm||d|}$. The composite map $hm$ has degree $|h|+|m| = -1+0 = -1$ and the differential $d$ has degree $1$ as we work with cohomological grading. Since $i$ is a morphism of chain complexes it commutes with the differentials, hence we can put all the $i$'s to the right, to get 
-\begin{align*}
-    \partial m_3 
-    &= dm_3
-    +p(m(hm(d\otimes 1)\otimes 1)
-    +m(d\otimes hm) \\
-    & \hspace{17mm} 
-    +m(hm(1\otimes d)\otimes 1)
-    -m(1\otimes hm(d\otimes 1)) \\
-    & \hspace{17mm} 
-    +m(hm\otimes d)
-    -m(1\otimes hm(1\otimes d))(i\otimes i\otimes i)
-\end{align*}
+This proof is quite long and terse, so we have moved it to Appendix A. It does however give some nice intuition, and general feeling for how these homotopies work, so the reader is advised to at least skim through it. 
 
-We haven't touched the $dm_3$ part yet, so lets see what this gives us. We get 
-\begin{align*}
-    dm_3 
-    &= 
-    d(p(m(hm\otimes 1)
-    -m(1\otimes hm))(i\otimes i\otimes i)) \\
-    &= 
-    p(dm(hm\otimes 1)
-    -dm(1\otimes hm))(i\otimes i\otimes i) \\
-\end{align*}
+This result means that the topology we described earlier---with the Stasheff associahedra\index{Stasheff associahedron}---really dictates what is going on in the purely algebraic scenario. This is of course by design, as Stasheff used these algebraic structures to describe what happens topologically, but it is still important to understand how the two different stories are compatible. This really shows that $m_3$ is the algebraic version of $K3$, i.e. the interval---or homotopy really---between the two ways of combining the product $m_2$ with it self. Because of this we often call $m_3$ \emph{the associating homotopy}\index{The associating homotopy} of $m_2$. 
 
-Since $A$ is a DG-algebra we can use the graded Leibniz rule to expand $dm$ into $m(d\otimes 1)+m(1\otimes d)$. Doing so both places they appear above gives us
-\begin{align*}
-    dm_3 
-    &= 
-    p((m(d\otimes 1)
-    +m(1\otimes d))(hm\otimes 1) \\
-    &\quad 
-    -(m(d\otimes 1)
-    +m(1\otimes d))(1\otimes hm))(i\otimes i\otimes i) \\
-    &=
-    p((m(d\otimes 1)
-    +m(1\otimes d))(hm\otimes 1) \\
-    &\quad 
-    -m(d\otimes 1)
-    -m(1\otimes d)(1\otimes hm))(i\otimes i\otimes i) 
-\end{align*}
-
-To contract this we again need to apply the Koszul grading rule. For the individual pieces in the above equation we get
-\begin{align*}
-    m(d\otimes 1)(hm\otimes 1) &= (-1)^{|1||hm|}m(dhm\otimes 1) \\
-    m(1\otimes d)(hm\otimes 1) &= (-1)^{|d||hm|}m(hm\otimes d) \\
-    m(d\otimes 1)(1\otimes hm) &= (-1)^{|1||1|}m(d\otimes hm) \\
-    m(1\otimes d)(1\otimes hm) &= (-1)^{|d||1|}m(1\otimes dhm),
-\end{align*}
-
-where as before all signs are $1$ except $(-1)^{|d||hm|}=-1$. Hence we have 
-\begin{align*}
-    dm_3 
-    &= 
-    p(m(dhm\otimes 1)-m(hm\otimes d)-m(d\otimes hm)-m(1\otimes dhm))(i\otimes i\otimes i)
-\end{align*}
-
-We know that $h$ is a homotopy between $i\circ p$ and $id_A$, and for chain complexes this means that $dh+hd=i\circ p - id_A$. This gives us that we can replace $dh$ by $id_A-i\circ p-hd$ in the equation above. Doing this gives us 
-\begin{align*}
-    dm_3 
-    &= 
-    p(m((1-ip-hd)m\otimes 1)-m(hm\otimes d)-m(d\otimes hm) \\
-    &\quad -m(1\otimes (1-ip-hd)m))(i\otimes i\otimes i) \\
-    &= 
-    p(m(m\otimes 1)-m(ipm\otimes 1)-m(hdm\otimes 1) \\
-    &\quad -m(hm\otimes d)-m(d\otimes hm) \\
-    &\quad -m(1\otimes m)+m(1\otimes ipm)+m(1\otimes hdm))(i\otimes i\otimes i)
-\end{align*}
-
-Notice that we have both $m(m\otimes 1)$ and $m(1\otimes m)$ present, with the opposite signs. These two are just repeated products in $A$, so their difference is $0$, as we know $A$ is a DG-algebra, which in particular have an associative product.
-
-After canceling the associator in $A$, and rearranging the terms a bit nicer, we can venture further by again applying the graded Leibniz rule to the $dm$'s. This gives us
-\begin{align*}
-    dm_3 
-    &=
-    p(m(1\otimes ipm)-m(ipm\otimes 1) \\
-    &\quad -m(h(m(d\otimes 1)+m(1\otimes d))\otimes 1) \\
-    &\quad -m(hm\otimes d)-m(d\otimes hm) \\
-    &\quad +m(1\otimes h(m(d\otimes 1)+m(1\otimes d))))(i\otimes i\otimes i) \\
-    &=
-    p(m(1\otimes ipm)-m(ipm\otimes 1) \\
-    &\quad - m(hm(d\otimes 1)\otimes 1) - m(hm(1\otimes d)\otimes 1) \\
-    &\quad +m(hm\otimes d)+m(d\otimes hm) \\
-    &\quad +m(1\otimes hm(d\otimes 1))+m(1\otimes hm(1\otimes d)))(i\otimes i\otimes i)
-\end{align*}
-
-Now we are finally ready to put everything together. Recall we wanted to find $\partial m_3 = dm_3 + m_3d_{A^{\otimes 3}}$. The calculation has been so long that it is hard to remember what we actually were doing. We have found both parts of this equation, so putting them together and moving all the $p$'s to the left, and the $i$'s to the right, we get
-\begin{align*}
-    \partial m_3
-    &=
-%    p(m(1\otimes ipm)-m(ipm\otimes 1) \\
-%    &\quad - m(hm(d\otimes 1)\otimes 1) - m(hm(1\otimes d)\otimes 1) \\
-%    &\quad -m(hm\otimes d)-m(d\otimes hm) \\
-%    &\quad +m(1\otimes hm(d\otimes 1))+m(1\otimes hm(1\otimes d))(i\otimes i\otimes i) \\
-%    &\quad
-%    +p(m(hm(d\otimes 1)\otimes 1)
-%    +m(d\otimes hm) \\
-%    &\quad 
-%    +m(hm(1\otimes d)\otimes 1)
-%    -m(1\otimes hm(d\otimes 1)) \\
-%    &\quad  
-%    +m(hm\otimes d)
-%    -m(1\otimes hm(1\otimes d))(i\otimes i\otimes i) \\
-%    &= 
-    p(m(1\otimes ipm)-m(ipm\otimes 1) \\
-    &\quad - m(hm(d\otimes 1)\otimes 1) - m(hm(1\otimes d)\otimes 1) \\
-    &\quad -m(hm\otimes d)-m(d\otimes hm) \\
-    &\quad +m(1\otimes hm(d\otimes 1))+m(1\otimes hm(1\otimes d) \\
-    &\quad
-    +m(hm(d\otimes 1)\otimes 1)
-    +m(d\otimes hm) \\
-    &\quad 
-    +m(hm(1\otimes d)\otimes 1)
-    -m(1\otimes hm(d\otimes 1)) \\
-    &\quad  
-    +m(hm\otimes d)
-    -m(1\otimes hm(1\otimes d))(i\otimes i\otimes i)
-\end{align*}
-%where in the last equality we have just put the $p$ on the left and the $i$'s on the right. This is just to have everything inside the same bracket, i.e. $p(\text{all the stuff})(i\otimes i\otimes i)$, which we can do as they are linear. 
-We see that almost everything on the inside cancels nicely, and we are left with 
-\begin{equation*}
-    \partial m_3 = p(m(1\otimes ipm)-m(ipm\otimes 1))(i\otimes i\otimes i)
-\end{equation*}
-
-Expanding this we get 
-\begin{equation*}
-    \partial m_3 = pm(1\otimes ipm)(i\otimes i\otimes i) - pm(ipm\otimes 1)(i\otimes i\otimes i)
-\end{equation*}
-
-which we recognize as $m_2(1\otimes m_2) - m_2(m_2\otimes 1)$. This means we are finally left with what we wanted to show 
-\begin{equation*}
-    \partial m_3 = m_2(1\otimes m_2)-m_2(m_2\otimes 1)
-\end{equation*}
-i.e. the associator of $m_2$. 
-
-Hence we see that the topology we described earlier---with the Stasheff associahedra---really dictates what is going on in the purely algebraic scenario. This is of course by design, as Stasheff used these algebraic structures to describe what happens topologically, but it is still important to understand how the two different stories are compatible. This really shows that $m_3$ is the algebraic version of $K3$, i.e. the interval---or homotopy really---between the two ways of combining the product $m_2$ with it self. Because of this we often call $m_3$ \emph{the associating homotopy}\index{The associating homotopy} of $m_2$. 
-
-Let's test our understanding of this by looking a bit at what happens in the arity four case as well. We have now done the bulk terse computation, so it will luckily not be as difficult, and we will not be as detailed. First let's look at $K4$, with its corresponding ways to combine $m_2$. 
+Let's test our understanding of this by looking a bit at what happens in the arity four case as well. First let's look at $K4$, with its corresponding ways to combine $m_2$. 
 
 \hspace{2mm}
 
@@ -304,4 +162,4 @@ Without now defining some quaternary operation $m_4$ concretely---we will do thi
 
 which we see is the difference of the two paths just described above. Thus, $m_4$ is a homotopy between the two paths. 
 
-We will later look a little bit into what happens for higher arity maps, but things unfortunately get exponentially more complicated. We will then also use a very specific deformation retraction from a DG-algebra onto its cohomology algebra $H(A)$, and use that to equip $H(A)$ with $m_3$ and other higher arity maps which will sort of model the Massey products we saw earlier.  
+We will later look a little bit into what happens for higher arity maps, but things unfortunately get exponentially more complicated. We will then also use a very specific deformation retraction from a DG-algebra onto its cohomology algebra $H(A)$, and use that to equip $H(A)$ with $m_3$ and other higher arity maps, which will sort of model the Massey products we saw in \cref{ch:2}.  

@@ -14,6 +14,7 @@ Before we go into the theory, we give a brief overview of the process. Recall th
 The above chain of words is rather daunting, so lets build it up---step by step.
 
 \begin{definition}[Monoidal category]
+\index{Monoidal category}
 A monoidal category is a category $\mathcal{C}$, equipped with a functor $\otimes : \mathcal{C} \times \mathcal{C} \rightarrow \mathcal{C}$, called the monoidal product, a unit object $1\in \mathcal{C}$ and three natural isomorphisms $\lambda_A : 1\otimes A \rightarrow A$, $\rho_A : A\otimes 1\rightarrow A$ and $\alpha_{A,B,C} : (A\otimes B)\otimes C \rightarrow A\otimes (B\otimes C)$ called the left unitor, right unitor and associator respectively---such that the following diagrams 
 
 \begin{center}
@@ -53,10 +54,11 @@ called the pentagon identity, and
 called the triangle identity---both commute. 
 \end{definition}
 
-This definition can seem very abstract and difficult, but in reality it is quite simple. We are using the symbol for the tensor product, $ \otimes $, for the monoidal product because the tensor product is usually the product we are using. So any intuition we have from using the tensor product can usually be applied to monoidal categories. If the three natural isomorphisms $ \lambda, \rho, \alpha $ are identities, then $ \mathcal{C}$ is called a strict monoidal category. These do rarely come up in nature, but every monoidal category is in fact equivalent to a strict monoidal category. Notice also $K4$ appearing as the pentagon identity. 
+This definition can seem very abstract and difficult, but in reality it is quite simple. We are using the symbol for the tensor product, $\otimes $, for the monoidal product because the tensor product is usually the product we are using. So any intuition we have from using the tensor product can usually be applied to monoidal categories. If the three natural isomorphisms $ \lambda, \rho, \alpha $ are identities, then $ \mathcal{C}$ is called a strict monoidal category. These do rarely come up in nature, but every monoidal category is in fact equivalent to a strict monoidal category. Notice also $K4$ appearing as the pentagon identity. 
 
 \begin{definition}[Symmetric monoidal category]
-Let $ \mathcal{C}$ be a monoidal category. We say  $ \mathcal{C}$ is a symmetric monoidal category if there is a natural isomorphism $ \beta_{X,Y}: X\otimes Y \rightarrow Y \otimes X$, called the braid isomorphism, such that $ \beta_{X,Y}\circ \beta_{Y,X} = id_{X\otimes Y} $ and the following diagrams 
+\index{Symmetric monoidal category}
+Let $\mathcal{C}$ be a monoidal category. We say  $\mathcal{C}$ is a symmetric monoidal category if there is a natural isomorphism $\beta_{X,Y}: X\otimes Y \rightarrow Y \otimes X$, called the braid isomorphism, such that $\beta_{X,Y}\circ \beta_{Y,X} = id_{X\otimes Y} $ and the following diagrams 
 \begin{center}
 \begin{tikzpicture}
 	\node (1) {$A\otimes 1$};
@@ -94,6 +96,7 @@ called the associativity coherence, both commute.
 A monoidal category can be thought of as a category with a multiplication, an a symmetric monoidal category is then a monoidal category with a commutative product. 
 
 \begin{definition}[Closed symmetric monoidal category]
+\index{Closed symmetric monoidal category}
 Let $\C$ be a symmetric monoidal category. We say $\C$ is closed if the tensor functor $-\otimes A\colon \C \longrightarrow \C$ has a right adjoint functor $[A, -]\colon \C \longrightarrow \C$, called the internal hom. 
 \end{definition}
 
@@ -102,6 +105,7 @@ The notion of closed category can be defined without the need for a symmetric mo
 We can think about this as being motivated by---or at least inspired by the category of sets---where we have $[X,Y]=\{ f:X\rightarrow Y\}$, and $Hom(S, [X, Y])\cong Hom(S\times X, Y)$. So when we require that the internal hom functor $[A,-]$ is a right adjoint to the monoidal product functor $-\otimes A$, we get a bijection $Hom(X, [A, B])\rightarrow Hom(X\otimes A, B)$, that is natural in all three variables. This isomorphism is called ``currying''.
 
 \begin{definition}[Pushout product]
+\index{Pushout product}
 Let $\C$ be a symmetric monoidal category and $f\colon A\to B$, $f'\colon A'\to B'$ be morphisms in $\C$. We can form the following pushout diagram
 \begin{center}
 \begin{tikzpicture}
@@ -123,9 +127,9 @@ By the universal property of pushouts we get an induced map
 which we call the pushout product of $f$ and $f'$. 
 \end{definition}
 
-We have already covered the definition of a model category in the thesis, so recall that it consists of three classes of maps $W, C, F$---called weak equivalences, cofibrations and fibrations respectively---such that certain axioms \textbf{MC1}, \textbf{MC2}, \textbf{MC3} and \textbf{MC4} hold. 
+We have already covered the definition of a model category\index{Model category} in the thesis, so recall that it consists of three classes of maps $W, C, F$---called weak equivalences\index{Weak equivalence}, cofibrations\index{Cofibration} and fibrations\index{Fibration} respectively---such that certain axioms \textbf{MC1}, \textbf{MC2}, \textbf{MC3} and \textbf{MC4} hold. 
 
-\begin{definition}[Symmetric monoidal model category]
+\begin{definition}[Symmetric monoidal model category]\index{Symmetric monoidal model category}
 A (closed) symmetric monoidal model category is a category $\C$ with a model structure $(W, C, F)$, equipped with the structure of a closed symmetric monoidal category $(\otimes, I)$, such that the pushout product of two cofibrations is again a cofibration, the pushout product of a cofibration and an acyclic cofibration is again an acyclic cofibration and that the map $QI\otimes X \overset{p\otimes id_X}\to I\otimes X \to X$ between any cofibrant object $X$---and any cofibrant replacement $QI$ of the tensor unit $I$---is a weak equivalence. 
 \end{definition}
 
@@ -139,6 +143,7 @@ If we let $P$ be some set of morphisms in $\C$ then let
 \end{itemize}
 
 \begin{definition}[Cofibrantly generated model category]
+\index{Cofibrantly generated model category}
 Let $\C$ be a category with a model structure $(W, C, F)$. We say $\C$ is cofibrantly generated if there are subsets $P\subseteq C$ and $Q\subseteq C\cap W$ such that 
 \begin{itemize}
     \item $F = Q-inj$
@@ -160,7 +165,8 @@ We then have the category we want, i.e. $\C$ a cofibrantly generated closed symm
 
 \subsection*{The category of monoids}
 
-\begin{definition}[Monoid]
+\begin{definition}[Monoid in a monoidal category]
+\index{Monoid in a monoidal category}
 A monoid in a monoidal category $ (\mathcal{C}, \otimes, I)$ is an object $ M$ together with a map $ \mu:M\otimes M\rightarrow M$, called multiplication, and a map $ \eta: I\rightarrow M$, called the unit, such that the associative law and left and right unit laws hold, i.e. the following three diagrams commute
 \begin{center}
 \begin{tikzpicture}
@@ -258,10 +264,10 @@ which gives
 \begin{equation*}
     d_M(m(a\otimes b) = m(d_M(a)\otimes b) + (-1)^{|a|}m(a\otimes d_M(b))
 \end{equation*}
-when applied to elements and using the Koszul sign rule. If we write $m(a\otimes b) = a\cdot b$ then we get the familiar graded Leibniz rule 
+when applied to elements and using the Koszul grading rule\index{The Koszul grading rule}. If we write $m(a\otimes b) = a\cdot b$ then we get the familiar graded Leibniz rule\index{The Leibniz rule} 
 \begin{equation*}
     d_M(a\cdot b) = d_M(a)\cdot b + (-1)^{|a|}a\cdot d_M(b).
 \end{equation*}
 
-Thus, a monoid in $Ch(Vect_k)$ is in fact a DG-algebra. We then get an induced model structure on $Mon(Ch(Vect_k)) = DGA_k$, which we can identify with Jardine's model structure we constructed earlier in the thesis.
+Thus, a monoid in $Ch(Vect_k)$ is in fact a DG-algebra\index{DG-algebra}. We then get an induced model structure on $Mon(Ch(Vect_k)) = DGA_k$, which we can identify with Jardine's model structure we constructed earlier in the thesis.
 

@@ -1,7 +1,7 @@
 
 \section{Motivation}
 
-In the introduction we said that in some situations, there is some information in the DG-algebra, not accessible to the cohomology algebra of that DG-algebra. On example of such information is given by the Massey products---which will be the focus of this chapter. 
+In the introduction (\ref{sec:introduction}) we said that in some situations, there is some information in the DG-algebra, not accessible to the cohomology algebra of that DG-algebra. On example of such information is given by the Massey products---which will be the focus of this chapter. 
 
 These operations were first introduced to algebraic topology by William S. Massey in \cite{massey}, and have since been used to solve some really interesting problems. One of the reasons Massey products are interesting in topology is due to their ability to distinguish seemingly similar spaces, where other methods fail. The three main invariants we use in algebraic topology to distinguish spaces are homology, cohomology and homotopy. Why do we need all three? It is because none of them are perfect. There are spaces that have the same homology, but are not homeomorphic. Same goes for cohomology and homotopy. We can use these three together to an even greater effect. What we mean is that when two spaces have the same homology and are not homeomorphic, they usually have different homotopy. But, as mentioned in the introduction, the homotopy groups can be extremely difficult to calculate. 
 
@@ -25,25 +25,27 @@ Massey products are often referred to as higher order cohomology operations. We 
 
 \begin{definition}[The triple Massey product]
 \label{def:triple_massey}
+\index{The triple Massey product}
 Let $(A,d)$ be a DG-algebra. Let $x_1, x_2, x_3 \in H(A)$ be three cohomology classes such that $x_1 x_2 = 0 = x_2 x_3$, and let $a_1, a_2, a_3$ be cycles that represent these classes. Since their product is zero in cohomology, there exists classes $b_1$ and $b_2$, such that $d(b_1)=(-1)^{|a_1|}a_1a_2$ and $d(b_2)=(-1)^{|a_2|}a_2a_3$. The cochain 
 \begin{equation*}
     x = (-1)^{|a_1|}a_1 b_2 + (-1)^{|b_1|}b_1 a_3
 \end{equation*}
-is then a cocycle and defines an element in $H^{|a_1|+|a_2|+|a_3|+1}(A)$.  
+is then a cocycle and defines an element in $H^{|x_1|+|x_2|+|x_3|+1}(A)$.  
 
 Since the choices of $b_1$ and $b_2$ are not unique, we define the triple Massey product of $x_1, x_2, x_3$, denoted $\langle x_1, x_2, x_3 \rangle$, to be the set of all such $x$ we can make with different choices for $b_1$ and $b_2$. The elements of the Massey product lie in degree $|x_1|+|x_2|+|x_3|+1$, where the $+1$ comes from the fact that $b_1$ and $b_2$ lie in degree one less than the products $a_1 a_2$ and $a_2 a_3$ respectively. 
 \end{definition} 
 
 \begin{remark}
-Note that we showed earlier, in \cref{ex:cohomology}, that the product on a DG algebra induces a well defined product on its cohomology algebra, which we have used in the above definition of the triple Massey product.  
+Note that we showed earlier, in \cref{ex:cohomology}, that the product on a DG-algebra induces a well defined product on its cohomology algebra, which we have used in the above definition of the triple Massey product.  
 \end{remark}
 
-Notice also that the different elements in the triple Massey product all determine the same element in $H(A)/([u]H(A)+H(A)[w])$, hence we could define the triple Massey product to be a morphism from a subset of $H(A)\times H(A)\times H(A)$ to in $H(A)/([u]H(A)+H(A)[w])$. This subset would then have to be the set of elements $(u, v, w)$ such that $[u][v] = 0 = [v][w]$. Since this method does not generalize well to the higher Massey products we want to define, we do not use this definition. 
+Notice also that the different elements in the triple Massey product all determine the same element in $H(A)/(x_1H(A)+H(A)x_3)$, hence we could define the triple Massey product to be a morphism from a subset of $H(A)\times H(A)\times H(A)$ to in $H(A)/(x_1H(A)+H(A)x_3)$. This subset would then have to be the set of elements $x_1, x_2, x_3$ such that $x_1x_2 = 0 = x_2x_3$. Since this method does not generalize well to the higher Massey products we want to define, we do not use this definition. 
 
 As said, generalizing this construction is a bit tedious explicitly, so we instead find a suitable workaround by using so-called defining systems. 
 
 \begin{definition}[Defining system]
 \label{def:defining_system}
+\index{Defining system}
 Let $\bar{x} = (-1)^{|x|}x$. A defining system for a set of cohomology classes $x_1, \ldots, x_n$ in $ H(A)$ is a collection $\{ a_{i,j}\}$ of cochains in $A$ such that
 \begin{itemize}
     \item $[a_{i-1, i}] = x_i$
@@ -56,6 +58,7 @@ These defining systems allow us to quite easily define Massey products of any or
 
 \begin{definition}[Massey $n$-product]
 \label{def:massey_product}
+\index{Massey product}
 The Massey $n$-product of $n$ cohomology classes $x_1, \ldots, x_n$, denoted $\langle x_1, \ldots, x_n\rangle$, is defined to be the set of all $[a_{0,n}]$, where
 \begin{equation*}
     a_{0,n} = \sum_{0<k<n}\overline{a_{0, k}}a_{k, n}
@@ -105,6 +108,7 @@ We wanted these Massey products to serve as information not accessible to the co
 
 \begin{definition}[Vanishing Massey product]
 \label{def:vanishing_massey}
+\index{Vanishing Massey product}
 We say that a Massey $n$-product, $\langle x_1, \cdots, x_n\rangle$, vanishes if it contains zero as an element, i.e. $0\in \langle x_1, \ldots, x_n\rangle$. 
 \end{definition}
 
@@ -112,6 +116,7 @@ Since the Massey $n$-product is a set, we cant in general hope for it being just
 
 \begin{definition}[Uniquely defined Massey product]
 \label{def:uniquely_defined_massey}
+\index{Uniquely defined Massey product}
 We say that a Massey $n$-product, $\langle x_1, \ldots, x_n\rangle$, is uniquely defined if it contains only a single class, i.e. $\langle x_1, \ldots, x_n\rangle=\{x\}$. 
 \end{definition}
 
@@ -129,7 +134,7 @@ This means that by construction we have a non-trivial element of the Massey 3-pr
 
 \begin{example}
 \label{ex:borromean_rings}
-When talking about Massey products it is customary to mention the application to proving that the Borromean rings are not homeomorphic to the triple unlink. 
+When talking about Massey products it is customary to mention the application to proving that \emph{the Borromean rings}\index{The Borromean rings} are not homeomorphic to the triple unlink. 
 
 \begin{center}
 \def\svgwidth{0.8\textwidth}
@@ -164,7 +169,7 @@ In the introduction we intuitively defined formal DG-algebras to be the ones whe
 
 %From the Borromean link example, cohomology only sees the pairwise linking of the circles, which there is none, but fails to see the higher linking. So intuitively we expect having vanishing Massey products means there is no such higher information, and hence the cohomology algebra has enough to reconstruct the DG algebra. This is formalized in the question; is a DG algebra with vanishing Massey products formal? This turns out to almost be true, but not in this exact formulation. There are examples of DG algebras with vanishing Massey products that are not formal. But, if we can have vanishing Massey products in a ``nice'' way, i.e. that they all vanish for the same reason, then we will have a formal DG algebra. The converse statement though, is true. We cant have higher information, i.e. Massey products, if we know it is formal. 
 
-Recall that a DG-algebra $A$ is called formal there is a span of quasi-isomorphism $H(A)\leftarrow C \rightarrow A$ for some DG-algebra $C$. 
+Recall that a DG-algebra $A$ is called formal\index{Formal DG-algebra} there is a span of quasi-isomorphism $H(A)\leftarrow C \rightarrow A$ for some DG-algebra $C$. 
 
 \begin{theorem}
 \label{thm:formal_no_massey}
@@ -349,7 +354,7 @@ Ok, lets put these lemmas together to form the proof of the fact that a formal D
 Given a formal DG-algebra $A$ there is by \cref{thm:span} a span of quasi-isomorphisms $H(A)\longleftarrow C\longrightarrow A$. By \cref{lm:trivial_differential_then_no_massey} all Massey products in $H(A)$ must contain the zero class, as it is a DG-algebra with trivial differential. By \cref{cor:quasi_preserves_vanishing} we know that $H(A)$ only having vanishing Massey product implies that $A$ only has vanishing Massey products, as they are connected by quasi-isomorphisms. 
 \end{proof}
 
-This resolves \textbf{Theorem B.} from the motivation of the chapter. Having now proven that formal DG-algebras admit no non-vanishing Massey products means that having any non-trivial Massey product is a definite obstruction to being a formal DG algebra, which is exactly what we expected. It is information--inaccessible to the cohomology algebra---hence the DG-algebra can't be sufficiently simple. This also 	gives us a criteria for answering negative to our central question: 
+This resolves \textbf{Theorem B.} from the motivation of the chapter. Having now proven that formal DG-algebras admit no non-vanishing Massey products means that having any non-trivial Massey product is a definite obstruction to being a formal DG-algebra, which is exactly what we expected. It is information--inaccessible to the cohomology algebra---hence the DG-algebra can't be sufficiently simple. This also 	gives us a criteria for answering negative to our central question: 
 
 \begin{central}
 Given a DG-algebra $A$, when do we know that $A$ is formal?

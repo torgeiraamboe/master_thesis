@@ -22,6 +22,7 @@
 \RequirePackage{pgfplots}
 \RequirePackage{adjustbox}
 \RequirePackage{tikz-cd}
+\usetikzlibrary{decorations.pathmorphing}
 %\RequirePackage{quiver}
 \RequirePackage{multicol}
 
@@ -139,7 +140,7 @@ linkcolor=blue,
 }{}
 
 \newenvironment{definition}[1][]{%
-	\index{#1}
+	%\index{#1}
     \refstepcounter{mathenv}%
     \par
     \ifstrempty{#1}%
@@ -166,6 +167,7 @@ linkcolor=blue,
 }{}
 
 \newenvironment{central}{%
+	\index{The central question}
     \par
 	{\textbf{The central question:}~}%                       
 	\relax
@@ -254,6 +256,7 @@ linkcolor=blue,
 node distance=2.3cm, 
 every state/.style={thick, fill=gray!10},  
 auto,
+snake it/.style={decorate, decoration=snake}
 }
 \tikzstyle{every path}=[line width=0.8pt]
 

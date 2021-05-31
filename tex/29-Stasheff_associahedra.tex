@@ -1,6 +1,6 @@
 
 
-\section{Transferring algebraic structures}
+\section{Motivation}
 
 Imagine we have a system of two topological spaces, $f:T\longrightarrow G$. We are often interested in knowing if a certain property on the space $G$ can be transferred through $f$ such that we have the same property on $T$. If $f$ is a nice enough morphism, an example could be a topological invariant of $G$, for example its Euler characteristic. Transferring invariants is an important, rich field of study in topology, but in this thesis we are more interested in transferring other things than invariants---more specifically algebraic structures. If $G$ has an algebraic structure, we ask: can we transfer the same or some other similar structure onto $T$ through $f$?
 
@@ -40,6 +40,8 @@ t_1\cdot (t_2\cdot t_3)
 \end{align*}
 where the equality between the third and the fourth line comes from the associativity of the product in $G$. Hence we have; an associative binary operation on $T$, an identity element and has all inverses---which makes $T$ into a group.
 
+\section{Homotopy equivalence between spaces}
+
 A crucial part in the above proof is that $f$ is an isomorphism, so what happens when this is not the case? To get a similar type of operation, we must at least have some way to get to $T$, but also back to $G$ again, i.e. a system $f\colon T\leftrightarrows G\colon g$. One of the simplest---non isomorphism---examples of such a system is a homotopy equivalence. In this situation, what happens to the same kind of transferred structure on $T$? We do the same thing as earlier and define our operation to be given by $m_2(t_1, t_2)=t_1\cdot t_2 = g(f(t_1)\cdot f(t_2))$. Why we also denote it by $ m_2$ will be clearer later. This is a map $ T\times T\longrightarrow T$. One thing we can check is whether this map is still associative. We have
 \begin{align*} 
 t_1\cdot (t_2 \cdot t_3) 
@@ -68,7 +70,7 @@ We can graphically visualize the parameterization by the following picture:
 
 Here the two ends are the different brackets we can put between the elements in order to get the two different operations using $ m_2$. The line between them is the homotopy $m_3$.
 
-The line we just constructed, i.e. the space that parametrizes operations $ T^3\longrightarrow T$ is called the third Stasheff associahedra, which we denote by $K3$. A natural question to ask is if we can continue this process, i.e. to see if we have spaces that parametrize maps $T^4\longrightarrow T$ such that the different ways of combining four elements using $m_2$ lie on its boundary. Let's investigate what this would mean. We have five ways of combining four elements by the operation $ m_2$, namely $ t_1 \cdot (t_2 \cdot (t_3 \cdot t_4))$, $ t_1 \cdot ((t_2 \cdot t_3) \cdot t_4)$, $ (t_1 \cdot t_2) \cdot (t_3 \cdot t_4)$, $ (t_1 \cdot (t_2 \cdot t_3)) \cdot t_4$ and $ ((t_1 \cdot t_2) \cdot t_3) \cdot t_4$. All of these are homotopic to each other through repeatedly using the homotopy $m_3$ to reposition the brackets. Notice that we have two ways of getting from $ t_1 \cdot (t_2 \cdot (t_3 \cdot t_4))$ to $ ((t_1 \cdot t_2) \cdot t_3) \cdot t_4$. By using diagrams to describe the rebracketing we can visualize them as follows.
+The line we just constructed, i.e. the space that parametrizes operations $ T^3\longrightarrow T$ is called the third \emph{Stasheff associahedra}\index{Stasheff associahedra}, which we denote by $K3$. A natural question to ask is if we can continue this process, i.e. to see if we have spaces that parametrize maps $T^4\longrightarrow T$ such that the different ways of combining four elements using $m_2$ lie on its boundary. Let's investigate what this would mean. We have five ways of combining four elements by the operation $ m_2$, namely $ t_1 \cdot (t_2 \cdot (t_3 \cdot t_4))$, $ t_1 \cdot ((t_2 \cdot t_3) \cdot t_4)$, $ (t_1 \cdot t_2) \cdot (t_3 \cdot t_4)$, $ (t_1 \cdot (t_2 \cdot t_3)) \cdot t_4$ and $ ((t_1 \cdot t_2) \cdot t_3) \cdot t_4$. All of these are homotopic to each other through repeatedly using the homotopy $m_3$ to reposition the brackets. Notice that we have two ways of getting from $ t_1 \cdot (t_2 \cdot (t_3 \cdot t_4))$ to $ ((t_1 \cdot t_2) \cdot t_3) \cdot t_4$. By using diagrams to describe the rebracketing we can visualize them as follows.
 
 \begin{center}
 \def\svgwidth{0.6\textwidth}

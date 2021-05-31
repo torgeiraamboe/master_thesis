@@ -1,0 +1,118 @@
+
+There is an alternative way to construct the triple Massey product which uses the notion of a spectral sequence. This machinery is very general, and is extremely useful in computations of homology, cohomology and homotopy groups of spaces. 
+
+
+\subsection*{Spectral sequence}
+
+\begin{definition}[Spectral sequence]
+A spectral sequence of homological type is a tri-graded object, or a list of bi-graded objects $E_{p,q}^r$ together with morphisms $d_r: E_{p,q}^r \longrightarrow E_{p+r, q+r-1}^r$ for all $r>0, p,q\in \mathbb{Z}$, and isomorphisms $E_{p,q}^{r+1}\cong H(E_{p,q}^{r})$. 
+\end{definition}
+
+This object can be thought of as a book, where for each $r$, we have a page with a bigraded object $E_{*,*}^r$ together with a set of maps making the bigraded object into a complex. When we flip a page we get a new bigraded object which consists of the homology of the complexes with the maps new maps making this new bigraded object into a complex. The ``next page'' is sometimes called the derived object of the previous page. 
+
+\subsection*{Spectral sequence from a bicomplex}
+
+\begin{definition}[Bicomplex]
+A bicomplex $C_{*,*}$ in $\mathcal{A}$ is a bigraded object, or a diagram in $\mathcal{A}$ with morphisms 
+$d^h_n: C_{n,m}\longrightarrow C_{n-1,m}$ and $d^v_m: C_{n,m}\longrightarrow C_{n,m-1}$ such that $d^h \circ d^h = 0 = d^v \circ d^v$ and $d^h \circ d^v + d^v \circ d^h = 0$.
+\end{definition}
+
+Associated to every bicomplex $C_{*,*}$, we have a spectral sequence whose second page $E^2$ is the crossed double homology, i.e. $E^2_{p,q}=H_p^{h}(H_q^{v}(C))$, where $h$ and $v$ means horizontal and vertical respectively. This associated spectral sequence is a special case of the associated spectral sequence one gets from a filtered complex. In this special case, the complex is the totalization of $C_{*,*}$ and the filtration is one of the two natural filtrations described earlier, i.e. the row and column filtrations. We leave out the description of how one gets a spectral sequence from a filtered complex as how we get it is not important, just that we indeed can.  
+
+\begin{lemma}
+Suppose $C_{*,*}$ is a first quadrant bicomplex. %i.e. that $C_{a,b} = 0$ when $a < 0$ or $b < 0$. 
+Then the associated spectral sequence with respect to both of the natural filtrations converge to the homology of the total complex, i.e.
+\begin{align*}
+    E^2_{p,q} = H_p H_q (C_{*,*}) &\implies H_{p+q}(\Tot(C_{*,*})) \\
+    D^2_{p,q} = H_q H_p (C_{*,*}) &\implies H_{p+q}(\Tot(C_{*,*}))
+\end{align*}
+\end{lemma}
+The proof can be found in \cite[Theorem 5.5.1]{weibel}. 
+
+
+\subsection*{Defining the Massey product}
+
+Since DG-algebras are chain complexes, we can think of maps of DG-algebras as bicomplexes where everything outside of the two DG-algebras are zero. We can also iterate this for longer compositions of morphisms of DG-algebras.
+
+Let $A$ be a DG-algebra and $x, z \in A$. We then form the complex
+\begin{equation*}
+    A\overset{f}\longrightarrow A\oplus A \overset{g}\longrightarrow A
+\end{equation*}
+where the first map sends an element $y\mapsto (xy, yz)$ and the second map sends $(u, v)\mapsto uz-xv$. It is a fact a complex as $g\circ f (y) = g(xy, yz)= xyz-xyz = 0$. We then think of the complex of DG-algebras as the following bicomplex of vector spaces
+\begin{center}
+\begin{tikzcd}
+	{\vdots} & {\vdots} & {\vdots} \\
+	{A^{n-1}} & {A^{n-1}\oplus A^{n-1}} & {A^{n-1}} \\
+	{A^n} & {A^{n}\oplus A^{n}} & {A^{n-1}} \\
+	{A^{n+1}} & {A^{n+1}\oplus A^{n+1}} & {A^{n-1}} \\
+	{\vdots} & {\vdots} & {\vdots}
+	\arrow[from=1-1, to=2-1]
+	\arrow[from=1-2, to=2-2]
+	\arrow[from=1-3, to=2-3]
+	\arrow[from=2-1, to=3-1]
+	\arrow[from=2-2, to=3-2]
+	\arrow[from=2-3, to=3-3]
+	\arrow[from=3-3, to=4-3]
+	\arrow[from=3-2, to=4-2]
+	\arrow[from=3-1, to=4-1]
+	\arrow[from=4-1, to=5-1]
+	\arrow[from=4-2, to=5-2]
+	\arrow[from=4-3, to=5-3]
+	\arrow[from=2-1, to=2-2]
+	\arrow[from=3-1, to=3-2]
+	\arrow[from=4-1, to=4-2]
+	\arrow[from=4-2, to=4-3]
+	\arrow[from=3-2, to=3-3]
+	\arrow[from=2-2, to=2-3]
+\end{tikzcd}
+\end{center}
+
+which makes the $E_1$ page look like 
+\begin{center}
+\begin{tikzcd}
+	{H(A^{n-1})} & {H(A^{n-1})\oplus H(A^{n-1})} & {H(A^{n-1})} \\
+	{H(A^n)} & {H(A^{n})\oplus H(A^{n})} & {H(A^{n-1})} \\
+	{H(A^{n+1})} & {H(A^{n+1})\oplus H(A^{n+1})} & {H(A^{n-1})}
+	\arrow[from=2-1, to=2-2]
+	\arrow[from=3-1, to=3-2]
+	\arrow[from=3-2, to=3-3]
+	\arrow[from=2-2, to=2-3]
+	\arrow[from=1-2, to=1-3]
+	\arrow[from=1-1, to=1-2]
+\end{tikzcd}
+\end{center}
+
+and the $E_2$ page like 
+\begin{center}
+\begin{tikzcd}
+	{} \\
+	{Ker(\overline{f})} & {B^{n-1}} & {Cok(\overline{g})} \\
+	{Ker(\overline{f})} & {B^{n}} & {Cok(\overline{g})} \\
+	{Ker(\overline{f})} & {B^{n+1}} & {Cok(\overline{g})} \\
+	&& {}
+	\arrow[from=2-1, to=3-3]
+	\arrow[from=3-1, to=4-3]
+	%\arrow[from=4-1, to=5-3]
+	%\arrow[from=1-1, to=2-3]
+\end{tikzcd}    
+\end{center}
+
+The kernel of $\overline{f}$ is $\{ y \in H(A)| xz = yz = 0\}$, which makes their Massey product defined. The cokernel of $\overline{g} = H(A)/xH(A)+H(A)z$, which is the correct vector space for removing the indeterminacy. Hence we get 
+
+\begin{center}
+\begin{tikzcd}
+	{} \\
+	{\{ y \in H(A)| xz = yz = 0\}} & {B^{n-1}} & {H(A)/xH(A)+H(A)z} \\
+	{\{ y \in H(A)| xz = yz = 0\}} & {B^{n}} & {H(A)/xH(A)+H(A)z} \\
+	{\{ y \in H(A)| xz = yz = 0\}} & {B^{n+1}} & {H(A)/xH(A)+H(A)z} \\
+	&& {}
+	\arrow[from=2-1, to=3-3]
+	\arrow[from=3-1, to=4-3]
+\end{tikzcd}    
+\end{center}
+
+The differentials here are the triple Massey products $H(A)\longrightarrow H(A)/xH(A)+H(A)z$.
+
+There are ways to construct the more general Massey $n$-products using spectral sequences as well, but these are not so simple as the construction above. This is done in \cite[Section 4.]{massey}.
+
+

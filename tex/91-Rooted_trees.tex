@@ -1,8 +1,9 @@
 
 \subsection{Visualization using rooted trees}
+\label{ssec:trees}
 
 
-There is another---more graphical---way of describing the Stasheff identities, and this is done by \emph{rooted trees}\index{Rooted tree}. A rooted tree is a graph with a fixed node at the bottom (which we call the root), and where every other two nodes are connected by no more than one line. An example is the following graph.
+There is another---more graphical---way of describing the Stasheff identities\index{The Stasheff identities} in a $\A$-algebra\index{$A_\infty$-algebra}, and this is done by \emph{rooted trees}\index{Rooted tree}. A rooted tree is a graph with a fixed node at the bottom (which we call the root), and where every other two nodes are connected by no more than one line. An example is the following graph.
 
 \input{images/rooted_tree/1}
 
@@ -12,7 +13,7 @@ We can use these to represent our higher operations. For example---if the above 
 
 \input{images/rooted_tree/2}
 
-Adding more leaves to the central vertex gives all the other $m_i$'s as well. We can let these trees interact in certain ways in order to produce the Stasheff identities. Let's start with $n=1$. This relation is given by $m_1 m_1=0$, which we can describe with the following rooted tree:
+Adding more leaves to the central vertex gives all the other $m_i$'s as well. We can let these trees interact in certain ways in order to produce the Stasheff identities\index{The Stasheff identities}. Let's start with $n=1$. This relation is given by $m_1 m_1=0$, which we can describe with the following rooted tree:
 \input{images/rooted_tree/relation1}
 
 Here we have stacked them on top of each other in order to signify that they happen ``after'' each other. We still read from top to bottom, which means that we first do $m_1$, and then $m_1$ again. Note that this rooted tree is the unique way of combining two operations, $m_i, m_j$, such that the combination is an operation that takes in one element and produces one element. 
@@ -73,15 +74,15 @@ For our $n=4$ example the final triangle would look like
 \input{images/rooted_tree/relation4_1}
 
 
-\subsubsection{Rooted trees for DG-algebras}
+\subsection*{Rooted trees for DG-algebras}
 
-Since we know that a DG-algebra can be though of as an $\A$-algebra where $m_n = 0$ for all $n\geq 3$, we can explicitly write out all the relations we have in a DG-algebra using these trees. The $n=1$ relation is again given by
+Since we know that a DG-algebra\index{DG-algebra} can be though of as an $\A$-algebra where $m_n = 0$ for all $n\geq 3$, we can explicitly write out all the relations we have in a DG-algebra using these trees. The $n=1$ relation is again given by
 \input{images/rooted_tree/DG1}
 
 just as we saw earlier for a general $\A$-algebra. The relation for $n=2$, is given by
 \input{images/rooted_tree/DG2}
 
-which we can recognize as the Leibniz rule. We don't have the $(-1)^{|x|}$ sign here, as it first arises when using the Koszul grading rule when applying these operations to actual elements. The third and final relation is given by 
+which we can recognize as the Leibniz rule\index{The Leibniz rule}. We don't have the $(-1)^{|x|}$ sign here, as it first arises when using the Koszul grading rule\index{The Koszul grading rule} when applying these operations to actual elements. The third and final relation is given by 
 \input{images/rooted_tree/DG3}
 
-which we recognize as the associativity condition. Here none of the higher arity trees appear, du to the fact that $m_i=0$ for all $i\geq 3$. 
+which we recognize as the associativity condition. Here none of the higher arity trees appear, due to the fact that $m_i=0$ for all $i\geq 3$. 

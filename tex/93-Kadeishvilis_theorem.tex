@@ -7,45 +7,29 @@ One of the main reasons we introduce these $\A$-algebras, instead of just workin
 We then want to study these more complicated structures and morphisms in order to figure out if they collapse to our more simple DG-algebra world in certain situations. If we can do and understand this, it will give us a new tool to figure out if a DG-algebra is formal. So far our tool for checking formality of a DG-algebra---namely the Massey products---have been a sort of non-criteria. By this we means that we can use them to easily spot whether a DG-algebra is non-formal, but we can not use them to check formality. This more general theory will allow us to create a more ``perfect'' version of Massey products in order to actually prove that a class of DG-algebras are formal. 
 
 \begin{definition}[Minimal $\A$-algebra]
+\index{Minimal $\A$-algebra}
 \label{def:minimal_A_infinity-algebra}
 We say an $\A$-algebra $(A, m)$ is minimal if we have $m_1 = 0$. 
 \end{definition}
 
 \begin{theorem}[Kadeishvili's theorem]
 \label{thm:Kadeishvilis_theorem}
-Let $(A,d)$ be a DG-algebra. Then there exists a minimal $\A$-algebra structure on its cohomology algebra $H(A)$, and a quasi-isomorphism of $\A$-algebras $H(A)\rightarrow A$. 
+\index{Kadeishvili's theorem}
+Let $(A,d)$ be a DG-algebra. Then there exists a minimal $\A$-algebra structure on its cohomology algebra $H(A)$, and a quasi-isomorphism of $\A$-algebras\index{$\A$-quasi-isomorphism} $H(A)\rightsquigarrow A$. 
 \end{theorem}
 
-Before we look into the proof, we discuss the strategy. We have already seen---at least the beginnings of---how to construct an $\A$-structure from a deformation retraction between a DG-algebra and a chain complex. This is also the idea for this theorem. We construct a particular deformation retract, and use the earlier discussed procedure to produce both the $\A$-structure and the $\A$-quasi-isomorphism that we want. We remind the reader that we are working over a field $k$, so the graded components of the objects are vector spaces, which makes it easy to construct compliments and direct sums. The following construction is due to Lu, Palmieri, Wu and Zhang in \cite{Ext} as a special case of the more general approach by Merkulov in \cite{Merkulov}. 
+Before we look into the proof, we discuss the strategy. We have already seen---at least the beginnings of---how to construct an $\A$-structure from a deformation retraction\index{Deformation retraction} between a DG-algebra and a chain complex. This is also the idea for this theorem. We construct a particular deformation retract, and use the earlier discussed procedure to produce both the $\A$-structure and the $\A$-quasi-isomorphism that we want. We remind the reader that we are working over a field $k$, so the graded components of the objects are vector spaces, which makes it easy to construct compliments and direct sums. The following construction is due to Lu, Palmieri, Wu and Zhang in \cite{Ext} as a special case of the more general approach by Merkulov in \cite{Merkulov}. 
 
-Let $A=(\bigoplus_{i\in \Z}A^i, d, m)$ be a DG-algebra. As usual we denote $Z^n = \ker d^n$, the $n$-cochains,  and $B^n = \ima d^{n-1}$, the $n$-coboundaries. Since $A$ is in particular a cochain complex we know that $B^n\subseteq Z^n$ is a subspace, i.e. all coboundaries are cocycles. This means that we can find a subspace $H^n$ of $Z^n$ such that $Z^n = B^n\oplus H^n$. Notice that we can identify $H^n(A)\cong H^n$ as we have a split exact sequence
+The deformation retraction $(A, H(A), i, p, h)$ we are going to use is the following. Decompose $A$ into $Z\oplus H\oplus L$, where $Z=\ker d$, $H\cong H(A)$ and $L\cong B[+1]$. Because of this particular $H$, we use this in our deformation retraction, instead of $H(A)$. The map $i$ is the inclusion of $H$ into $A$, $p$ the projection and $h$ the map given by the matrix 
 \begin{equation*}
-    0\longrightarrow B^n\longrightarrow Z^n\overset{d^n}\longrightarrow H^n(A)\longrightarrow 0 .
+h^n = 
+\begin{bmatrix}
+0 & 0 & (d_{LB}^{n-1})^{-1}\\
+0 & 0 & 0\\
+0 & 0 & 0
+\end{bmatrix}, 
 \end{equation*}
-As $Z^n$ is a subspace of $A^n$ we can also find another subspace $L^n$ such that 
-\begin{equation*}
-    A^n = Z^n\oplus L^n = B^n\oplus H^n\oplus L^n
-\end{equation*}
-We can identify $L^n$ with $B^{n+1}$ because of the existence of the split exact sequence 
-\begin{equation*}
-    0\longrightarrow Z^n\longrightarrow A^n\overset{d^n}\longrightarrow B^{n+1}\longrightarrow 0
-\end{equation*}
-
-We can also view the cohomology algebra $H(A)$ as a sub algebra through the identification with $H=\bigoplus_{i\in \Z} H^n$. Denote $i\colon H\longrightarrow A$ the inclusion of $H$ into $A$ and $p\colon A\longrightarrow H$ the projection. Notice that we have $p\circ i = id_H$. The only remaining part---in order to have a deformation retraction---is the homotopy $h\colon A\longrightarrow A$. We will chose this homotopy quite carefully. 
-
-Let us first define some notation. Since $A^n=B^n\oplus H^n\oplus L^n$ we can describe the differential $d$ by nine maps 
-\begin{alignat*}{3}
-    d^n_{BB}&\colon B^n &&\longrightarrow B^{n+1} \\
-    d^n_{BH}&\colon B^n &&\longrightarrow H^{n+1} \\
-    d^n_{BL}&\colon B^n &&\longrightarrow L^{n+1} \\
-    d^n_{HB}&\colon H^n &&\longrightarrow B^{n+1} \\
-    d^n_{HH}&\colon H^n &&\longrightarrow H^{n+1} \\
-    d^n_{HL}&\colon H^n &&\longrightarrow L^{n+1} \\
-    d^n_{LB}&\colon L^n &&\longrightarrow B^{n+1} \\
-    d^n_{LH}&\colon L^n &&\longrightarrow H^{n+1} \\
-    d^n_{LL}&\colon L^n &&\longrightarrow L^{n+1} , 
-\end{alignat*}
-each of them being just the differential projected and restricted to the proper part of the decomposition of $A$. Equivalently they are the parts of the matrix describing the differential, i.e. 
+where $d_{LB}$ comes from the description of $d$ as a matrix as follows:
 \begin{equation*}
 d^n = 
 \begin{bmatrix}
@@ -55,174 +39,8 @@ d^n =
 \end{bmatrix}
 \colon B^n\oplus H^n\oplus L^n \longrightarrow B^{n+1}\oplus H^{n+1}\oplus L^{n+1}
 \end{equation*}
-Because $B^n$ and $H^n$ both consist of cocycles, we know that the differential vanishes on those subspaces. Hence we have 
-\begin{equation*}
-    d^n_{BB} = d^n_{BH} = d^n_{BL} = d^n_{HB} = d^n_{HH} = d^n_{HL} = 0.
-\end{equation*}
-We also have no $(n+1)$-coboundaries in $H^{n+1}$ and $L^{n+1}\cong B^{n+2}$, which means we have $d^n_{LH} = d^n_{LL} = 0$ as well.
 
-This means that the matrix for $d^n$ really looks like
-\begin{equation*}
-d^n = 
-\begin{bmatrix}
-    0 & 0 & 0 \\
-    0 & 0 & 0 \\
-    d^n_{LB} & 0 & 0 
-\end{bmatrix}    
-\end{equation*}
-
-We can now describe the degree $n$ part of our proposed homotopy $h$ as a map 
-\begin{equation*}
-    h^n\colon B^n\oplus H^n\oplus L^n \longrightarrow B^{n-1}\oplus H^{n-1}\oplus L^{n-1} 
-\end{equation*}
-given by the matrix 
-\begin{equation*}
-h^n = 
-\begin{bmatrix}
-0 & 0 & (d_{LB}^{n-1})^{-1}\\
-0 & 0 & 0\\
-0 & 0 & 0
-\end{bmatrix}
-\end{equation*}
-Note that this inverse, $(d_{LB}^{n-1})^{-1}$, exists, as we earlier identified the subspace $L^n$ by $L^n \cong B^{n+1}$. 
-
-In order for $h$ to be a homotopy between $id_A$ and $i\circ p$, we need to have 
-\begin{equation*}
-    id_{A^n} - (i\circ p)^n = d^{n-1}\circ h^{n} + h^{n+1}\circ d^n, 
-\end{equation*}
-or equivalently stated---that the sum of the maps in the parallelogram in the below diagram, equals the vertical arrow. 
-\begin{center}
-\begin{tikzpicture}
-	\node (1) {$B^{n-1}\otimes H^{n-1}\otimes L^{n-1}$};
-	\node (2) [node distance=5cm, right of=1] {$B^n\otimes H^n\otimes L^n$};
-	\node (3) [node distance=5cm, right of=2] {$B^{n+1}\otimes H^{n+1}\otimes L^{n+1}$};
-	
-	\node (4) [below of=1]{$B^{n-1}\otimes H^{n-1}\otimes L^{n-1}$};
-	\node (5) [node distance=5cm, right of=4] {$B^n\otimes H^n\otimes L^n$};
-	\node (6) [node distance=5cm, right of=5] {$B^{n+1}\otimes H^{n+1}\otimes L^{n+1}$};
-
-	\draw [-to] (2) to node [swap]{$h^n$} (4);
-	\draw [-to] (3) to node {$h^{n+1}$} (5);
-	\draw [-to] (2) to node {{\scriptsize $id_{A^n}-(i\circ p)^n$}} (5);
-	
-	\draw [-to] (1) to node {$d^{n-1}$} (2);
-	\draw [-to] (2) to node {$d^{n}$} (3);
-	\draw [-to] (4) to node [swap]{$d^{n-1}$} (5);
-	\draw [-to] (5) to node [swap]{$d^{n}$} (6);
-\end{tikzpicture}
-\end{center}
-
-In matrix notation the left hand side becomes
-\begin{equation*}
-\begin{bmatrix}
-1 & 0 & 0 \\
-0 & 1 & 0 \\
-0 & 0 & 1
-\end{bmatrix}
--
-\begin{bmatrix}
-0 & 0 & 0 \\
-0 & 1 & 0 \\
-0 & 0 & 0
-\end{bmatrix}
-=
-\begin{bmatrix}
-1 & 0 & 0 \\
-0 & 0 & 0 \\
-0 & 0 & 1
-\end{bmatrix}
-\end{equation*}
-so we need to confirm that the right hand side is equal to that. We just multiply the matrices we have for the maps, which gives us
-\begin{align*}
-    d^{n-1}\circ h^n 
-    &= 
-    \begin{bmatrix}
-    0 & 0 & 0 \\
-    0 & 0 & 0 \\
-    d^{n-1}_{LB} & 0 & 0
-    \end{bmatrix}
-    \cdot
-    \begin{bmatrix}
-    0 & 0 & (d_{LB}^{n-1})^{-1}\\
-    0 & 0 & 0\\
-    0 & 0 & 0
-    \end{bmatrix} \\
-    &= 
-    \begin{bmatrix}
-    0 & 0 & 0 \\
-    0 & 0 & 0 \\
-    0 & 0 & d^{n-1}_{LB}(d_{LB}^{n-1})^{-1} 
-    \end{bmatrix} \\
-    &= 
-    \begin{bmatrix}
-    0 & 0 & 0 \\
-    0 & 0 & 0 \\
-    0 & 0 & 1 
-    \end{bmatrix}
-\end{align*}
-and
-\begin{align*}
-    h^{n+1}\circ d^n 
-    &=
-    \begin{bmatrix}
-    0 & 0 & (d_{LB}^{n})^{-1}\\
-    0 & 0 & 0\\
-    0 & 0 & 0
-    \end{bmatrix}
-    \cdot 
-    \begin{bmatrix}
-    0 & 0 & 0 \\
-    0 & 0 & 0 \\
-    d^{n}_{LB} & 0 & 0
-    \end{bmatrix} \\
-    &=
-    \begin{bmatrix}
-    (d_{LB}^{n})^{-1}d^{n}_{LB} & 0 & 0\\
-    0 & 0 & 0\\
-    0 & 0 & 0
-    \end{bmatrix} \\
-    &=
-    \begin{bmatrix}
-    1 & 0 & 0\\
-    0 & 0 & 0\\
-    0 & 0 & 0
-    \end{bmatrix} .
-\end{align*}
-Hence we have
-\begin{align*}
-    h^{n+1}\circ d^n + d^{n-1}\circ h^n 
-    &= 
-    \begin{bmatrix}
-    0 & 0 & 0 \\
-    0 & 0 & 0 \\
-    0 & 0 & 1 
-    \end{bmatrix}
-    + 
-    \begin{bmatrix}
-    1 & 0 & 0 \\
-    0 & 0 & 0 \\
-    0 & 0 & 0 
-    \end{bmatrix} \\
-    &= 
-    \begin{bmatrix}
-    1 & 0 & 0 \\
-    0 & 0 & 0 \\
-    0 & 0 & 1
-    \end{bmatrix} \\
-    &= 
-    id_{A^n} - (i\circ p)^n , 
-\end{align*}
-which shows that $h$ is in fact a chain homotopy between $id_A$ and $i\circ p$. This means that we finally have our deformation retraction
-\begin{center}
-\begin{tikzpicture}
-	\node (1) {$A$};
-	\node (2) [node distance=3.5cm, right of=1] {$H(A)$};
-	
-	\draw [to-, out=220, in=140, loop] (1) to node {$h$} (1);
-	\draw [-to] (1.20) to node {$p$} (2.170);
-	\draw [-to] (2.190) to node {$i$} (1.340); . 
-\end{tikzpicture}
-\end{center}
+A more detailed construction---and the proof of this actually being a deformation retraction---is moved to appendix A. 
 
 Note that this deformation retraction is not unique, as it requires making choices for the subspaces $H^n$ and $L^n$. Thus we can get many different such deformation retractions by altering these choices. In the theorem we want to prove, namely that such a deformation retraction gives us an $\A$-structure on the cohomology algebra, we will get different, albeit $\A$-quasi-isomorphic $\A$-structures when we alter the choices of the subspaces. Since we are only interested in an $\A$-structure on $H(A)$ such that it is $\A$-quasi-isomorphic to $A$, these choices of subspaces are not important---as we have our desired $\A$-quasi-isomorphism regardless. This is because we are not really interested in the structure itself, merely its existence, and its relation to formality. 
 
@@ -230,7 +48,8 @@ We now restate Kadeishvili's theorem in this new situation we have created.
 
 \begin{theorem}[Kadeishvili's theorem]
 \label{thm:Kadeishvilis_theorem2}
-Let $(A, m, d)$ be a DG-algebra and $(A, H(A), p, i, h)$ be the deformation retraction onto its cohomology algebra described above. Then there is a minimal $\A$-structure $\{m_n\}$ on $H(A)$ and an $\A$-quasi-isomorphism $I\colon H(A)\longrightarrow A$ that extends $i$. 
+\index{Kadeishvili's theorem}
+Let $(A, m, d)$ be a DG-algebra and $(A, H(A), p, i, h)$ be the deformation retraction onto its cohomology algebra described above. Then there is a minimal $\A$-structure $\{m_n\}$ on $H(A)$ and an $\A$-quasi-isomorphism $I\colon H(A)\rightsquigarrow A$ that extends $i$. 
 \end{theorem}
 \begin{proof}
 We let $m_1=0$, $I_1=i$ and $h\lambda_1 = -id_A$. Then for $n\geq 2$ we recursively define
@@ -244,7 +63,7 @@ Then our $\A$-structure and $\A$-quasi-isomorphism is given by
 \end{align*}
 \end{proof}
 
-We call such a minimal $\A$-structure on the cohomology algebra $H(A)$---coming from a deformation retraction of the type above---a Merkulov model of $A$. 
+We call such a minimal $\A$-structure on the cohomology algebra $H(A)$---coming from a deformation retraction of the type above---a \emph{Merkulov model}\index{Merkulov model} of $A$. 
 
 We will not prove that these do in fact satisfy the Stasheff identities, but we refer the reader to \cite{kadeishvili} for the original, and much more general proof. We do however write out what happens for some low $n$. 
 
@@ -282,13 +101,13 @@ which is just the induced multiplication from $A$ on $H(A)$. Earlier when we loo
     &= p(m((-id_A)\otimes hm)-m(hm\otimes (-id_A))) \\
     &= p(m(hm\otimes id_A)-m(id_A\otimes hm))
 \end{align*}
-which we should recognize as the same $m_3$ we constructed from the general deformation retraction we studied earlier, namely the associating homotopy between $m_2(id\otimes m_2)$ and $m_2(m_2\otimes id)$. Since $m_2$ is just the induced product on $H$, we actually know that it is associative, i.e. $m_2(id\otimes m_2)-m_2(m_2\otimes id)=0$, as it is isomorphic to $H(A)$, which is an associative DG-algebra. If we look at the $n=3$ equation defining an $\A$-algebra we have 
+which we should recognize as the same $m_3$ we constructed from the general deformation retraction we studied earlier in \cref{ch:3}, namely the associating homotopy\index{Associating homotopy} between $m_2(id\otimes m_2)$ and $m_2(m_2\otimes id)$. Since $m_2$ is just the induced product on $H$, we actually know that it is associative, i.e. $m_2(id\otimes m_2)-m_2(m_2\otimes id)=0$, as it is isomorphic to $H(A)$, which is an associative DG-algebra. If we look at the $n=3$ equation defining an $\A$-algebra we have 
 \begin{equation*}
     m_2(id\otimes m_2)-m_2(m_2\otimes id) = m_1 m_3 + m_3(m_1\otimes id\otimes id + id\otimes m_1\otimes id + id\otimes id \otimes m_1), 
 \end{equation*}
 but, as we have $m_1=0$, we are totally fine with having an associative product in this scenario! This means that we have $\partial m_3 = 0$, i.e. that it is a cocycle in $Hom(A^{\otimes 3}, A)$. This, however, does not mean it zero itself.
 
-We mentioned earlier that an alternative way of describing the Stasheff identities was given by 
+We mentioned earlier that an alternative way of describing the Stasheff identities\index{The Stasheff identities} was given by 
 \begin{equation*}
     \partial m_n = - \sum_{r+s+t=n}(-1)^{r+st}m_{r+s+t}(id^{\otimes r}\otimes m_s\otimes id^{\otimes t})
 \end{equation*}
@@ -300,7 +119,7 @@ for $r, s, t\geq 1$. We earlier formed an upside down triangle of trees represen
 \begin{equation*}
     \left(\sum_{i=1}^n i\right) - n-1 = \left(\sum_{i=1}^{n-1} i\right) -1
 \end{equation*}
-trees, i.e. one less than the $n-1$'st triangle number. This is not by coincidence equal to the number of facets in $K(n+1)$, the $n+1$'st Stasheff associahedron. 
+trees, i.e. one less than the $n-1$'st triangle number. This is not by coincidence equal to the number of facets in $K(n+1)$, the $n+1$'st Stasheff associahedron\index{Stasheff associahedron}. 
 
 
 
@@ -317,15 +136,16 @@ The results have also been generalized to the theory of $\infty$-operads, where 
 
 \subsection{Connection to formality}
 
-Now that we have this more general approach to studying the relationship between a DG-algebra and its cohomology algebra, we need to know how it relates back to our original interests---namely formality. Recall that by \cref{thm:span}, $A$ being a formal DG-algebra means that we have a span of DG-quasi-isomorphisms between $A$ and $H(A)$, i.e. $H(A)\longleftarrow M\longrightarrow A$. By Kadeishvili's theorem we now have more than a DG-structure on $H(A)$, as we have in fact an $\A$-structure $\{m_n\}$, but we also have a direct $\A$-quasi-isomorphism $q\colon H(A)\longrightarrow A$. We know that if $m_n = 0$ for $n\geq 3$ then $H(A)$ is in fact a DG-algebra, so we can think of these possibly non-trivial $m_n$'s as measuring how far away $A$ is from being formal. This is of course informal, but it will soon turn out to also be a precise statement. 
+Now that we have this more general approach to studying the relationship between a DG-algebra and its cohomology algebra, we need to know how it relates back to our original interests---namely formality. Recall that by \cref{thm:span}, $A$ being a formal DG-algebra\index{Formal DG-algebra} means that we have a span of DG-quasi-isomorphisms between $A$ and $H(A)$, i.e. $H(A)\longleftarrow M\longrightarrow A$. By Kadeishvili's theorem we now have more than a DG-structure on $H(A)$, as we have in fact an $\A$-structure $\{m_n\}$, but we also have a direct $\A$-quasi-isomorphism $q\colon H(A)\rightsquigarrow A$. We know that if $m_n = 0$ for $n\geq 3$ then $H(A)$ is in fact a DG-algebra, so we can think of these possibly non-trivial $m_n$'s as measuring how far away $A$ is from being formal. This is of course informal, but it will soon turn out to also be a precise statement. 
 
-One of the other main reasons for passing to $\A$-algebras is that their homotopy theory is better behaved than for DG-algebras. We have in fact already seen this, as a complex homotopy equivalent to a DG-algebra is not necessarily a DG-algebra, but by the generalizaton of Kadeishvili's theorem we mentioned, this property in fact holds for $\A$-algebras. This means that being an $\A$-algebra is a ``homotopy stable'' property. 
+One of the other main reasons for passing to $\A$-algebras is that their homotopy theory is better behaved than for DG-algebras. We have in fact already seen this, as a deformation retraction\index{Deformation retraction} of a DG-algebra is not necessarily a DG-algebra, but by the generalizaton of Kadeishvili's theorem we mentioned, this property in fact holds for $\A$-algebras. This means that being an $\A$-algebra is a ``homotopy stable'' property. 
 
-We have also seen that DG-quasi-isomorphisms are not the nicest ones, as they are not homotopy invertible. This is because not all isomorphisms in the homotopy category $hoDGA_k$ comes from a DG-quasi-isomorphism in $DGA_k$. This resulted is us having to use zig-zags and spans of DG-quasi-isomorphisms instead of just direct ones. This property is luckily also fixed by passing to $\A$-algebras, meaning that all $\A$-quasi-isomorphisms are $\A$-homotopy equivalences. 
+We have also seen that DG-quasi-isomorphisms are not the nicest ones, as they are not homotopy invertible. This is because not all isomorphisms in the homotopy category\index{The homotopy category} $hoDGA_k$ comes from a DG-quasi-isomorphism in $DGA_k$. This resulted is us having to use zig-zags and spans of DG-quasi-isomorphisms instead of just direct ones. This property is luckily also fixed by passing to $\A$-algebras, meaning that all $\A$-quasi-isomorphisms are $\A$-homotopy equivalences. 
 
 
 \begin{definition}[$\A$-homotopy]
 \label{def:A_infinity-homotopy}
+\index{$\A$-homotopy}
 Let $(A, m^A)$ and $(B, m^B)$ be $\A$-algebras. Two $\A$-morphisms $\{f_n\}, \{g_n\}$ between them are called homotopic if there exists a family of graded homogeneous multilinear degree $-1$ maps $h_n:A^{\otimes n}\longrightarrow B$, such that 
 \begin{equation*}
     g_n-f_n = \sum_{i_1+\cdots i_r = n}m^B_{r+1+t} (g_{i_1}\otimes \cdots g_{i_t}\otimes h_s \otimes f_{i_{t+1}}\otimes \cdots \otimes f_{i_r} ) + \sum_{r+s+t = n}h_{r+1+t} (id^{\otimes r}\otimes m^A_s \otimes id^{\otimes t})
@@ -336,7 +156,7 @@ where $r, t\geq 0, n, s\geq 1$ as usual.
 
 \begin{proposition}
 \label{prop:infty-qi_homotopy_invertible}
-Let $(A, m^A)$ and $(B, m^B)$ be $\A$-algebras and $q:A\rightarrow B$ an $\A$-quasi-isomorphism. Then there exists an $\A$-quasi-isomorphism $q':B\rightarrow A$ that is a $\A$-homotopy inverse of $f$. This means that the class of $\A$-quasi-isomorphisms is the same as the class of $\A$-homotopy equivalences. 
+Let $(A, m^A)$ and $(B, m^B)$ be $\A$-algebras and $q:A\rightsquigarrow B$ an $\A$-quasi-isomorphism. Then there exists an $\A$-quasi-isomorphism $q':B\rightsquigarrow A$ that is a $\A$-homotopy inverse of $f$. This means that the class of $\A$-quasi-isomorphisms is the same as the class of $\A$-homotopy equivalences. 
 \end{proposition}
 
 We wont prove this result, as the proof uses some machinery that we will not cover in this thesis. More precisely one at least needs the bar and cobar constructions for $\A$-algebras. The reader interested in the proof is referred to \cite[Corollary 1.3.1.3]{french1}. 
@@ -345,21 +165,32 @@ The next step is to figure out how an $\A$-quasi-isomorphism relates to a DG-qua
 
 \begin{corollary}
 \label{cor:zigzag-quasi}
-Two DG algebras $(A, d_A)$ and $(B, d_B)$ is connected by a zig-zag of quasi-isomorphisms
+Two DG-algebras $(A, d_A)$ and $(B, d_B)$ is connected by a zig-zag of DG-quasi-isomorphisms
 \begin{equation*}
     A \overset{\sim}\longleftarrow \bullet \overset{\sim}\longrightarrow \cdots \overset{\sim}\longleftarrow \bullet \overset{\sim}\longrightarrow B, 
 \end{equation*}
-i.e. they are quasi-isomorphic, if and only if there is an $\A$-quasi-isomorphism $A\rightarrow B$. 
+i.e. they are quasi-isomorphic, if and only if there is an $\A$-quasi-isomorphism $A\rightsquigarrow B$. 
 \end{corollary}
 
 \begin{proof}
-Assume we have a zig-zag of DG-quasi-isomorphisms between $A$ and $B$. Recall that by \cref{thm:span} we can reduce the zig-zag to a single span of DG-quasi-isomorphisms $A\overset{q}\longleftarrow C\overset{p}\longrightarrow B$. We now interpret $A$, $B$ and $C$ as $\A$-algebras, and $q, p$ as morphisms of $\A$ algebras. This is the same standard procedure we have described before, i.e. letting $m^A_n = m^B_n = m^C_n = 0$ for all $n\geq 3$ and defining $\{q_n\}$ by $q_1 = q$ and $q_m = 0$ for $m\geq 2$ and similarly for $p$. By abuse of notation we denote these $\A$-morphisms again by $q$ and $p$. Notice that since $q$ and $p$ are DG-quasi-isomorphisms, then $q$ and $p$ are $\A$-quasi-isomorphisms as well. We then have a span $A\overset{q}\longleftarrow C \overset{p}\longrightarrow B$ of $\A$-quasi-isomorphisms. By \cref{prop:infty-qi_homotopy_invertible} we know these are invertible up to homotopy, hence we have an $A$-quasi-isomorphism $q'\colon A\longrightarrow C$ such that $q\circ q' \sim id_A$ and $q'\circ q \sim id_C$. 
+Assume we have a zig-zag of DG-quasi-isomorphisms between $A$ and $B$. Recall that by \cref{thm:span} we can reduce the zig-zag to a single span of DG-quasi-isomorphisms $A\overset{q}\longleftarrow C\overset{p}\longrightarrow B$. We now interpret $A$, $B$ and $C$ as $\A$-algebras, and $q, p$ as morphisms of $\A$ algebras. This is the same standard procedure we have described before, i.e. letting $m^A_n = m^B_n = m^C_n = 0$ for all $n\geq 3$ and defining $\{q_n\}$ by $q_1 = q$ and $q_m = 0$ for $m\geq 2$ and similarly for $p$. By abuse of notation we denote these $\A$-morphisms again by $q$ and $p$. Notice that since $q$ and $p$ are DG-quasi-isomorphisms, then $q$ and $p$ are $\A$-quasi-isomorphisms as well. We then have a span 
+\begin{center}
+\begin{tikzpicture}
+\node (1) {$A$};
+\node (2) [node distance=1.3cm, right of=1] {$C$};
+\node (3) [node distance=1.3cm, right of=2] {$B$};
+
+\draw [-to, snake it] (2) to node {} (1);
+\draw [-to, snake it] (2) to node {} (3); 
+\end{tikzpicture}
+\end{center}
+of $\A$-quasi-isomorphisms. By \cref{prop:infty-qi_homotopy_invertible} we know these are invertible up to homotopy, hence we have an $\A$-quasi-isomorphism $q'\colon A\rightsquigarrow C$ such that $q\circ q' \sim id_A$ and $q'\circ q \sim id_C$. 
 
 Since composition of two $DG$-quasi-isomorphisms is again a DG-quasi-isomorphism we know that this is the case for composition of $\A$-quasi-isomorphisms as well, as it only depends on the arity $1$ map. Thus $q'\circ p$ is an $\A$-quasi-isomorphism from $A$ to $B$. Notice that this can no longer have $(q'\circ p)_m = 0$ for $m\geq 2$ in general, as that would contradict DG-quasi-isomorphism being homotopy invertible. 
 
 The other direction also holds, but to construct the zig-zag from a $\A$-quasi-isomorphism we again need the previously mentioned bar and cobar construction. To outline the idea, we can produce a DG-algebra $U(A)$ through the bar and cobar construction from an $\A$-algebra $A$. This can be though of as an ``anti Merkulov model''. This DG-algebra is universal, in the sense that any $\A$-morphism from $A$ to a DG-algebra $B$ factorizes uniquely through $U(A)$. Moreover $U(A)$ is $\A$-quasi-isomorphic to $A$. It can then be shown that if $A$ is a DG-algebra, then the map $U(A)\longrightarrow A$ is a DG-quasi-isomorphism. 
 
-In our case we have two DG-algebras $A$ and $B$ and a $\A$-quasi-isomorphism $q\colon A\longrightarrow B$. We then get a zig-zag
+In our case we have two DG-algebras $A$ and $B$ and a $\A$-quasi-isomorphism $q\colon A\rightsquigarrow B$. We then get a zig-zag
 \begin{equation*}
     A\overset{q_A}\longleftarrow U(A) \overset{U(q)}\longrightarrow U(B)\overset{q_B}\longrightarrow B
 \end{equation*}
@@ -371,10 +202,10 @@ These results allow us to characterize formal DG-algebras by use of $\A$-morphis
 
 \begin{corollary}
 \label{cor:formal_A_infinity-qi}
-Let $(A, d_A)$ be a DG-algebra and $H(A)$ its cohomology algebra, treated as a DG-algebra with trivial differential. Then $A$ is formal if and only if there is an $\A$-quasi-isomorphism $q\colon H(A)\longrightarrow A$. 
+Let $(A, d_A)$ be a DG-algebra and $H(A)$ its cohomology algebra, treated as a DG-algebra with trivial differential. Then $A$ is formal\index{Formal DG-algebra} if and only if there is an $\A$-quasi-isomorphism $q\colon H(A)\rightsquigarrow A$. 
 \end{corollary}
 
-Notice here that this is not the same statement as Kadeishvili's theorem, as here $H(A)$ is purely a DG-algebra, and not endowed with an $\A$-structure. We can however restate the corollary in more similar terms to Kadeishvili's theorem, then saying that a DG-algebra is formal if and only if its Merkulov model is again a DG-algebra, i.e. it has $m_i=0$ for all $i\geq 3$. 
+Notice here that this is not the same statement as Kadeishvili's theorem, as here $H(A)$ is purely a DG-algebra, and not endowed with an $\A$-structure. We can however restate the corollary in more similar terms to Kadeishvili's theorem, then saying that a DG-algebra is formal if and only if its Merkulov model\index{Merkulov model} is again a DG-algebra, i.e. it has $m_i=0$ for all $i\geq 3$. 
 
 
 

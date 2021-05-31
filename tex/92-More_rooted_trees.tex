@@ -2,8 +2,9 @@
 
 
 \subsection{Visualization of morphisms using rooted trees}
+\label{ssec:trees2}
 
-We can also describe the relations of the $\A$-morphisms as systems of rooted trees. Let us assume we have a morphism of $\A$-algebras $f\colon A\longrightarrow B$. The idea is to compare what happens with applying the internal maps $m_n^A$ before applying the $f_i$'s versus first applying the $f_i$'s and then the internal maps $m_n^B$. Let's start with the former.
+We can also describe the relations of the $\A$-morphisms\index{$\A$-morphism} as systems of rooted trees. Let us assume we have a morphism of $\A$-algebras $f\colon A\rightsquigarrow B$. The idea is to compare what happens with applying the internal maps $m_n^A$ before applying the $f_i$'s versus first applying the $f_i$'s and then the internal maps $m_n^B$. Let's start with the former.
 
 From the equation used to define the morphisms, we see that the left hand side is very similar to the Stasheff identities. In fact, it is exactly what we get if we replace the operation $m_{r+1+t}^A$ by $f_{r+1+t}$, i.e. 
 \begin{equation*}
@@ -32,9 +33,9 @@ The latter part of the relation, i.e. the right hand side, seems a bit more diff
 \end{equation*}
 We see that we need to decompose $n$ in many more ways than for the left hand side. For any $0\leq k\leq n$ we need figure out all possible ways of decomposing $n$ into $k$ pieces, where all of them are positive. This requires a little detour into some combinatorics.
 
-\subsubsection{Combinatorics}
+\subsection*{Combinatorics}
 
-What we need is to know how to decompose a number into a sum of smaller numbers. Given an integer $n$ we must know how many ways to partition $n$ things into $k$ groups, which is done by the binomial coefficient $\binom{n}{k}$. In our double sum we sum over all the different size $k$ partitions for all $1\leq k\leq n$, hence for some $n$ we need to know $\binom{n}{k}$ for all $1\leq k\leq n$. A nice visual way to get this is by Pascals triangle. We have added the first six rows of it below.
+What we need is to know how to decompose a number into a sum of smaller numbers. Given an integer $n$ we must know how many ways to partition $n$ things into $k$ groups, which is done by the binomial coefficient $\binom{n}{k}$. In our double sum we sum over all the different size $k$ partitions for all $1\leq k\leq n$, hence for some $n$ we need to know $\binom{n}{k}$ for all $1\leq k\leq n$. A nice visual way to get this is by \emph{Pascals triangle}\index{Pascals triangle}. We have added the first six rows of it below.
 
 \begin{center}
 \begin{tabular}{lccccccccccccccc}
@@ -91,8 +92,8 @@ We have also seen most of the parts of the full relation for $n=4$, so lets see 
 
 \includepdf[pages=-]{pdfs/coverart_master.pdf}
 
-\subsubsection{Rooted trees for DG-morphisms}
-As we did for the relations describing a DG-algebra, we now present the full relations describing a DG-morphism. Let $A$ and $B$ be two DG-algebras. We think of these as $\A$-algebras by letting $m_i =0$ for $i\geq 3$. A map $f\colon A\longrightarrow B$ can then be considered to be a morphism of $\A$-algebras, $\{f_i\}$ by letting $f_1 = f$ and $f_i = 0$ for all $i\geq 2$. Then we get that the relations describing a DG-morphism are the following:
+\subsection*{Rooted trees for DG-morphisms}
+As we did for the relations describing a DG-algebra, we now present the full relations describing a DG-morphism\index{DG-morphism}. Let $A$ and $B$ be two DG-algebras. We think of these as $\A$-algebras by letting $m_i =0$ for $i\geq 3$. A map $f\colon A\longrightarrow B$ can then be considered to be a morphism of $\A$-algebras, $f'=\{f_i\}$ by letting $f_1 = f$ and $f_i = 0$ for all $i\geq 2$. Then we get that the relations describing a DG-morphism are the following:
 \input{images/more_rooted_tree/DG1}
 
 and 

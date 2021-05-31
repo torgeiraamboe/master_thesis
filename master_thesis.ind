@@ -1,102 +1,149 @@
 \begin{theindex}
 
-  \item $\ensuremath  {A_{\infty }}$-algebra, \hyperpage{54}
-  \item $\ensuremath  {A_{\infty }}$-homotopy, \hyperpage{77}
-  \item $\ensuremath  {A_{\infty }}$-isomorphism, \hyperpage{57}
-  \item $\ensuremath  {A_{\infty }}$-morphism, \hyperpage{56}
-  \item $\ensuremath  {A_{\infty }}$-quasi-isomorphism, \hyperpage{58}
+  \item $A_\infty$-algebra, \hyperpage{52}, \hyperpage{57}
+  \item $\A$-homotopy, \hyperpage{74}
+  \item $\A$-isomorphism, \hyperpage{56}
+  \item $\A$-morphism, \hyperpage{55}, \hyperpage{62}
+  \item $\A$-quasi-isomorphism, \hyperpage{56}, \hyperpage{71}
   \item 1-connected, \hyperpage{9}
 
   \indexspace
 
+  \item Acyclic cofibration, \hyperpage{11}
+  \item Acyclic fibration, \hyperpage{11}
   \item Algebra, \hyperpage{2}
+  \item Associating homotopy, \hyperpage{56}, \hyperpage{72}, 
+		\hyperpage{90}
 
   \indexspace
 
-  \item Bifibrant object, \hyperpage{13}
+  \item Bifibrant object, \hyperpage{13}, \hyperpage{16}
 
   \indexspace
 
-  \item Closed symmetric monoidal category, \hyperpage{93}
-  \item Cochain complex, \hyperpage{3}
+  \item Closed symmetric monoidal category, \hyperpage{97}
+  \item Cochain complex, \hyperpage{3}, \hyperpage{53}
   \item Cofibrant object, \hyperpage{13}
-  \item Cofibrantly generated model category, \hyperpage{95}
+  \item Cofibrantly generated model category, \hyperpage{99}
+  \item Cofibration, \hyperpage{11}, \hyperpage{17}, \hyperpage{98}
+  \item Cohomology of a DG-algebra, \hyperpage{4}
   \item Cohomology of finite type, \hyperpage{9}
   \item Connected DG-algebra, \hyperpage{9}
+  \item Coproduct of DG-algebras, \hyperpage{17}
+  \item Cospan of morphisms, \hyperpage{24}
+  \item Cup length, \hyperpage{83}
   \item Cylinder object, \hyperpage{13}
 
   \indexspace
 
   \item Defining system, \hyperpage{31}
-  \item Deformation retraction, \hyperpage{47}
-  \item DG morphism, \hyperpage{7}
-  \item Differential graded algebra, \hyperpage{3}
+  \item Deformation retraction, \hyperpage{47}, \hyperpage{71}, 
+		\hyperpage{74}, \hyperpage{93}
+  \item DG-algebra, \hyperpage{3}, \hyperpage{61}, \hyperpage{78}, 
+		\hyperpage{101}
+  \item DG-algebras, \hyperpage{54}
+  \item DG-morphism, \hyperpage{7}, \hyperpage{70}
 
   \indexspace
 
-  \item Fibrant object, \hyperpage{13}
-  \item Formal DG-algebra, \hyperpage{8}, \hyperpage{23}
-  \item Formal topological space, \hyperpage{8}
+  \item Fibrant object, \hyperpage{13}, \hyperpage{23}
+  \item Fibration, \hyperpage{11}, \hyperpage{17}, \hyperpage{98}
+  \item Formal DG-algebra, \hyperpage{8}, \hyperpage{23}, 
+		\hyperpage{34}, \hyperpage{73}, \hyperpage{75}, 
+		\hyperpage{77}, \hyperpage{84}
+  \item Formal topological space, \hyperpage{8}, \hyperpage{85}
 
   \indexspace
 
+  \item Generalized Whiteheads theorem, \hyperpage{16}
+  \item Good cylinder object, \hyperpage{13}
+  \item Good left homotopy, \hyperpage{14}
+  \item Good path object, \hyperpage{13}
+  \item Good right homotopy, \hyperpage{14}
   \item Graded algebra, \hyperpage{3}
 
   \indexspace
 
+  \item Homotopic maps, \hyperpage{16}
   \item Homotopy equivalence, \hyperpage{16}
-  \item Homtopic maps, \hyperpage{16}
+  \item Homotopy of chain maps, \hyperpage{49}, \hyperpage{89}
 
   \indexspace
 
+  \item Initial object, \hyperpage{13}
+
+  \indexspace
+
+  \item Kadeishvili's theorem, \hyperpage{71}, \hyperpage{83}
   \item Koszul sign rule, \hyperpage{48}
 
   \indexspace
 
   \item Left homotopy, \hyperpage{14}
-  \item Lusternik-Scnirelman category, \hyperpage{84}
+  \item Left lifting property, \hyperpage{11}, \hyperpage{22}
 
   \indexspace
 
-  \item Massey $n$-product, \hyperpage{31}
-  \item Minimal $\ensuremath  {A_{\infty }}$-algebra, \hyperpage{71}
-  \item Model category, \hyperpage{11}
+  \item Massey product, \hyperpage{31}, \hyperpage{76}, \hyperpage{84}
+  \item Merkulov model, \hyperpage{72}, \hyperpage{75, 76}, 
+		\hyperpage{78}
+  \item Minimal $\A$-algebra, \hyperpage{70}
+  \item Model category, \hyperpage{11}, \hyperpage{98}
   \item Model structure, \hyperpage{11}
-  \item Monoid, \hyperpage{95}
-  \item Monoidal category, \hyperpage{92}
+  \item Monoid in a monoidal category, \hyperpage{99}
+  \item Monoidal category, \hyperpage{96}
 
   \indexspace
 
+  \item Pascals triangle, \hyperpage{64}
   \item Path object, \hyperpage{13}
-  \item Pushout product, \hyperpage{94}
+  \item Piece-wise linear de Rham algebra, \hyperpage{7}
+  \item Pushout product, \hyperpage{98}
 
   \indexspace
 
-  \item Quasi-isomorphic DG-algebras, \hyperpage{7}
-  \item Quasi-isomorphism, \hyperpage{7}
+  \item Quasi-isomorphic DG-algebras, \hyperpage{7}, \hyperpage{24}
+  \item Quasi-isomorphism, \hyperpage{7}, \hyperpage{17}
 
   \indexspace
 
-  \item Reduced cohomology, \hyperpage{84}
-  \item Reduced formal space, \hyperpage{86}
+  \item Reduced cohomology, \hyperpage{82}
+  \item Reduced formal topological space, \hyperpage{84}
   \item Retraction, \hyperpage{10}
-  \item Retraction closed, \hyperpage{11}
+  \item Retraction closed, \hyperpage{11}, \hyperpage{19}
   \item Right homotopy, \hyperpage{14}
+  \item Right lifting property, \hyperpage{11}, \hyperpage{22}
   \item Right proper model category, \hyperpage{24}
-  \item Rooted tree, \hyperpage{58}
+  \item Rooted tree, \hyperpage{57}
 
   \indexspace
 
-  \item Strict $\A$-morphism, \hyperpage{56}
-  \item Symmetric monoidal category, \hyperpage{93}
-  \item Symmetric monoidal model category, \hyperpage{94}
+  \item Singular cochain algebra, \hyperpage{4}
+  \item Singular mod $p$ cohomolohy, \hyperpage{4}
+  \item Span of morphisms, \hyperpage{24}
+  \item Stasheff associahedra, \hyperpage{45}
+  \item Stasheff associahedron, \hyperpage{49}, \hyperpage{73}
+  \item Strict $\A$-morphism, \hyperpage{55}
+  \item Suspension of a space, \hyperpage{83}
+  \item Symmetric monoidal category, \hyperpage{97}
+  \item Symmetric monoidal model category, \hyperpage{98}
 
   \indexspace
 
-  \item The associating homotopy, \hyperpage{51}
-  \item The homotopy category, \hyperpage{13}
-  \item The left lifting property, \hyperpage{11}
-  \item The right lifting property, \hyperpage{11}
+  \item Terminal object, \hyperpage{13}
+  \item The associating homotopy, \hyperpage{49}
+  \item The Borromean rings, \hyperpage{33}, \hyperpage{78}
+  \item The central question, \hyperpage{vi, vii}, \hyperpage{8}, 
+		\hyperpage{39}, \hyperpage{77}
+  \item The homotopy category, \hyperpage{13}, \hyperpage{28}, 
+		\hyperpage{74}
+  \item The Koszul grading rule, \hyperpage{53}, \hyperpage{62}, 
+		\hyperpage{76}, \hyperpage{88}, \hyperpage{101}
+  \item The Leibniz rule, \hyperpage{3}, \hyperpage{54}, \hyperpage{61}, 
+		\hyperpage{88}, \hyperpage{101}
+  \item The right Ore condition, \hyperpage{26}
+  \item The Stasheff identities, \hyperpage{53, 54}, \hyperpage{57}, 
+		\hyperpage{72}
   \item The triple Massey product, \hyperpage{30}
 
   \indexspace
@@ -105,6 +152,16 @@
 
   \indexspace
 
-  \item Vanishing Massey product, \hyperpage{33}
+  \item Vanishing Massey product, \hyperpage{33}, \hyperpage{76}, 
+		\hyperpage{78}
+  \item Very good cylinder object, \hyperpage{13}
+  \item Very good left homotopy, \hyperpage{14}
+  \item Very good path object, \hyperpage{13}
+  \item Very good right homotopy, \hyperpage{14}
+
+  \indexspace
+
+  \item Weak equivalence, \hyperpage{11}, \hyperpage{17}, 
+		\hyperpage{98}
 
 \end{theindex}
