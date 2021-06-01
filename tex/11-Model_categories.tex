@@ -176,17 +176,17 @@ Let $X$ be an object in a model category $\mathcal{C}$. The cylinder object of $
 \end{equation*} 
 where $p$ is a weak equivalence. 
 
-If $X\coprod X\overset{i_1 + i_2}\rightarrow Cyl(X)$ is a cofibration, we call $Cyl(X)$ a \emph{good cylinder object}\index{Good cylinder object}, and if in addition $p$ is an acyclic fibration, we call $Cyl(X)$ a \emph{very good cylinder object}\index{Very good cylinder object}.
+If $X\coprod X\overset{i_1 + i_2}\longrightarrow Cyl(X)$ is a cofibration, we call $Cyl(X)$ a \emph{good cylinder object}\index{Good cylinder object}, and if in addition $p$ is an acyclic fibration, we call $Cyl(X)$ a \emph{very good cylinder object}\index{Very good cylinder object}.
 \end{definition}
 
 \begin{definition}[Path object]
 \label{def:path_object}
 \index{Path object}
-Given an object $X$ in a model category $\mathcal{C}$ we define the path object of $X$, denoted $Path(X)$ to be factorization of the diagonal map $\Delta\colon X \rightarrow X\prod X$ into
+Given an object $X$ in a model category $\mathcal{C}$ we define the path object of $X$, denoted $Path(X)$ to be factorization of the diagonal map $\Delta\colon X \longrightarrow X\prod X$ into
 \begin{equation*}
-     X \overset{i}\rightarrow Path(X) \overset{(p_1,p_2)}\rightarrow X \prod X,
+     X \overset{i}\longrightarrow Path(X) \overset{(p_1,p_2)}\longrightarrow X \prod X,
 \end{equation*}
-where $i$ is a weak equivalence. Similarly to the cylinder object, if $Path(X)\overset{p}\rightarrow X\prod X$ is a fibration, we call $Path(X)$ a \emph{good path object}\index{Good path object}, and if in addition $i$ is an acyclic cobfiration, we call $Path(X)$ a \emph{very good path object}\index{Very good path object}.
+where $i$ is a weak equivalence. Similarly to the cylinder object, if $Path(X)\overset{p}\longrightarrow X\prod X$ is a fibration, we call $Path(X)$ a \emph{good path object}\index{Good path object}, and if in addition $i$ is an acyclic cobfiration, we call $Path(X)$ a \emph{very good path object}\index{Very good path object}.
 \end{definition}
 
 By the factorization axiom (\textbf{MC4}) every object has at least one very good cylinder object and one very good path object. It can be useful to use these in some cases, but in other cases we can actually be interested in cylinder and path objects that aren't necessarily good, or very good. For example, in the Serre model structure on topological spaces, the standard cylinder object $Cyl(X)=X\times I$ is only a good cylinder object when $X$ is a CW complex. It would sometimes be limiting to not use this standard cylinder when working with homotopies of maps between spaces that are not CW complexes, hence the reason for the weaker definition. 
@@ -196,7 +196,7 @@ Speaking of homotopies, we now have objects that resemble what we use in the cat
 \begin{definition}[Left homotopy]
 \label{def:left_homotopy}
 \index{Left homotopy}
-Given two maps $f,g: X\rightarrow Y$ we define a left homotopy $h:f\sim_L g$ from $f$ to $g$ to be a map $h: Cyl(X)\rightarrow Y$ such that the following diagram commutes
+Given two maps $f,g: X\longrightarrow Y$ we define a left homotopy $h:f\sim_L g$ from $f$ to $g$ to be a map $h: Cyl(X)\longrightarrow Y$ such that the following diagram commutes
 \begin{center}
 \begin{tikzpicture}
 	\node (X) {$X$};
@@ -216,7 +216,7 @@ Given two maps $f,g: X\rightarrow Y$ we define a left homotopy $h:f\sim_L g$ fro
 \begin{definition}[Right homotopy]
 \label{def:right_homotopy}
 \index{Right homotopy}
-Given two maps $f,g: X\rightarrow Y$ we define a right homotopy $h:f\sim_R g$ from $f$ to $g$ to be a map $h: X\rightarrow Path(Y)$ such that the following diagram commutes
+Given two maps $f,g: X\longrightarrow Y$ we define a right homotopy $h:f\sim_R g$ from $f$ to $g$ to be a map $h: X\longrightarrow Path(Y)$ such that the following diagram commutes
 \begin{center}
 \begin{tikzpicture}
 	\node (Y) {$Y$};
@@ -235,7 +235,7 @@ Given two maps $f,g: X\rightarrow Y$ we define a right homotopy $h:f\sim_R g$ fr
 
 If the cylinder object used to define the left homotopy is a good cylinder object then we call the homotopy a \emph{good left homotopy}\index{Good left homotopy}, and similarly if it is a very good cylinder object we call the homotopy a \emph{very good left homotopy}\index{Very good left homotopy}. The same goes for the path object used to define the right homotopy, which gives us \emph{good right homotopies}\index{Good right homotopy} and \emph{very good right homotopies}\index{Very good right homotopy}.
 
-The fact that homotopy is an equivalence relation on classes of continuous maps is one of the most important, and fundamental properties, that homotopy has in the category of topological spaces. Thus it should also be important in the general setting. Before we do that, we note that we can upgrade any left homotopy $h$ to a good left homotopy by factoring the map $X\rightarrow Cyl(X)$ into $X\rightarrow Cyl(X)' \overset{\sigma}\rightarrow Cyl(X)$ by \textbf{MC4}. Then $h\circ \sigma$ will be a good homotopy. If $Y$ is fibrant, then we can upgrade it further to a very good left homotopy by using the other factorization on $Cyl(X)\rightarrow Y$ to get $Cyl(X)\rightarrow Cyl(X)'\rightarrow Y$. This factorization gives us a commutative diagram
+The fact that homotopy is an equivalence relation on classes of continuous maps is one of the most important, and fundamental properties, that homotopy has in the category of topological spaces. Thus it should also be important in the general setting. Before we do that, we note that we can upgrade any left homotopy $h$ to a good left homotopy by factoring the map $X\longrightarrow Cyl(X)$ into $X\longrightarrow Cyl(X)' \overset{\sigma}\longrightarrow Cyl(X)$ by \textbf{MC4}. Then $h\circ \sigma$ will be a good homotopy. If $Y$ is fibrant, then we can upgrade it further to a very good left homotopy by using the other factorization on $Cyl(X)\longrightarrow Y$ to get $Cyl(X)\longrightarrow Cyl(X)'\longrightarrow Y$. This factorization gives us a commutative diagram
 \begin{center}
 \begin{tikzpicture}
 	\node (C) {$Cyl(X)$};
@@ -256,7 +256,7 @@ where $T$ is the terminal object. The lift $h'$ comes from \textbf{MC3} and give
 Let $X$ and $Y$ be objects in a model category $\mathcal{C}$. If $X$ is cofibrant then left homotopy defines an equivalence relation on $Hom(X,Y)$.
 \end{lemma}
 \begin{proof}
-Using $X$ itself as a cylinder object together with the map $f:Cyl(X)=X\rightarrow Y$ as a left homotopy shows that any map $f:X\rightarrow Y$ is left homotopic to itself. It is symmetric---as we can compose with the switching map $X\coprod X \rightarrow X\coprod X$---that just switches the components. This gives a homotopy “in the other direction”. Lastly, let $f_1\sim_L f_2$ and $f_2\sim_L f_3$ be good homotopies with cylinder objects being $Cyl(X)$ and $Cyl(X)'$ respectively. Then the pushout of the diagram $Cyl(X)' \leftarrow X \rightarrow Cyl(X)$ defines a new cylinder object and a homotopy $f_1\sim f_3$. Hence the relation is reflexive, symmetric and transitive which is the definition of an equivalence relation.
+Using $X$ itself as a cylinder object together with the map $f:Cyl(X)=X\longrightarrow Y$ as a left homotopy shows that any map $f:X\longrightarrow Y$ is left homotopic to itself. It is symmetric---as we can compose with the switching map $X\coprod X \longrightarrow X\coprod X$---that just switches the components. This gives a homotopy “in the other direction”. Lastly, let $f_1\sim_L f_2$ and $f_2\sim_L f_3$ be good homotopies with cylinder objects being $Cyl(X)$ and $Cyl(X)'$ respectively. Then the pushout of the diagram $Cyl(X)' \longleftarrow X \longrightarrow Cyl(X)$ defines a new cylinder object and a homotopy $f_1\sim f_3$. Hence the relation is reflexive, symmetric and transitive which is the definition of an equivalence relation.
 \end{proof}
 
 Dually, we also get the exact same result for right homotopy, but we have to switch from $X$ being cofibrant to $Y$ being fibrant. This is because from a model structure on a category $\mathcal{C}$ we also get a model structure on its opposite category. Here the classes of fibrations and cofibrations are switched, but the weak equivalences stay the same. 
@@ -264,10 +264,10 @@ Dually, we also get the exact same result for right homotopy, but we have to swi
 It might feel uneasing that we now have two different concepts of homotopy, which we usually don't have when working in topological spaces. There is a good reason for this, because in both the Serre and the Strøm model structure on topological spaces, all objects are fibrant. Hence, by the next lemma, the existence of right homotopies always implies the existence of left homotopies in the category of topological spaces, which means we don’t ever need to make the distinction between them.
 
 \begin{lemma}
-Let $f,g:X\rightarrow Y$ be two maps. If $X$ is cofibrant and $f,g$ are left homotopic then they are right homotopic. Dually, if $Y$ is fibrant and $f,g$ are right homotopic, then they are left homotopic.
+Let $f,g:X\longrightarrow Y$ be two maps. If $X$ is cofibrant and $f,g$ are left homotopic then they are right homotopic. Dually, if $Y$ is fibrant and $f,g$ are right homotopic, then they are left homotopic.
 \end{lemma}
 \begin{proof}
-Choose a good cylinder object $X\coprod X \overset{i_1 + i_2}\rightarrow Cyl(X) \overset{j}\rightarrow X$ and let $h:Cyl(X)\rightarrow Y$ be a left homotopy between $f$ and $g$. Choose also a good path object $Y\overset{q}\rightarrow Path(Y) \overset{(p_1, p_2)}\rightarrow Y\prod Y$. We then have a commutative diagram
+Choose a good cylinder object $X\coprod X \overset{i_1 + i_2}\longrightarrow Cyl(X) \overset{j}\longrightarrow X$ and let $h:Cyl(X)\longrightarrow Y$ be a left homotopy between $f$ and $g$. Choose also a good path object $Y\overset{q}\longrightarrow Path(Y) \overset{(p_1, p_2)}\longrightarrow Y\prod Y$. We then have a commutative diagram
 \begin{center}
 \begin{tikzpicture}
 	\node (X) {$X$};
@@ -284,7 +284,7 @@ Choose a good cylinder object $X\coprod X \overset{i_1 + i_2}\rightarrow Cyl(X) 
 \end{center}
 which has a lift $\overline{h}$ by \textbf{MC3}. 
 %Note here that we used the fact that $i_1$ is an acyclic cofibration which we have not proved, but it can be seen by the two out of three property since $X$ is assumed to be cofibrant together with the fact that it is a composition of two cofibrations. 
-The composition $h\circ i_2:X\rightarrow Path(X)$ gives a right homotopy between $f$ and $g$ as desired. The dual statement is proved dually.
+The composition $h\circ i_2:X\longrightarrow Path(X)$ gives a right homotopy between $f$ and $g$ as desired. The dual statement is proved dually.
 \end{proof}
 
 We can then finally define the notion of homotopy as follows. 
@@ -292,7 +292,7 @@ We can then finally define the notion of homotopy as follows.
 \begin{definition}[Homtopic maps]
 \label{def:homotopic_maps}
 \index{Homotopic maps}
-We say two maps $f,g:X\rightarrow Y$ are homotopic, denoted $f\sim g$, if they are both left homotopic and right homotopic.
+We say two maps $f,g:X\longrightarrow Y$ are homotopic, denoted $f\sim g$, if they are both left homotopic and right homotopic.
 \end{definition}
 
 This means we can finally define homotopy equivalences. 
@@ -313,7 +313,7 @@ Two bifibrant objects $X$ and $Y$, in a model category $\C$, are homotopy equiva
 
 We won't cover the proof, but refer to \cite[Theorem 1.2.10.]{hovey}. 
 
-This means that localizing at the weak equivalences also turns homotopy equivalences of bifibrant objects into isomorphisms. If we take the subcategory of bifibrant objects, which we denote $\C_{cf}$, we can form its quotient by the homotopy relation, $\C_{cf}\longrightarrow \C_{cf}/\sim$. By the generalized Whitehead theorem this map sends weak equivalences to isomorphisms, and hence it has to factor through its homotopy category, $Ho(\C_{cf})$, by general theory about localization. We also have an inclusion $\C_{cf} \longrightarrow \C$ which induces a map on their homotopy categories, $Ho(\C_{cf})\rightarrow Ho(\C)$. The final piece of the puzzle of having a workable homotopy category, comes from the fact that those maps form an equivalence of categories $Ho(\C)\cong \C_{cf}/\sim$, which means that we have a nice definition, and a nice way to work with it.
+This means that localizing at the weak equivalences also turns homotopy equivalences of bifibrant objects into isomorphisms. If we take the subcategory of bifibrant objects, which we denote $\C_{cf}$, we can form its quotient by the homotopy relation, $\C_{cf}\longrightarrow \C_{cf}/\sim$. By the generalized Whitehead theorem this map sends weak equivalences to isomorphisms, and hence it has to factor through its homotopy category, $Ho(\C_{cf})$, by general theory about localization. We also have an inclusion $\C_{cf} \longrightarrow \C$ which induces a map on their homotopy categories, $Ho(\C_{cf})\longrightarrow Ho(\C)$. The final piece of the puzzle of having a workable homotopy category, comes from the fact that those maps form an equivalence of categories $Ho(\C)\cong \C_{cf}/\sim$, which means that we have a nice definition, and a nice way to work with it.
 
 
 

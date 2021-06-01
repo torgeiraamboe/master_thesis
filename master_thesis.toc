@@ -21,18 +21,18 @@
 \contentsline {section}{\numberline {3.1}Motivation}{44}{section.3.1}
 \contentsline {section}{\numberline {3.2}Homotopy equivalence between spaces}{45}{section.3.2}
 \contentsline {section}{\numberline {3.3}Deformation retraction}{47}{section.3.3}
-\contentsline {chapter}{\numberline {4}$\ensuremath {A_{\infty }}$-algebras}{51}{chapter.4}
-\contentsline {section}{\numberline {4.1}Motivation}{52}{section.4.1}
-\contentsline {section}{\numberline {4.2}The generalized algebraic model}{52}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Morphisms of $\ensuremath {A_{\infty }}$-algebras}{55}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Visualization using rooted trees}{57}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}Visualization of morphisms using rooted trees}{62}{subsection.4.2.3}
-\contentsline {section}{\numberline {4.3}Kadeishvili's theorem}{70}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}Connection to formality}{73}{subsection.4.3.1}
-\contentsline {section}{\numberline {4.4}Uniform vanishing}{75}{section.4.4}
-\contentsline {chapter}{\numberline {5}Lusternik-Schnirelmann category}{81}{chapter.5}
-\contentsline {section}{\numberline {5.1}Motivation}{82}{section.5.1}
-\contentsline {section}{\numberline {5.2}Lusternik-Schnirelmann category 1 spaces}{82}{section.5.2}
-\contentsline {section}{\numberline {5.3}Summary and last thoughts}{86}{section.5.3}
-\contentsline {chapter}{\numberline {A}Two long proofs}{87}{appendix.A}
-\contentsline {chapter}{\numberline {B}Alternative construction of the model structure on $DGA_k$}{95}{appendix.B}
+\contentsline {chapter}{\numberline {4}$\ensuremath {A_{\infty }}$-algebras}{53}{chapter.4}
+\contentsline {section}{\numberline {4.1}Motivation}{54}{section.4.1}
+\contentsline {section}{\numberline {4.2}The generalized algebraic model}{54}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Morphisms of $\ensuremath {A_{\infty }}$-algebras}{57}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}Visualization using rooted trees}{60}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Visualization of morphisms using rooted trees}{64}{subsection.4.2.3}
+\contentsline {section}{\numberline {4.3}Kadeishvili's theorem}{72}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}Connection to formality}{75}{subsection.4.3.1}
+\contentsline {section}{\numberline {4.4}Uniform vanishing}{78}{section.4.4}
+\contentsline {chapter}{\numberline {5}Lusternik-Schnirelmann category}{83}{chapter.5}
+\contentsline {section}{\numberline {5.1}Motivation}{84}{section.5.1}
+\contentsline {section}{\numberline {5.2}Lusternik-Schnirelmann category 1 spaces}{84}{section.5.2}
+\contentsline {section}{\numberline {5.3}Summary and last thoughts}{88}{section.5.3}
+\contentsline {chapter}{\numberline {A}Two long proofs}{89}{appendix.A}
+\contentsline {chapter}{\numberline {B}Monoids in monoidal categories}{97}{appendix.B}

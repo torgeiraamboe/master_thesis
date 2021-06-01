@@ -1,5 +1,5 @@
 
-\section*{Abstract nonsense}
+\section*{Overview}
 
 There is a more general procedure we can use, in order to describe both DG-algebras and their model structure in one joint framework. The theory is developed in \cite{monoid} and uses so called monoids in monoidal categories. We will not cover all the details in this appendix, but we will go through the construction at least on a surface level. This is to get insight into how the theory presented in this thesis might be abstracted to other types of objects. 
 
@@ -58,7 +58,7 @@ This definition can seem very abstract and difficult, but in reality it is quite
 
 \begin{definition}[Symmetric monoidal category]
 \index{Symmetric monoidal category}
-Let $\mathcal{C}$ be a monoidal category. We say  $\mathcal{C}$ is a symmetric monoidal category if there is a natural isomorphism $\beta_{X,Y}: X\otimes Y \rightarrow Y \otimes X$, called the braid isomorphism, such that $\beta_{X,Y}\circ \beta_{Y,X} = id_{X\otimes Y} $ and the following diagrams 
+Let $\mathcal{C}$ be a monoidal category. We say  $\mathcal{C}$ is a symmetric monoidal category if there is a natural isomorphism $\beta_{X,Y}: X\otimes Y \longrightarrow Y \otimes X$, called the braid isomorphism, such that $\beta_{X,Y}\circ \beta_{Y,X} = id_{X\otimes Y} $ and the following diagrams 
 \begin{center}
 \begin{tikzpicture}
 	\node (1) {$A\otimes 1$};
@@ -102,11 +102,11 @@ Let $\C$ be a symmetric monoidal category. We say $\C$ is closed if the tensor f
 
 The notion of closed category can be defined without the need for a symmetric monoidal structure, but this definition is a bit more involved---and the above definition is the result of combining the closed structure with the symmetric monoidal one. 
 
-We can think about this as being motivated by---or at least inspired by the category of sets---where we have $[X,Y]=\{ f:X\rightarrow Y\}$, and $Hom(S, [X, Y])\cong Hom(S\times X, Y)$. So when we require that the internal hom functor $[A,-]$ is a right adjoint to the monoidal product functor $-\otimes A$, we get a bijection $Hom(X, [A, B])\rightarrow Hom(X\otimes A, B)$, that is natural in all three variables. This isomorphism is called ``currying''.
+We can think about this as being motivated by---or at least inspired by the category of sets---where we have $[X,Y]=\{ f:X\longrightarrow Y\}$, and $Hom(S, [X, Y])\cong Hom(S\times X, Y)$. So when we require that the internal hom functor $[A,-]$ is a right adjoint to the monoidal product functor $-\otimes A$, we get a bijection $Hom(X, [A, B])\longrightarrow Hom(X\otimes A, B)$, that is natural in all three variables. This isomorphism is called ``currying''.
 
 \begin{definition}[Pushout product]
 \index{Pushout product}
-Let $\C$ be a symmetric monoidal category and $f\colon A\to B$, $f'\colon A'\to B'$ be morphisms in $\C$. We can form the following pushout diagram
+Let $\C$ be a symmetric monoidal category and $f\colon A\longrightarrow B$, $f'\colon A'\longrightarrow B'$ be morphisms in $\C$. We can form the following pushout diagram
 \begin{center}
 \begin{tikzpicture}
 	\node (1) {$A\otimes A'$};
@@ -130,7 +130,7 @@ which we call the pushout product of $f$ and $f'$.
 We have already covered the definition of a model category\index{Model category} in the thesis, so recall that it consists of three classes of maps $W, C, F$---called weak equivalences\index{Weak equivalence}, cofibrations\index{Cofibration} and fibrations\index{Fibration} respectively---such that certain axioms \textbf{MC1}, \textbf{MC2}, \textbf{MC3} and \textbf{MC4} hold. 
 
 \begin{definition}[Symmetric monoidal model category]\index{Symmetric monoidal model category}
-A (closed) symmetric monoidal model category is a category $\C$ with a model structure $(W, C, F)$, equipped with the structure of a closed symmetric monoidal category $(\otimes, I)$, such that the pushout product of two cofibrations is again a cofibration, the pushout product of a cofibration and an acyclic cofibration is again an acyclic cofibration and that the map $QI\otimes X \overset{p\otimes id_X}\to I\otimes X \to X$ between any cofibrant object $X$---and any cofibrant replacement $QI$ of the tensor unit $I$---is a weak equivalence. 
+A (closed) symmetric monoidal model category is a category $\C$ with a model structure $(W, C, F)$, equipped with the structure of a closed symmetric monoidal category $(\otimes, I)$, such that the pushout product of two cofibrations is again a cofibration, the pushout product of a cofibration and an acyclic cofibration is again an acyclic cofibration and that the map $QI\otimes X \overset{p\otimes id_X}\longrightarrow I\otimes X \longrightarrow X$ between any cofibrant object $X$---and any cofibrant replacement $QI$ of the tensor unit $I$---is a weak equivalence. 
 \end{definition}
 
 We are almost at the end, but we need one more ``niceness'' condition on our category $\C$. We now have that the monoidal structure is nice, and respects the model structure, but we also want the model structure itself to be ``nice''. The rigorous definition of this niceness condition is a bit tricky, but it essentially requires the cofibrations and the acyclic cofibrations to be generated by a small set. 
@@ -167,7 +167,7 @@ We then have the category we want, i.e. $\C$ a cofibrantly generated closed symm
 
 \begin{definition}[Monoid in a monoidal category]
 \index{Monoid in a monoidal category}
-A monoid in a monoidal category $ (\mathcal{C}, \otimes, I)$ is an object $ M$ together with a map $ \mu:M\otimes M\rightarrow M$, called multiplication, and a map $ \eta: I\rightarrow M$, called the unit, such that the associative law and left and right unit laws hold, i.e. the following three diagrams commute
+A monoid in a monoidal category $ (\mathcal{C}, \otimes, I)$ is an object $ M$ together with a map $ \mu:M\otimes M\longrightarrow M$, called multiplication, and a map $ \eta: I\longrightarrow M$, called the unit, such that the associative law and left and right unit laws hold, i.e. the following three diagrams commute
 \begin{center}
 \begin{tikzpicture}
 	\node (1) {$1\otimes M$};

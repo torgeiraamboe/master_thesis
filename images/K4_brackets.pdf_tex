@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{381.79985814bp}%
+    \setlength{\unitlength}{559.19543065bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,14 +50,14 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.53745352)%
+  \begin{picture}(1,0.38351001)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{K4_brackets.pdf}}%
-    \put(0.36830335,0.51729815){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$(t_1t_2)(t_3t_4)$\end{tabular}}}}%
-    \put(-0.00198229,0.31300262){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$((t_1t_2)t_3)t_4$\end{tabular}}}}%
-    \put(0.74644648,0.31300262){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$t_1(t_2(t_3t_4))$\end{tabular}}}}%
-    \put(0.64233432,0.00526904){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$t_1(t_2t_3)t_4)$\end{tabular}}}}%
-    \put(0.11096954,0.00526904){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$(t_1(t_2t_3))t_4$\end{tabular}}}}%
+    \put(0.32657307,0.3697486){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$(t_1\cdot t_2)\cdot (t_3\cdot t_4)$\end{tabular}}}}%
+    \put(-0.00135344,0.23026247){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$((t_1\cdot t_2)\cdot t_3)\cdot t_4$\end{tabular}}}}%
+    \put(0.6685823,0.23026247){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$t_1\cdot (t_2\cdot (t_3\cdot t_4))$\end{tabular}}}}%
+    \put(0.58878016,0.00359753){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$t_1\cdot (t_2\cdot t_3)\cdot t_4)$\end{tabular}}}}%
+    \put(0.0999081,0.00359753){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$(t_1\cdot (t_2\cdot t_3))\cdot t_4$\end{tabular}}}}%
   \end{picture}%
 \endgroup%

@@ -2,18 +2,24 @@
 
 \bibitem[Ada78]{adams_loop}
 John~Frank Adams.
-\newblock Infinite loop spaces.
-\newblock {\em Annals of mathematics}, 90, 1978.
+\newblock {\em Infinite loop spaces}.
+\newblock Number~90. Hermann Weyl lectures at IAS, Annals of Mathematics, 1978.
+
+\bibitem[AL10]{sha-example}
+Michael~P. Allocca and Tom Lada.
+\newblock A finite dimensional a-infinity algebra example.
+\newblock {\em Georgian mathematical journal}, 17:1--12, 2010.
 
 \bibitem[Bas15]{nonformal_loop}
 Somnath Basu.
 \newblock Of sullivan models, massey products, and twisted pontrjagin products.
 \newblock {\em Journal of homotopy and related structures}, 10:239--273, 2015.
 
-\bibitem[BB17]{berglund}
+\bibitem[BB20]{berglund}
 Alexander Berglund and Kaj Börjeson.
 \newblock Koszul a-infinity-algebras and free loop space homology.
-\newblock 2017.
+\newblock {\em Proceedings of the Edinburgh Mathematical Society}, 63:37--65,
+  2020.
 
 \bibitem[Bet70]{betti}
 Enrico Betti.
@@ -22,8 +28,8 @@ Enrico Betti.
 
 \bibitem[BG76]{PLdeRham}
 Aldridge Bousfield and Victor Gugenheim.
-\newblock On pl derham theory and rational homotopy type.
-\newblock {\em Memoirs of the AMS}, 179, 1976.
+\newblock {\em On PL deRham theory and rational homotopy type}.
+\newblock Number 179. 1976.
 
 \bibitem[BMFM20]{detection}
 Urtzi Buijs, José~Manuel Moreno-Fernández, and Aniceto Murillo.
@@ -32,9 +38,8 @@ Urtzi Buijs, José~Manuel Moreno-Fernández, and Aniceto Murillo.
 
 \bibitem[BV73]{boardman_vogt}
 J.M. Boardman and R.M. Vogt.
-\newblock {\em Homotopy invariant algebraic structures on topological spaces},
-  volume 347 of {\em Lecture notes in mathematics}.
-\newblock Springer verlag, 1973.
+\newblock {\em Homotopy invariant algebraic structures on topological spaces}.
+\newblock Number 347. Springer, Lecture notes in mathematics, 1973.
 
 \bibitem[CLOT03]{lscategorybook}
 Octav Cornea, Gregory Lupton, John Oprea, and Daniel Tanré.
@@ -49,7 +54,8 @@ Diarmuid Crowley and Johannes Nordström.
 
 \bibitem[CPRNW20]{Petersen}
 Ricardo Campos, Dan Petersen, Daniel Robert-Nicoud, and Felix Wierstra.
-\newblock Lie, associative and commutative quasi-isomorphism, 2020.
+\newblock Lie, associative and commutative quasi-isomorphism.
+\newblock {\em arXiv}, 1904.03585, 2020.
 
 \bibitem[DGMS75]{DGMS}
 Pierre Deligne, Phillip Griffiths, John Morgan, and Dennis Sullivan.
@@ -61,10 +67,10 @@ Yves Félix, Stephen Halperin, and Jean-Claude Thomas.
 \newblock {\em Rational Homotopy Theory}.
 \newblock Springer-Verlag, 2001.
 
-\bibitem[FM02]{sformality}
+\bibitem[FM05]{sformality}
 Marisa Fernández and Vicente Muñoz.
 \newblock Formality of donaldson submanifolds.
-\newblock {\em Mathematische Zeitschrift}, 257, 2002.
+\newblock {\em Mathematische Zeitschrift}, 250:149--175, 2005.
 
 \bibitem[Gar09]{small_objects}
 Richard Gardner.
@@ -79,8 +85,8 @@ Allen Hatcher.
 \bibitem[Hen83]{co-H-space}
 Hans-Werner Henn.
 \newblock On almost rational co-h-spaces.
-\newblock {\em Proceedings of the american mathematical society}, 87:164--168,
-  1983.
+\newblock {\em Proceedings of the american mathematical society},
+  (87):164--168, 1983.
 
 \bibitem[Hes07]{hess}
 Kathryn Hess.
@@ -132,7 +138,7 @@ Kenji Lefèvre-Hasegawa.
 \bibitem[LPWZ09]{Ext}
 Di~M. Lu, John~H. Palmieri, Quan~S. Wu, and James~J. Zhang.
 \newblock A-infinity structure on ext-algebras.
-\newblock {\em Pure Applied Algebra}, 2013, 2009.
+\newblock {\em Pure Applied Algebra}, 213:2017--2037, 2009.
 
 \bibitem[LS34]{lscat}
 Lazar Lusternik and Lev Schnirelmann.
@@ -152,7 +158,7 @@ Jean-Louis Loday and Bruno Vallette.
 \bibitem[LW09]{infty-massey}
 Weiping Li and Siye Wu.
 \newblock Massey product and twisted cohomology of a-infinity algebras.
-\newblock 2009.
+\newblock {\em arXiv}, 0912.1775, 2009.
 
 \bibitem[Mar06]{transfer}
 Martin Markl.
@@ -193,8 +199,8 @@ James~Peter May.
 
 \bibitem[May72]{may_loop}
 James~Peter May.
-\newblock {\em The geometry of iterated loop spaces}, volume 271.
-\newblock Springer verlag, 1972.
+\newblock {\em The geometry of iterated loop spaces}.
+\newblock Number 271. Springer, Lecture notes in mathematics, 1972.
 
 \bibitem[Mer99]{Merkulov}
 Sergei~A. Merkulov.
@@ -216,12 +222,12 @@ Edward~J. O'neill.
 \bibitem[Poi95]{situs}
 Henry Poincaré.
 \newblock Analysis situs.
-\newblock {\em Journal de l'École Polytechnique}, pages 1--123, 1895.
+\newblock {\em Journal de l'École Polytechnique}, 1:1--123, 1895.
 
 \bibitem[Poi99]{situs2}
 Henry Poincaré.
 \newblock Complément à l'analysis situs.
-\newblock {\em Rendiconti del Circolo Matematico di Palermo}, page 285–343,
+\newblock {\em Rendiconti del Circolo Matematico di Palermo}, 13:285–343,
   1899.
 
 \bibitem[Qui69]{Quillen}
@@ -276,8 +282,8 @@ James Stasheff.
 
 \bibitem[Sta70]{h-spaces}
 James Stasheff.
-\newblock H-spaces from a homotopy point of view.
-\newblock {\em Springer verlag}, 1970.
+\newblock {\em H-spaces from a homotopy point of view}.
+\newblock Number 161. 1970.
 
 \bibitem[Sul77]{Sullivan}
 Dennis Sullivan.

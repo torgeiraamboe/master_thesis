@@ -40,7 +40,7 @@ It can be noted that we can define algebras over rings in general---not just fie
 \begin{definition}[Graded algebra]
 \label{def:graded_algebra}
 \index{Graded algebra}
-We say an algebra $A$ is a graded algebra if there is a decomposition $A = \bigoplus_{n\in \Z}A^n$, into vector spaces $A^n$, such that the product respects the grading, i.e. $m:A^n\times A^m \rightarrow A^{n+m}$. 
+We say an algebra $A$ is a graded algebra if there is a decomposition $A = \bigoplus_{n\in \Z}A^n$, into vector spaces $A^n$, such that the product respects the grading, i.e. $m:A^n\times A^m \longrightarrow A^{n+m}$. 
 \end{definition}
 
 To be able to tie these graded algebras in with the already well developed theory of homological algebra and algebraic topology, we need to have some way to build cohomology. This is done through the notion of cochain complexes. 
@@ -63,7 +63,7 @@ The following definition is one of the main definitions of the thesis, so make s
 \begin{definition}[DG-algebra]
 \label{def:dga}
 \index{DG-algebra}
-A differential graded algebra $(A, d)$, often called just a DG-algebra or a DGA, is a graded algebra $A$ together with a degree $+1$ map $d: A\rightarrow A$, often called the differential, such that 
+A differential graded algebra $(A, d)$, often called just a DG-algebra or a DGA, is a graded algebra $A$ together with a degree $+1$ map $d: A\longrightarrow A$, often called the differential, such that 
 \begin{itemize}
     \item $d\circ d = 0$, and
     \item $d(a\cdot b) = d(a)\cdot b + (-1)^{|a|}a\cdot d(b)$. 
@@ -90,7 +90,7 @@ As these objects will be one of our main focus points throughout this thesis, it
 \index{Singular mod $p$ cohomolohy}
 Let $T$ be a topological space. For any prime number $p\neq 2$, the singular $mod p$ cohomology ring $H^*(T, \Z/p\Z)$, is a DG-algebra. Its graded multiplication is the induced operation in cohomology from the cup product of n-cochains. The differential is a bit more involved, but comes from the exact sequence
 \begin{equation*}
-\Z/p\Z \rightarrow \Z/p^2 \rightarrow \Z/p\Z.
+\Z/p\Z \longrightarrow \Z/p^2 \longrightarrow \Z/p\Z.
 \end{equation*}    
 This induces a long exact sequence 
 \begin{equation*}
@@ -151,7 +151,7 @@ Notice that this example actually uses the opposite grading of what we used in t
 
 The next example requires a bit to set up. It is called the piece-wise linear de Rham algebra, and comes from the field of rational homotopy theory. Because this theory is central for the development of DG-algebras, and formality, we give a bit of background information. 
 
-A famous---notoriously difficult---problem in algebraic topology, is to calculate the homotopy groups of the spheres. The $n$'th homotopy group of a space $X$ is essentially the set of continuous maps from $S^n$---the $n$-dimensional sphere---to $X$, where we identify two such maps if they are in some sense topologically similar. It turns out that higher dimensional spheres can twist around lower dimensional spheres non-trivially---producing many non-trivial homotopy groups. Even worse is maybe the fact that they seem to satisfy no general pattern at all. 
+A famous, notoriously difficult, problem in algebraic topology, is to calculate the homotopy groups of the spheres. The $n$'th homotopy group of a space $X$ is essentially the set of continuous maps from $S^n$---the $n$-dimensional sphere---to $X$, where we identify two such maps if they are in some sense topologically similar. It turns out that higher dimensional spheres can twist around lower dimensional spheres non-trivially---producing many non-trivial homotopy groups. Even worse is maybe the fact that they seem to satisfy no general pattern at all. 
 
 As a way to get around this, Serre looked at what happens if one works over the rationals instead of the integers, essentially removing the difficult torsion from the theory. In \cite{Serre} he successfully calculated the torsion free part of all homotopy groups of all spheres, starting a journey for mathematicians to develop a complete torsion free theory of topological spaces. This theory is now called rational homotopy theory, and its development was mainly spearheaded by Quillen and Sullivan. One of the great achievements in this field came from developing purely algebraic models for the theory, meaning that one could only study some algebraic objects, and get all information about the topological spaces. More formally, we get that the rational homotopy type of a topological space is given by the isomorphism class of its algebraic model. The first successful attempt at making such an algebraic model was made in \cite{Quillen} in 1969 by Quillen, using certain differential graded Lie algebras (DGL-algebras). Some years later Sullivan---inspired by the de Rham theory for manifolds---proposed in \cite{Sullivan} a simpler idea for a purely algebraic model for rational homotopy theory, using certain DG-algebras. 
 
@@ -212,7 +212,7 @@ Hopefully the reader was able to imagine some definition of morphism between DG-
 \begin{definition}[DG-morphism]
 \label{def:dg-morphism}
 \index{DG-morphism}
-Let $(A, d_A)$ and $(B, d_B)$ be two DG-algebras. A map $f:A\longrightarrow B$ is called a morphism of DG-algebras---sometimes shortened DG-morphism---if it
+Let $(A, d_A)$ and $(B, d_B)$ be two DG-algebras. A map $f:A\longrightarrow B$ is called a morphism of DG-algebras, sometimes shortened to DG-morphism, if it
 \begin{itemize}
     \item preserves the degree of homogeneous elements, i.e. if $a\in A^n$ then $f(a)\in B^n$, and
     \item commutes with the differentials, i.e. $f(d_A(a))=d_B(f(a))$. 
@@ -247,7 +247,7 @@ With this we finally can state the definition of the informal description ``suff
 A DG-algebra $(A, d)$ is called formal if it is quasi-isomorphic to a DG-algebra $(M, 0)$ with trivial differential. 
 \end{definition}
 
-This definition is often stated as $A$ being quasi-isomorphic to its cohomology algebra, treated as a DG-algebra in the way described in \ref{ex:cohomology}. This is equivalent, because if $A$ is formal then the zig-zag of quasi-isomorphisms $M \leftarrow \cdots \rightarrow A$ induces isomorphisms $H(M)\cong \cdots \cong H(A)$, but as $M$ had a trivial differential---its cohomology is equal to itself. Hence we have $M\cong H(A)$, and we can extend the zig-zag of quasi-isomorphisms to $H(A)\cong M \leftarrow \cdots \rightarrow A$, which is also a zig-zag of quasi-isomorphisms. This means that $A$ is quasi-isomorphic to its cohomology algebra $H(A)$. 
+This definition is often stated as $A$ being quasi-isomorphic to its cohomology algebra, treated as a DG-algebra in the way described in \ref{ex:cohomology}. This is equivalent, because if $A$ is formal then the zig-zag of quasi-isomorphisms $M \longleftarrow \cdots \longrightarrow A$ induces isomorphisms $H(M)\cong \cdots \cong H(A)$, but as $M$ had a trivial differential---its cohomology is equal to itself. Hence we have $M\cong H(A)$, and we can extend the zig-zag of quasi-isomorphisms to $H(A)\cong M \longleftarrow \cdots \longrightarrow A$, which is also a zig-zag of quasi-isomorphisms. This means that $A$ is quasi-isomorphic to its cohomology algebra $H(A)$. 
 
 So what does it mean for a DG-algebra to be formal? And is there a justification for its name? Formality for DG-algebras was first defined in \cite{DGMS} and was used as a tool to describe the real homotopy theory of certain manifolds. In the paper the authors define a certain DG-algebra for these manifolds---called their minimal models---and define the manifold to be formal if its minimal model is formal as a DG-algebra. The notion of being formal then means that we can ``formally reconstruct'' the minimal model from its cohomology algebra. The former is often very hard to describe in full detail as it is very rich in information, while the latter is often simple to calculate for many manifolds. Thus, formality means that our DG-algebra is simple enough, and does not contain ``too much information'', meaning that having calculated the cohomology algebra automatically ``gives us'' the minimal model---at least up to quasi-isomorphism. This is of course not precise at all, but in our opinion it serves as some good intuition. When this is the case we say that the real homotopy type of the manifold is a formal consequence of its cohomology. 
 
@@ -277,7 +277,7 @@ for some DG-algebra $B$. This gives us two things:
     \item $\Apl(X)$ is formal as a (not necessarily commutative) DG-algebra if and only if $C^*(X;\Q)$ is formal. 
 \end{enumerate}
 
-We say that the $\Apl$ construction gives us an algebraic model of rational homotopy theory. This is justified by the fact that Sullivan showed in \cite{Sullivan} that---if we make some restrictions---this $\Apl$ functor is an equivalence of categories. Recall that a topological space $X$ is called 1-connected---or simply connected---if $\pi_1(X)=0$. It is also said to have cohomology of finite type if $H^n(X)$ is finite dimensional vector space. We can similarly define a DG-algebra $(A, d)$ to be \emph{connected}\index{Connected DG-algebra} if $A^i = 0$ for $i< 0$ and $A^0\cong k$. We define it to be \emph{1-connected DG-algebra}\index{1-connected} if it is connected and $A^1=0$. Similarily, a rational DG-algebra $A$ is said to have \emph{cohomology of finite type}\index{Cohomology of finite type} if $H^n(A)$ is finite dimensional. 
+We say that the $\Apl$ construction gives us an algebraic model of rational homotopy theory. This is justified by the fact that Sullivan showed in \cite{Sullivan} that---if we make some restrictions---this $\Apl$ functor is an equivalence of categories. Recall that a topological space $X$ is called 1-connected, or simply connected, if $\pi_1(X)=0$. It is also said to have cohomology of finite type if $H^n(X)$ is finite dimensional vector space. We can similarly define a DG-algebra $(A, d)$ to be \emph{connected}\index{Connected DG-algebra} if $A^i = 0$ for $i< 0$ and $A^0\cong k$. We define it to be \emph{1-connected DG-algebra}\index{1-connected} if it is connected and $A^1=0$. Similarily, a rational DG-algebra $A$ is said to have \emph{cohomology of finite type}\index{Cohomology of finite type} if $H^n(A)$ is finite dimensional. 
 
 The equivalence Sullivan showed is the following.
 

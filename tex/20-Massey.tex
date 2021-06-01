@@ -39,7 +39,7 @@ Since the choices of $b_1$ and $b_2$ are not unique, we define the triple Massey
 Note that we showed earlier, in \cref{ex:cohomology}, that the product on a DG-algebra induces a well defined product on its cohomology algebra, which we have used in the above definition of the triple Massey product.  
 \end{remark}
 
-Notice also that the different elements in the triple Massey product all determine the same element in $H(A)/(x_1H(A)+H(A)x_3)$, hence we could define the triple Massey product to be a morphism from a subset of $H(A)\times H(A)\times H(A)$ to in $H(A)/(x_1H(A)+H(A)x_3)$. This subset would then have to be the set of elements $x_1, x_2, x_3$ such that $x_1x_2 = 0 = x_2x_3$. Since this method does not generalize well to the higher Massey products we want to define, we do not use this definition. 
+Notice also that the different elements in the triple Massey product all determine the same element in $H(A)/(x_1H(A)+H(A)x_3)$, hence we could define the triple Massey product to be a morphism from a subset of $H(A)\times H(A)\times H(A)$ to $H(A)/(x_1H(A)+H(A)x_3)$. This subset would then have to be the set of elements $x_1, x_2, x_3$ such that $x_1x_2 = 0 = x_2x_3$. Since this method does not generalize well to the higher Massey products we want to define, we do not use this definition. 
 
 As said, generalizing this construction is a bit tedious explicitly, so we instead find a suitable workaround by using so-called defining systems. 
 
@@ -109,7 +109,7 @@ We wanted these Massey products to serve as information not accessible to the co
 \begin{definition}[Vanishing Massey product]
 \label{def:vanishing_massey}
 \index{Vanishing Massey product}
-We say that a Massey $n$-product, $\langle x_1, \cdots, x_n\rangle$, vanishes if it contains zero as an element, i.e. $0\in \langle x_1, \ldots, x_n\rangle$. 
+Let $\langle x_1, \cdots, x_n\rangle$ de a defined Massey product in a DG-algebra $A$. We say it vanishes if it contains zero as an element, i.e. $0\in \langle x_1, \ldots, x_n\rangle$. 
 \end{definition}
 
 Since the Massey $n$-product is a set, we cant in general hope for it being just the zero class, so this definition of a vanishing Massey product is the closest thing we can have to a ``trivial'' Massey product. 
@@ -169,7 +169,11 @@ In the introduction we intuitively defined formal DG-algebras to be the ones whe
 
 %From the Borromean link example, cohomology only sees the pairwise linking of the circles, which there is none, but fails to see the higher linking. So intuitively we expect having vanishing Massey products means there is no such higher information, and hence the cohomology algebra has enough to reconstruct the DG algebra. This is formalized in the question; is a DG algebra with vanishing Massey products formal? This turns out to almost be true, but not in this exact formulation. There are examples of DG algebras with vanishing Massey products that are not formal. But, if we can have vanishing Massey products in a ``nice'' way, i.e. that they all vanish for the same reason, then we will have a formal DG algebra. The converse statement though, is true. We cant have higher information, i.e. Massey products, if we know it is formal. 
 
-Recall that a DG-algebra $A$ is called formal\index{Formal DG-algebra} there is a span of quasi-isomorphism $H(A)\leftarrow C \rightarrow A$ for some DG-algebra $C$. 
+Recall that (by \cref{thm:span}) a DG-algebra $A$ is called formal\index{Formal DG-algebra} there is a span of quasi-isomorphism
+\begin{equation*}
+	H(A)\longleftarrow C \longrightarrow A
+\end{equation*}
+for some DG-algebra $C$. 
 
 \begin{theorem}
 \label{thm:formal_no_massey}
@@ -361,7 +365,7 @@ Given a DG-algebra $A$, when do we know that $A$ is formal?
 \end{central}
 \textbf{Criteria:} All Massey products needs to be vanishing, if not, $A$ can't be formal. 
 
-Notethat any DG-algebra $G$ with $d=0$ must be formal---as the map $G\longrightarrow H(G)$ sending $g$ to its cohomology class $[g]$ induces an isomorphism in cohomology, namely the identity map. This means that we can include the category of graded algebras into the category $DGA_k$ by letting $d=0$, project down to the homotopy category $hoDGA_k$ and look at its essential image, i.e. all objects in $hoDGA_k$ that are isomorphic to an algebra in the image of the functor
+Notethat any DG-algebra $G$ with $d=0$ must be formal, as the map $G\longrightarrow H(G)$ sending $g$ to its cohomology class $[g]$ induces an isomorphism in cohomology---namely the identity map. This means that we can include the category of graded algebras into the category $DGA_k$ by letting $d=0$, project down to the homotopy category $hoDGA_k$ and look at its essential image, i.e. all objects in $hoDGA_k$ that are isomorphic to an algebra in the image of the functor
 \begin{center}
 \begin{tikzcd}
 GrAlg_k \arrow[r, "I"] & DGA_k \arrow[r, "\pi"] & hoDGA_k

@@ -32,7 +32,7 @@ We have motivated this structure for a while now, so it is finally time to see h
 \begin{definition}[$A_\infty$-algebra]
 \label{def:A_infinity-algebra}
 \index{$A_\infty$-algebra}
-Let $k$ be a field. An $\A$-algebra over $k$ is a $\Z$-graded vector space $A=\bigoplus_{i\in \Z}A_i$ together with a family of $k$-linear maps $m_n : A^{\otimes n}\rightarrow A$ of degree $n-2$, such that the identities 
+Let $k$ be a field. An $\A$-algebra over $k$ is a $\Z$-graded vector space $A=\bigoplus_{i\in \Z}A_i$ together with a family of $k$-linear maps $m_n : A^{\otimes n}\longrightarrow A$ of degree $n-2$, such that the identities 
 \begin{equation*}
     0=\sum_{r+s+t = n}(-1)^{r+st}m_{r+1+t}(id^{\otimes r}\otimes m_s \otimes id^{\otimes t})
 \end{equation*}
@@ -86,7 +86,32 @@ The third condition should be recognizable by the discussion on transferring DG-
 
 If in fact $m_3 = 0$, then we see that the associator is zero, and hence the product $m_2$ is associative.  As we can see, $m_2$ is also associative if $m_1$ is zero, which will cause some interesting phenomenons later. In this last case we have a associative product, but the higher homotopies need not vanish. 
 
-As we see by the first two relations, these look an awful lot like our DG-algebras\index{DG-algebras}, and we have in fact just showed that an $\A$-algebra where $m_3 = 0$ is a DG-algebra. This also means that we can view every DG-algebra as an $\A$-algebra, by letting the multiplication $m$ be the map $m_2$, the differential $d$ be the map $m_1$ and letting $m_i=0$ for all $i\geq 3$. Hence, a DG-algebra is a kind of trivial, or easy version of an $\A$-algebra. 
+\begin{example}[DG-algebras]
+We look at the first two Stasheff identities, and notice that these look an awful lot like the relations from our DG-algebras\index{DG-algebras}. The above discussion on the relations has in fact showed that an $\A$-algebra where $m_3 = 0$ is a DG-algebra. This also means that we can view every DG-algebra as an $\A$-algebra, by letting the multiplication $m$ be the map $m_2$, the differential $d$ be the map $m_1$ and letting $m_i=0$ for all $i\geq 3$. Hence, a DG-algebra is a kind of trivial, or easy version of an $\A$-algebra.
+\end{example}
+
+\begin{example}
+Maybe even more trivially, we can view any graded algebra $(A, m)=\bigoplus_{i\in \Z} A_i$ as an $\A$-algebra, by letting $m_i=0$ for all $i\neq 2$, and $m_2 = m$. 
+
+Similarly, any cochain complex of vector spaces $(V,d)$
+\begin{equation*}
+	\cdots \longrightarrow V_{i-1} \longrightarrow V_i \longrightarrow V_{i+1} \longrightarrow \cdots 
+\end{equation*}
+can be thought of as an $\A$-algebra by letting $m_1=d$ and $m_i=0$ for all $i>1$. 
+\end{example}
+
+A ``non trivial'' example made by Allocca and Lada in \cite{sha-example} is the following. 
+\begin{example}
+Let $V$ be the graded vector space given by $V_0\oplus V_1$, where $V_0$ has a basis $\{v_1, v_2\}$ and $V_1$ the basis $\{w\}$. The operations are defined by 
+\begin{itemize}
+	\item $m_1(v_1) = w = m_1(v_2)$
+	\item $m_n(v_1\otimes w^{\otimes k}\otimes v_1\otimes w^{\otimes n-k-2}) = (-1)^k (-1)^{s(n)} v_1$ for all $0\leq k\leq n-2$
+	\item $m_n(v_1\otimes w^{\otimes n-1})= (-1)^{s(n+1)}w$
+	\item $m_n(v_1\otimes w^{\otimes n-2}\otimes v_2)= (-1)^{s(n+1)}v_1$
+	\item $m_n = 0$ for all other combinations of elements 
+\end{itemize}
+where $s(n)=\frac{(n+1)(n+2)}{2}$. The proof of for the fact that this gives an $\A$-structure on $V$ can be found in \cite{sha-example}, and will not be covered here. We do however note that this example is interesting, because it gives a sneak peak into how $\A$-algebras are useful in theoretical physics, as it is related to open-closed string field theory. More information can be found in \cite{sha-example} and its references. 
+\end{example}
 
 
 % If we compare what happens in these higher products to what happens in successive products in the algebra, we start to see the structure a bit more. If we were to take the differential of a successive product in a DG algebra $A$, i.e. to look at $d((xy)z)$, we know, since the product is associative that $d((xy)z) = d(x(yz))$. If we write these out, we have 
@@ -166,22 +191,15 @@ which we can reformulate to
 \end{equation*}
 which tells us that $f_1$ almost commutes with the $m_2$'s, but only up to a higher morphism $f_2$. Above we saw that a DG-algebra is an $\A$-algebra with $m_i=0$ for $i\geq 3$. If we let $f_2=0$ then this relation tells us that $f_1$ is a morphism of DG-algebras. Hence we can kind of start to think about $\A$-morphisms as DG-morphisms up to homotopy.  
 
-$\mathbf{n=3:}$ Now the relations start to get complex and more confusing, but lets write it out anyway. 
-\begin{align*}
-    f_3(m_1^A\otimes id^{\otimes 2})
-    +f_2(m_2^A\otimes id)
-    +f_1(m_3^A)
-    &+f_3(id\otimes m_1^A\otimes id)
-    -f_2(id\otimes m_2^A)
-    +f_3(id^{\otimes 2}\otimes m_1^A) \\
-    &= \\
-    m_1^B(f_1)
-    +m_2^B(f_1\otimes f_2) 
-    &-m_2^B(f_2\otimes f_1)
-    +m_3^B(f_1\otimes f_1\otimes f_1)
-\end{align*}
-
-This relation can be rewritten to form 
+$\mathbf{n=3:}$ Now the relations start to get complex and more confusing, but lets write it out anyway. The left hand side is 
+\begin{equation*}
+m_1^B(f_1)+m_2^B(f_1\otimes f_2)-m_2^B(f_2\otimes f_1)+m_3^B(f_1\otimes f_1\otimes f_1)
+\end{equation*}
+and the right hand side becomes
+\begin{equation*}
+f_3(m_1^A\otimes id^{\otimes 2})+f_2(m_2^A\otimes id)+f_1(m_3^A)+f_3(id\otimes m_1^A\otimes id)-f_2(id\otimes m_2^A)+f_3(id^{\otimes 2}\otimes m_1^A)
+\end{equation*}
+hence the relation can be rewritten to form 
 \begin{align*}
     f_1(m_3^A)
     -m_3^B(f_1^{\otimes 3})

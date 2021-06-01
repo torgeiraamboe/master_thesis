@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{369.18755075bp}%
+    \setlength{\unitlength}{470.57625855bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,11 +50,11 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.09115916)%
+  \begin{picture}(1,0.07151833)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{K3_brackets.pdf}}%
-    \put(-0.00205001,0.03421592){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$(t_1t_2)t_3$\end{tabular}}}}%
-    \put(0.80749789,0.03421592){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$t_1(t_2t_3)$\end{tabular}}}}%
+    \put(-0.00160832,0.02684388){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$(t_1\cdot t_2)\cdot t_3$\end{tabular}}}}%
+    \put(0.72356641,0.02684388){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$t_1\cdot (t_2\cdot t_3)$\end{tabular}}}}%
   \end{picture}%
 \endgroup%

@@ -65,7 +65,7 @@ Any map from this DG-algebra $f:A[C]\longrightarrow B$ is uniquely determined by
 \end{equation*}
 where $inc(c) = 1\otimes c \otimes 1$. 
 
-Hence we have an isomorphism $A\ast_k T(x) \cong A[C(X)]$ from the coproduct to this ``free algebra'' on $C$. This is because $T(x)\cong T(C(x))$, and the map $A[C(x)]\rightarrow A\ast_k T(C(x))$ is uniquely determined by sending $A$ into $A$, and $C(x)$ into $C(x)$ as a component of $T(C(x))$. 
+Hence we have an isomorphism $A\ast_k T(x) \cong A[C(X)]$ from the coproduct to this ``free algebra'' on $C$. This is because $T(x)\cong T(C(x))$, and the map $A[C(x)]\longrightarrow A\ast_k T(C(x))$ is uniquely determined by sending $A$ into $A$, and $C(x)$ into $C(x)$ as a component of $T(C(x))$. 
 
 
 \begin{lemma}
@@ -487,7 +487,7 @@ for some DG-algebras $C_1$ and $C_2$. Consider now the diagram
 \end{center}
 As all objects are fibrant we know that $A_{i-1}\longrightarrow 0$ is a fibration. By \textbf{MC3}  there exists a lift, $q'\colon C_1\longrightarrow A$ making the sub-diagrams commute. In particular $q'\circ q = id_{A_{i-1}}$. Since $q$ and $id_{A_{i-1}}$ are both quasi-isomorphisms, $q'$ has to be as well due to the two-out-of-three property. Similarily a quasi-isomorphism $p'$ exists such that $p'\circ p = id_{A_{i+1}}$. 
 
-The next step is to take the pullback of the cospan $C_1\overset{i}\rightarrow A_i\overset{j}\leftarrow C_2$, i.e.
+The next step is to take the pullback of the cospan $C_1\overset{i}\longrightarrow A_i\overset{j}\longleftarrow C_2$, i.e.
 \begin{center}
 \begin{tikzpicture}
 	\node (1) {$C_3$};
@@ -525,7 +525,7 @@ As $i$ and $j$ are both acyclic fibrations, the maps $i'$ and $j'$ will be as we
 \end{tikzpicture}
 \end{center}
 
-And the compositions $q'\circ i'$ and $p'\circ j'$ are both quasi-isomorphisms, as all four individually are. Hence we have a span $A_{i-1}\longleftarrow C_3 \longrightarrow A_{i+1}$, which by the argument above means we can reduce any zig-zag of quasi-isomorphisms $A\leftarrow \cdots \rightarrow B$ to a single span $A\leftarrow C\rightarrow B$, for some DG-algebra $C$. 
+And the compositions $q'\circ i'$ and $p'\circ j'$ are both quasi-isomorphisms, as all four individually are. Hence we have a span $A_{i-1}\longleftarrow C_3 \longrightarrow A_{i+1}$, which by the argument above means we can reduce any zig-zag of quasi-isomorphisms $A\longleftarrow \cdots \longrightarrow B$ to a single span $A\longleftarrow C\longrightarrow B$, for some DG-algebra $C$. 
 \end{proof}
 
 This finally resolves \textbf{Theorem A.} from the motivation in the beginning of this chapter. We have a formal DG-algebra if and only if there is a span of quasi-isomorphisms connecting it to its cohomology.  
@@ -533,7 +533,7 @@ This finally resolves \textbf{Theorem A.} from the motivation in the beginning o
 
 We didn't actually use the specific model structure on $DGA_k$ in this proof, so the same argument holds for any right proper model categories where all objects are fibrant. 
 
-Notice that this also implies that $DGA_k$ satisfies the \emph{right Ore condition}\index{The right Ore condition}, i.e. that given a cospan $A\overset{a}\rightarrow C \overset{q}\leftarrow B$, where $q$ is a quasi-isomorphism, then there exists a span $A\overset{q'}\leftarrow C' \rightarrow B$ where $q'$ is a quasi-isomorphism. This follows from the proof above as we can factorize $a$ into $f\circ c$, where $c$ is an acyclic cofibration and $f$ a fibration. We can take the pullback of $D\rightarrow C\leftarrow B$ to get the diagram
+Notice that this also implies that $DGA_k$ satisfies the \emph{right Ore condition}\index{The right Ore condition}, i.e. that given a cospan $A\overset{a}\longrightarrow C \overset{q}\longleftarrow B$, where $q$ is a quasi-isomorphism, then there exists a span $A\overset{q'}\longleftarrow C' \longrightarrow B$ where $q'$ is a quasi-isomorphism. This follows from the proof above as we can factorize $a$ into $f\circ c$, where $c$ is an acyclic cofibration and $f$ a fibration. We can take the pullback of $D\longrightarrow C\longleftarrow B$ to get the diagram
 \begin{center}
 \begin{tikzpicture}
 	\node (1) {$C'$};
